@@ -1,5 +1,6 @@
 package collaboRhythm.plugins.incisionEvaluation.controller
 {
+	import collaboRhythm.plugins.incisionEvaluation.model.IncisionEvaluationModel;
 	import collaboRhythm.plugins.incisionEvaluation.view.IncisionEvaluationButtonWidgetView;
 	import collaboRhythm.plugins.incisionEvaluation.view.IncisionEvaluationView;
 	import collaboRhythm.shared.controller.apps.AppControllerBase;
@@ -12,10 +13,12 @@ package collaboRhythm.plugins.incisionEvaluation.controller
 		private var _widgetView:IncisionEvaluationButtonWidgetView;
 
 		public static const DEFAULT_NAME:String = "Incision Evaluation";
+		private var _model:IncisionEvaluationModel;
 
 		public function IncisionEvaluationAppController(constructorParams:AppControllerConstructorParams)
 		{
 			super(constructorParams);
+			_model = new IncisionEvaluationModel();
 		}
 
 		public override function get defaultName():String
@@ -61,7 +64,22 @@ package collaboRhythm.plugins.incisionEvaluation.controller
 
 		public function showIncisionEvaluationView():void
 		{
-			_viewNavigator.pushView(IncisionEvaluationView);
+			_viewNavigator.pushView(IncisionEvaluationView, this);
+		}
+
+		public function updateHasRedness(value:Boolean):void
+		{
+			_model.hasRedness = value;
+		}
+
+		public function get model():IncisionEvaluationModel
+		{
+			return _model;
+		}
+
+		public function set model(value:IncisionEvaluationModel):void
+		{
+			_model = value;
 		}
 	}
 }

@@ -17,6 +17,67 @@
   -->
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 		xmlns:s="library://ns.adobe.com/flex/spark"
-		xmlns:tablet="collaboRhythm.shared.view.tablet.*">
+		xmlns:tablet="collaboRhythm.shared.view.tablet.*"
+		fontSize="26" title="Incision Evaluation">
 
+	<s:VGroup paddingLeft="100" paddingTop="100">
+		<s:HGroup verticalAlign="baseline">
+			<s:Label text="Redness"/>
+			<s:CheckBox id="rednessCheckBox" label="Yes" skinClass="spark.skins.spark.CheckBoxSkin" change="rednessCheckBox_changeHandler(event)"/>
+		</s:HGroup>
+		<s:HGroup id="sizeGroup" verticalAlign="baseline" visible="{_model.showRednessDetails}" includeInLayout="{_model.showRednessDetails}">
+			<s:Label text="Size"/>
+			<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="200"
+						 textAlign="right" restrict="0-9" softKeyboardType="number"/>
+			<s:Label text="mm"/>
+			<s:Label text="by"/>
+			<s:TextInput id="rednessHeightTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="200"
+						 textAlign="right" restrict="0-9" softKeyboardType="number"/>
+			<s:Label text="mm"/>
+		</s:HGroup>
+		<s:HGroup visible="{_model.showRednessDetails}" includeInLayout="{_model.showRednessDetails}">
+			<s:Label text="How Red?"/>
+			<s:DropDownList id="rednessIndicatorDropDownList" dataProvider="{rednessColor}" labelField="label" width="200"
+					prompt="Select Color" change="rednessIndicatorDropDownList_changeHandler(event)" skinClass="spark.skins.spark.DropDownListSkin"/>
+		</s:HGroup>
+	</s:VGroup>
+
+	<fx:Script><![CDATA[
+		import collaboRhythm.plugins.incisionEvaluation.controller.IncisionEvaluationAppController;
+		import collaboRhythm.plugins.incisionEvaluation.model.IncisionEvaluationModel;
+
+		import mx.collections.ArrayCollection;
+
+		import spark.events.IndexChangeEvent;
+
+		private var _controller:IncisionEvaluationAppController;
+
+		[Bindable]
+		private var _model:IncisionEvaluationModel;
+		private var rednessColor:ArrayCollection = new ArrayCollection([
+			{label:"Pink", data:1},
+			{label:"Light Red", data:2},
+			{label:"Dark Red", data:3}
+		]);
+
+		override public function set data(value:Object):void
+		{
+			super.data = value;
+			_controller = value as IncisionEvaluationAppController;
+			_model = _controller.model;
+		}
+
+		private function rednessCheckBox_changeHandler(event:Event):void
+		{
+			if (_controller != null)
+			{
+				_controller.updateHasRedness(rednessCheckBox.selected);
+			}
+		}
+
+		private function rednessIndicatorDropDownList_changeHandler(event:IndexChangeEvent):void
+		{
+
+		}
+		]]></fx:Script>
 </tablet:TabletViewBase>
