@@ -3,7 +3,7 @@
   <component name="FlexBuildConfigurationManager" active="CollaboRhythm.Plugins.IncisionEvaluation">
     <configurations>
       <configuration name="CollaboRhythm.Plugins.IncisionEvaluation" target-platform="Desktop" output-type="RuntimeLoadedModule" main-class="collaboRhythm.plugins.incisionEvaluation.controller.IncisionEvaluationPluginModule" output-file="IncisionEvaluationPluginModule.swf" output-folder="$MODULE_DIR$/bin-debug">
-        <dependencies target-player="11.1">
+        <dependencies>
           <entries>
             <entry module-name="CollaboRhythm.Shared.PluginsSupport" build-configuration-name="CollaboRhythm.Shared.PluginsSupport">
               <dependency linkage="Merged" />
@@ -18,6 +18,9 @@
               <dependency linkage="Merged" />
             </entry>
             <entry library-id="6b88d01e-ee5d-4e89-ad5d-a6dcfd9da91e">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="FlextrasMobileComponents" library-level="project">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -71,6 +74,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="FlextrasMobileComponents" level="project" />
   </component>
 </module>
 
