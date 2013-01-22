@@ -81,5 +81,15 @@ package collaboRhythm.plugins.incisionEvaluation.controller
 		{
 			_model = value;
 		}
+
+		public function updateHasTenderness(value:Boolean):void
+		{
+			_model.hasTenderness = value;
+		}
+
+		public function updateHasDischarge(value:Boolean):void
+		{
+			_model.hasDischarge = value;
+		}
 	}
 }
