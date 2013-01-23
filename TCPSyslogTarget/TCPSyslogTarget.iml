@@ -4,7 +4,7 @@
     <configurations>
       <configuration name="TCPSyslogTarget" target-platform="Desktop" output-type="Library" output-file="TCPSyslogTarget.swc" output-folder="$MODULE_DIR$/../out/production/TCPSyslogTarget">
         <dependencies>
-          <sdk name="4.6.0" />
+          <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
