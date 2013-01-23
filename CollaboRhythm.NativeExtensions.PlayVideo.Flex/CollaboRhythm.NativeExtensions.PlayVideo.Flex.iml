@@ -4,7 +4,7 @@
     <configurations>
       <configuration name="CollaboRhythm.NativeExtensions.PlayVideo.Flex" target-platform="Desktop" output-type="Library" output-file="PlayVideo.swc" output-folder="$MODULE_DIR$/../out/production/CollaboRhythm.NativeExtensions.PlayVideo.Flex">
         <dependencies target-player="11.1">
-          <sdk name="4.6.0" />
+          <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />

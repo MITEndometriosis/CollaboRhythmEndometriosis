@@ -30,7 +30,7 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="4.6.0" />
+          <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
@@ -78,7 +78,7 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="4.6.0" />
+          <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options>
           <map>
@@ -132,7 +132,7 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="4.6.0" />
+          <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
