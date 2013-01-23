@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <IndivoDocuments
 		>
-	</IndivoDocuments>
+	<LoadableIndivoDocument>
+		<document>
+			<HealthActionPlan xmlns="http://indivo.org/vocab/xml/documents/healthActionPlan#"
+							  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+				<name>Pain Evaluation</name>
+				<planType>Prescribed</planType>
+				<plannedBy>jking@records.media.mit.edu</plannedBy>
+				<datePlanned>2011-07-14T09:00:00-04:00</datePlanned>
+				<indication>Post Surgical Pain</indication>
+				<instructions>Use CollaboRhythm to evaluate your pain post-surgery and monitor your healing progress.
+				</instructions>
+			</HealthActionPlan>
+		</document>
+		<relatesTo>
+			<relation type="healthActionSchedule">
+				<LoadableIndivoDocument>
+					<document>
+						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"
+											  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+							<name>Pain Evaluation</name>
+							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
+							<dateScheduled>2011-07-14T09:00:00-04:00</dateScheduled>
+							<dateStart>2011-07-15T13:00:00Z</dateStart>
+							<dateEnd>2011-07-15T17:00:00Z</dateEnd>
+							<recurrenceRule>
+								<frequency>DAILY</frequency>
+								<count>42</count>
+							</recurrenceRule>
+						</HealthActionSchedule>
+					</document>
+				</LoadableIndivoDocument>
+			</relation>
+		</relatesTo>
+	</LoadableIndivoDocument>
+</IndivoDocuments>
