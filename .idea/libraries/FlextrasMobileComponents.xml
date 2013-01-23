@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="FlextrasMobileComponents" type="flex">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ExternalLibraries/FlextrasMobileComponents/MobileComponents45.swc!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/ExternalLibraries/FlextrasMobileComponents/asdoc-output" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

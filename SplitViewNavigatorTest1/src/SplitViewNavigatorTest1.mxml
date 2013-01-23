@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
-               xmlns:s="library://ns.adobe.com/flex/spark"
-               initialize="initializeHandler(event)">
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:s="library://ns.adobe.com/flex/spark" xmlns:flextras="http://www.flextras.com/mxml"
+			   initialize="initializeHandler(event)">
 
-    <fx:Script>
+	<fx:Script>
         <![CDATA[
 		import mx.events.FlexEvent;
 		import mx.events.ResizeEvent;
 
 		import spark.managers.PersistenceManager;
+
 		public var persistenceManager:PersistenceManager;
 
 		// Update the applications state based on the orientation of the device
@@ -34,7 +36,7 @@
 			persistenceManager.setProperty("navigatorState", splitNavigator.saveViewData());
 			persistenceManager.save();
 		}
-        ]]>
+		]]>
     </fx:Script>
 
 	<s:states>
@@ -42,16 +44,27 @@
 		<s:State name="landscape"/>
 	</s:states>
 
-    <s:SplitViewNavigator id="splitNavigator" width="100%" height="100%" autoHideFirstViewNavigator="true">
-<!--
-		 skinClass="skins.SplitViewNavigatorAutoOrientSkin"
--->
-            <s:ViewNavigator firstView="views.MasterCategory" width="256" height="100%"/>
-            <s:ViewNavigator firstView="views.DetailView" width="100%" height="100%">
-                    <s:actionContent.portrait>
-                         <s:Button id="navigatorButton" label="Show Navigator" click="splitNavigator.showFirstViewNavigatorInPopUp(navigatorButton)" />
-                    </s:actionContent.portrait>
-            </s:ViewNavigator>
+	<s:SplitViewNavigator id="splitNavigator" width="100%" height="100%" autoHideFirstViewNavigator="true">
+		<!--
+		   skinClass="skins.SplitViewNavigatorAutoOrientSkin"
+  -->
+		<s:ViewNavigator firstView="views.MasterCategory" width="256" height="100%"/>
+		<s:ViewNavigator firstView="views.DetailView" width="100%" height="100%">
+			<s:actionContent.portrait>
+				<s:Button id="navigatorButton" label="Show Navigator"
+						  click="splitNavigator.showFirstViewNavigatorInPopUp(navigatorButton)"/>
+				<flextras:DropDownList width="140"
+								selectedIndex="4">
+					<mx:ArrayCollection>
+						<fx:String>Alabama</fx:String>
+						<fx:String>Alaska</fx:String>
+						<fx:String>Arizona</fx:String>
+						<fx:String>Arkansas</fx:String>
+						<fx:String>California</fx:String>
+					</mx:ArrayCollection>
+				</flextras:DropDownList>
+			</s:actionContent.portrait>
+		</s:ViewNavigator>
 	</s:SplitViewNavigator>
 
 </s:Application>

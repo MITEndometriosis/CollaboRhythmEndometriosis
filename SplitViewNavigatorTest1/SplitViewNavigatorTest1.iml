@@ -4,6 +4,11 @@
     <configurations>
       <configuration name="SplitViewNavigatorTest1" target-platform="Mobile" main-class="SplitViewNavigatorTest1" output-file="SplitViewNavigatorTest1.swf" output-folder="$MODULE_DIR$/../out/production/SplitViewNavigatorTest1">
         <dependencies>
+          <entries>
+            <entry library-name="FlextrasMobileComponents" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="4.6.0" />
         </dependencies>
         <compiler-options />
@@ -21,6 +26,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="4.6.0" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="library" name="FlextrasMobileComponents" level="project" />
   </component>
 </module>
 
