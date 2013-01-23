@@ -30,7 +30,7 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="flex_sdk_4.6" />
+          <sdk name="4.6.0" />
         </dependencies>
         <compiler-options>
           <option name="additionalOptions" value="-locale en_US" />

@@ -48,7 +48,7 @@
         <jarDirectory url="file://$MODULE_DIR$/libs" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="jdk" jdkName="flex_sdk_4.6" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="4.6.0" jdkType="Flex SDK Type (new)" />
   </component>
 </module>
 
