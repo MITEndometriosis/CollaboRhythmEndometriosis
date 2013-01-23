@@ -1,28 +1,23 @@
 <?xml version="1.0"?>
 <!---
- - Copyright 2012 John Moore, Scott Gilroy
- -
- - This file is part of CollaboRhythm.
- -
- - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
- - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
- - version.
- -
- - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
- - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
- - details.
- -
- - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
- - <http://www.gnu.org/licenses/>.
--->
+  - Copyright 2012 John Moore, Scott Gilroy
+  -
+  - This file is part of CollaboRhythm.
+  -
+  - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+  - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+  - version.
+  -
+  - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+  - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+  - details.
+  -
+  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+  - <http://www.gnu.org/licenses/>.
+  -->
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
-<<<<<<< HEAD
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*" xmlns:mx="library://ns.adobe.com/flex/mx"
-=======
-					   xmlns:flextras="http://www.flextras.com/mxml"
-					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
->>>>>>> 4b1558b9cbe8f55abf9125e71839c42fd0d56ee4
 					   fontSize="26" title="Incision Evaluation">
 
 	<mx:Panel title="Please evaluate your incision areas." paddingTop="100" paddingLeft="100"
@@ -91,13 +86,9 @@
 <!--	<s:VGroup paddingLeft="100" paddingTop="100">
 		<s:HGroup verticalAlign="baseline">
 			<s:Label text="Redness"/>
-			<s:CheckBox id="rednessCheckBox" label="Yes" skinClass="spark.skins.spark.CheckBoxSkin"
-						change="rednessCheckBox_changeHandler(event)"
-						selected="{_model.hasRedness}"
-					/>
+			<s:CheckBox id="rednessCheckBox" label="Yes" skinClass="spark.skins.spark.CheckBoxSkin" change="rednessCheckBox_changeHandler(event)"/>
 		</s:HGroup>
-		<s:HGroup id="sizeGroup" verticalAlign="middle" visible="{_model.showRednessDetails}"
-				  includeInLayout="{_model.showRednessDetails}">
+		<s:HGroup id="sizeGroup" verticalAlign="baseline" visible="{_model.showRednessDetails}" includeInLayout="{_model.showRednessDetails}">
 			<s:Label text="Size"/>
 			<s:TextInput skinClass="spark.skins.mobile.StageTextInputSkin" width="200"
 						 textAlign="right" restrict="0-9" softKeyboardType="number"/>
@@ -107,27 +98,14 @@
 						 textAlign="right" restrict="0-9" softKeyboardType="number"/>
 			<s:Label text="mm"/>
 		</s:HGroup>
-		<s:HGroup verticalAlign="baseline" visible="{_model.showRednessDetails}"
-				  includeInLayout="{_model.showRednessDetails}">
+		<s:HGroup visible="{_model.showRednessDetails}" includeInLayout="{_model.showRednessDetails}">
 			<s:Label text="How Red?"/>
-<<<<<<< HEAD
 			<s:SpinnerListContainer width="150" height="100" skinClass="spark.skins.mobile.SpinnerListContainerSkin">
 				<s:SpinnerList labelField="color" dataProvider="{rednessIndicatorArrayCollection}"
 						skinClass="spark.skins.mobile.SpinnerListSkin" width="100%"/>
 			</s:SpinnerListContainer>
 			<s:DropDownList id="rednessIndicatorDropDownList" dataProvider="{rednessColor}" labelField="label" width="200"
 					prompt="Select Color" change="rednessIndicatorDropDownList_changeHandler(event)" skinClass="spark.skins.spark.DropDownListSkin"/>
-=======
-			<flextras:DropDownList id="rednessIndicatorDropDownList" dataProvider="{rednessColor}" labelField="label"
-								   width="200"
-								   prompt="Select Color" change="rednessIndicatorDropDownList_changeHandler(event)"/>
-			<s:SpinnerListContainer skinClass="spark.skins.mobile.SpinnerListContainerSkin">
-				<s:SpinnerList id="rednessIndicatorSpinnerList" skinClass="spark.skins.mobile.SpinnerListSkin"
-							   dataProvider="{rednessColor}" labelField="label" width="200" height="120"
-							   wrapElements="false"/>
-			</s:SpinnerListContainer>
-
->>>>>>> 4b1558b9cbe8f55abf9125e71839c42fd0d56ee4
 		</s:HGroup>
 	</s:VGroup>-->
 
