@@ -26,7 +26,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="4.6.0" jdkType="Flex SDK Type (new)" />
-    <orderEntry type="library" name="FlextrasMobileComponents" level="project" />
+    <orderEntry type="library" exported="" name="FlextrasMobileComponents" level="project" />
   </component>
 </module>
 
