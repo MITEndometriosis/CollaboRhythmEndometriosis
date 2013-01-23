@@ -21,13 +21,13 @@
 					   fontSize="26" title="Incision Evaluation">
 
 	<mx:Panel title="Please evaluate your incision areas." paddingTop="100" paddingLeft="100"
-			horizontalAlign="center">
+			horizontalAlign="center" backgroundColor="0x778899" borderColor="0x778899">
 <!--		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
 							  paddingLeft="100" paddingTop="100"/>
 		</s:layout>-->
 
-		<mx:Form>
+		<mx:Form backgroundColor="0xd3d3d3" borderColor="0xd3d3d3" >
 			<!--<mx:FormHeading label="Please evaluate your incision areas."/>-->
 
 			<mx:FormItem label="Are you experiencing redness?">
