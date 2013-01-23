@@ -8,7 +8,7 @@
 				<name>Pain Evaluation</name>
 				<planType>Prescribed</planType>
 				<plannedBy>jking@records.media.mit.edu</plannedBy>
-				<datePlanned>2011-07-14T09:00:00-04:00</datePlanned>
+				<datePlanned>2013-01-01T09:00:00-12:00</datePlanned>
 				<indication>Post Surgical Pain</indication>
 				<instructions>Use CollaboRhythm to evaluate your pain post-surgery and monitor your healing progress.
 				</instructions>
@@ -22,9 +22,9 @@
 											  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 							<name>Pain Evaluation</name>
 							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
-							<dateScheduled>2011-07-14T09:00:00-04:00</dateScheduled>
-							<dateStart>2011-07-15T13:00:00Z</dateStart>
-							<dateEnd>2011-07-15T17:00:00Z</dateEnd>
+							<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>
+							<dateStart>2013-01-01T9:00:00Z</dateStart>
+							<dateEnd>2013-02-11T12:00:00Z</dateEnd>
 							<recurrenceRule>
 								<frequency>DAILY</frequency>
 								<count>42</count>

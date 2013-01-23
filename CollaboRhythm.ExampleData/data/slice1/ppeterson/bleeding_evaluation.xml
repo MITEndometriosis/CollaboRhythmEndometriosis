@@ -24,7 +24,7 @@
 				<name>Bleeding Evaluation</name>
 				<planType>Prescribed</planType>
 				<plannedBy>jking@records.media.mit.edu</plannedBy>
-				<datePlanned>2011-07-14T09:00:00-04:00</datePlanned>
+				<datePlanned>2013-01-01T09:00:00-12:00</datePlanned>
 				<indication>Post-operational Plan for Endometriosis Surgery</indication>
 				<instructions>Use CollaboRhythm to record vaginal bleeding daily for the first as needed for 6 weeks after operation.
 				</instructions>
@@ -105,9 +105,9 @@
 														  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 										<name>Bleeding Evaluation Week 2-6</name>
 										<scheduledBy>jking@records.media.mit.edu</scheduledBy>
-										<dateScheduled>2011-07-14T09:00:00-04:00</dateScheduled>
-										<dateStart>2011-07-22T13:00:00Z</dateStart>
-										<dateEnd>2011-08-22T17:00:00Z</dateEnd>
+										<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>
+										<dateStart>2013-01-08T9:00:00Z</dateStart>
+										<dateEnd>2013-02-12T12:00:00Z</dateEnd>
 										<recurrenceRule>
 											<frequency>DAILY</frequency>
 											<count>7</count>
