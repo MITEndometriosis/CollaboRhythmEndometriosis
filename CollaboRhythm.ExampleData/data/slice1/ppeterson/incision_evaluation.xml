@@ -25,15 +25,9 @@
 				<planType>Prescribed</planType>
 				<plannedBy>jking@records.media.mit.edu</plannedBy>
 				<datePlanned>2013-01-01T09:00:00-12:00</datePlanned>
-				<indication>Post-Surgical Infection</indication>
-				<instructions>Use CollaboRhythm to guide the evaluation of your incisions daily.
+				<indication>Endometriosis</indication>
+				<instructions>Examine your incisions daily and report any worrisome signs.
 				</instructions>
-				<!--<actions>
-									<action xsi:type="ActionStep">
-										<name>Choose a new dose for your insulin</name>
-										<type>Decide</type>
-									</action>
-								</actions>-->
 			</HealthActionPlan>
 		</document>
 		<relatesTo>
@@ -45,11 +39,11 @@
 							<name>Incision Evaluation</name>
 							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
 							<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>
-							<dateStart>2013-01-01T9:00:00Z</dateStart>
-							<dateEnd>2013-01-10T12:00:00Z</dateEnd>
+							<dateStart>2013-01-01T09:00:00Z</dateStart>
+							<dateEnd>2013-01-01T13:00:00Z</dateEnd>
 							<recurrenceRule>
 								<frequency>DAILY</frequency>
-								<count>10</count>
+								<count>40</count>
 							</recurrenceRule>
 						</HealthActionSchedule>
 					</document>
