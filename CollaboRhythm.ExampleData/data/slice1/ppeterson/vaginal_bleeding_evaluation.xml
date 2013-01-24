@@ -21,14 +21,14 @@
 		<document>
 			<HealthActionPlan xmlns="http://indivo.org/vocab/xml/documents/healthActionPlan#"
 							  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-				<name>Bleeding Evaluation</name>
+				<name>Vaginal Bleeding Evaluation</name>
 				<planType>Prescribed</planType>
 				<plannedBy>jking@records.media.mit.edu</plannedBy>
 				<datePlanned>2013-01-01T09:00:00-12:00</datePlanned>
-				<indication>Post-operational Plan for Endometriosis Surgery</indication>
-				<instructions>Use CollaboRhythm to record vaginal bleeding daily for the first as needed for 6 weeks after operation.
+				<indication>Endometriosis</indication>
+				<instructions>Record vaginal bleeding daily for the first week and as needed for 6 weeks after operation.
 				</instructions>
-				<system>CollaboRhythm Bleeding Evaluation Form</system>
+<!--
 				<actions>
 					<action	xsi:type="ActionStep">
 						<position />
@@ -75,7 +75,7 @@
 						<additionalDetails/>
 						<instructions>Fill out evaluation form</instructions>
 					</action>
-				</actions>
+				</actions>-->
 			</HealthActionPlan>
 		</document>
 		<relatesTo>
@@ -84,39 +84,39 @@
 					<document>
 						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"
 											  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-							<name>Bleeding Evaluation First Week</name>
+							<name>Vaginal Bleeding Evaluation</name>
 							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
-							<dateScheduled>2011-07-14T09:00:00-04:00</dateScheduled>
-							<dateStart>2011-07-15T13:00:00Z</dateStart>
-							<dateEnd>2011-07-22T17:00:00Z</dateEnd>
+							<dateScheduled>2013-01-01T09:00:00-04:00</dateScheduled>
+							<dateStart>2013-01-01TT09:00:00Z</dateStart>
+							<dateEnd>2013-01-01TT13:00:00Z</dateEnd>
 							<recurrenceRule>
 								<frequency>DAILY</frequency>
-								<count>7</count>
+								<count>40</count>
 							</recurrenceRule>
 						</HealthActionSchedule>
 					</document>
 
 				</LoadableIndivoDocument>
 			</relation>
-			<relation type="healthActionSchedule">
-							<LoadableIndivoDocument>
-								<document>
-									<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"
-														  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-										<name>Bleeding Evaluation Week 2-6</name>
-										<scheduledBy>jking@records.media.mit.edu</scheduledBy>
-										<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>
-										<dateStart>2013-01-08T9:00:00Z</dateStart>
-										<dateEnd>2013-02-12T12:00:00Z</dateEnd>
-										<recurrenceRule>
-											<frequency>DAILY</frequency>
-											<count>7</count>
-										</recurrenceRule>
-									</HealthActionSchedule>
-								</document>
+			<!--<relation type="healthActionSchedule">-->
+							<!--<LoadableIndivoDocument>-->
+								<!--<document>-->
+									<!--<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"-->
+														  <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-->
+										<!--<name>Bleeding Evaluation Week 2-6</name>-->
+										<!--<scheduledBy>jking@records.media.mit.edu</scheduledBy>-->
+										<!--<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>-->
+										<!--<dateStart>2013-01-08T9:00:00Z</dateStart>-->
+										<!--<dateEnd>2013-01-08T12:00:00Z</dateEnd>-->
+										<!--<recurrenceRule>-->
+											<!--<frequency>DAILY</frequency>-->
+											<!--<count>7</count>-->
+										<!--</recurrenceRule>-->
+									<!--</HealthActionSchedule>-->
+								<!--</document>-->
 
-							</LoadableIndivoDocument>
-						</relation>
+							<!--</LoadableIndivoDocument>-->
+						<!--</relation>-->
 		</relatesTo>
 	</LoadableIndivoDocument>
 </IndivoDocuments>

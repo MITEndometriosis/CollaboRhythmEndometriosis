@@ -7,10 +7,14 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import collaboRhythm.shared.model.healthRecord.document.HealthActionSchedule;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.EndometriosisModel;
+
 	import mx.collections.ArrayCollection;
 
 	public class EndometriosisHealthActionListViewAdapterFactory implements IHealthActionListViewAdapterFactory
 	{
+
+
 		public function EndometriosisHealthActionListViewAdapterFactory()
 		{
 		}
@@ -21,6 +25,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			adapters.addItem(new PainEvaluationHealthActionListViewAdapter(null, healthActionModelDetailsProvider));
 		}
 
+
 		public function createScheduledHealthActionViewAdapter(scheduleItemOccurrence:ScheduleItemOccurrence,
 															   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
 															   currentHealthActionListViewAdapter:IHealthActionListViewAdapter):IHealthActionListViewAdapter
@@ -29,8 +34,14 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			// TODO: perform additional check(s) to ensure that this healthActionSchedule is a Endometriosis health action; we must avoid creating/modifying the adapter for other health action schedules 
 			if (healthActionSchedule && healthActionSchedule.scheduledHealthAction is HealthActionPlan &&
 					healthActionModelDetailsProvider.record)
-				return new PainEvaluationHealthActionListViewAdapter(scheduleItemOccurrence,
-						healthActionModelDetailsProvider);
+			{
+				if (healthActionSchedule.name.text == EndometriosisModel.INCISION_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+				{
+					return new IncisionEvaluationHealthActionListViewAdapter(scheduleItemOccurrence,
+							healthActionModelDetailsProvider);
+				}
+
+			}
 
 			return currentHealthActionListViewAdapter;
 		}

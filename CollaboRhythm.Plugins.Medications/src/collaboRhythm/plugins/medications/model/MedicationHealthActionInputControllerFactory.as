@@ -29,7 +29,7 @@ package collaboRhythm.plugins.medications.model
 														  currentHealthActionInputController:IHealthActionInputController,
 														  collaborationLobbyNetConnectionServiceProxy:ICollaborationLobbyNetConnectionServiceProxy):IHealthActionInputController
 		{
-			if (healthAction.type == MedicationHealthAction.TYPE)
+			if (healthAction && healthAction.type == MedicationHealthAction.TYPE)
 			{
 				return new MedicationHealthActionInputController(scheduleItemOccurrence,
 						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
