@@ -20,14 +20,14 @@
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*" xmlns:mx="library://ns.adobe.com/flex/mx"
 					   fontSize="26" title="Incision Evaluation">
 
-	<mx:Panel title="Please evaluate your incision areas." paddingTop="100" paddingLeft="100"
-			horizontalAlign="center" backgroundColor="0x778899" borderColor="0x778899">
+	<mx:Panel title="Please evaluate your incision areas." paddingTop="150" paddingLeft="150"
+			horizontalAlign="center" backgroundColor="0xd3d3d3" borderColor="0xd3d3d3">
 <!--		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
 							  paddingLeft="100" paddingTop="100"/>
 		</s:layout>-->
 
-		<mx:Form backgroundColor="0xd3d3d3" borderColor="0xd3d3d3" >
+		<mx:Form backgroundColor="0xd3d3d3" borderColor="0xd3d3d3" paddingTop="150" paddingLeft="150">
 			<!--<mx:FormHeading label="Please evaluate your incision areas."/>-->
 
 			<mx:FormItem label="Are you experiencing redness?">
