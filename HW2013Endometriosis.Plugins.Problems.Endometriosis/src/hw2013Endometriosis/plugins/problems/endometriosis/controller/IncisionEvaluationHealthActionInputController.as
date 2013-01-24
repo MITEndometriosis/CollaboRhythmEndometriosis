@@ -37,7 +37,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function handleHealthActionSelected():void
 		{
-
+			_viewNavigator.pushView(IncisionEvaluationView, this);
 		}
 
 		public function handleUrlVariables(urlVariables:URLVariables):void
