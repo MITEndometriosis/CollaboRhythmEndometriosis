@@ -40,18 +40,21 @@
 		}
 		]]></fx:Script>
 	<?xml version="1.0" encoding="utf-8"?>
-	<s:Form horizontalCenter="0">
-		<s:FormItem label="Enter some text">
-			<s:TextInput/>
-		</s:FormItem>
-		<s:FormItem label="Check a box">
-			<s:CheckBox label="option 1"/>
-			<s:CheckBox label="option 2"/>
-		</s:FormItem>
-		<s:FormItem>
-			<s:Button label="Submit it!"/>
-		</s:FormItem>
-	</s:Form>
+	<s:VGroup>
+		<s:Form horizontalCenter="0">
+			<s:FormItem label="Enter some text">
+				<s:TextInput/>
+			</s:FormItem>
+			<s:FormItem label="Check a box">
+				<s:CheckBox label="option 1"/>
+				<s:CheckBox label="option 2"/>
+			</s:FormItem>
+			<s:FormItem>
+				<s:Button label="Submit it!"/>
+			</s:FormItem>
+
+		</s:Form>
+	</s:VGroup>
 
 
 </tablet:TabletViewBase>

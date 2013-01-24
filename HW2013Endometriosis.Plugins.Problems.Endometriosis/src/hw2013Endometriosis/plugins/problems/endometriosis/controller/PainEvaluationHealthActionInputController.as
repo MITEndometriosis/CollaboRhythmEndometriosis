@@ -31,13 +31,13 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function handleHealthActionResult(initiatedLocally:Boolean):void
 		{
-			_viewNavigator.pushView(PainEvaluationView, this)
+			_viewNavigator.pushView(PainEvaluationView, this);
 		}
 
 
 		public function handleHealthActionSelected():void
 		{
-			_viewNavigator.pushView(PainEvaluationView, this)
+			_viewNavigator.pushView(PainEvaluationView, this);
 		}
 
 
