@@ -11,6 +11,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import flash.net.URLVariables;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.IncisionEvaluationHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingHealthActionInputController;
 
 	import spark.components.ViewNavigator;
 
@@ -34,6 +35,14 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 				return new IncisionEvaluationHealthActionInputController(scheduleItemOccurrence,
 						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
 			}
+
+			if (healthAction.name == EndometriosisModel.VAGINAL_BLEEDING_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+			{
+				return new VaginalBleedingHealthActionInputController(scheduleItemOccurrence,
+						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
+			}
+
+
 			return currentHealthActionInputController;
 		}
 

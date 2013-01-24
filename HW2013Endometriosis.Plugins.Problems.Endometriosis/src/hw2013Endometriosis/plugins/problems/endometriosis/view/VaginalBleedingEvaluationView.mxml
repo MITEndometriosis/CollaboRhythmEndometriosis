@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!---
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
+<tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
+					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   title="VaginalBleedingEvaluation">
+
+	<fx:Declarations>
+
+		//sliders for blood color
+		<!--<s:ArrayCollection id="BleedingColorIndicatorArrayCollection">-->
+		<!--<fx:Object color="Red"/>-->
+		<!--<fx:Object color="Re"/>-->
+		<!--<fx:Object color="dark red"/>-->
+		<!--</s:ArrayCollection>-->
+
+
+	</fx:Declarations>
+
+
+	<fx:Script><![CDATA[
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.VaginalBleedingEvaluationModel;
+
+		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
+		import collaboRhythm.shared.collaboration.model.CollaborationModel;
+
+		[Bindable]
+		private var _controller:VaginalBleedingHealthActionInputController;
+		private var _model:VaginalBleedingEvaluationModel;
+		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
+
+
+		override public function set data(value:Object):void
+		{
+			super.data = value;
+
+			_controller = value as VaginalBleedingHealthActionInputController;
+			_model = _controller.model;
+
+		}
+
+		private function bleedingIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasBleeding(bleedingIndicatorToggleSwitch.selected);
+			}
+		}
+
+		//		private function bleedingIndicatorHSlider_changeHandler(event:SliderEvent):void
+		//				{
+		//				}
+
+
+		private function bloodClotsIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasBloodClots(bloodClotsIndicatorToggleSwitch.selected);
+			}
+		}
+
+		private function bloodClotsSmallCheckBox_changeHandler(event:Event):void
+		{
+		}
+
+		private function bloodClotsMediumCheckBox_changeHandler(event:Event):void
+		{
+		}
+
+		private function bloodClotsLargeCheckBox_changeHandler(event:Event):void
+		{
+		}
+
+		private function feminineProductsIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateUseFeminineProducts(FeminineProductsIndicatorToggleSwitch.selected);
+			}
+		}
+
+		private function feminineProductsPantilinerCheckBox_changeHandler(event:Event):void
+		{
+
+		}
+
+		private function feminineProductsMaxiPadCheckBox_changeHandler(event:Event):void
+		{
+
+		}
+
+		private function feminineProductsTamponCheckBox_changeHandler(event:Event):void
+		{
+
+		}
+		]]>
+
+
+		</fx:Script>
+
+
+	<s:VGroup width="100%" height="100%" gap="0">
+		<s:Label text="Hello VaginalBleedingEvaluation!"/>
+	</s:VGroup>
+
+
+	<mx:Panel title="Please enter vaginal bleeding evaluation." paddingTop="100" paddingLeft="100"
+			  horizontalAlign="center" backgroundColor="0x778899" borderColor="0x778899">
+
+
+		<mx:Form backgroundColor="0xd3d3d3" borderColor="0xd3d3d3">
+			<!--<mx:FormHeading label="Please evaluate your incision areas."/>-->
+
+			<mx:FormItem label="Are you experiencing any vaginal bleeding?">
+				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
+			</mx:FormItem>
+
+			<mx:FormItem label="What Color?" visible="{_model.showBleedingColor}"
+						 includeInLayout="{_model.showBleedingColor}">
+
+				//change to color slider
+				<!--<s:SpinnerListContainer width="150" height="100"-->
+				<!--skinClass="spark.skins.mobile.SpinnerListContainerSkin">-->
+				<!--<s:SpinnerList id="bleedingIndicatorSpinnerList" labelField="color"-->
+				<!--dataProvider="{bleIndicatorArrayCollection}"-->
+				<!--skinClass="spark.skins.mobile.SpinnerListSkin" width="100%"/>-->
+				<!--</s:SpinnerListContainer>-->
+			</mx:FormItem>
+
+			<mx:FormItem label="Do you have any blood clots?">
+				<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
+								change="bloodClotsIndicatorToggleSwitch_changeHandler(event)"/>
+			</mx:FormItem>
+
+			<mx:FormItem label="What size?" direction="vertical" visible="{_model.showBloodClotSize}"
+						 includeInLayout="{_model.showFeminineProductsTypes}">
+				<s:CheckBox id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.CheckBoxSkin"
+							change="bloodClotsSmallCheckBox_changeHandler(event)"/>
+				<s:CheckBox id="bloodClotsMediumCheckBox" label="Medium"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							change="bloodClotsMediumCheckBox_changeHandler(event)"/>
+				<s:CheckBox id="feminineProductsLargeCheckBox" label="Large" skinClass="spark.skins.spark.CheckBoxSkin"
+							change="bloodClotsLargeCheckBox_changeHandler(event)"/>
+			</mx:FormItem>
+			<!--<mx:FormItem>
+				<mx:HSlider id="tendernessIndicatorHSlider" minimum="1" maximum="10" value="1" dataTipPlacement="bottom"
+							snapInterval="1" tickInterval="1" labels="['1','5','10']" allowTrackClick="true"
+							liveDragging="true" change="tendernessIndicatorHSlider_changeHandler(event)"/>
+			</mx:FormItem>-->
+
+			<mx:FormItem label="Have you used any feminine products in the last 24 hours?">
+				<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
+								skinClass="spark.skins.mobile.ToggleSwitchSkin"
+								change="feminineProductsIndicatorToggleSwitch_changeHandler(event)"/>
+			</mx:FormItem>
+
+			<mx:FormItem label="What type?" direction="vertical" visible="{_model.showBloodClotSize}"
+						 includeInLayout="{_model.showFeminineProductsTypes}">
+				<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							change="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
+				<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							change="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
+				<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							change="feminineProductsTamponCheckBox_changeHandler(event)"/>
+			</mx:FormItem>
+
+		</mx:Form>
+	</mx:Panel>
+
+</tablet:TabletViewBase>
