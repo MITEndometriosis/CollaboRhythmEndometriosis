@@ -35,9 +35,23 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			if (healthActionSchedule && healthActionSchedule.scheduledHealthAction is HealthActionPlan &&
 					healthActionModelDetailsProvider.record)
 			{
-				if (healthActionSchedule.name.text == EndometriosisModel.INCISION_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+				if (healthActionSchedule.name.text ==
+						EndometriosisModel.INCISION_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
 				{
 					return new IncisionEvaluationHealthActionListViewAdapter(scheduleItemOccurrence,
+							healthActionModelDetailsProvider);
+				}
+				if (healthActionSchedule.name.text ==
+						EndometriosisModel.PAIN_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+				{
+					return new PainEvaluationHealthActionListViewAdapter(scheduleItemOccurrence,
+							healthActionModelDetailsProvider);
+				}
+
+				if (healthActionSchedule.name.text ==
+						EndometriosisModel.VAGINAL_BLEEDING_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+				{
+					return new VaginalBleedingHealthActionListViewAdapter(scheduleItemOccurrence,
 							healthActionModelDetailsProvider);
 				}
 
