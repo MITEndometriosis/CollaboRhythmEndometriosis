@@ -80,5 +80,15 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 			_model.canUrinate = value;
 		}
+
+		public function updateUrinationPain(value:Boolean):void
+		{
+			_model.hasUrinationPain = value;
+		}
+
+		public function updateHasNausea(value:Boolean):void
+		{
+			_model.hasNausea = value;
+		}
 	}
 }

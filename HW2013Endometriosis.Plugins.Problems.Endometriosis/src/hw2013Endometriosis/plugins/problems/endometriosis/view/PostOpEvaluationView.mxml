@@ -39,7 +39,25 @@
 						backgroundColor="0xd3d3d3">
 				<s:ToggleSwitch id="urinationIndicatorToggleSwitch"
 								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="urinationIndicatorToggleSwitch_changeHandler(event)"/>
+								change="urinationIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
+			</s:FormItem>
+
+			<s:FormItem label="Do you have any pain while urinating?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3" visible="{urinationIndicatorToggleSwitch.selected}"
+						includeInLayout="{urinationIndicatorToggleSwitch.selected}">
+				<s:ToggleSwitch id="urinationPainIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								change="urinationPainIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
+			</s:FormItem>
+
+			<s:FormItem label="Are you nauseated?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="nauseaIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								change="nauseaIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
 			</s:FormItem>
 
 		</s:Form>
@@ -69,6 +87,22 @@
 			if (_controller)
 			{
 				_controller.updateCanUrinate(urinationIndicatorToggleSwitch.selected);
+			}
+		}
+
+		private function urinationPainIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateUrinationPain(urinationPainIndicatorToggleSwitch.selected);
+			}
+		}
+
+		private function nauseaIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasNausea(nauseaIndicatorToggleSwitch.selected);
 			}
 		}
 		]]></fx:Script>
