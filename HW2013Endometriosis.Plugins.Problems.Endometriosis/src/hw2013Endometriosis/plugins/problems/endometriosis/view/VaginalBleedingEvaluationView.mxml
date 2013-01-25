@@ -18,39 +18,29 @@
 <tablet:TabletViewBase xmlns="http://ns.adobe.com/sml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
-					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
-					   xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:mx="library://ns.adobe.com/flex/mx"
+					   xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   title="VaginalBleedingEvaluation">
 
 	<fx:Declarations>
-
-		<!--sliders for blood color-->
-
-
-		<!--<s:ArrayCollection id="BleedingColorIndicatorArrayCollection">-->
-		<!--<fx:Object color="Red"/>-->
-		<!--<fx:Object color="Re"/>-->
-		<!--<fx:Object color="dark red"/>-->
-		<!--</s:ArrayCollection>-->
 
 
 	</fx:Declarations>
 
 
 	<fx:Script><![CDATA[
-		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingHealthActionInputController;
-		import hw2013Endometriosis.plugins.problems.endometriosis.model.VaginalBleedingEvaluationModel;
-
 		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
-		import collaboRhythm.shared.collaboration.model.CollaborationModel;
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingHealthActionInputController;
+
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.VaginalBleedingEvaluationModel;
 
 		[Bindable]
 		private var _controller:VaginalBleedingHealthActionInputController;
+		[Bindable]
 		private var _model:VaginalBleedingEvaluationModel;
 		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
 
-		[Bindable]
-		public var bloodColor:Array = ['0xFF0000', '0x8B0000', '0x800000', '0xA52A2A', 'A0522D', '0x8B4513' ];
+		//		[Bindable]
+		//		public var bloodColor:Array = ['0xFF0000', '0x8B0000', '0x800000', '0xA52A2A', 'A0522D', '0x8B4513' ];
 
 		override public function set data(value:Object):void
 		{
@@ -166,7 +156,8 @@
 
 			<s:FormItem label="Are you experiencing any vaginal bleeding?"
 						skinClass="spark.skins.spark.FormItemSkin">
-				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
+				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
+								change="bleedingIndicatorToggleSwitch_changeHandler(event)"/>
 			</s:FormItem>
 
 			<s:FormItem label="What Color?" visible="{_model.showBleedingColor}"
@@ -204,7 +195,7 @@
 			</s:FormItem>
 
 			<s:FormItem label="What size?" visible="{_model.showBloodClotSize}"
-						includeInLayout="{_model.showFeminineProductsTypes}"
+						includeInLayout="{_model.showBloodClotSize}"
 						skinClass="spark.skins.spark.FormItemSkin">
 				<s:HGroup>
 					<s:CheckBox id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.CheckBoxSkin"
@@ -225,7 +216,7 @@
 								change="feminineProductsIndicatorToggleSwitch_changeHandler(event)"/>
 			</s:FormItem>
 
-			<s:FormItem label="What type?" visible="{_model.showBloodClotSize}"
+			<s:FormItem label="What type?" visible="{_model.showFeminineProductsTypes}"
 						includeInLayout="{_model.showFeminineProductsTypes}"
 						skinClass="spark.skins.spark.FormItemSkin">
 				<s:HGroup>
