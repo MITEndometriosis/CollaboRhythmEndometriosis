@@ -44,7 +44,7 @@
 			if (_controller)
 			{
 				_controller.updateHasPain(PainToggleSwitch.selected);
-				TestButton.visible = PainToggleSwitch.selected
+				ShoulderButton.visible = PainToggleSwitch.selected
 			}
 
 		}
@@ -53,19 +53,23 @@
 		{
 			if (_model)
 			{
-				TestButton.visible = _model.hasPain
+				ShoulderButton.visible = _model.hasPain
 			}
 		}
 		]]></fx:Script>
 
 
-	<s:VGroup>
+
 		<s:Form skinClass="spark.skins.spark.FormSkin">
 			<s:Label text="Have you been experiencing pain today?"/>
 			<s:ToggleSwitch id="PainToggleSwitch" selected="false" skinClass="spark.skins.mobile.ToggleSwitchSkin" click="painToggleSwitchChangeHandler()"/>
-			<s:Button id="TestButton" label="clickme" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="ShoulderButton" label="Shoulder" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="AbdomenButton" label="Abdomen" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="PelvisButton" label="Pelvis" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="OtherButton" label="Other" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="FlankButton" label="Flank" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
 		</s:Form>
-	</s:VGroup>
+
 
 
 </tablet:TabletViewBase>
