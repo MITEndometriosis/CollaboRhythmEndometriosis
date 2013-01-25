@@ -19,12 +19,16 @@
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
-					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
-					   xmlns:mx="library://ns.adobe.com/flex/mx"
 					   title="IncisionEvaluation">
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+
+		import mx.collections.ArrayCollection;
+
+		import mx.collections.ArrayList;
+
+		import spark.components.Button;
 
 		[Bindable]
 		private var _controller:PainEvaluationHealthActionInputController;
@@ -44,7 +48,13 @@
 			if (_controller)
 			{
 				_controller.updateHasPain(PainToggleSwitch.selected);
-				ShoulderButton.visible = PainToggleSwitch.selected
+				var buttonList:Array = [ShoulderButton , AbdomenButton , PelvisButton , OtherButton , FlankButton];
+				var sampleButton:Button;
+				PainLocationLabel.visible = PainToggleSwitch.selected
+				for each (sampleButton in buttonList)
+				{
+					sampleButton.setVisible(PainToggleSwitch.selected)
+				}
 			}
 
 		}
@@ -60,9 +70,10 @@
 
 
 
-		<s:Form skinClass="spark.skins.spark.FormSkin">
-			<s:Label text="Have you been experiencing pain today?"/>
-			<s:ToggleSwitch id="PainToggleSwitch" selected="false" skinClass="spark.skins.mobile.ToggleSwitchSkin" click="painToggleSwitchChangeHandler()"/>
+		<s:Form id = "PainForm" skinClass="spark.skins.spark.FormSkin">
+			<s:Label id="PainTFLabel" text="Have you been experiencing pain today?"/>
+			<s:ToggleSwitch id="PainToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin" click="painToggleSwitchChangeHandler()"/>
+			<s:Label id="PainLocationLabel" text="Please select the areas in which you have experienced pain." visible="false"/>
 			<s:Button id="ShoulderButton" label="Shoulder" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
 			<s:Button id="AbdomenButton" label="Abdomen" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
 			<s:Button id="PelvisButton" label="Pelvis" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
