@@ -22,14 +22,14 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	public class VaginalBleedingHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
 	{
 		private var _viewNavigator:ViewNavigator;
-		private var _vaginalbleedingEvaluationModel:VaginalBleedingEvaluationModel;
+		private var _model:VaginalBleedingEvaluationModel;
 
 		public function VaginalBleedingHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
 																   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
 																   scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																   viewNavigator:ViewNavigator)
 		{
-			_vaginalbleedingEvaluationModel = new VaginalBleedingEvaluationModel();
+			_model = new VaginalBleedingEvaluationModel();
 			_viewNavigator = viewNavigator
 		}
 
@@ -71,29 +71,29 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function get model():VaginalBleedingEvaluationModel
 		{
-			return _vaginalbleedingEvaluationModel;
+			return _model;
 		}
 
 		public function set model(value:VaginalBleedingEvaluationModel):void
 		{
-			_vaginalbleedingEvaluationModel = value;
+			_model = value;
 		}
 
 
 		public function updateHasBleeding(value:Boolean):void
 		{
-			_vaginalbleedingEvaluationModel.hasBleeding = value;
+			_model.hasBleeding = value;
 		}
 
 
 		public function updateHasBloodClots(value:Boolean):void
 		{
-			_vaginalbleedingEvaluationModel.hasBloodClots = value;
+			_model.hasBloodClots = value;
 		}
 
 		public function updateUseFeminineProducts(value:Boolean):void
 		{
-			_vaginalbleedingEvaluationModel.useFeminineProducts = value;
+			_model.useFeminineProducts = value;
 		}
 	}
 }
