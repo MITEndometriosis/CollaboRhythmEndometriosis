@@ -28,7 +28,6 @@
 				<indication>Endometriosis</indication>
 				<instructions>Evaluate general symptoms daily for one week after operation.
 				</instructions>
-
 			</HealthActionPlan>
 		</document>
 		<relatesTo>
@@ -44,7 +43,7 @@
 							<dateEnd>2013-01-01TT13:00:00Z</dateEnd>
 							<recurrenceRule>
 								<frequency>DAILY</frequency>
-								<count>7</count>
+								<count>40</count>
 							</recurrenceRule>
 						</HealthActionSchedule>
 					</document>
