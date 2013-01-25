@@ -30,12 +30,14 @@
 	<fx:Script><![CDATA[
 		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
 
-		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
+
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
 
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.VaginalBleedingEvaluationModel;
 
 		[Bindable]
-		private var _controller:VaginalBleedingHealthActionInputController;
+		private var _controller:VaginalBleedingEvaluationHealthActionInputController;
 		[Bindable]
 		private var _model:VaginalBleedingEvaluationModel;
 		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
@@ -47,7 +49,7 @@
 		{
 			super.data = value;
 
-			_controller = value as VaginalBleedingHealthActionInputController;
+			_controller = value as VaginalBleedingEvaluationHealthActionInputController;
 			_model = _controller.model;
 
 		}

@@ -51,16 +51,23 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 				if (healthActionSchedule.name.text ==
 						EndometriosisModel.VAGINAL_BLEEDING_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
 				{
-					return new VaginalBleedingHealthActionListViewAdapter(scheduleItemOccurrence,
+					return new VaginalBleedingEvaluationHealthActionListViewAdapter(scheduleItemOccurrence,
 							healthActionModelDetailsProvider);
 				}
 
 				if (healthActionSchedule.name.text ==
-										EndometriosisModel.VAGINAL_BLEEDING_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
-								{
-									return new PostOpHealthActionListViewAdapter(scheduleItemOccurrence,
-											healthActionModelDetailsProvider);
-								}
+						EndometriosisModel.POST_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+				{
+					return new PostOpEvaluationHealthActionListViewAdapter(scheduleItemOccurrence,
+							healthActionModelDetailsProvider);
+				}
+
+				if (healthActionSchedule.name.text ==
+						EndometriosisModel.PRE_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+				{
+					return new PreOpEvaluationHealthActionListViewAdapter(scheduleItemOccurrence,
+							healthActionModelDetailsProvider);
+				}
 
 
 			}
