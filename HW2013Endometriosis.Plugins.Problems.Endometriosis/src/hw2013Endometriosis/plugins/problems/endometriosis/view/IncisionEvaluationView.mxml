@@ -21,7 +21,7 @@
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   title="IncisionEvaluation">
 
-	<s:Panel title="Incision Evaluation." backgroundColor="0x778899" borderColor="0x778899" width="750"
+	<s:Panel title="Incision Evaluation." backgroundColor="0x778899" borderColor="0x778899" width="1000"
 			 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
 
 		<s:layout>
@@ -35,21 +35,27 @@
 			<s:FormHeading label="Please evaluate your incisions."
 						   skinClass="spark.skins.spark.FormHeadingSkin"/>
 
-			<s:FormItem label="Are you experiencing redness?" skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="rednessIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
+			<s:FormItem label="Are you experiencing redness?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="rednessIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 								change="rednessIndicatorToggleSwitch_changeHandler(event)"/>
 			</s:FormItem>
 
 			<s:FormItem label="Size:" visible="{rednessIndicatorToggleSwitch.selected}"
-						includeInLayout="{rednessIndicatorToggleSwitch.selected}" skinClass="spark.skins.spark.FormItemSkin"
+						includeInLayout="{rednessIndicatorToggleSwitch.selected}"
+						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
-				<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
-							 textAlign="right" restrict="0-9" softKeyboardType="number"/>
-				<s:Label text="mm"/>
-				<s:Label text="by"/>
-				<s:TextInput id="rednessHeightTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
-							 textAlign="right" restrict="0-9" softKeyboardType="number"/>
-				<s:Label text="mm"/>
+				<s:HGroup>
+					<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
+								 textAlign="right" restrict="0-9." softKeyboardType="number"/>
+					<s:Label text="mm" alignmentBaseline="ideographicBottom"/>
+					<s:Label text="by" alignmentBaseline="ideographicBottom"/>
+					<s:TextInput id="rednessHeightTextInput" skinClass="spark.skins.mobile.StageTextInputSkin"
+								 width="50"
+								 textAlign="right" restrict="0-9." softKeyboardType="number"/>
+					<s:Label text="mm" alignmentBaseline="ideographicBottom"/>
+				</s:HGroup>
 			</s:FormItem>
 
 			<!--			<s:FormItem label="Color:" visible="{_model.showRednessDetails}"
@@ -62,24 +68,38 @@
 							</s:SpinnerListContainer>
 						</s:FormItem>-->
 
-			<s:FormItem label="Do you have any tenderness?" skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="tendernessIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
+			<s:FormItem label="Do you have any tenderness?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="tendernessIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 								change="tendernessIndicatorToggleSwitch_changeHandler(event)"/>
 			</s:FormItem>
 
-			<s:FormItem label="Do you have any discharge?" skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="dischargeIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
+			<s:FormItem label="Do you have any discharge?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="dischargeIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 								change="dischargeIndicatorToggleSwitch_changeHandler(event)"/>
 			</s:FormItem>
 
 			<s:FormItem label="What kind?" visible="{dischargeIndicatorToggleSwitch.selected}"
-						includeInLayout="{dischargeIndicatorToggleSwitch.selected}" skinClass="spark.skins.spark.FormItemSkin"
+						includeInLayout="{dischargeIndicatorToggleSwitch.selected}"
+						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
-				<s:CheckBox id="dischargePussCheckBox" label="Puss" skinClass="spark.skins.spark.CheckBoxSkin"
-							change="dischargePussCheckBox_changeHandler(event)"/>
-				<s:CheckBox id="dischargeBloodCheckBox" label="Blood" skinClass="spark.skins.spark.CheckBoxSkin"
-							change="dischargeBloodCheckBox_changeHandler(event)"/>
+				<s:HGroup>
+					<s:CheckBox id="dischargePussCheckBox" label="Puss" skinClass="spark.skins.spark.CheckBoxSkin"
+								change="dischargePussCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="dischargeBloodCheckBox" label="Blood" skinClass="spark.skins.spark.CheckBoxSkin"
+								change="dischargeBloodCheckBox_changeHandler(event)"/>
+				</s:HGroup>
 			</s:FormItem>
+
+			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
+				<s:Button label="Submit"
+						  width="100"
+						  skinClass="spark.skins.mobile.ButtonSkin"/>
+			</s:FormItem>
+
 		</s:Form>
 	</s:Panel>
 
@@ -139,7 +159,6 @@
 		private function dischargeBloodCheckBox_changeHandler(event:Event):void
 		{
 		}
-
 		]]></fx:Script>
 
 
