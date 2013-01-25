@@ -19,9 +19,6 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	public class IncisionEvaluationHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
 	{
 		private var _viewNavigator:ViewNavigator;
-		private var _incisionEvaluationModel:IncisionEvaluationModel;
-
-		public static const DEFAULT_NAME:String = "Incision Evaluation";
 		private var _model:IncisionEvaluationModel;
 
 		public function IncisionEvaluationHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
@@ -29,7 +26,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 																	  scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																	  viewNavigator:ViewNavigator)
 		{
-			_incisionEvaluationModel = new IncisionEvaluationModel();
+			_model = new IncisionEvaluationModel();
 			_viewNavigator = viewNavigator
 		}
 
@@ -71,22 +68,17 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function get model():IncisionEvaluationModel
 		{
-			return _incisionEvaluationModel;
-		}
-
-		public function showIncisionEvaluationView():void
-		{
-			_viewNavigator.pushView(IncisionEvaluationView, this);
-		}
-
-		public function updateHasRedness(value:Boolean):void
-		{
-			_model.hasRedness = value;
+			return _model;
 		}
 
 		public function set model(value:IncisionEvaluationModel):void
 		{
 			_model = value;
+		}
+
+		public function updateHasRedness(value:Boolean):void
+		{
+			_model.hasRedness = value;
 		}
 
 		public function updateHasTenderness(value:Boolean):void
