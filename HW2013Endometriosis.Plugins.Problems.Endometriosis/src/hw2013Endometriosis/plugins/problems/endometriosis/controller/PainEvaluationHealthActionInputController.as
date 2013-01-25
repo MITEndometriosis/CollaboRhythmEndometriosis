@@ -73,5 +73,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		}
 
 
+		public function updateHasPain(value:Boolean):void
+		{
+			_painEvaluationModel.hasPain = value;
+		}
 	}
 }
