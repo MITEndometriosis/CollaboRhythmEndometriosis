@@ -15,16 +15,18 @@
  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
  - <http://www.gnu.org/licenses/>.
 -->
-<tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
+<tablet:TabletViewBase xmlns="http://ns.adobe.com/sml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
-					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:mx="library://ns.adobe.com/flex/mx"
 					   title="VaginalBleedingEvaluation">
 
 	<fx:Declarations>
 
-		//sliders for blood color
+		<!--sliders for blood color-->
+
+
 		<!--<s:ArrayCollection id="BleedingColorIndicatorArrayCollection">-->
 		<!--<fx:Object color="Red"/>-->
 		<!--<fx:Object color="Re"/>-->
@@ -47,6 +49,8 @@
 		private var _model:VaginalBleedingEvaluationModel;
 		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
 
+		[Bindable]
+		public var bloodColor:Array = ['0xFF0000', '0x8B0000', '0x800000', '0xA52A2A', 'A0522D', '0x8B4513' ];
 
 		override public function set data(value:Object):void
 		{
@@ -63,6 +67,26 @@
 			{
 				_controller.updateHasBleeding(bleedingIndicatorToggleSwitch.selected);
 			}
+		}
+
+		private function redBloodCheckBox_changeHandler(event:Event):void
+		{
+
+		}
+
+		private function darkRedBloodCheckBox_changeHandler(event:Event):void
+		{
+
+		}
+
+		private function redBrownBloodCheckBox_changeHandler(event:Event):void
+		{
+
+		}
+
+		private function brownBloodCheckBox_changeHandler(event:Event):void
+		{
+
 		}
 
 		//		private function bleedingIndicatorHSlider_changeHandler(event:SliderEvent):void
@@ -118,75 +142,112 @@
 		</fx:Script>
 
 
-	<s:VGroup width="100%" height="100%" gap="0">
-		<s:Label text="Hello VaginalBleedingEvaluation!"/>
-	</s:VGroup>
+	<!--<s:VGroup width="100%" height="100%" gap="0">-->
+	<!--<s:Label text="Hello VaginalBleedingEvaluation!"/>-->
+	<!--</s:VGroup>-->
 
 
-	<mx:Panel title="Please enter vaginal bleeding evaluation." paddingTop="100" paddingLeft="100"
-			  horizontalAlign="center" backgroundColor="0x778899" borderColor="0x778899">
+	<s:Panel title="Vaginal Bleeding Evaluation"
+			 backgroundColor="0x778899" borderColor="0x778899"
+			 width="1000"
+			x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
+
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="10"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
 
 
-		<mx:Form backgroundColor="0xd3d3d3" borderColor="0xd3d3d3">
-			<!--<mx:FormHeading label="Please evaluate your incision areas."/>-->
+		<s:Form skinClass="spark.skins.spark.FormSkin"
+				backgroundColor="0xd3d3d3">
+			<s:FormHeading label="Please evaluate any vaginal bleeding that you have."
+					skinClass="spark.skins.spark.FormHeadingSkin"/>
 
-			<mx:FormItem label="Are you experiencing any vaginal bleeding?">
+			<s:FormItem label="Are you experiencing any vaginal bleeding?"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
-			</mx:FormItem>
+			</s:FormItem>
 
-			<mx:FormItem label="What Color?" visible="{_model.showBleedingColor}"
-						 includeInLayout="{_model.showBleedingColor}">
+			<s:FormItem label="What Color?" visible="{_model.showBleedingColor}"
+						includeInLayout="{_model.showBleedingColor}"
+						skinClass="spark.skins.spark.FormItemSkin">
 
-				//change to color slider
-				<!--<s:SpinnerListContainer width="150" height="100"-->
-				<!--skinClass="spark.skins.mobile.SpinnerListContainerSkin">-->
-				<!--<s:SpinnerList id="bleedingIndicatorSpinnerList" labelField="color"-->
-				<!--dataProvider="{bleIndicatorArrayCollection}"-->
-				<!--skinClass="spark.skins.mobile.SpinnerListSkin" width="100%"/>-->
-				<!--</s:SpinnerListContainer>-->
-			</mx:FormItem>
+				<s:HGroup>
+					<!--<mx:ColorPicker id="bloodColor" showTextField="true" colorField="['0xFF0000', '0x8B0000','0x800000','0xA52A2A','A0522D','0x8B4513'] "/>
 
-			<mx:FormItem label="Do you have any blood clots?">
+			        <mx:VBox width="100%" height="100%" backgroundColor="{bloodColor.selectedColor}" borderStyle="solid"/>
+			        <mx:Label color="0x000000" text="selectedColor: 0x{BloodColor.selectedColor.toString(16)}"/>
+
+-->
+
+
+					<s:CheckBox id="redBloodCheckBox" label="Red" skinClass="spark.skins.spark.CheckBoxSkin"
+								opaqueBackground="red"
+								change="redBloodCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="darkRedBloodCheckBox" label="Dark Red" skinClass="spark.skins.spark.CheckBoxSkin"
+								opaqueBackground="8B0000"
+								change="darkRedBloodCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="redBrownBloodCheckBox" label="redBrown" skinClass="spark.skins.spark.CheckBoxSkin"
+								opaqueBackground="800000"
+								change="redBrownBloodCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="brownBloodCheckBox" label="rdBrown" skinClass="spark.skins.spark.CheckBoxSkin"
+								opaqueBackground="800000"
+								change="brownBloodCheckBox_changeHandler(event)"/>
+				</s:HGroup>
+			</s:FormItem>
+
+			<s:FormItem label="Do you have any blood clots?"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
 								change="bloodClotsIndicatorToggleSwitch_changeHandler(event)"/>
-			</mx:FormItem>
+			</s:FormItem>
 
-			<mx:FormItem label="What size?" direction="vertical" visible="{_model.showBloodClotSize}"
-						 includeInLayout="{_model.showFeminineProductsTypes}">
-				<s:CheckBox id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.CheckBoxSkin"
-							change="bloodClotsSmallCheckBox_changeHandler(event)"/>
-				<s:CheckBox id="bloodClotsMediumCheckBox" label="Medium"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							change="bloodClotsMediumCheckBox_changeHandler(event)"/>
-				<s:CheckBox id="feminineProductsLargeCheckBox" label="Large" skinClass="spark.skins.spark.CheckBoxSkin"
-							change="bloodClotsLargeCheckBox_changeHandler(event)"/>
-			</mx:FormItem>
-			<!--<mx:FormItem>
-				<mx:HSlider id="tendernessIndicatorHSlider" minimum="1" maximum="10" value="1" dataTipPlacement="bottom"
-							snapInterval="1" tickInterval="1" labels="['1','5','10']" allowTrackClick="true"
-							liveDragging="true" change="tendernessIndicatorHSlider_changeHandler(event)"/>
-			</mx:FormItem>-->
+			<s:FormItem label="What size?" visible="{_model.showBloodClotSize}"
+						includeInLayout="{_model.showFeminineProductsTypes}"
+						skinClass="spark.skins.spark.FormItemSkin">
+				<s:HGroup>
+					<s:CheckBox id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.CheckBoxSkin"
+								change="bloodClotsSmallCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="bloodClotsMediumCheckBox" label="Medium"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								change="bloodClotsMediumCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="feminineProductsLargeCheckBox" label="Large"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								change="bloodClotsLargeCheckBox_changeHandler(event)"/>
+				</s:HGroup>
+			</s:FormItem>
 
-			<mx:FormItem label="Have you used any feminine products in the last 24 hours?">
+			<s:FormItem label="Have you used any feminine products in the last 24 hours?"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
 								skinClass="spark.skins.mobile.ToggleSwitchSkin"
 								change="feminineProductsIndicatorToggleSwitch_changeHandler(event)"/>
-			</mx:FormItem>
+			</s:FormItem>
 
-			<mx:FormItem label="What type?" direction="vertical" visible="{_model.showBloodClotSize}"
-						 includeInLayout="{_model.showFeminineProductsTypes}">
-				<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							change="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
-				<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							change="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
-				<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							change="feminineProductsTamponCheckBox_changeHandler(event)"/>
-			</mx:FormItem>
+			<s:FormItem label="What type?" visible="{_model.showBloodClotSize}"
+						includeInLayout="{_model.showFeminineProductsTypes}"
+						skinClass="spark.skins.spark.FormItemSkin">
+				<s:HGroup>
+					<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								change="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								change="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								change="feminineProductsTamponCheckBox_changeHandler(event)"/>
+				</s:HGroup>
+			</s:FormItem>
 
-		</mx:Form>
-	</mx:Panel>
+
+			<s:FormItem
+					skinClass="spark.skins.spark.FormItemSkin">
+				<s:Button label="Submit"
+						skinClass="spark.skins.mobile.ButtonSkin"/>
+			</s:FormItem>
+		</s:Form>
+	</s:Panel>
 
 </tablet:TabletViewBase>

@@ -35,10 +35,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function handleHealthActionResult(initiatedLocally:Boolean):void
 		{
+			_viewNavigator.pushView(VaginalBleedingEvaluationView, this);
 		}
 
 		public function handleHealthActionSelected():void
 		{
+			_viewNavigator.pushView(VaginalBleedingEvaluationView, this);
 		}
 
 		public function handleUrlVariables(urlVariables:URLVariables):void
@@ -77,6 +79,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			_vaginalbleedingEvaluationModel = value;
 		}
 
+
 		public function updateHasBleeding(value:Boolean):void
 		{
 			_vaginalbleedingEvaluationModel.hasBleeding = value;
@@ -90,7 +93,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function updateUseFeminineProducts(value:Boolean):void
 		{
-			_vaginalbleedingEvaluationModel.useFeminineProductsType = value;
+			_vaginalbleedingEvaluationModel.useFeminineProducts = value;
 		}
 	}
 }
+

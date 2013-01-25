@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 
 <!---
-  - Copyright 2013 John Moore, Scott Gilroy
-  -
-  - This file is part of CollaboRhythm.
-  -
-  - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
-  - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
-  - version.
-  -
-  - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
-  - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-  - details.
-  -
-  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
-  - <http://www.gnu.org/licenses/>.
-  -->
-
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
-					   title="PainEvaluation">
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   title="IncisionEvaluation">
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
@@ -38,23 +38,38 @@
 			_model = _controller.model;
 
 		}
+
+		private function painToggleSwitchChangeHandler():void
+		{
+			if (_controller)
+			{
+				_controller.updateHasPain(PainToggleSwitch.selected);
+				ShoulderButton.visible = PainToggleSwitch.selected
+			}
+
+		}
+
+		private function testButtonHandler():void
+		{
+			if (_model)
+			{
+				ShoulderButton.visible = _model.hasPain
+			}
+		}
 		]]></fx:Script>
 
-	<s:VGroup>
-		<s:Form horizontalCenter="0">
-			<s:FormItem label="Enter some text">
-				<s:TextInput/>
-			</s:FormItem>
-			<s:FormItem label="Check a box">
-				<s:CheckBox label="option 1"/>
-				<s:CheckBox label="option 2"/>
-			</s:FormItem>
-			<s:FormItem>
-				<s:Button label="Submit it!"/>
-			</s:FormItem>
 
+
+		<s:Form skinClass="spark.skins.spark.FormSkin">
+			<s:Label text="Have you been experiencing pain today?"/>
+			<s:ToggleSwitch id="PainToggleSwitch" selected="false" skinClass="spark.skins.mobile.ToggleSwitchSkin" click="painToggleSwitchChangeHandler()"/>
+			<s:Button id="ShoulderButton" label="Shoulder" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="AbdomenButton" label="Abdomen" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="PelvisButton" label="Pelvis" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="OtherButton" label="Other" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+			<s:Button id="FlankButton" label="Flank" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
 		</s:Form>
-	</s:VGroup>
+
 
 
 </tablet:TabletViewBase>
