@@ -7,7 +7,7 @@
 							  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 				<name>Pain Evaluation</name>
 				<planType>Prescribed</planType>
-				<plannedBy>jking@records.media.mit.edu</plannedBy>
+				<plannedBy>ppeterson@records.media.mit.edu</plannedBy>
 				<datePlanned>2013-01-01T09:00:00-12:00</datePlanned>
 				<indication>Endometriosis</indication>
 				<instructions>Evaluate your pain post-surgery and monitor your healing progress.
@@ -21,7 +21,7 @@
 						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"
 											  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 							<name>Pain Evaluation</name>
-							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
+							<scheduledBy>ppeterson@records.media.mit.edu</scheduledBy>
 							<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>
 							<dateStart>2013-01-01T9:00:00Z</dateStart>
 							<dateEnd>2013-01-01T13:00:00Z</dateEnd>
@@ -31,69 +31,6 @@
 							</recurrenceRule>
 						</HealthActionSchedule>
 					</document>
-					<relatesTo>
-						<relation type="adherenceItem">
-							<LoadableIndivoDocument>
-								<document>
-									<AdherenceItem xmlns="http://indivo.org/vocab/xml/documents#">
-										<name xmlns="">FORA D40b</name>
-										<reportedBy xmlns="">mbrooks@records.media.mit.edu</reportedBy>
-										<dateReported>2011-07-17T14:57:00Z</dateReported>
-										<recurrenceIndex>2</recurrenceIndex>
-										<adherence>true</adherence>
-									</AdherenceItem>
-								</document>
-								<relatesTo>
-									<relation type="adherenceResult">
-										<LoadableIndivoDocument>
-											<document>
-												<HealthActionResult
-														xmlns="http://indivo.org/vocab/xml/documents/healthActionResult#"
-														xmlns:indivo="http://indivo.org/vocab/xml/documents#"
-														xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-													<name type="http://actions.repository.coded.values/"
-														  value="Exercise Plan">Exercise Plan 1
-													</name>
-													<planType>prescribed</planType>
-													<reportedBy>ppeterson@records.media.mit.edu</reportedBy>
-													<dateReported>2012-04-05T16:00:35.835336-04:00</dateReported>
-													<actions>
-														<action xsi:type="ActionGroupResult">
-															<measurements>
-																<measurement>
-																	<name type="http://measures.coded.values/"
-																		  value="1">has redness
-																	</name>
-																	<type type="http://www.w3.org/2001/XMLSchema"
-																		  value="xs:boolean">xs:boolean
-																	</type>
-																	<value>
-																		<indivo:textValue>true</indivo:textValue>
-																	</value>
-																</measurement>
-																<measurement>
-																	<name type="http://measures.coded.values/"
-																		  value="1">wound width
-																	</name>
-																	<type type="http://www.w3.org/2001/XMLSchema"
-																		  value="xs:float">xs:float
-																	</type>
-																	<value>
-																		<indivo:textValue>3</indivo:textValue>
-																		<indivo:unit>cm</indivo:unit>
-																	</value>
-																</measurement>
-															</measurements>
-														</action>
-													</actions>
-												</HealthActionResult>
-											</document>
-										</LoadableIndivoDocument>
-									</relation>
-								</relatesTo>
-							</LoadableIndivoDocument>
-						</relation>
-					</relatesTo>
 				</LoadableIndivoDocument>
 			</relation>
 		</relatesTo>
