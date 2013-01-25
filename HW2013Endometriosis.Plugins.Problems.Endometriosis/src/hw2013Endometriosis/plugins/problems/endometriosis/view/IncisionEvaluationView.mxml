@@ -39,7 +39,8 @@
 						backgroundColor="0xd3d3d3">
 				<s:ToggleSwitch id="rednessIndicatorToggleSwitch"
 								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="rednessIndicatorToggleSwitch_changeHandler(event)"/>
+								change="rednessIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
 			</s:FormItem>
 
 			<s:FormItem label="Size:" visible="{rednessIndicatorToggleSwitch.selected}"
@@ -72,14 +73,16 @@
 						backgroundColor="0xd3d3d3">
 				<s:ToggleSwitch id="tendernessIndicatorToggleSwitch"
 								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="tendernessIndicatorToggleSwitch_changeHandler(event)"/>
+								change="tendernessIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
 			</s:FormItem>
 
 			<s:FormItem label="Do you have any discharge?" skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:ToggleSwitch id="dischargeIndicatorToggleSwitch"
 								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="dischargeIndicatorToggleSwitch_changeHandler(event)"/>
+								change="dischargeIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
 			</s:FormItem>
 
 			<s:FormItem label="What kind?" visible="{dischargeIndicatorToggleSwitch.selected}"
@@ -97,7 +100,8 @@
 			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
 				<s:Button label="Submit"
 						  width="100"
-						  skinClass="spark.skins.mobile.ButtonSkin"/>
+						  skinClass="spark.skins.mobile.ButtonSkin"
+						  chromeColor="0x9370db"/>
 			</s:FormItem>
 
 		</s:Form>
