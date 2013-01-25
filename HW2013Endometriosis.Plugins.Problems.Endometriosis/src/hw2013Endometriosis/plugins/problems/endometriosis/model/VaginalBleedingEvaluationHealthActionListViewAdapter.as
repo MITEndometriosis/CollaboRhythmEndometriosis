@@ -20,26 +20,27 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import spark.components.Image;
 	import spark.skins.spark.ImageSkin;
 
-	public class PreOpHealthActionListViewAdapter implements IHealthActionListViewAdapter
+
+	public class VaginalBleedingEvaluationHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-		[Embed(source="/assets/images/star.png")]
-		public var starImageClass:Class;
+		[Embed(source="/assets/images/pad.png")]
+		public var padImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;
 
-		private var _preOpEvaluationHealthAction:HealthActionBase;
+		private var _vaginalbleedingEvaluationHealthAction:HealthActionBase;
 		private var _model:HealthActionListViewModelBase;
 		private var _controller:HealthActionListViewControllerBase;
 
-		public function PreOpHealthActionListViewAdapter(scheduleItemOccurrence:ScheduleItemOccurrence,
-														  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider)
+		public function VaginalBleedingEvaluationHealthActionListViewAdapter(scheduleItemOccurrence:ScheduleItemOccurrence,
+																			  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider)
 		{
 			if (scheduleItemOccurrence)
 			{
 				_scheduleItemOccurrence = scheduleItemOccurrence;
 				_healthActionSchedule = scheduleItemOccurrence.scheduleItem as HealthActionSchedule;
 
-				_preOpEvaluationHealthAction = new HealthActionBase(EndometriosisModel.PRE_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE,
+				_vaginalbleedingEvaluationHealthAction = new HealthActionBase(EndometriosisModel.VAGINAL_BLEEDING_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE,
 						_healthActionSchedule.name.text);
 
 				_model = new HealthActionListViewModelBase(scheduleItemOccurrence, healthActionModelDetailsProvider);
@@ -48,16 +49,16 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get healthAction():HealthActionBase
 		{
-			return _preOpEvaluationHealthAction;
+			return _vaginalbleedingEvaluationHealthAction;
 		}
 
 		public function createImage():Image
 		{
-			var preOpEvaluationImage:Image = new Image();
-			preOpEvaluationImage.setStyle("skinClass", ImageSkin);
-			preOpEvaluationImage.source = starImageClass;
+			var bleedingEvaluationImage:Image = new Image();
+			bleedingEvaluationImage.setStyle("skinClass", ImageSkin);
+			bleedingEvaluationImage.source = padImageClass;
 
-			return preOpEvaluationImage;
+			return bleedingEvaluationImage;
 		}
 
 		public function createCustomView():IVisualElement
@@ -67,7 +68,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get name():String
 		{
-			return "Pre-Op Evaluation";
+			return "Vaginal Bleeding Evalution";
 		}
 
 		public function get description():String
@@ -123,5 +124,4 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			return null;
 		}
 	}
-
 }
