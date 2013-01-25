@@ -96,10 +96,6 @@
 		{
 		}
 
-		private function bloodClotsMediumCheckBox_changeHandler(event:Event):void
-		{
-		}
-
 		private function bloodClotsLargeCheckBox_changeHandler(event:Event):void
 		{
 		}
@@ -154,7 +150,7 @@
 
 		<s:Form skinClass="spark.skins.spark.FormSkin"
 				backgroundColor="0xd3d3d3">
-			<s:FormHeading label="Please evaluate any vaginal bleeding that you have."
+			<s:FormHeading label="You may be experiencing bleeding."
 						   skinClass="spark.skins.spark.FormHeadingSkin"
 						   backgroundColor="0xd3d3d3"/>
 
@@ -203,9 +199,6 @@
 				<s:HGroup>
 					<s:RadioButton id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.RadioButtonSkin"
 								   click="bloodClotsSmallCheckBox_changeHandler(event)"/>
-					<s:RadioButton id="bloodClotsMediumCheckBox" label="Medium"
-								   skinClass="spark.skins.spark.RadioButtonSkin"
-								   click="bloodClotsMediumCheckBox_changeHandler(event)"/>
 					<s:RadioButton id="feminineProductsLargeCheckBox" label="Large"
 								   skinClass="spark.skins.spark.RadioButtonSkin"
 								   click="bloodClotsLargeCheckBox_changeHandler(event)"/>
@@ -261,7 +254,7 @@
 				skinClass="spark.skins.spark.FormItemSkin"
 				backgroundColor="0xd3d3d3">
 			<s:Button label="Submit"
-					  width="150"
+					  width="100"
 					  skinClass="spark.skins.mobile.ButtonSkin"
 					  chromeColor="0x9370db"/>
 		</s:FormItem>

@@ -9,6 +9,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _showHasUrinationPain:Boolean;
 		private var _hasNausea:Boolean;
 		private var _showHasNausea:Boolean;
+		private var _hasVomited:Boolean;
+		private var _showHasVomited:Boolean;
+		private var _hasAppetite:Boolean;
+		private var _showHasAppetite:Boolean;
+		private var _hasBM:Boolean;
+		private var _showHasBM:Boolean;
 
 		public function PostOpEvaluationModel()
 		{
@@ -75,6 +81,69 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		public function set showHasNausea(value:Boolean):void
 		{
 			_showHasNausea = value;
+		}
+
+		public function get hasVomited():Boolean
+		{
+			return _hasVomited;
+		}
+
+		public function set hasVomited(value:Boolean):void
+		{
+			_hasVomited = value;
+			showHasVomited = hasVomited;
+		}
+
+		public function get showHasVomited():Boolean
+		{
+			return _showHasVomited;
+		}
+
+		public function set showHasVomited(value:Boolean):void
+		{
+			_showHasVomited = value;
+		}
+
+		public function get hasAppetite():Boolean
+		{
+			return _hasAppetite;
+		}
+
+		public function set hasAppetite(value:Boolean):void
+		{
+			_hasAppetite = value;
+			showHasAppetite = hasAppetite;
+		}
+
+		public function get showHasAppetite():Boolean
+		{
+			return _showHasAppetite;
+		}
+
+		public function set showHasAppetite(value:Boolean):void
+		{
+			_showHasAppetite = value;
+		}
+
+		public function get hasBM():Boolean
+		{
+			return _hasBM;
+		}
+
+		public function set hasBM(value:Boolean):void
+		{
+			_hasBM = value;
+			showHasBM = hasBM;
+		}
+
+		public function get showHasBM():Boolean
+		{
+			return _showHasBM;
+		}
+
+		public function set showHasBM(value:Boolean):void
+		{
+			_showHasBM = value;
 		}
 	}
 }

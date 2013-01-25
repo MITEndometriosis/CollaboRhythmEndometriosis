@@ -54,9 +54,42 @@
 
 			<s:FormItem label="Are you nauseated?" skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="nauseaIndicatorToggleSwitch"
+				<s:ToggleSwitch id="hasNauseaIndicatorToggleSwitch"
 								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="nauseaIndicatorToggleSwitch_changeHandler(event)"
+								change="hasNauseaIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
+			</s:FormItem>
+
+			<s:FormItem label="Have you vomited?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3" visible="{hasNauseaIndicatorToggleSwitch.selected}"
+						includeInLayout="{hasNauseaIndicatorToggleSwitch.selected}">
+				<s:ToggleSwitch id="hasVomitedIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								change="hasVomitedIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
+			</s:FormItem>
+
+			<s:FormItem label="Do you have an appetite?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="hasAppetiteIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								change="hasAppetiteIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
+			</s:FormItem>
+
+			<s:FormItem label="Have you had a bowel movement?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="hasBMIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								change="hasBMIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
+			</s:FormItem>
+
+			<s:FormItem label="Have you had a bowel movement?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="hasBMIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								change="hasBMIndicatorToggleSwitch_changeHandler(event)"
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
@@ -98,11 +131,35 @@
 			}
 		}
 
-		private function nauseaIndicatorToggleSwitch_changeHandler(event:Event):void
+		private function hasNauseaIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
 			if (_controller)
 			{
-				_controller.updateHasNausea(nauseaIndicatorToggleSwitch.selected);
+				_controller.updateHasNausea(hasNauseaIndicatorToggleSwitch.selected);
+			}
+		}
+
+		private function hasVomitedIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasVomited(hasVomitedIndicatorToggleSwitch.selected);
+			}
+		}
+
+		private function hasAppetiteIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasAppetite(hasAppetiteIndicatorToggleSwitch.selected);
+			}
+		}
+
+		private function hasBMIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasBM(hasBMIndicatorToggleSwitch.selected);
 			}
 		}
 		]]></fx:Script>

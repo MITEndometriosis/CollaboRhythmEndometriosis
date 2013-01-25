@@ -4,6 +4,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionInputController;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
+	import collaboRhythm.shared.model.healthRecord.CodedValue;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 
 	import flash.events.MouseEvent;
@@ -89,6 +90,21 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function updateHasNausea(value:Boolean):void
 		{
 			_model.hasNausea = value;
+		}
+
+		public function updateHasVomited(value:Boolean):void
+		{
+			_model.hasVomited = value;
+		}
+
+		public function updateHasAppetite(value:Boolean):void
+		{
+			_model.hasAppetite = value;
+		}
+
+		public function updateHasBM(value:Boolean):void
+		{
+			_model.hasBM = value;
 		}
 	}
 }
