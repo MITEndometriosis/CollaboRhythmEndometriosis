@@ -1,24 +1,24 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.model
 {
 	import collaboRhythm.plugins.schedule.shared.controller.HealthActionInputControllerBase;
-		import collaboRhythm.plugins.schedule.shared.controller.HealthActionListViewControllerBase;
-		import collaboRhythm.plugins.schedule.shared.model.EquipmentHealthAction;
-		import collaboRhythm.plugins.schedule.shared.model.HealthActionBase;
-		import collaboRhythm.plugins.schedule.shared.model.HealthActionListViewModelBase;
-		import collaboRhythm.plugins.schedule.shared.model.IHealthActionListViewAdapter;
-		import collaboRhythm.plugins.schedule.shared.model.IHealthActionListViewController;
-		import collaboRhythm.plugins.schedule.shared.model.IHealthActionListViewModel;
-		import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
-		import collaboRhythm.shared.model.healthRecord.document.Equipment;
-		import collaboRhythm.shared.model.healthRecord.document.HealthActionSchedule;
-		import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
+	import collaboRhythm.plugins.schedule.shared.controller.HealthActionListViewControllerBase;
+	import collaboRhythm.plugins.schedule.shared.model.EquipmentHealthAction;
+	import collaboRhythm.plugins.schedule.shared.model.HealthActionBase;
+	import collaboRhythm.plugins.schedule.shared.model.HealthActionListViewModelBase;
+	import collaboRhythm.plugins.schedule.shared.model.IHealthActionListViewAdapter;
+	import collaboRhythm.plugins.schedule.shared.model.IHealthActionListViewController;
+	import collaboRhythm.plugins.schedule.shared.model.IHealthActionListViewModel;
+	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
+	import collaboRhythm.shared.model.healthRecord.document.Equipment;
+	import collaboRhythm.shared.model.healthRecord.document.HealthActionSchedule;
+	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 
-		import mx.core.IVisualElement;
+	import mx.core.IVisualElement;
 
-		import spark.components.Button;
+	import spark.components.Button;
 
-		import spark.components.Image;
-		import spark.skins.spark.ImageSkin;
+	import spark.components.Image;
+	import spark.skins.spark.ImageSkin;
 
 
 	public class VaginalBleedingHealthActionListViewAdapter implements IHealthActionListViewAdapter

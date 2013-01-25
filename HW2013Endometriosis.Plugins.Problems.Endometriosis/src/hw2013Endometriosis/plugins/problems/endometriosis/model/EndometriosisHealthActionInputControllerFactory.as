@@ -12,6 +12,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.IncisionEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PostOpEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingHealthActionInputController;
 
 	import spark.components.ViewNavigator;
@@ -48,6 +49,13 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 				return new PainEvaluationHealthActionInputController(scheduleItemOccurrence,
 						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
 			}
+
+			if (healthAction.name == EndometriosisModel.POST_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
+						{
+							return new PostOpEvaluationHealthActionInputController(scheduleItemOccurrence,
+									healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
+						}
+
 
 			return currentHealthActionInputController;
 		}
