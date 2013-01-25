@@ -10,6 +10,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.view
 			selectedLabel = "Yes";
 			unselectedLabel = "No";
 
+
 		}
+
+
 	}
 }
