@@ -142,14 +142,15 @@
 		</fx:Script>
 
 
-	<s:VGroup width="100%" height="100%" gap="0">
-		<s:Label text="Hello VaginalBleedingEvaluation!"/>
-	</s:VGroup>
+	<!--<s:VGroup width="100%" height="100%" gap="0">-->
+	<!--<s:Label text="Hello VaginalBleedingEvaluation!"/>-->
+	<!--</s:VGroup>-->
 
 
 	<s:Panel title="Vaginal Bleeding Evaluation"
 			 backgroundColor="0x778899" borderColor="0x778899"
-			 width="1000">
+			 width="1000"
+			x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
 
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
@@ -158,15 +159,19 @@
 		</s:layout>
 
 
-		<s:Form backgroundColor="0xd3d3d3">
-			<s:FormHeading label="Please evaluate any vaginal bleeding that you have."/>
+		<s:Form skinClass="spark.skins.spark.FormSkin"
+				backgroundColor="0xd3d3d3">
+			<s:FormHeading label="Please evaluate any vaginal bleeding that you have."
+					skinClass="spark.skins.spark.FormHeadingSkin"/>
 
-			<s:FormItem label="Are you experiencing any vaginal bleeding?">
+			<s:FormItem label="Are you experiencing any vaginal bleeding?"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
 			</s:FormItem>
 
 			<s:FormItem label="What Color?" visible="{_model.showBleedingColor}"
-						includeInLayout="{_model.showBleedingColor}">
+						includeInLayout="{_model.showBleedingColor}"
+						skinClass="spark.skins.spark.FormItemSkin">
 
 				<s:HGroup>
 					<!--<mx:ColorPicker id="bloodColor" showTextField="true" colorField="['0xFF0000', '0x8B0000','0x800000','0xA52A2A','A0522D','0x8B4513'] "/>
@@ -192,13 +197,15 @@
 				</s:HGroup>
 			</s:FormItem>
 
-			<s:FormItem label="Do you have any blood clots?">
+			<s:FormItem label="Do you have any blood clots?"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
 								change="bloodClotsIndicatorToggleSwitch_changeHandler(event)"/>
 			</s:FormItem>
 
 			<s:FormItem label="What size?" visible="{_model.showBloodClotSize}"
-						includeInLayout="{_model.showFeminineProductsTypes}">
+						includeInLayout="{_model.showFeminineProductsTypes}"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:HGroup>
 					<s:CheckBox id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.CheckBoxSkin"
 								change="bloodClotsSmallCheckBox_changeHandler(event)"/>
@@ -211,14 +218,16 @@
 				</s:HGroup>
 			</s:FormItem>
 
-			<s:FormItem label="Have you used any feminine products in the last 24 hours?">
+			<s:FormItem label="Have you used any feminine products in the last 24 hours?"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
 								skinClass="spark.skins.mobile.ToggleSwitchSkin"
 								change="feminineProductsIndicatorToggleSwitch_changeHandler(event)"/>
 			</s:FormItem>
 
 			<s:FormItem label="What type?" visible="{_model.showBloodClotSize}"
-						includeInLayout="{_model.showFeminineProductsTypes}">
+						includeInLayout="{_model.showFeminineProductsTypes}"
+						skinClass="spark.skins.spark.FormItemSkin">
 				<s:HGroup>
 					<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
 								skinClass="spark.skins.spark.CheckBoxSkin"
@@ -232,6 +241,12 @@
 				</s:HGroup>
 			</s:FormItem>
 
+
+			<s:FormItem
+					skinClass="spark.skins.spark.FormItemSkin">
+				<s:Button label="Submit"
+						skinClass="spark.skins.mobile.ButtonSkin"/>
+			</s:FormItem>
 		</s:Form>
 	</s:Panel>
 
