@@ -16,42 +16,43 @@
  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
  - <http://www.gnu.org/licenses/>.
 -->
-
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
-					   title="PainEvaluation">
-	<fx:Script><![CDATA[
-		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
-		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   title="IncisionEvaluation">
+<fx:Script><![CDATA[
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 
-		[Bindable]
-		private var _controller:PainEvaluationHealthActionInputController;
-		private var _model:PainEvaluationModel;
+	[Bindable]
+	private var _controller:PainEvaluationHealthActionInputController;
+	private var _model:PainEvaluationModel;
 
-		override public function set data(value:Object):void
-		{
-			super.data = value;
+	override public function set data(value:Object):void
+	{
+		super.data = value;
 
-			_controller = value as PainEvaluationHealthActionInputController;
-			_model = _controller.model;
+		_controller = value as PainEvaluationHealthActionInputController;
+		_model = _controller.model;
 
-		}
-		]]></fx:Script>
 
-	<s:Form horizontalCenter="0">
-		<s:FormItem label="Enter some text">
-			<s:TextInput/>
-		</s:FormItem>
-		<s:FormItem label="Check a box">
-			<s:CheckBox label="option 1"/>
-			<s:CheckBox label="option 2"/>
-		</s:FormItem>
-		<s:FormItem>
-			<s:Button label="Submit it!"/>
-		</s:FormItem>
+	}
+	]]></fx:Script>
+
+
+<s:Label text="Hello Pain Evaluation!"/>
+	<s:Form>
+		<s:Button label="clickme">
+
+		</s:Button>
+
+
+
 	</s:Form>
 
 
-</tablet:TabletViewBase>
+
+
+		</tablet:TabletViewBase>
