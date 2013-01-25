@@ -1,8 +1,15 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.model
 {
+	import flash.display.Bitmap;
+
+	import spark.components.Image;
+	import spark.skins.mobile.ImageSkin;
+
 	public class PainEvaluationModel
 	{
-		private var _hasPain:Boolean = false;
+//		[Embed(source="/assets/images/PainLocation.bmp")]
+//		public var PainLocationBitMapImageClass:Class;
+	private var _hasPain:Boolean = false;
 
 		public function PainEvaluationModel()
 		{
@@ -17,5 +24,13 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		{
 			_hasPain = value;
 		}
+
+//		public function createLocationBitmapImage():Bitmap
+//		{
+//			var painLocationBitMapImage:Bitmap = new Bitmap();
+//
+//
+//			return painLocationBitMapImage;
+//		}
 	}
 }

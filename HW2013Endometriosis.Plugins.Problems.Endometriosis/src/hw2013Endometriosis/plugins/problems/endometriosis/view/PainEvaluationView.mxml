@@ -27,12 +27,14 @@
 		import mx.collections.ArrayCollection;
 
 		import mx.collections.ArrayList;
+		import mx.core.FlexBitmap;
 
 		import spark.components.Button;
 
 		[Bindable]
 		private var _controller:PainEvaluationHealthActionInputController;
 		private var _model:PainEvaluationModel;
+
 
 		override public function set data(value:Object):void
 		{
@@ -48,39 +50,81 @@
 			if (_controller)
 			{
 				_controller.updateHasPain(PainToggleSwitch.selected);
-				var buttonList:Array = [ShoulderButton , AbdomenButton , PelvisButton , OtherButton , FlankButton];
-				var sampleButton:Button;
-				PainLocationLabel.visible = PainToggleSwitch.selected
-				for each (sampleButton in buttonList)
-				{
-					sampleButton.setVisible(PainToggleSwitch.selected)
-				}
+//				var locationBitmapData:BitmapData;
+//				var locationBitMapImage:Bitmap;
+//				locationBitMapImage = _model.createLocationBitmapImage();
+//				locationBitmapData = BitmapData(locationBitMapImage);
+//				createHitArea(locationBitmapData);
 			}
 
 		}
 
-		private function testButtonHandler():void
+		private function painLocationHandler():void
 		{
 			if (_model)
 			{
 				ShoulderButton.visible = _model.hasPain
 			}
 		}
+
+		private function createHitArea(bitmapData:BitmapData, grainSize:uint = 1):Sprite
+		{
+			var _hitarea:Sprite = new Sprite();
+			_hitarea.graphics.beginFill(0x000000, 1.0);
+			for (var x:uint = 0; x < bitmapData.width; x += grainSize)
+			{
+				for (var y:uint = grainSize; y < bitmapData.height; y += grainSize)
+				{
+					if (x <= bitmapData.width && y <= bitmapData.height && bitmapData.getPixel(x, y) != 0)
+					{
+						_hitarea.graphics.drawRect(x, y, grainSize, grainSize);
+					}
+				}
+			}
+			_hitarea.graphics.endFill();
+			return _hitarea;
+		}
 		]]></fx:Script>
 
 
+	<s:Panel title="Pain Evaluation">
+		<s:layout>
+			<s:VerticalLayout>
+			</s:VerticalLayout>
+		</s:layout>
 
-		<s:Form id = "PainForm" skinClass="spark.skins.spark.FormSkin">
-			<s:Label id="PainTFLabel" text="Have you been experiencing pain today?"/>
-			<s:ToggleSwitch id="PainToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin" click="painToggleSwitchChangeHandler()"/>
-			<s:Label id="PainLocationLabel" text="Please select the areas in which you have experienced pain." visible="false"/>
-			<s:Button id="ShoulderButton" label="Shoulder" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
-			<s:Button id="AbdomenButton" label="Abdomen" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
-			<s:Button id="PelvisButton" label="Pelvis" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
-			<s:Button id="OtherButton" label="Other" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
-			<s:Button id="FlankButton" label="Flank" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+
+		<s:Label id="PainTFLabel" text="Have you been experiencing pain today?"/>
+		<s:ToggleSwitch id="PainToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
+						change="painToggleSwitchChangeHandler()"/>
+		<s:Form id="PainForm" skinClass="spark.skins.spark.FormSkin" visible="{PainToggleSwitch.selected}">
+
+
+			<s:Label id="PainLocationLabel" text="Please select the areas in which you have experienced pain."
+					 visible="false"/>
+
+			<s:HGroup>
+				<s:FormItem>
+					<s:VGroup>
+						<s:ToggleButton id="ShoulderButton" label="Shoulder"
+								  skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true" />
+						<s:ToggleButton id="AbdomenButton" label="Abdomen"
+								  skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true"/>
+						<s:ToggleButton id="PelvisButton" label="Pelvis"
+								  skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true"/>
+						<s:ToggleButton id="OtherButton" label="Other" skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true"/>
+						<s:ToggleButton id="FlankButton" label="Flank" skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true"/>
+					</s:VGroup>
+				</s:FormItem>
+
+				<s:Image
+						source="C:\Users\NURSEN\Documents\GitRepositories\CollaboRhythmEndometriosis\HW2013Endometriosis.Plugins.Problems.Endometriosis\src\assets\images\PainLocation.png"/>
+
+			</s:HGroup>
 		</s:Form>
 
+
+	</s:Panel>
 
 
 </tablet:TabletViewBase>
