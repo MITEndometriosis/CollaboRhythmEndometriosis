@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <!---
-  - Copyright 2013 John Moore, Scott Gilroy
-  -
-  - This file is part of CollaboRhythm.
-  -
-  - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
-  - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
-  - version.
-  -
-  - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
-  - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-  - details.
-  -
-  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
-  - <http://www.gnu.org/licenses/>.
-  -->
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
 <tablet:TabletViewBase xmlns="http://ns.adobe.com/sml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
@@ -150,11 +150,12 @@
 
 		<s:Form skinClass="spark.skins.spark.FormSkin"
 				backgroundColor="0xd3d3d3">
-			<s:FormHeading label="You may be experiencing bleeding."
-						   skinClass="spark.skins.spark.FormHeadingSkin"
-						   backgroundColor="0xd3d3d3"/>
+			<s:FormHeading
+					label="Bleeding can be normal, either due to the surgery or menstruation."
+					skinClass="spark.skins.spark.FormHeadingSkin"
+					backgroundColor="0xd3d3d3"/>
 
-			<s:FormItem label="Are you experiencing any vaginal bleeding?"
+			<s:FormItem label="Have you had any vaginal bleeding in the past day?"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch"
@@ -163,14 +164,13 @@
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem label="What Color?"
+			<s:FormItem label="What color is the blood?"
 						visible="{bleedingIndicatorToggleSwitch.selected}"
 						includeInLayout="{bleedingIndicatorToggleSwitch.selected}"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 
 				<s:HGroup>
-
 					<s:RadioButton id="redBloodCheckBox" label="Red" skinClass="spark.skins.spark.RadioButtonSkin"
 								   color="red"
 								   click="redBloodCheckBox_changeHandler(event)"/>
@@ -192,12 +192,13 @@
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem label="What size?" visible="{bloodClotsIndicatorToggleSwitch.selected}"
+			<s:FormItem label="What size are they?" visible="{bloodClotsIndicatorToggleSwitch.selected}"
 						includeInLayout="{bloodClotsIndicatorToggleSwitch.selected}"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:HGroup>
-					<s:RadioButton id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.RadioButtonSkin"
+					<s:RadioButton id="bloodClotsSmallCheckBox" label="Small"
+								   skinClass="spark.skins.spark.RadioButtonSkin"
 								   click="bloodClotsSmallCheckBox_changeHandler(event)"/>
 					<s:RadioButton id="feminineProductsLargeCheckBox" label="Large"
 								   skinClass="spark.skins.spark.RadioButtonSkin"
@@ -205,60 +206,60 @@
 				</s:HGroup>
 			</s:FormItem>
 
-			<s:FormItem label="Have you used any feminine products in the last 24 hours?"
+			<s:FormItem label="Have you used any feminine products?"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3"
 						visible="{bleedingIndicatorToggleSwitch.selected}"
 						includeInLayout="{bleedingIndicatorToggleSwitch.selected}">
-			<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
-							skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-							click="feminineProductsIndicatorToggleSwitch_changeHandler(event)"
-							accentColor="0x9370db"/>
-		</s:FormItem>
+				<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								click="feminineProductsIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
+			</s:FormItem>
 
-		<s:FormItem label="What kind of feminine product are you using?"
-					visible="{FeminineProductsIndicatorToggleSwitch.selected}"
-					includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
+			<s:FormItem label="What kind of product?"
+						visible="{FeminineProductsIndicatorToggleSwitch.selected}"
+						includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
+						skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:HGroup variableColumnWidth="false" columnWidth="100">
+					<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								click="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								click="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								click="feminineProductsTamponCheckBox_changeHandler(event)"/>
+				</s:HGroup>
+			</s:FormItem>
+
+			<s:FormItem label="How many have you had to change because you bled through them?"
+						visible="{FeminineProductsIndicatorToggleSwitch.selected}"
+						includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
+						skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:HGroup variableColumnWidth="false" columnWidth="75">
+					<s:TextInput width="50" skinClass="spark.skins.mobile.TextInputSkin"/>
+					<s:Label text="or"
+							 textAlign="center"
+							 alignmentBaseline="ideographicBottom"/>
+					<s:CheckBox id="spottingFeminineProductsCheckBox" label="spotting"
+								skinClass="spark.skins.spark.CheckBoxSkin"
+								click="spottingFeminingProductsCheckBox_changeHandler(event)"/>
+				</s:HGroup>
+			</s:FormItem>
+
+			<s:FormItem
 					skinClass="spark.skins.spark.FormItemSkin"
 					backgroundColor="0xd3d3d3">
-			<s:HGroup variableColumnWidth="false" columnWidth="100">
-				<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							click="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
-				<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							click="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
-				<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							click="feminineProductsTamponCheckBox_changeHandler(event)"/>
-			</s:HGroup>
-		</s:FormItem>
+				<s:Button label="Submit"
+						  width="100"
+						  skinClass="spark.skins.mobile.ButtonSkin"
+						  chromeColor="0x9370db"/>
+			</s:FormItem>
+		</s:Form>
+	</s:Panel>
 
-		<s:FormItem label="About how many have you bled through in the past 24 hours?"
-					visible="{FeminineProductsIndicatorToggleSwitch.selected}"
-					includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
-					skinClass="spark.skins.spark.FormItemSkin"
-					backgroundColor="0xd3d3d3">
-			<s:HGroup variableColumnWidth="false" columnWidth="75">
-				<s:TextInput width="50" skinClass="spark.skins.mobile.TextInputSkin"/>
-				<s:Label text="or"
-						 textAlign="center"
-						 alignmentBaseline="ideographicBottom"/>
-				<s:CheckBox id="spottingFeminineProductsCheckBox" label="spotting"
-							skinClass="spark.skins.spark.CheckBoxSkin"
-							click="spottingFeminingProductsCheckBox_changeHandler(event)"/>
-			</s:HGroup>
-		</s:FormItem>
-
-		<s:FormItem
-				skinClass="spark.skins.spark.FormItemSkin"
-				backgroundColor="0xd3d3d3">
-			<s:Button label="Submit"
-					  width="100"
-					  skinClass="spark.skins.mobile.ButtonSkin"
-					  chromeColor="0x9370db"/>
-		</s:FormItem>
-	</s:Form>
-</s:Panel>
-
-		</tablet:TabletViewBase>
+</tablet:TabletViewBase>
