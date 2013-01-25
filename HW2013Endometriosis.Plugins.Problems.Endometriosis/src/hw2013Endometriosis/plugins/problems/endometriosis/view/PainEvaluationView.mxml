@@ -22,37 +22,50 @@
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   xmlns:mx="library://ns.adobe.com/flex/mx"
 					   title="IncisionEvaluation">
-<fx:Script><![CDATA[
-	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
-	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+	<fx:Script><![CDATA[
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 
-	[Bindable]
-	private var _controller:PainEvaluationHealthActionInputController;
-	private var _model:PainEvaluationModel;
+		[Bindable]
+		private var _controller:PainEvaluationHealthActionInputController;
+		private var _model:PainEvaluationModel;
 
-	override public function set data(value:Object):void
-	{
-		super.data = value;
+		override public function set data(value:Object):void
+		{
+			super.data = value;
 
-		_controller = value as PainEvaluationHealthActionInputController;
-		_model = _controller.model;
+			_controller = value as PainEvaluationHealthActionInputController;
+			_model = _controller.model;
+
+		}
+
+		private function painToggleSwitchChangeHandler():void
+		{
+			if (_controller)
+			{
+				_controller.updateHasPain(PainToggleSwitch.selected);
+				TestButton.visible = PainToggleSwitch.selected
+			}
+
+		}
+
+		private function testButtonHandler():void
+		{
+			if (_model)
+			{
+				TestButton.visible = _model.hasPain
+			}
+		}
+		]]></fx:Script>
 
 
-	}
-	]]></fx:Script>
+	<s:VGroup>
+		<s:Form skinClass="spark.skins.spark.FormSkin">
+			<s:Label text="Have you been experiencing pain today?"/>
+			<s:ToggleSwitch id="PainToggleSwitch" selected="false" skinClass="spark.skins.mobile.ToggleSwitchSkin" click="painToggleSwitchChangeHandler()"/>
+			<s:Button id="TestButton" label="clickme" visible="false" skinClass="spark.skins.mobile.ButtonSkin"/>
+		</s:Form>
+	</s:VGroup>
 
 
-<s:Label text="Hello Pain Evaluation!"/>
-	<s:Form>
-		<s:Button label="clickme">
-
-		</s:Button>
-
-
-
-	</s:Form>
-
-
-
-
-		</tablet:TabletViewBase>
+</tablet:TabletViewBase>
