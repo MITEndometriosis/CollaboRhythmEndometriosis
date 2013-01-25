@@ -124,8 +124,6 @@
 		import mx.collections.ArrayCollection;
 		import mx.events.SliderEvent;
 
-		import spark.events.IndexChangeEvent;
-
 		private var _controller:IncisionEvaluationAppController;
 
 		[Bindable]

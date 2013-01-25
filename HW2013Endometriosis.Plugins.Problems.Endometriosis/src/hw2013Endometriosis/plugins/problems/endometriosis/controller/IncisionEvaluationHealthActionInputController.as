@@ -21,6 +21,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		private var _viewNavigator:ViewNavigator;
 		private var _incisionEvaluationModel:IncisionEvaluationModel;
 
+		public static const DEFAULT_NAME:String = "Incision Evaluation";
+		private var _model:IncisionEvaluationModel;
+
 		public function IncisionEvaluationHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
 																	  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
 																	  scheduleCollectionsProvider:IScheduleCollectionsProvider,
@@ -69,6 +72,31 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function get model():IncisionEvaluationModel
 		{
 			return _incisionEvaluationModel;
+		}
+
+		public function showIncisionEvaluationView():void
+		{
+			_viewNavigator.pushView(IncisionEvaluationView, this);
+		}
+
+		public function updateHasRedness(value:Boolean):void
+		{
+			_model.hasRedness = value;
+		}
+
+		public function set model(value:IncisionEvaluationModel):void
+		{
+			_model = value;
+		}
+
+		public function updateHasTenderness(value:Boolean):void
+		{
+			_model.hasTenderness = value;
+		}
+
+		public function updateHasDischarge(value:Boolean):void
+		{
+			_model.hasDischarge = value;
 		}
 	}
 }
