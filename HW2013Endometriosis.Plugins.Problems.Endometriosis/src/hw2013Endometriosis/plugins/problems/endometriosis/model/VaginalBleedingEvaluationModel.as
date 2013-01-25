@@ -61,7 +61,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			return _useFeminineProducts;
 		}
 
-		public function set useFeminineProductsType(value:Boolean):void
+		public function set useFeminineProducts(value:Boolean):void
 		{
 			_useFeminineProducts = value;
 			showFeminineProductsTypes = useFeminineProducts;

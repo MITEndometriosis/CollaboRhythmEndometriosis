@@ -15,16 +15,18 @@
  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
  - <http://www.gnu.org/licenses/>.
 -->
-<tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
+<tablet:TabletViewBase xmlns="http://ns.adobe.com/sml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
-					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   title="VaginalBleedingEvaluation">
 
 	<fx:Declarations>
 
-		//sliders for blood color
+		<!--sliders for blood color-->
+
+		
 		<!--<s:ArrayCollection id="BleedingColorIndicatorArrayCollection">-->
 		<!--<fx:Object color="Red"/>-->
 		<!--<fx:Object color="Re"/>-->
@@ -123,35 +125,35 @@
 	</s:VGroup>
 
 
-	<mx:Panel title="Please enter vaginal bleeding evaluation." paddingTop="100" paddingLeft="100"
-			  horizontalAlign="center" backgroundColor="0x778899" borderColor="0x778899">
+	<s:Panel title="Please enter vaginal bleeding evaluation."
+			 backgroundColor="0x778899" borderColor="0x778899">
 
 
-		<mx:Form backgroundColor="0xd3d3d3" borderColor="0xd3d3d3">
-			<!--<mx:FormHeading label="Please evaluate your incision areas."/>-->
+		<s:Form backgroundColor="0xd3d3d3">
+			<!--<s:FormHeading label="Please evaluate your incision areas."/>-->
 
-			<mx:FormItem label="Are you experiencing any vaginal bleeding?">
+			<s:FormItem label="Are you experiencing any vaginal bleeding?">
 				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
-			</mx:FormItem>
+			</s:FormItem>
 
-			<mx:FormItem label="What Color?" visible="{_model.showBleedingColor}"
+			<s:FormItem label="What Color?" visible="{_model.showBleedingColor}"
 						 includeInLayout="{_model.showBleedingColor}">
 
-				//change to color slider
+				<!--//change to color slider-->
 				<!--<s:SpinnerListContainer width="150" height="100"-->
 				<!--skinClass="spark.skins.mobile.SpinnerListContainerSkin">-->
 				<!--<s:SpinnerList id="bleedingIndicatorSpinnerList" labelField="color"-->
 				<!--dataProvider="{bleIndicatorArrayCollection}"-->
 				<!--skinClass="spark.skins.mobile.SpinnerListSkin" width="100%"/>-->
 				<!--</s:SpinnerListContainer>-->
-			</mx:FormItem>
+			</s:FormItem>
 
-			<mx:FormItem label="Do you have any blood clots?">
+			<s:FormItem label="Do you have any blood clots?">
 				<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
 								change="bloodClotsIndicatorToggleSwitch_changeHandler(event)"/>
-			</mx:FormItem>
+			</s:FormItem>
 
-			<mx:FormItem label="What size?" direction="vertical" visible="{_model.showBloodClotSize}"
+			<s:FormItem label="What size?" visible="{_model.showBloodClotSize}"
 						 includeInLayout="{_model.showFeminineProductsTypes}">
 				<s:CheckBox id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.CheckBoxSkin"
 							change="bloodClotsSmallCheckBox_changeHandler(event)"/>
@@ -160,20 +162,20 @@
 							change="bloodClotsMediumCheckBox_changeHandler(event)"/>
 				<s:CheckBox id="feminineProductsLargeCheckBox" label="Large" skinClass="spark.skins.spark.CheckBoxSkin"
 							change="bloodClotsLargeCheckBox_changeHandler(event)"/>
-			</mx:FormItem>
-			<!--<mx:FormItem>
-				<mx:HSlider id="tendernessIndicatorHSlider" minimum="1" maximum="10" value="1" dataTipPlacement="bottom"
+			</s:FormItem>
+			<!--<s:FormItem>
+				<s:HSlider id="tendernessIndicatorHSlider" minimum="1" maximum="10" value="1" dataTipPlacement="bottom"
 							snapInterval="1" tickInterval="1" labels="['1','5','10']" allowTrackClick="true"
 							liveDragging="true" change="tendernessIndicatorHSlider_changeHandler(event)"/>
-			</mx:FormItem>-->
+			</s:FormItem>-->
 
-			<mx:FormItem label="Have you used any feminine products in the last 24 hours?">
+			<s:FormItem label="Have you used any feminine products in the last 24 hours?">
 				<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
 								skinClass="spark.skins.mobile.ToggleSwitchSkin"
 								change="feminineProductsIndicatorToggleSwitch_changeHandler(event)"/>
-			</mx:FormItem>
+			</s:FormItem>
 
-			<mx:FormItem label="What type?" direction="vertical" visible="{_model.showBloodClotSize}"
+			<s:FormItem label="What type?" visible="{_model.showBloodClotSize}"
 						 includeInLayout="{_model.showFeminineProductsTypes}">
 				<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
 							skinClass="spark.skins.spark.CheckBoxSkin"
@@ -184,9 +186,9 @@
 				<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
 							skinClass="spark.skins.spark.CheckBoxSkin"
 							change="feminineProductsTamponCheckBox_changeHandler(event)"/>
-			</mx:FormItem>
+			</s:FormItem>
 
-		</mx:Form>
-	</mx:Panel>
+		</s:Form>
+	</s:Panel>
 
 </tablet:TabletViewBase>
