@@ -56,9 +56,7 @@
     </orderEntry>
     <orderEntry type="module-library">
       <library>
-        <CLASSES>
-          <root url="jar://C:/Program Files (x86)/Android/android-sdk/extras/android/compatibility/v4/android-support-v4.jar!/" />
-        </CLASSES>
+        <CLASSES />
         <JAVADOC />
         <SOURCES />
       </library>
