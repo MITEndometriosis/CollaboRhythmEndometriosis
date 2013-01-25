@@ -16,18 +16,17 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 	import spark.components.ViewNavigator;
 
-
 	public class PostOpEvaluationHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
 	{
 		private var _viewNavigator:ViewNavigator;
-		private var _postOpEvaluationModel:PostOpEvaluationModel;
+		private var _model:PostOpEvaluationModel;
 
 		public function PostOpEvaluationHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
 																	  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
 																	  scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																	  viewNavigator:ViewNavigator)
 		{
-			_postOpEvaluationModel = new PostOpEvaluationModel();
+			_model = new PostOpEvaluationModel();
 			_viewNavigator = viewNavigator
 		}
 
@@ -69,7 +68,17 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function get model():PostOpEvaluationModel
 		{
-			return _postOpEvaluationModel;
+			return _model;
+		}
+
+		public function set model(value:PostOpEvaluationModel):void
+		{
+			_model = value;
+		}
+
+		public function updateCanUrinate(value:Boolean):void
+		{
+			_model.canUrinate = value;
 		}
 	}
 }

@@ -1,25 +1,52 @@
 <?xml version="1.0"?>
 <!---
-  - Copyright 2013 John Moore, Scott Gilroy
-  -
-  - This file is part of CollaboRhythm.
-  -
-  - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
-  - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
-  - version.
-  -
-  - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
-  - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-  - details.
-  -
-  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
-  - <http://www.gnu.org/licenses/>.
-  -->
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   title="PostOpEvaluation">
+
+	<s:Panel title="General Evaluation." backgroundColor="0x778899" borderColor="0x778899" width="1000"
+			 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
+
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="10"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
+
+		<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xd3d3d3">
+
+			<s:FormHeading label="Please evaluate your incisions."
+						   skinClass="spark.skins.spark.FormHeadingSkin"/>
+
+			<s:FormItem label="Are you able to urinate?" skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:ToggleSwitch id="urinationIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								change="urinationIndicatorToggleSwitch_changeHandler(event)"/>
+			</s:FormItem>
+
+		</s:Form>
+
+	</s:Panel>
+
+
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PostOpEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PostOpEvaluationModel;
@@ -35,6 +62,14 @@
 			_controller = value as PostOpEvaluationHealthActionInputController;
 			_model = _controller.model;
 
+		}
+
+		private function urinationIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateCanUrinate(urinationIndicatorToggleSwitch.selected);
+			}
 		}
 		]]></fx:Script>
 	<s:VGroup width="100%" height="100%" gap="0">
