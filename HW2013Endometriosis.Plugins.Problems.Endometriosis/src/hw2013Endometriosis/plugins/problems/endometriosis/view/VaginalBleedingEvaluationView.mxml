@@ -54,7 +54,7 @@
 
 		private function bleedingIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
-				_controller.updateHasBleeding(bleedingIndicatorToggleSwitch.selected);
+			_controller.updateHasBleeding(bleedingIndicatorToggleSwitch.selected);
 
 		}
 
@@ -85,7 +85,7 @@
 
 		private function bloodClotsIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
-				_controller.updateHasBloodClots(bloodClotsIndicatorToggleSwitch.selected);
+			_controller.updateHasBloodClots(bloodClotsIndicatorToggleSwitch.selected);
 
 
 		}
@@ -104,7 +104,7 @@
 
 		private function feminineProductsIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
-				_controller.updateUseFeminineProducts(FeminineProductsIndicatorToggleSwitch.selected);
+			_controller.updateUseFeminineProducts(FeminineProductsIndicatorToggleSwitch.selected);
 
 		}
 
@@ -125,7 +125,7 @@
 
 		private function spottingFeminingProductsCheckBox_changeHandler(event:Event):void
 		{
-			
+
 		}
 		]]>
 
@@ -156,45 +156,42 @@
 						   skinClass="spark.skins.spark.FormHeadingSkin"
 						   backgroundColor="0xd3d3d3"/>
 
-			<s:FormItem	label="Are you experiencing any vaginal bleeding?"
+			<s:FormItem label="Are you experiencing any vaginal bleeding?"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch" skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								click="bleedingIndicatorToggleSwitch_changeHandler(event)"/>
+				<s:ToggleSwitch id="bleedingIndicatorToggleSwitch"
+								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+								click="bleedingIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem label="What Color?" visible="{bleedingIndicatorToggleSwitch.selected}"
+			<s:FormItem label="What Color?"
+						visible="{bleedingIndicatorToggleSwitch.selected}"
 						includeInLayout="{bleedingIndicatorToggleSwitch.selected}"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 
 				<s:HGroup>
-					<!--<mx:ColorPicker id="bloodColor" showTextField="true" colorField="['0xFF0000', '0x8B0000','0x800000','0xA52A2A','A0522D','0x8B4513'] "/>
 
-			        <mx:VBox width="100%" height="100%" backgroundColor="{bloodColor.selectedColor}" borderStyle="solid"/>
-			        <mx:Label color="0x000000" text="selectedColor: 0x{BloodColor.selectedColor.toString(16)}"/>
+					<s:RadioButton id="redBloodCheckBox" label="Red" skinClass="spark.skins.spark.RadioButtonSkin"
+								   color="red"
+								   click="redBloodCheckBox_changeHandler(event)"/>
 
--->
-
-
-					<s:CheckBox id="redBloodCheckBox" label="Red" skinClass="spark.skins.spark.CheckBoxSkin"
-								color="red"
-								chromeColor="red"
-								click="redBloodCheckBox_changeHandler(event)"/>
-
-					<s:CheckBox id="brownBloodCheckBox" label="Brown" skinClass="spark.skins.spark.CheckBoxSkin"
-								color="0xa52a2a"
-								chromeColor="0xa52a2a"
-								click="brownBloodCheckBox_changeHandler(event)"/>
+					<s:RadioButton id="brownBloodCheckBox" label="Brown" skinClass="spark.skins.spark.RadioButtonSkin"
+								   color="0xa52a2a"
+								   click="brownBloodCheckBox_changeHandler(event)"/>
 				</s:HGroup>
 			</s:FormItem>
 
 			<s:FormItem label="Do you have any blood clots?"
+						visible="{bleedingIndicatorToggleSwitch.selected}"
+						includeInLayout="{bleedingIndicatorToggleSwitch.selected}"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch"
 								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								click="bloodClotsIndicatorToggleSwitch_changeHandler(event)"/>
+								click="bloodClotsIndicatorToggleSwitch_changeHandler(event)"
+								accentColor="0x9370db"/>
 			</s:FormItem>
 
 			<s:FormItem label="What size?" visible="{bloodClotsIndicatorToggleSwitch.selected}"
@@ -202,65 +199,71 @@
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:HGroup>
-					<s:CheckBox id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.CheckBoxSkin"
-								click="bloodClotsSmallCheckBox_changeHandler(event)"/>
-					<s:CheckBox id="bloodClotsMediumCheckBox" label="Medium"
-								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="bloodClotsMediumCheckBox_changeHandler(event)"/>
-					<s:CheckBox id="feminineProductsLargeCheckBox" label="Large"
-								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="bloodClotsLargeCheckBox_changeHandler(event)"/>
+					<s:RadioButton id="bloodClotsSmallCheckBox" label="Small" skinClass="spark.skins.spark.RadioButtonSkin"
+								   click="bloodClotsSmallCheckBox_changeHandler(event)"/>
+					<s:RadioButton id="bloodClotsMediumCheckBox" label="Medium"
+								   skinClass="spark.skins.spark.RadioButtonSkin"
+								   click="bloodClotsMediumCheckBox_changeHandler(event)"/>
+					<s:RadioButton id="feminineProductsLargeCheckBox" label="Large"
+								   skinClass="spark.skins.spark.RadioButtonSkin"
+								   click="bloodClotsLargeCheckBox_changeHandler(event)"/>
 				</s:HGroup>
 			</s:FormItem>
 
 			<s:FormItem label="Have you used any feminine products in the last 24 hours?"
 						skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
-								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								click="feminineProductsIndicatorToggleSwitch_changeHandler(event)"/>
-			</s:FormItem>
+						backgroundColor="0xd3d3d3"
+						visible="{bleedingIndicatorToggleSwitch.selected}"
+						includeInLayout="{bleedingIndicatorToggleSwitch.selected}">
+			<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
+							skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+							click="feminineProductsIndicatorToggleSwitch_changeHandler(event)"
+							accentColor="0x9370db"/>
+		</s:FormItem>
 
-			<s:FormItem label="What kind of feminine product are you using?"
-						visible="{FeminineProductsIndicatorToggleSwitch.selected}"
-						includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
-						skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:HGroup>
-					<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
-								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
-					<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
-								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
-					<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
-								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="feminineProductsTamponCheckBox_changeHandler(event)"/>
-				</s:HGroup>
-			</s:FormItem>
-
-			<s:FormItem label="About how many have you bled through in the past 24 hours?"
-						visible="{FeminineProductsIndicatorToggleSwitch.selected}"
-						includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
-						skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:HGroup>
-					<s:TextInput width="50" skinClass="spark.skins.mobile.TextInputSkin"/>
-					<s:Label text="or" alignmentBaseline="ideographicBottom"/>
-					<s:CheckBox id="spottingFeminineProductsCheckBox" label="spotting"
-								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="spottingFeminingProductsCheckBox_changeHandler(event)"/>
-				</s:HGroup>
-			</s:FormItem>
-
-			<s:FormItem
+		<s:FormItem label="What kind of feminine product are you using?"
+					visible="{FeminineProductsIndicatorToggleSwitch.selected}"
+					includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
 					skinClass="spark.skins.spark.FormItemSkin"
 					backgroundColor="0xd3d3d3">
-				<s:Button label="Submit"
-						  width="150"
-						  skinClass="spark.skins.mobile.ButtonSkin"/>
-			</s:FormItem>
-		</s:Form>
-	</s:Panel>
+			<s:HGroup variableColumnWidth="false" columnWidth="100">
+				<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							click="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
+				<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							click="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
+				<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							click="feminineProductsTamponCheckBox_changeHandler(event)"/>
+			</s:HGroup>
+		</s:FormItem>
 
-</tablet:TabletViewBase>
+		<s:FormItem label="About how many have you bled through in the past 24 hours?"
+					visible="{FeminineProductsIndicatorToggleSwitch.selected}"
+					includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
+					skinClass="spark.skins.spark.FormItemSkin"
+					backgroundColor="0xd3d3d3">
+			<s:HGroup variableColumnWidth="false" columnWidth="75">
+				<s:TextInput width="50" skinClass="spark.skins.mobile.TextInputSkin"/>
+				<s:Label text="or"
+						 textAlign="center"
+						 alignmentBaseline="ideographicBottom"/>
+				<s:CheckBox id="spottingFeminineProductsCheckBox" label="spotting"
+							skinClass="spark.skins.spark.CheckBoxSkin"
+							click="spottingFeminingProductsCheckBox_changeHandler(event)"/>
+			</s:HGroup>
+		</s:FormItem>
+
+		<s:FormItem
+				skinClass="spark.skins.spark.FormItemSkin"
+				backgroundColor="0xd3d3d3">
+			<s:Button label="Submit"
+					  width="150"
+					  skinClass="spark.skins.mobile.ButtonSkin"
+					  chromeColor="0x9370db"/>
+		</s:FormItem>
+	</s:Form>
+</s:Panel>
+
+		</tablet:TabletViewBase>
