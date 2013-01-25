@@ -15,6 +15,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _showHasAppetite:Boolean;
 		private var _hasBM:Boolean;
 		private var _showHasBM:Boolean;
+		private var _hasPassedGas:Boolean;
+		private var _showHasPassedGas:Boolean;
 
 		public function PostOpEvaluationModel()
 		{
@@ -144,6 +146,27 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		public function set showHasBM(value:Boolean):void
 		{
 			_showHasBM = value;
+		}
+
+		public function get hasPassedGas():Boolean
+		{
+			return _hasPassedGas;
+		}
+
+		public function set hasPassedGas(value:Boolean):void
+		{
+			_hasPassedGas = value;
+			showHasPassedGas = hasPassedGas;
+		}
+
+		public function get showHasPassedGas():Boolean
+		{
+			return _showHasPassedGas;
+		}
+
+		public function set showHasPassedGas(value:Boolean):void
+		{
+			_showHasPassedGas = value;
 		}
 	}
 }

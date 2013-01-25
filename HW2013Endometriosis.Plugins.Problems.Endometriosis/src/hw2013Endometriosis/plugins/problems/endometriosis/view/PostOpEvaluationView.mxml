@@ -85,13 +85,24 @@
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem label="Have you had a bowel movement?" skinClass="spark.skins.spark.FormItemSkin"
+			<s:FormItem label="Have you passed gas?" skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="hasBMIndicatorToggleSwitch"
+				<s:ToggleSwitch id="hasPassedGasIndicatorToggleSwitch"
 								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="hasBMIndicatorToggleSwitch_changeHandler(event)"
+								change="hasPassedGasIndicatorToggleSwitch_changeHandler(event)"
 								accentColor="0x9370db"/>
 			</s:FormItem>
+
+			<s:FormItem label="What is your temperature?"
+						skinClass="spark.skins.spark.FormItemSkin"
+						backgroundColor="0xd3d3d3">
+				<s:HGroup>
+					<s:TextInput id="temperatureTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
+								 textAlign="right" restrict="0-9." softKeyboardType="number"/>
+					<s:Label text="degrees" alignmentBaseline="ideographicBottom"/>
+				</s:HGroup>
+			</s:FormItem>
+
 
 		</s:Form>
 
@@ -162,8 +173,15 @@
 				_controller.updateHasBM(hasBMIndicatorToggleSwitch.selected);
 			}
 		}
+
+		private function hasPassedGasIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasPassedGas(hasPassedGasIndicatorToggleSwitch.selected);
+			}
+		}
+
 		]]></fx:Script>
-	<s:VGroup width="100%" height="100%" gap="0">
-		<s:Label text="Hello PostOpEvaluation!"/>
-	</s:VGroup>
+
 </tablet:TabletViewBase>

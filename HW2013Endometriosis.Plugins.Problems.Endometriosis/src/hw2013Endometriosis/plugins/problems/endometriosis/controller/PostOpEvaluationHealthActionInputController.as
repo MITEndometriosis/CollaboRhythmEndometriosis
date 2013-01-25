@@ -106,5 +106,10 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 			_model.hasBM = value;
 		}
+
+		public function updateHasPassedGas(value:Boolean):void
+		{
+			_model.hasPassedGas = value;
+		}
 	}
 }
