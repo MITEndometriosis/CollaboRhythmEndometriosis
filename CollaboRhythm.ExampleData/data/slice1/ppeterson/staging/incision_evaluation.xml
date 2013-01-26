@@ -55,7 +55,7 @@
 										<name xmlns="">Incision Evaluation</name>
 										<reportedBy xmlns="">ppeterson@records.media.mit.edu</reportedBy>
 										<dateReported>2013-01-01T09:34:00Z</dateReported>
-										<recurrenceIndex>0</recurrenceIndex>
+										<recurrenceIndex>1</recurrenceIndex>
 										<adherence>true</adherence>
 									</AdherenceItem>
 								</document>
@@ -170,7 +170,7 @@
 										<name xmlns="">Incision Evaluation</name>
 										<reportedBy xmlns="">ppeterson@records.media.mit.edu</reportedBy>
 										<dateReported>2013-01-02T10:06:00Z</dateReported>
-										<recurrenceIndex>1</recurrenceIndex>
+										<recurrenceIndex>2</recurrenceIndex>
 										<adherence>true</adherence>
 									</AdherenceItem>
 								</document>
@@ -285,7 +285,7 @@
 										<name xmlns="">Incision Evaluation</name>
 										<reportedBy xmlns="">ppeterson@records.media.mit.edu</reportedBy>
 										<dateReported>2013-01-03T09:25:00Z</dateReported>
-										<recurrenceIndex>2</recurrenceIndex>
+										<recurrenceIndex>3</recurrenceIndex>
 										<adherence>true</adherence>
 									</AdherenceItem>
 								</document>

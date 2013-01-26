@@ -26,7 +26,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 																	  scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																	  viewNavigator:ViewNavigator)
 		{
-			_model = new IncisionEvaluationModel();
+			_model = new IncisionEvaluationModel(scheduleItemOccurrence, healthActionModelDetailsProvider, scheduleCollectionsProvider);
 			_viewNavigator = viewNavigator
 		}
 
@@ -89,6 +89,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function updateHasDischarge(value:Boolean):void
 		{
 			_model.hasDischarge = value;
+		}
+
+		public function saveIncisionEvalution():void
+		{
+			_model.saveIncisionEvaluation();
 		}
 	}
 }
