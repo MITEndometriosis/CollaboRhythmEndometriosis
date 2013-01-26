@@ -28,19 +28,25 @@
 				<indication>Endometriosis</indication>
 				<instructions>Evaluate general symptoms daily for one week after operation.
 				</instructions>
+				<system>CollaboRhythm</system>
+				<actions>
+					<action xsi:type="ActionStep">
+						<name>Evaluate</name>
+						<type>Evaluate</type>
+					</action>
+				</actions>
 			</HealthActionPlan>
 		</document>
 		<relatesTo>
 			<relation type="healthActionSchedule">
 				<LoadableIndivoDocument>
 					<document>
-						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"
-											  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#">
 							<name>Post-Operative Daily Evaluation</name>
 							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
-							<dateScheduled>2013-01-01T09:00:00-04:00</dateScheduled>
-							<dateStart>2013-01-01TT09:00:00Z</dateStart>
-							<dateEnd>2013-01-01TT13:00:00Z</dateEnd>
+							<dateScheduled>2013-01-01T21:00:00Z</dateScheduled>
+							<dateStart>2013-01-01T09:00:00Z</dateStart>
+							<dateEnd>2013-01-01T13:00:00Z</dateEnd>
 							<recurrenceRule>
 								<frequency>DAILY</frequency>
 								<count>40</count>
