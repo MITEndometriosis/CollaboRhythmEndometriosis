@@ -22,7 +22,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 	public class PreOpEvaluationHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-		[Embed(source="/assets/images/star.png")]
+		[Embed(source="/assets/images/questionnaire.png")]
 		public var starImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;

@@ -103,6 +103,13 @@
 				</s:HGroup>
 			</s:FormItem>
 
+			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
+				<s:Button label="Save"
+						  width="100"
+						  skinClass="spark.skins.mobile.ButtonSkin"
+						  chromeColor="0x9370db"/>
+			</s:FormItem>
+
 
 		</s:Form>
 
@@ -181,7 +188,6 @@
 				_controller.updateHasPassedGas(hasPassedGasIndicatorToggleSwitch.selected);
 			}
 		}
-
 		]]></fx:Script>
 
 </tablet:TabletViewBase>
