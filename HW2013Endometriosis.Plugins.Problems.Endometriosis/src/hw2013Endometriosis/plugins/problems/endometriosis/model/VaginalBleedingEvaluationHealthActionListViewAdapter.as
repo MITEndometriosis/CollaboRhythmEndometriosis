@@ -23,7 +23,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 	public class VaginalBleedingEvaluationHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-		[Embed(source="/assets/images/pad.png")]
+		[Embed(source="/assets/images/seacucumber.png")]
 		public var padImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;
