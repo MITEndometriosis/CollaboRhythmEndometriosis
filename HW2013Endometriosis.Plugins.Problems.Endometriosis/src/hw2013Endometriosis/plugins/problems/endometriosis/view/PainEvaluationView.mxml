@@ -70,7 +70,6 @@
 				_controller.changeScreens()
 
 			}
-			PainLocationLabel.text= "TESTTEST"
 		}
 
 		private function createHitArea(bitmapData:BitmapData, grainSize:uint = 1):Sprite
