@@ -63,12 +63,14 @@
 			}
 		}
 
-		private function submitButtonHandler(event:Event):void
+		private function nextButtonHandler(event:Event):void
 		{
 			if (_controller)
 			{
 				_controller.changeScreens()
+
 			}
+			PainLocationLabel.text= "TESTTEST"
 		}
 
 		private function createHitArea(bitmapData:BitmapData, grainSize:uint = 1):Sprite
@@ -121,9 +123,13 @@
 									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
 						<ToggleButton id="FlankButton" label="Flank"
 									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
-						<Button id="SubmitButton" label="Submit" click="painLocationButtonHandler(event)" skinClass="spark.skins.mobile.ButtonSkin" />
+						<Button id="NextButton" label="Next" click="nextButtonHandler(event)" skinClass="spark.skins.mobile.ButtonSkin" />
+
+
+
 					</VGroup>
 				</FormItem>
+
 
 				<Image
 						source="C:\Users\NURSEN\Documents\GitRepositories\CollaboRhythmEndometriosis\HW2013Endometriosis.Plugins.Problems.Endometriosis\src\assets\images\PainLocation.png"/>

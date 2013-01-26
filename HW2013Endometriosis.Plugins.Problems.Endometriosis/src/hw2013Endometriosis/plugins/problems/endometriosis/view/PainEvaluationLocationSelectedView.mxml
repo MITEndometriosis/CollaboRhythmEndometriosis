@@ -36,8 +36,28 @@
 			_model = _controller.model;
 
 		}
+
+		private function formItemDisplayHandler (location:String):Boolean
+		{
+			if (_controller)
+			{
+				if (location == "ShoulderFormItem")
+				return _controller.model.hasShoulderPain;
+				if (location == "AbdomenFormItem")
+								return _controller.model.hasAbdomenPain;
+				if (location == "PelvisFormItem")
+								return _controller.model.hasPelvisPain;
+				if (location == "FlankFormItem")
+								return _controller.model.hasFlankPain;
+				if (location == "OtherFormItem")
+								return _controller.model.hasOtherPain;
+			}
+			return false
+		}
+
 		]]></fx:Script>
-	<s:VGroup width="100%" height="100%" gap="0">
-		<s:Label text="Hello PainEvaluationLocationSelected!"/>
-	</s:VGroup>
+<s:Panel title="Pain Evaluation">
+	<s:Label text="The following questions will guide you in evaluating your pain symptoms."/>
+	
+</s:Panel>
 </tablet:TabletViewBase>
