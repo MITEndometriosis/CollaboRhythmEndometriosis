@@ -29,7 +29,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 																			 scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																			 viewNavigator:ViewNavigator)
 		{
-			_model = new VaginalBleedingEvaluationModel();
+			_model = new VaginalBleedingEvaluationModel(scheduleItemOccurrence, healthActionModelDetailsProvider,
+					scheduleCollectionsProvider);
 			_viewNavigator = viewNavigator
 		}
 
@@ -94,6 +95,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function updateUseFeminineProducts(value:Boolean):void
 		{
 			_model.useFeminineProducts = value;
+		}
+
+		public function saveVaginalBleedingEvalution():void
+		{
+			_model.saveVaginalBleedingEvaluation();
 		}
 	}
 }

@@ -125,6 +125,11 @@
 		{
 
 		}
+
+		private function saveButton_clickHandler(event:MouseEvent):void
+		{
+			_controller.saveVaginalBleedingEvalution();
+		}
 		]]>
 
 

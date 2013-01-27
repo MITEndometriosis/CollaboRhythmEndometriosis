@@ -1,7 +1,29 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.model
 {
+	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
+	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
+	import collaboRhythm.shared.model.Record;
+	import collaboRhythm.shared.model.healthRecord.CodedValue;
+	import collaboRhythm.shared.model.healthRecord.DocumentBase;
+	import collaboRhythm.shared.model.healthRecord.ValueAndUnit;
+	import collaboRhythm.shared.model.healthRecord.document.HealthActionResult;
+	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
+	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.ActionGroupResult;
+	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.Measurement;
+
+	import mx.collections.ArrayCollection;
+
+	[Bindable]
 	public class VaginalBleedingEvaluationModel
 	{
+		private static const VAGINAL_BLEEDING_EVALUATION_RESULT:String = "Vaginal Bleeding Evaluation Result";
+		private static const MEASURES_CODED_VALUE_TYPE:String = "http://measures.coded.values/";
+
+		private static const TYPE_CODED_VALUE_TYPE:String = "http://www.w3.org/2001/XMLSchema";
+
+		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
+		private var _record:Record;
+
 		private var _hasBleeding:Boolean;
 		private var _showBleedingColor:Boolean;
 		private var _hasBloodClots:Boolean;
@@ -10,8 +32,15 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _showFeminineProductsType:Boolean;
 		private var _showFeminineProductsNum:Boolean;
 
-		public function VaginalBleedingEvaluationModel()
+		private var _activeAccountId:String;
+
+		public function VaginalBleedingEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
+														healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+														scheduleCollectionsProvider:IScheduleCollectionsProvider)
 		{
+			_scheduleItemOccurrence = scheduleItemOccurrence;
+			_record = healthActionModelDetailsProvider.record;
+			_activeAccountId = healthActionModelDetailsProvider.activeAccount.accountId;
 		}
 
 		public function get hasBleeding():Boolean
@@ -86,6 +115,35 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		public function set showFeminineProductsNum(value:Boolean):void
 		{
 			_showFeminineProductsNum = value;
+		}
+
+		public function saveVaginalBleedingEvaluation():void
+		{
+			var adherenceResults:Vector.<DocumentBase> = new Vector.<DocumentBase>();
+
+			var healthActionResult:HealthActionResult = new HealthActionResult();
+
+			healthActionResult.name = new CodedValue(null, null, null, VAGINAL_BLEEDING_EVALUATION_RESULT);
+
+
+			var actions:ArrayCollection = new ArrayCollection();
+			var action:ActionGroupResult = new ActionGroupResult();
+			var measurements:ArrayCollection = new ArrayCollection();
+
+			var hasRednessMeasurement:Measurement = new Measurement();
+			hasRednessMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has redness");
+			hasRednessMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasRednessMeasurement.value = new ValueAndUnit(null, null, hasBleeding.toString());
+			measurements.addItem(hasRednessMeasurement);
+
+			action.measurements = measurements;
+			actions.addItem(action);
+			healthActionResult.actions = actions;
+
+			adherenceResults.push(healthActionResult);
+
+			_scheduleItemOccurrence.createAdherenceItem(adherenceResults, _record, _activeAccountId, true);
+			_record.saveAllChanges();
 		}
 	}
 }

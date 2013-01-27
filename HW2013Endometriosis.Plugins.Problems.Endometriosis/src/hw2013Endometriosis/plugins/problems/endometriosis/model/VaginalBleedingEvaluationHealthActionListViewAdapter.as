@@ -68,7 +68,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get name():String
 		{
-			return "Vaginal Bleeding Evalution";
+			return "Vaginal Bleeding Evaluation";
 		}
 
 		public function get description():String

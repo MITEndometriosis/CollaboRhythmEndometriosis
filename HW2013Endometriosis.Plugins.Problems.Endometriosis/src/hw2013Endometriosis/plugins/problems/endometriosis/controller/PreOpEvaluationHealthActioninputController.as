@@ -11,23 +11,22 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import flash.net.URLVariables;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.PreOpEvaluationModel;
-
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.VaginalBleedingEvaluationModel;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PreOpEvaluationView;
 
 	import spark.components.ViewNavigator;
 
-
 	public class PreOpEvaluationHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
 	{
 		private var _viewNavigator:ViewNavigator;
-		private var _preOpEvaluationModel:PreOpEvaluationModel;
+		private var _model:PreOpEvaluationModel;
 
 		public function PreOpEvaluationHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
-																	healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
-																	scheduleCollectionsProvider:IScheduleCollectionsProvider,
-																	viewNavigator:ViewNavigator)
+																   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+																   scheduleCollectionsProvider:IScheduleCollectionsProvider,
+																   viewNavigator:ViewNavigator)
 		{
-			_preOpEvaluationModel = new PreOpEvaluationModel();
+			_model = new PreOpEvaluationModel();
 			_viewNavigator = viewNavigator
 		}
 
@@ -69,7 +68,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function get model():PreOpEvaluationModel
 		{
-			return _preOpEvaluationModel;
+			return _model;
+		}
+
+		public function set model(value:PreOpEvaluationModel):void
+		{
+			_model = value;
 		}
 	}
 }
