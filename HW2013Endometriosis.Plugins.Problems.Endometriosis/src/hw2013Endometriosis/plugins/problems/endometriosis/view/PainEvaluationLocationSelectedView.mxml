@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!---
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
+<tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
+					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
+					   title="PainEvaluationLocationSelected">
+	<fx:Script><![CDATA[
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+
+		[Bindable]
+		private var _controller:PainEvaluationHealthActionInputController;
+		private var _model:PainEvaluationModel;
+
+		override public function set data(value:Object):void
+		{
+			super.data = value;
+
+			_controller = value as PainEvaluationHealthActionInputController;
+			_model = _controller.model;
+
+		}
+
+		private function formItemDisplayHandler(location:String):Boolean
+		{
+			if (_controller)
+			{
+				if (location == "ShoulderFormItem")
+					return _controller.model.hasShoulderPain;
+				if (location == "AbdomenFormItem")
+					return _controller.model.hasAbdomenPain;
+				if (location == "PelvisFormItem")
+					return _controller.model.hasPelvisPain;
+				if (location == "FlankFormItem")
+					return _controller.model.hasFlankPain;
+				if (location == "OtherFormItem")
+					return _controller.model.hasOtherPain;
+			}
+			return false
+		}
+		]]></fx:Script>
+	<s:Panel title="Pain Evaluation">
+		<s:Label text="The following questions will guide you in evaluating your pain symptoms."/>
+		<s:Form skinClass="spark.skins.spark.FormSkin">
+			<s:VGroup>
+				<s:FormItem skinClass="spark.skins.spark.FormItemSkin" label="Shoulder Pain">
+					<s:HGroup>
+						<s:Label text="How would you describe your pain?"/>
+						<s:VGroup>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Sharp/Shooting"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"/>
+						</s:VGroup>
+					</s:HGroup>
+					<s:HGroup>
+						<s:Label text="How intense is the pain?"/>
+						<s:HSlider skinClass="spark.skins.spark.HSliderSkin" minimum="1" maximum="10" value="1"/>
+					</s:HGroup>
+					<s:VGroup>
+						<s:HGroup>
+							<s:Label
+									text="Are there any aggrevating factors? (Things that bring the pain on and/or make the pain worse?)"/>
+							<s:ToggleSwitch id="AggrevatingFactorSwitch"
+											skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
+						</s:HGroup>
+						<s:HGroup includeInLayout="{AggrevatingFactorSwitch.selected}">
+							<s:Label text="Please describe these factors."/>
+							<s:TextInput includeInLayout="{AlleviatingFactorSwitch.selected}" skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+						</s:HGroup>
+					</s:VGroup>
+					<s:VGroup>
+						<s:HGroup>
+							<s:Label
+									text="Are there any alleviating factors? (Things that get rid of the pain subside and/or make the pain lessen?)"/>
+							<s:ToggleSwitch id="AlleviatingFactorSwitch"
+											skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
+						</s:HGroup>
+						<s:HGroup includeInLayout="{AlleviatingFactorSwitch.selected}">
+							<s:Label text="Please describe these factors."/>
+							<s:TextInput includeInLayout="{AlleviatingFactorSwitch.selected}" skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+						</s:HGroup>
+					</s:VGroup>
+
+				</s:FormItem>
+			</s:VGroup>
+		</s:Form>
+
+
+	</s:Panel>
+</tablet:TabletViewBase>

@@ -19,7 +19,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 	public class PainEvaluationHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-		[Embed(source="/assets/images/PainEval.png")]
+		[Embed(source="/assets/images/Paindot.png")]
 		public var PainEvalImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;

@@ -14,7 +14,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PostOpEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PreOpEvaluationHealthActionInputController;
-	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
 
 	import spark.components.ViewNavigator;
 
@@ -41,7 +42,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 			if (healthAction.name == EndometriosisModel.VAGINAL_BLEEDING_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
 			{
-				return new VaginalBleedingHealthActionInputController(scheduleItemOccurrence,
+				return new VaginalBleedingEvaluationHealthActionInputController(scheduleItemOccurrence,
 						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
 			}
 
@@ -52,16 +53,16 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			}
 
 			if (healthAction.name == EndometriosisModel.POST_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
-						{
-							return new PostOpEvaluationHealthActionInputController(scheduleItemOccurrence,
-									healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
-						}
+			{
+				return new PostOpEvaluationHealthActionInputController(scheduleItemOccurrence,
+						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
+			}
 
 			if (healthAction.name == EndometriosisModel.PRE_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
-									{
-										return new PreOpEvaluationHealthActionInputController(scheduleItemOccurrence,
-												healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
-									}
+			{
+				return new PreOpEvaluationHealthActionInputController(scheduleItemOccurrence,
+						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
+			}
 
 
 			return currentHealthActionInputController;

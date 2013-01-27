@@ -29,7 +29,6 @@
 		[Bindable]
 		private var _controller:PreOpEvaluationHealthActionInputController;
 		private var _model:PreOpEvaluationModel;
-		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
 
 		override public function set data(value:Object):void
 		{

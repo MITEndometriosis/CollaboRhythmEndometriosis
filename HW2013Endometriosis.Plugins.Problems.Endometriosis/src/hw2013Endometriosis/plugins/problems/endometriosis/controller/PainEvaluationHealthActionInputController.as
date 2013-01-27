@@ -10,6 +10,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import flash.net.URLVariables;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationLocationSelectedView;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationView;
 
 	import spark.components.ViewNavigator;
@@ -76,6 +77,36 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function updateHasPain(value:Boolean):void
 		{
 			_painEvaluationModel.hasPain = value;
+		}
+
+		public function updateHasShoulderPain(selected:Boolean):void
+		{
+			_painEvaluationModel.hasShoulderPain = selected
+		}
+
+		public function updateHasAbdomenPain(selected:Boolean):void
+		{
+			_painEvaluationModel.hasAbdomenPain = selected
+		}
+
+		public function updateHasPelvisPain(selected:Boolean):void
+		{
+			_painEvaluationModel.hasPelvisPain = selected
+		}
+
+		public function updateHasFlankPain(selected:Boolean):void
+		{
+			_painEvaluationModel.hasFlankPain = selected
+		}
+
+		public function updateHasOtherPain(selected:Boolean):void
+		{
+			_painEvaluationModel.hasOtherPain = selected
+		}
+
+		public function changeScreens():void
+		{
+			_viewNavigator.pushView(PainEvaluationLocationSelectedView, this)
 		}
 	}
 }

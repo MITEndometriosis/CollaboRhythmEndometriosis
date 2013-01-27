@@ -20,103 +20,43 @@
 	<LoadableIndivoDocument>
 		<document>
 			<HealthActionPlan xmlns="http://indivo.org/vocab/xml/documents/healthActionPlan#"
+							  xmlns:indivo="http://indivo.org/vocab/xml/documents#"
 							  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 				<name>Vaginal Bleeding Evaluation</name>
 				<planType>Prescribed</planType>
 				<plannedBy>jking@records.media.mit.edu</plannedBy>
-				<datePlanned>2013-01-01T09:00:00-12:00</datePlanned>
+				<datePlanned>2013-01-01T21:00:00Z</datePlanned>
 				<indication>Endometriosis</indication>
-				<instructions>Record vaginal bleeding daily for the first week and as needed for 6 weeks after operation.
+				<instructions>Record vaginal bleeding daily for the first week and as needed for 6 weeks after
+					operation.
 				</instructions>
-<!--
+				<system>CollaboRhythm</system>
 				<actions>
-					<action	xsi:type="ActionStep">
-						<position />
-						<stopConditions />
-						<targets />
-						<measurementPlans>
-							<measurementPlan>
-								<name type="http://measures.coded.values/" value="1">Has Bleeding</name>
-								<type type="http://measures.type.coded.values/" value="3">Systolic</type>
-								<aggregationFunction type="http://aggregation.coded.values/">avg</aggregationFunction>
-							</measurementPlan>
-							<measurementPlan>
-								<name type="http://measures.coded.values/" value="1">Color</name>
-								<type type="http://measures.type.coded.values/" value="3">D</type>
-								<aggregationFunction type="http://aggregation.coded.values/">avg</aggregationFunction>
-							</measurementPlan>
-							<measurementPlan>
-								<name type="http://measures.coded.values/" value="1">Blood Clots</name>
-								<type/>
-								<aggregationFunction type="http://aggregation.coded.values/">avg</aggregationFunction>
-							</measurementPlan>
-							<measurementPlan>
-								<name type="http://measures.coded.values/" value="1">Size of Blood Clots</name>
-								<type type="http://measures.type.coded.values/" value="3">Systolic</type>
-								<aggregationFunction type="http://aggregation.coded.values/">avg</aggregationFunction>
-							</measurementPlan>
-							<measurementPlan>
-								<name type="http://measures.coded.values/" value="1">Feminine Products</name>
-								<type type="http://measures.type.coded.values/" value="3">Diastolic</type>
-								<aggregationFunction type="http://aggregation.coded.values/">avg</aggregationFunction>
-							</measurementPlan>
-							<measurementPlan>
-								<name type="http://measures.coded.values/" value="1">Number Used in 24 Hours</name>
-								<type/>
-								<aggregationFunction type="http://aggregation.coded.values/">avg</aggregationFunction>
-							</measurementPlan>
-						</measurementPlans>
-
-						<devicePlans/>
-						<medicationPlans />
-
-						<name type="http://actions.repository/" value="1">Evaluate vaginal bleeding level</name>
-						<type type="http://actions.repository.type/" value="1">Vaginal Bleeding</type>
-						<additionalDetails/>
-						<instructions>Fill out evaluation form</instructions>
+					<action xsi:type="ActionStep">
+						<name>Evaluate</name>
+						<type>Evaluate</type>
 					</action>
-				</actions>-->
+				</actions>
 			</HealthActionPlan>
 		</document>
 		<relatesTo>
 			<relation type="healthActionSchedule">
 				<LoadableIndivoDocument>
 					<document>
-						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"
-											  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#">
 							<name>Vaginal Bleeding Evaluation</name>
 							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
-							<dateScheduled>2013-01-01T09:00:00-04:00</dateScheduled>
-							<dateStart>2013-01-01TT09:00:00Z</dateStart>
-							<dateEnd>2013-01-01TT13:00:00Z</dateEnd>
+							<dateScheduled>2013-01-01T13:00:00Z</dateScheduled>
+							<dateStart>2013-01-01T09:00:00Z</dateStart>
+							<dateEnd>2013-01-01T13:00:00Z</dateEnd>
 							<recurrenceRule>
 								<frequency>DAILY</frequency>
 								<count>40</count>
 							</recurrenceRule>
 						</HealthActionSchedule>
 					</document>
-
 				</LoadableIndivoDocument>
 			</relation>
-			<!--<relation type="healthActionSchedule">-->
-							<!--<LoadableIndivoDocument>-->
-								<!--<document>-->
-									<!--<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"-->
-														  <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-->
-										<!--<name>Bleeding Evaluation Week 2-6</name>-->
-										<!--<scheduledBy>jking@records.media.mit.edu</scheduledBy>-->
-										<!--<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>-->
-										<!--<dateStart>2013-01-08T9:00:00Z</dateStart>-->
-										<!--<dateEnd>2013-01-08T12:00:00Z</dateEnd>-->
-										<!--<recurrenceRule>-->
-											<!--<frequency>DAILY</frequency>-->
-											<!--<count>7</count>-->
-										<!--</recurrenceRule>-->
-									<!--</HealthActionSchedule>-->
-								<!--</document>-->
-
-							<!--</LoadableIndivoDocument>-->
-						<!--</relation>-->
 		</relatesTo>
 	</LoadableIndivoDocument>
 </IndivoDocuments>

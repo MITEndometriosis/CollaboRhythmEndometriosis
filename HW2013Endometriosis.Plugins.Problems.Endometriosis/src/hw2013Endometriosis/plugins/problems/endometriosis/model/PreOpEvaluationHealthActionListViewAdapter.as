@@ -20,18 +20,18 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import spark.components.Image;
 	import spark.skins.spark.ImageSkin;
 
-	public class PostOpHealthActionListViewAdapter implements IHealthActionListViewAdapter
+	public class PreOpEvaluationHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-		[Embed(source="/assets/images/star.png")]
+		[Embed(source="/assets/images/questionnaire.png")]
 		public var starImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;
 
-		private var _postOpEvaluationHealthAction:HealthActionBase;
+		private var _preOpEvaluationHealthAction:HealthActionBase;
 		private var _model:HealthActionListViewModelBase;
 		private var _controller:HealthActionListViewControllerBase;
 
-		public function PostOpHealthActionListViewAdapter(scheduleItemOccurrence:ScheduleItemOccurrence,
+		public function PreOpEvaluationHealthActionListViewAdapter(scheduleItemOccurrence:ScheduleItemOccurrence,
 														  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider)
 		{
 			if (scheduleItemOccurrence)
@@ -39,7 +39,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 				_scheduleItemOccurrence = scheduleItemOccurrence;
 				_healthActionSchedule = scheduleItemOccurrence.scheduleItem as HealthActionSchedule;
 
-				_postOpEvaluationHealthAction = new HealthActionBase(EndometriosisModel.POST_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE,
+				_preOpEvaluationHealthAction = new HealthActionBase(EndometriosisModel.PRE_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE,
 						_healthActionSchedule.name.text);
 
 				_model = new HealthActionListViewModelBase(scheduleItemOccurrence, healthActionModelDetailsProvider);
@@ -48,16 +48,16 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get healthAction():HealthActionBase
 		{
-			return _postOpEvaluationHealthAction;
+			return _preOpEvaluationHealthAction;
 		}
 
 		public function createImage():Image
 		{
-			var postOpEvaluationImage:Image = new Image();
-			postOpEvaluationImage.setStyle("skinClass", ImageSkin);
-			postOpEvaluationImage.source = starImageClass;
+			var preOpEvaluationImage:Image = new Image();
+			preOpEvaluationImage.setStyle("skinClass", ImageSkin);
+			preOpEvaluationImage.source = starImageClass;
 
-			return postOpEvaluationImage;
+			return preOpEvaluationImage;
 		}
 
 		public function createCustomView():IVisualElement
@@ -67,7 +67,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get name():String
 		{
-			return "Post-Op Evaluation";
+			return "Pre-Op Evaluation";
 		}
 
 		public function get description():String

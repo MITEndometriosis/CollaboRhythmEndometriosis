@@ -4,6 +4,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionInputController;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
+	import collaboRhythm.shared.model.healthRecord.CodedValue;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 
 	import flash.events.MouseEvent;
@@ -16,18 +17,17 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 	import spark.components.ViewNavigator;
 
-
 	public class PostOpEvaluationHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
 	{
 		private var _viewNavigator:ViewNavigator;
-		private var _postOpEvaluationModel:PostOpEvaluationModel;
+		private var _model:PostOpEvaluationModel;
 
 		public function PostOpEvaluationHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
 																	  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
 																	  scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																	  viewNavigator:ViewNavigator)
 		{
-			_postOpEvaluationModel = new PostOpEvaluationModel();
+			_model = new PostOpEvaluationModel();
 			_viewNavigator = viewNavigator
 		}
 
@@ -69,7 +69,47 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function get model():PostOpEvaluationModel
 		{
-			return _postOpEvaluationModel;
+			return _model;
+		}
+
+		public function set model(value:PostOpEvaluationModel):void
+		{
+			_model = value;
+		}
+
+		public function updateCanUrinate(value:Boolean):void
+		{
+			_model.canUrinate = value;
+		}
+
+		public function updateUrinationPain(value:Boolean):void
+		{
+			_model.hasUrinationPain = value;
+		}
+
+		public function updateHasNausea(value:Boolean):void
+		{
+			_model.hasNausea = value;
+		}
+
+		public function updateHasVomited(value:Boolean):void
+		{
+			_model.hasVomited = value;
+		}
+
+		public function updateHasAppetite(value:Boolean):void
+		{
+			_model.hasAppetite = value;
+		}
+
+		public function updateHasBM(value:Boolean):void
+		{
+			_model.hasBM = value;
+		}
+
+		public function updateHasPassedGas(value:Boolean):void
+		{
+			_model.hasPassedGas = value;
 		}
 	}
 }
