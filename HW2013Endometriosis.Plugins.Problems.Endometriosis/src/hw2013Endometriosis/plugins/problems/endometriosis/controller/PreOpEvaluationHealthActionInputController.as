@@ -20,6 +20,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	{
 		private var _viewNavigator:ViewNavigator;
 		private var _model:PreOpEvaluationModel;
+//		SDJFLSDFLDSKJ
 
 		public function PreOpEvaluationHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
 																   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
