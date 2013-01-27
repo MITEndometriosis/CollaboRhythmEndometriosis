@@ -4,6 +4,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionInputController;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
+	import collaboRhythm.plugins.schedule.shared.view.ScheduledHealthActionsClockIconView;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 
 	import flash.events.MouseEvent;
@@ -11,6 +12,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import flash.net.URLVariables;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.IncisionEvaluationModel;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.EndometriosisView;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.IncisionEvaluationView;
 
@@ -109,6 +111,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function saveIncisionEvalution():void
 		{
 			_model.saveIncisionEvaluation();
+			_viewNavigator.popView();
+
 		}
 
 	}

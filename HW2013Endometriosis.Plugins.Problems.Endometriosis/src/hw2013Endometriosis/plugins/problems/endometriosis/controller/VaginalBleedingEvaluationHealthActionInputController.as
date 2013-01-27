@@ -29,7 +29,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 																			 scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																			 viewNavigator:ViewNavigator)
 		{
-			_model = new VaginalBleedingEvaluationModel();
+			_model = new VaginalBleedingEvaluationModel(scheduleItemOccurrence, healthActionModelDetailsProvider,
+					scheduleCollectionsProvider);
 			_viewNavigator = viewNavigator
 		}
 
@@ -85,15 +86,45 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			_model.hasBleeding = value;
 		}
 
+		public function updateBloodColor(text:String):void
+		{
+			_model.bloodColor = text;
+		}
 
 		public function updateHasBloodClots(value:Boolean):void
 		{
 			_model.hasBloodClots = value;
 		}
 
+		public function updateBloodClotSize(text:String):void
+		{
+			_model.bloodClotSize = text;
+		}
+
 		public function updateUseFeminineProducts(value:Boolean):void
 		{
 			_model.useFeminineProducts = value;
+		}
+
+		public function updateFeminineProductType(text:String):void
+		{
+			_model.feminineProductsType = text;
+		}
+
+		public function updateFeminineProductNum(text:String):void
+		{
+			_model.feminineProductsNum = text;
+		}
+
+		public function updateHasSpotting(value:Boolean):void
+		{
+			_model.hasSpotting = value;
+		}
+
+		public function saveVaginalBleedingEvalution():void
+		{
+			_model.saveVaginalBleedingEvaluation();
+			_viewNavigator.popView();
 		}
 	}
 }

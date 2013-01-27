@@ -24,12 +24,7 @@
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 
-		import mx.collections.ArrayCollection;
-
-		import mx.collections.ArrayList;
-		import mx.core.FlexBitmap;
-
-		import spark.components.Button;
+		import mx.controls.Button;
 
 		[Bindable]
 		private var _controller:PainEvaluationHealthActionInputController;
@@ -45,25 +40,35 @@
 
 		}
 
-		private function painToggleSwitchChangeHandler():void
+		private function painToggleSwitchChangeHandler(event:Event):void
 		{
 			if (_controller)
 			{
 				_controller.updateHasPain(PainToggleSwitch.selected);
-//				var locationBitmapData:BitmapData;
-//				var locationBitMapImage:Bitmap;
-//				locationBitMapImage = _model.createLocationBitmapImage();
-//				locationBitmapData = BitmapData(locationBitMapImage);
-//				createHitArea(locationBitmapData);
+//
 			}
 
 		}
 
-		private function painLocationHandler():void
+		private function painLocationButtonHandler(event:Event):void
 		{
-			if (_model)
+			if (_controller)
 			{
-				ShoulderButton.visible = _model.hasPain
+
+				_controller.updateHasShoulderPain(ShoulderButton.selected);
+				_controller.updateHasAbdomenPain(AbdomenButton.selected);
+				_controller.updateHasPelvisPain(PelvisButton.selected);
+				_controller.updateHasFlankPain(FlankButton.selected);
+				_controller.updateHasOtherPain(OtherButton.selected)
+			}
+		}
+
+		private function nextButtonHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.changeScreens()
+
 			}
 		}
 
@@ -96,7 +101,7 @@
 
 		<Label id="PainTFLabel" text="Have you been experiencing pain today?"/>
 		<ToggleSwitch id="PainToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
-						change="painToggleSwitchChangeHandler()"
+						change="painToggleSwitchChangeHandler(event)"
 						accentColor="0x9370db"/>
 		<Form id="PainForm" skinClass="spark.skins.spark.FormSkin" visible="{PainToggleSwitch.selected}">
 
@@ -108,15 +113,22 @@
 				<FormItem>
 					<VGroup>
 						<ToggleButton id="ShoulderButton" label="Shoulder"
-								  skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true" chromeColor="0x9370db"/>
+								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db" />
 						<ToggleButton id="AbdomenButton" label="Abdomen"
-								  skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true" chromeColor="0x9370db"/>
+								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
 						<ToggleButton id="PelvisButton" label="Pelvis"
-								  skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true" chromeColor="0x9370db"/>
-						<ToggleButton id="OtherButton" label="Other" skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true" chromeColor="0x9370db"/>
-						<ToggleButton id="FlankButton" label="Flank" skinClass="spark.skins.mobile.ButtonSkin" stickyHighlighting="true" chromeColor="0x9370db"/>
+								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
+						<ToggleButton id="OtherButton" label="Other"
+									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
+						<ToggleButton id="FlankButton" label="Flank"
+									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
+						<Button id="NextButton" label="Next" click="nextButtonHandler(event)" skinClass="spark.skins.mobile.ButtonSkin" />
+
+
+
 					</VGroup>
 				</FormItem>
+
 
 				<Image
 						source="C:\Users\NURSEN\Documents\GitRepositories\CollaboRhythmEndometriosis\HW2013Endometriosis.Plugins.Problems.Endometriosis\src\assets\images\PainLocation.png"/>
