@@ -23,7 +23,7 @@
 							  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 				<name>Incision Evaluation</name>
 				<planType>Prescribed</planType>
-				<plannedBy>jking@records.media.mit.edu</plannedBy>
+				<plannedBy>ppeterson@records.media.mit.edu</plannedBy>
 				<datePlanned>2013-01-01T09:00:00-12:00</datePlanned>
 				<indication>Endometriosis</indication>
 				<instructions>Examine your incisions daily and report any worrisome signs.
@@ -37,7 +37,7 @@
 						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#"
 											  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 							<name>Incision Evaluation</name>
-							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
+							<scheduledBy>ppeterson@records.media.mit.edu</scheduledBy>
 							<dateScheduled>2013-01-01T09:00:00-12:00</dateScheduled>
 							<dateStart>2013-01-01T09:00:00Z</dateStart>
 							<dateEnd>2013-01-01T13:00:00Z</dateEnd>

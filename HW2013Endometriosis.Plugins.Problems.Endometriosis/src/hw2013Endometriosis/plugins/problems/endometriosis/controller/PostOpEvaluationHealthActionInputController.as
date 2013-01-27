@@ -111,5 +111,15 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 			_model.hasPassedGas = value;
 		}
+
+		public function updateTemperatureReading(text:String):void
+		{
+			_model.temperatureReading = text;
+		}
+
+		public function savePostOpEvaluation():void
+		{
+			_model.savePostOpEvaluation();
+		}
 	}
 }

@@ -101,11 +101,11 @@
 			</s:FormItem>
 
 			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
-				<s:Button label="Save"
+				<s:Button label="Save" id="incisionEvaluationSaveButton"
 						  width="100"
 						  skinClass="spark.skins.mobile.ButtonSkin"
 						  chromeColor="0x9370db"
-						  click="saveButton_clickHandler(event)"/>
+						  click="incisionEvaluationSaveButton_clickHandler(event)"/>
 			</s:FormItem>
 
 		</s:Form>
@@ -146,6 +146,14 @@
 			}
 		}
 
+		private function rednessWidthTextInput_changeHandler(event:TextOperationEvent):void
+		{
+			if (_controller)
+			{
+				_controller.updateRednessWidth(rednessWidthTextInput.text);
+			}
+		}
+
 		private function tendernessIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
 			if (_controller)
@@ -178,18 +186,11 @@
 			}
 		}
 
-		private function saveButton_clickHandler(event:MouseEvent):void
+		private function incisionEvaluationSaveButton_clickHandler(event:MouseEvent):void
 		{
 			_controller.saveIncisionEvalution();
 		}
 
-		private function rednessWidthTextInput_changeHandler(event:TextOperationEvent):void
-		{
-			if (_controller)
-			{
-				_controller.updateRednessWidth(rednessWidthTextInput.text);
-			}
-		}
 		]]></fx:Script>
 
 
