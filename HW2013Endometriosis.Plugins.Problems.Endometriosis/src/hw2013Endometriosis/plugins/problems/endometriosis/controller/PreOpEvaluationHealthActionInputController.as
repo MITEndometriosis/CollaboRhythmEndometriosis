@@ -16,6 +16,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 	import spark.components.ViewNavigator;
 
+	/**
+	 * Input controller for pre-operative evaluation
+	 */
 	public class PreOpEvaluationHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
 	{
 		private var _viewNavigator:ViewNavigator;
