@@ -35,8 +35,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _activeAccountId:String;
 
 		public function VaginalBleedingEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
-														healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
-														scheduleCollectionsProvider:IScheduleCollectionsProvider)
+													   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+													   scheduleCollectionsProvider:IScheduleCollectionsProvider)
 		{
 			_scheduleItemOccurrence = scheduleItemOccurrence;
 			_record = healthActionModelDetailsProvider.record;
@@ -124,17 +124,26 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			var healthActionResult:HealthActionResult = new HealthActionResult();
 
 			healthActionResult.name = new CodedValue(null, null, null, VAGINAL_BLEEDING_EVALUATION_RESULT);
+			healthActionResult.planType = String("prescribed");
+			healthActionResult.reportedBy = String("ppeterson@records.mit.edu");
+			healthActionResult.dateReported = new Date();
 
 
 			var actions:ArrayCollection = new ArrayCollection();
 			var action:ActionGroupResult = new ActionGroupResult();
 			var measurements:ArrayCollection = new ArrayCollection();
 
-			var hasRednessMeasurement:Measurement = new Measurement();
-			hasRednessMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has redness");
-			hasRednessMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasRednessMeasurement.value = new ValueAndUnit(null, null, hasBleeding.toString());
-			measurements.addItem(hasRednessMeasurement);
+			var hasBleedingMeasurement:Measurement = new Measurement();
+			hasBleedingMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has redness");
+			hasBleedingMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasBleedingMeasurement.value = new ValueAndUnit(null, null, hasBleeding.toString());
+			measurements.addItem(hasBleedingMeasurement);
+
+			var bloodColorMeasurement:Measurement = new Measurement();
+			hasBleedingMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "blood color");
+			hasBleedingMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			hasBleedingMeasurement.value = new ValueAndUnit(null, null, hasBleeding.toString());
+			measurements.addItem(hasBleedingMeasurement);
 
 			action.measurements = measurements;
 			actions.addItem(action);

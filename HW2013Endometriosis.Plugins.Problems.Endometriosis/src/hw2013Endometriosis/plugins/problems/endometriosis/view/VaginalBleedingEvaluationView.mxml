@@ -262,7 +262,8 @@
 				<s:Button label="Save"
 						  width="100"
 						  skinClass="spark.skins.mobile.ButtonSkin"
-						  chromeColor="0x9370db"/>
+						  chromeColor="0x9370db"
+						  click="saveButton_clickHandler(event)"/>/>
 			</s:FormItem>
 		</s:Form>
 	</s:Panel>
