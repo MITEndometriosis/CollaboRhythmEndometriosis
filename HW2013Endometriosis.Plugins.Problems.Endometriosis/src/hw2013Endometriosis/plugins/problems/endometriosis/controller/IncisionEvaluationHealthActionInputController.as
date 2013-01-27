@@ -81,6 +81,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			_model.hasRedness = value;
 		}
 
+		public function updateRednessWidth(text:String):void
+		{
+			_model.rednessWidth = text;
+		}
+
 		public function updateHasTenderness(value:Boolean):void
 		{
 			_model.hasTenderness = value;
@@ -91,14 +96,20 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			_model.hasDischarge = value;
 		}
 
+		public function updateHasDischargePuss(value:Boolean):void
+		{
+			_model.hasDischargePuss = value;
+		}
+
+		public function updateHasDischargeBlood(value:Boolean):void
+		{
+			_model.hasDischargeBlood = value;
+		}
+
 		public function saveIncisionEvalution():void
 		{
 			_model.saveIncisionEvaluation();
 		}
 
-		public function updateRednessWidth(text:String):void
-		{
-			_model.rednessWidth = text;
-		}
 	}
 }

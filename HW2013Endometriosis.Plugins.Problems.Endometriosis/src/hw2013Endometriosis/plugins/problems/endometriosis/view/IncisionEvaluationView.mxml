@@ -43,7 +43,8 @@
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem id="rednessWidthFormItem" label="How wide is the redness?" visible="{rednessIndicatorToggleSwitch.selected}"
+			<s:FormItem id="rednessWidthFormItem" label="How wide is the redness?"
+						visible="{rednessIndicatorToggleSwitch.selected}"
 						height="0"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
@@ -92,10 +93,10 @@
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:HGroup>
-					<s:CheckBox id="dischargePussCheckBox" label="Puss" skinClass="spark.skins.spark.CheckBoxSkin"
-								change="dischargePussCheckBox_changeHandler(event)"/>
-					<s:CheckBox id="dischargeBloodCheckBox" label="Blood" skinClass="spark.skins.spark.CheckBoxSkin"
-								change="dischargeBloodCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="hasDischargePussCheckBox" label="Puss" skinClass="spark.skins.spark.CheckBoxSkin"
+								change="hasDischargePussCheckBox_changeHandler(event)"/>
+					<s:CheckBox id="hasDischargeBloodCheckBox" label="Blood" skinClass="spark.skins.spark.CheckBoxSkin"
+								change="hasDischargeBloodCheckBox_changeHandler(event)"/>
 				</s:HGroup>
 			</s:FormItem>
 
@@ -161,12 +162,20 @@
 			}
 		}
 
-		private function dischargePussCheckBox_changeHandler(event:Event):void
+		private function hasDischargePussCheckBox_changeHandler(event:Event):void
 		{
+			if (_controller)
+			{
+				_controller.updateHasDischargePuss(hasDischargePussCheckBox.selected);
+			}
 		}
 
-		private function dischargeBloodCheckBox_changeHandler(event:Event):void
+		private function hasDischargeBloodCheckBox_changeHandler(event:Event):void
 		{
+			if (_controller)
+			{
+				_controller.updateHasDischargeBlood(hasDischargeBloodCheckBox.selected);
+			}
 		}
 
 		private function saveButton_clickHandler(event:MouseEvent):void
