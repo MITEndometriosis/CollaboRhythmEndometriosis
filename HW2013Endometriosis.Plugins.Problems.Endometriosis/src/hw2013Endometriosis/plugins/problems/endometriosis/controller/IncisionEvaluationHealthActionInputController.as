@@ -95,5 +95,10 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 			_model.saveIncisionEvaluation();
 		}
+
+		public function updateRednessWidth(text:String):void
+		{
+			_model.rednessWidth = text;
+		}
 	}
 }

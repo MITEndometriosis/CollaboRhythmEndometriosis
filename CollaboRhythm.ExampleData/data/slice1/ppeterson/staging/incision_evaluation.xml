@@ -101,18 +101,6 @@
 																</measurement>
 																<measurement>
 																	<name type="http://measures.coded.values/"
-																		  value="1">wound height
-																	</name>
-																	<type type="http://www.w3.org/2001/XMLSchema"
-																		  value="xs:float">xs:float
-																	</type>
-																	<value>
-																		<indivo:textValue>2</indivo:textValue>
-																		<indivo:unit>cm</indivo:unit>
-																	</value>
-																</measurement>
-																<measurement>
-																	<name type="http://measures.coded.values/"
 																		  value="1">has tenderness
 																	</name>
 																	<type type="http://www.w3.org/2001/XMLSchema"

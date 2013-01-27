@@ -43,14 +43,21 @@
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem label="How wide is the redness?" visible="{rednessIndicatorToggleSwitch.selected}"
-						includeInLayout="{rednessIndicatorToggleSwitch.selected}"
+			<s:FormItem id="rednessWidthFormItem" label="How wide is the redness?" visible="{rednessIndicatorToggleSwitch.selected}"
+						height="0"
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
-				<s:HGroup>
+				<s:showEffect>
+					<s:Resize heightTo="{rednessWidthHGroup.height + 20}"/>
+				</s:showEffect>
+				<s:hideEffect>
+					<s:Resize heightTo="0"/>
+				</s:hideEffect>
+				<s:HGroup id="rednessWidthHGroup" verticalAlign="baseline">
 					<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
-								 textAlign="right" restrict="0-9." softKeyboardType="number"/>
-					<s:Label text="mm" alignmentBaseline="ideographicBottom"/>
+								 textAlign="right" restrict="0-9." softKeyboardType="number"
+								 change="rednessWidthTextInput_changeHandler(event)"/>
+					<s:Label text="mm"/>
 				</s:HGroup>
 			</s:FormItem>
 
@@ -97,7 +104,7 @@
 						  width="100"
 						  skinClass="spark.skins.mobile.ButtonSkin"
 						  chromeColor="0x9370db"
-						click="saveButton_clickHandler(event)"/>
+						  click="saveButton_clickHandler(event)"/>
 			</s:FormItem>
 
 		</s:Form>
@@ -114,6 +121,8 @@
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.IncisionEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.IncisionEvaluationModel;
+
+		import spark.events.TextOperationEvent;
 
 		[Bindable]
 		private var _controller:IncisionEvaluationHealthActionInputController;
@@ -163,6 +172,14 @@
 		private function saveButton_clickHandler(event:MouseEvent):void
 		{
 			_controller.saveIncisionEvalution();
+		}
+
+		private function rednessWidthTextInput_changeHandler(event:TextOperationEvent):void
+		{
+			if (_controller)
+			{
+				_controller.updateRednessWidth(rednessWidthTextInput.text);
+			}
 		}
 		]]></fx:Script>
 

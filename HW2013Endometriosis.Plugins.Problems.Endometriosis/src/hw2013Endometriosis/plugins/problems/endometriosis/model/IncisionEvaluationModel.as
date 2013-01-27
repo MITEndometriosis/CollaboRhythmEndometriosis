@@ -11,7 +11,10 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.ActionGroupResult;
 	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.Measurement;
 
+	import flashx.textLayout.factory.StringTextLineFactory;
+
 	import mx.collections.ArrayCollection;
+	import mx.skins.halo.DateChooserMonthArrowSkin;
 
 	[Bindable]
 	public class IncisionEvaluationModel
@@ -32,6 +35,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _hasDischarge:Boolean;
 		private var _showDischargeDetails:Boolean;
 		private var _activeAccountId:String;
+		private var _rednessWidth:String;
+		private var _showRednessWidth:String;
 
 		public function IncisionEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
 												healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
@@ -105,7 +110,26 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			_showDischargeDetails = value;
 		}
 
+		public function get rednessWidth():String
+		{
+			return _rednessWidth;
+		}
 
+		public function set rednessWidth(value:String):void
+		{
+			_rednessWidth = value;
+			showRednessWidth = rednessWidth;
+		}
+
+		public function get showRednessWidth():String
+		{
+			return _showRednessWidth;
+		}
+
+		public function set showRednessWidth(value:String):void
+		{
+			_showRednessWidth = value;
+		}
 
 
 		public function saveIncisionEvaluation():void
@@ -115,6 +139,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			var healthActionResult:HealthActionResult = new HealthActionResult();
 
 			healthActionResult.name = new CodedValue(null, null, null, INCISION_EVALUATION_RESULT);
+			healthActionResult.planType = String("prescribed");
+			healthActionResult.reportedBy = String("ppeterson@records.media.mit.edu");
+//			healthActionResult.dateReported = new Date(_record.);
 
 
 			var actions:ArrayCollection = new ArrayCollection();
@@ -127,6 +154,18 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			hasRednessMeasurement.value = new ValueAndUnit(null, null, hasRedness.toString());
 			measurements.addItem(hasRednessMeasurement);
 
+			var woundWidthMeasurement:Measurement = new Measurement();
+			woundWidthMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "wound width");
+			woundWidthMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
+			woundWidthMeasurement.value = new ValueAndUnit(null, CodedValue("cm"), rednessWidth);
+			measurements.addItem(woundWidthMeasurement);
+
+			var hasTendernessMeasurement:Measurement = new Measurement();
+			hasTendernessMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has tenderness");
+			hasTendernessMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasTendernessMeasurement.value = new ValueAndUnit(null, null, hasRedness.toString());
+			measurements.addItem(hasTendernessMeasurement);
+
 			action.measurements = measurements;
 			actions.addItem(action);
 			healthActionResult.actions = actions;
@@ -136,5 +175,6 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			_scheduleItemOccurrence.createAdherenceItem(adherenceResults, _record, _activeAccountId, true);
 			_record.saveAllChanges();
 		}
+
 	}
 }
