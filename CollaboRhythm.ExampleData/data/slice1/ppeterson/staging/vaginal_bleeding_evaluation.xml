@@ -114,7 +114,7 @@
 																</measurement>
 																<measurement>
 																	<name type="http://measures.coded.values/"
-																		  value="1">size of blood clots
+																		  value="1">blood clot size
 																	</name>
 																	<type type="http://www.w3.org/2001/XMLSchema"
 																		  value="xs:string">xs:string
@@ -125,7 +125,7 @@
 																</measurement>
 																<measurement>
 																	<name type="http://measures.coded.values/"
-																		  value="1">has discharge
+																		  value="1">use feminine products
 																	</name>
 																	<type type="http://www.w3.org/2001/XMLSchema"
 																		  value="xs:float">xs:boolean
@@ -150,10 +150,21 @@
 																		  value="1">number used in 24 hours
 																	</name>
 																	<type type="http://www.w3.org/2001/XMLSchema"
-																		  value="xs:int">xs:int
+																		  value="xs:float">xs:float
 																	</type>
 																	<value>
 																		<indivo:textValue>3</indivo:textValue>
+																	</value>
+																</measurement>
+																<measurement>
+																	<name type="http://measures.coded.values/"
+																		  value="1">spotting
+																	</name>
+																	<type type="http://www.w3.org/2001/XMLSchema"
+																		  value="xs:float">xs:boolean
+																	</type>
+																	<value>
+																		<indivo:textValue>false</indivo:textValue>
 																	</value>
 																</measurement>
 															</measurements>

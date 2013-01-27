@@ -4,6 +4,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionInputController;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
+	import collaboRhythm.plugins.schedule.shared.view.ScheduledHealthActionsClockIconView;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 
 	import flash.events.MouseEvent;
@@ -11,6 +12,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import flash.net.URLVariables;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.IncisionEvaluationModel;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.EndometriosisView;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.IncisionEvaluationView;
 
@@ -81,6 +83,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			_model.hasRedness = value;
 		}
 
+		public function updateRednessWidth(text:String):void
+		{
+			_model.rednessWidth = text;
+		}
+
 		public function updateHasTenderness(value:Boolean):void
 		{
 			_model.hasTenderness = value;
@@ -91,9 +98,22 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			_model.hasDischarge = value;
 		}
 
+		public function updateHasDischargePuss(value:Boolean):void
+		{
+			_model.hasDischargePuss = value;
+		}
+
+		public function updateHasDischargeBlood(value:Boolean):void
+		{
+			_model.hasDischargeBlood = value;
+		}
+
 		public function saveIncisionEvalution():void
 		{
 			_model.saveIncisionEvaluation();
+			_viewNavigator.popView();
+
 		}
+
 	}
 }

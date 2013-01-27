@@ -23,7 +23,8 @@
 
 	<fx:Declarations>
 
-
+		<s:RadioButtonGroup id="bloodColor" itemClick="bloodColor_eventHandler(event)"/>
+		<s:RadioButtonGroup id="bloodClotSize" itemClick="bloodClotSize_eventHandler(event);"/>
 	</fx:Declarations>
 
 
@@ -35,6 +36,10 @@
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
 
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.VaginalBleedingEvaluationModel;
+
+		import mx.events.ItemClickEvent;
+
+		import spark.events.TextOperationEvent;
 
 		[Bindable]
 		private var _controller:VaginalBleedingEvaluationHealthActionInputController;
@@ -60,29 +65,17 @@
 
 		}
 
-		private function redBloodCheckBox_changeHandler(event:Event):void
+		private function bloodColor_eventHandler(event:ItemClickEvent):void
 		{
-
+			if (event.currentTarget.selectedValue == "red")
+			{
+				_controller.updateBloodColor("Red");
+			}
+			else if (event.currentTarget.selectedValue == "brown")
+			{
+				_controller.updateBloodColor("Brown");
+			}
 		}
-
-		private function darkRedBloodCheckBox_changeHandler(event:Event):void
-		{
-
-		}
-
-		private function redBrownBloodCheckBox_changeHandler(event:Event):void
-		{
-
-		}
-
-		private function brownBloodCheckBox_changeHandler(event:Event):void
-		{
-
-		}
-
-		//		private function bleedingIndicatorHSlider_changeHandler(event:SliderEvent):void
-		//				{
-		//				}
 
 
 		private function bloodClotsIndicatorToggleSwitch_changeHandler(event:Event):void
@@ -92,13 +85,24 @@
 
 		}
 
-		private function bloodClotsSmallCheckBox_changeHandler(event:Event):void
+		private function bloodClotSize_eventHandler(event:ItemClickEvent):void
 		{
+			if (event.currentTarget.selectedValue == "Small")
+			{
+				_controller.updateBloodClotSize("Small")
+			}
+			else if (event.currentTarget.selectedValue == "Medium")
+			{
+				_controller.updateBloodClotSize("Medium")
+			}
+			else
+			//selectedValue=="large"
+			{
+				_controller.updateBloodClotSize("Large")
+			}
+
 		}
 
-		private function bloodClotsLargeCheckBox_changeHandler(event:Event):void
-		{
-		}
 
 		private function feminineProductsIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
@@ -106,24 +110,45 @@
 
 		}
 
-		private function feminineProductsPantilinerCheckBox_changeHandler(event:Event):void
+		private function feminineProductsCheckBox_eventHandler(event:Event):void
 		{
+			var feminineProductsUsed:String = "";
+			if (feminineProductsPantilinerCheckBox.selected == true)
+			{
+				feminineProductsUsed += "Pantiliner" + "\n";
+			}
+			if (feminineProductsMaxiPadCheckBox.selected == true)
+			{
+				feminineProductsUsed += "MaxiPad" + "\n";
+			}
+			if (feminineProductsTamponCheckBox.selected == true)
+			{
+				feminineProductsUsed += "TamponPad" + "\n";
+			}
+
+			if (_controller)
+			{
+				_controller.updateFeminineProductType(feminineProductsUsed);
+			}
+
 
 		}
 
-		private function feminineProductsMaxiPadCheckBox_changeHandler(event:Event):void
+
+		private function feminineProductNumTextInput_changeHandler(event:TextOperationEvent):void
 		{
-
-		}
-
-		private function feminineProductsTamponCheckBox_changeHandler(event:Event):void
-		{
-
+			if (_controller)
+			{
+				_controller.updateFeminineProductNum(feminineProductNumTextInput.text);
+			}
 		}
 
 		private function spottingFeminingProductsCheckBox_changeHandler(event:Event):void
 		{
-
+			if (_controller)
+			{
+				_controller.updateHasSpotting(hasSpottingCheckBox.selected);
+			}
 		}
 
 		private function saveButton_clickHandler(event:MouseEvent):void
@@ -131,6 +156,7 @@
 			_controller.saveVaginalBleedingEvalution();
 		}
 		]]>
+
 
 
 		</fx:Script>
@@ -176,13 +202,18 @@
 						backgroundColor="0xd3d3d3">
 
 				<s:HGroup>
-					<s:RadioButton id="redBloodCheckBox" label="Red" skinClass="spark.skins.spark.RadioButtonSkin"
+					<s:RadioButton id="redBloodButton"
+								   groupName="bloodColor"
+								   label="Red" value="red"
+								   skinClass="spark.skins.spark.RadioButtonSkin"
 								   color="red"
-								   click="redBloodCheckBox_changeHandler(event)"/>
+							/>
 
-					<s:RadioButton id="brownBloodCheckBox" label="Brown" skinClass="spark.skins.spark.RadioButtonSkin"
+					<s:RadioButton id="brownBloodButton"
+								   groupName="bloodColor"
+								   label="Brown" skinClass="spark.skins.spark.RadioButtonSkin"
 								   color="0xa52a2a"
-								   click="brownBloodCheckBox_changeHandler(event)"/>
+								   value="brown"/>
 				</s:HGroup>
 			</s:FormItem>
 
@@ -202,12 +233,18 @@
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:HGroup>
-					<s:RadioButton id="bloodClotsSmallCheckBox" label="Small"
-								   skinClass="spark.skins.spark.RadioButtonSkin"
-								   click="bloodClotsSmallCheckBox_changeHandler(event)"/>
-					<s:RadioButton id="feminineProductsLargeCheckBox" label="Large"
-								   skinClass="spark.skins.spark.RadioButtonSkin"
-								   click="bloodClotsLargeCheckBox_changeHandler(event)"/>
+					<s:RadioButton groupName="bloodClotSize"
+								   id="bloodClotsSmallCheckBox"
+								   value="Small" label="Small"
+								   skinClass="spark.skins.spark.RadioButtonSkin"/>
+					<s:RadioButton groupName="bloodClotSize"
+								   id="bloodClotsMediumCheckBox"
+								   value="Medium" label="Medium"
+								   skinClass="spark.skins.spark.RadioButtonSkin"/>
+					<s:RadioButton groupName="bloodClotSize"
+								   id="feminineProductsLargeCheckBox"
+								   value="Large" label="Large"
+								   skinClass="spark.skins.spark.RadioButtonSkin"/>
 				</s:HGroup>
 			</s:FormItem>
 
@@ -230,13 +267,14 @@
 				<s:HGroup variableColumnWidth="false" columnWidth="100">
 					<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
 								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="feminineProductsPantilinerCheckBox_changeHandler(event)"/>
+								click="feminineProductsCheckBox_eventHandler(event)"/>
 					<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
 								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="feminineProductsMaxiPadCheckBox_changeHandler(event)"/>
+								click="feminineProductsCheckBox_eventHandler(event)"/>
 					<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
 								skinClass="spark.skins.spark.CheckBoxSkin"
-								click="feminineProductsTamponCheckBox_changeHandler(event)"/>
+								click="feminineProductsCheckBox_eventHandler(event)"/>
+
 				</s:HGroup>
 			</s:FormItem>
 
@@ -246,11 +284,14 @@
 						skinClass="spark.skins.spark.FormItemSkin"
 						backgroundColor="0xd3d3d3">
 				<s:HGroup variableColumnWidth="false" columnWidth="75">
-					<s:TextInput width="50" skinClass="spark.skins.mobile.TextInputSkin"/>
+					<s:TextInput id="feminineProductNumTextInput"
+								 restrict="0-9" softKeyboardType="number"
+								 change="feminineProductNumTextInput_changeHandler(event)"
+								 width="50" skinClass="spark.skins.mobile.TextInputSkin"/>
 					<s:Label text="or"
 							 textAlign="center"
 							 alignmentBaseline="ideographicBottom"/>
-					<s:CheckBox id="spottingFeminineProductsCheckBox" label="spotting"
+					<s:CheckBox id="hasSpottingCheckBox" label="spotting"
 								skinClass="spark.skins.spark.CheckBoxSkin"
 								click="spottingFeminingProductsCheckBox_changeHandler(event)"/>
 				</s:HGroup>
@@ -263,7 +304,7 @@
 						  width="100"
 						  skinClass="spark.skins.mobile.ButtonSkin"
 						  chromeColor="0x9370db"
-						  click="saveButton_clickHandler(event)"/>/>
+						  click="saveButton_clickHandler(event)"/>
 			</s:FormItem>
 		</s:Form>
 	</s:Panel>
