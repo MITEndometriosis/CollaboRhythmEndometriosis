@@ -17,7 +17,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
         public var PELVIS:String = "Pelvis";
 	    public var FLANK: String = "Flank";
 	public var _OTHER: String = "";
-		public var SCREEN = SHOULDER;
+		public var HOME: String = "home"
+		public var SCREEN:String = HOME;
 
 
 		public function PainEvaluationModel()

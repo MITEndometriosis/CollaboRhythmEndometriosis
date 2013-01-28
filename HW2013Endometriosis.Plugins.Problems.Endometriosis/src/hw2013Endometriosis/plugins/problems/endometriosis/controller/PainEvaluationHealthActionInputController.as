@@ -118,11 +118,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function changeScreens():void
 		{
-			var viewList: Array = ["home",_painEvaluationModel.SHOULDER, _painEvaluationModel.ABDOMEN, _painEvaluationModel.PELVIS, _painEvaluationModel.FLANK, _painEvaluationModel.OTHER];
-			var painList: Array = [true, _painEvaluationModel.hasShoulderPain, _painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasFlankPain, _painEvaluationModel.hasOtherPain];
+			var viewList: Array = [_painEvaluationModel.HOME,_painEvaluationModel.SHOULDER, _painEvaluationModel.ABDOMEN, _painEvaluationModel.PELVIS, _painEvaluationModel.FLANK, _painEvaluationModel.OTHER];
+			var painList: Array = [false, _painEvaluationModel.hasShoulderPain, _painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasFlankPain, _painEvaluationModel.hasOtherPain];
 
 			_painEvaluationModel.SCREEN = viewList[viewList.indexOf(_painEvaluationModel.SCREEN) + 1];
-			if (_painEvaluationModel.SCREEN == "home")
+			if (_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
 			{
 				_viewNavigator.pushView(PainEvaluationView, this);
 			}
