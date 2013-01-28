@@ -1,5 +1,7 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.controller
 {
+	import avmplus.methodXml;
+
 	import collaboRhythm.plugins.schedule.shared.controller.HealthActionInputControllerBase;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionInputController;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
@@ -75,5 +77,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 			_model = value;
 		}
+
+
 	}
 }
