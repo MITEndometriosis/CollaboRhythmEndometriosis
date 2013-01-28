@@ -49,6 +49,13 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			_scheduleItemOccurrence = scheduleItemOccurrence;
 			_record = healthActionModelDetailsProvider.record;
 			_activeAccountId = healthActionModelDetailsProvider.activeAccount.accountId;
+
+			hasRedness = false;
+			rednessWidth = "0";
+			hasTenderness = false;
+			hasDischarge = false;
+			hasDischargePuss = false;
+			hasDischargeBlood = false;
 		}
 
 		public function get hasRedness():Boolean

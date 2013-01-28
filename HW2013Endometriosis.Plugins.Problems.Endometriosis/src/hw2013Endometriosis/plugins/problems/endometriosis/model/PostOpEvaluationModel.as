@@ -1,5 +1,7 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.model
 {
+	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
+	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
 	import collaboRhythm.shared.model.Record;
 	import collaboRhythm.shared.model.healthRecord.CodedValue;
 	import collaboRhythm.shared.model.healthRecord.DocumentBase;
@@ -42,8 +44,23 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _temperatureReading:String;
 		private var _showTemperatureReading:String;
 
-		public function PostOpEvaluationModel()
+		public function PostOpEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
+											  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+											  scheduleCollectionsProvider:IScheduleCollectionsProvider)
 		{
+			_scheduleItemOccurrence = scheduleItemOccurrence;
+			_record = healthActionModelDetailsProvider.record;
+			_activeAccountId = healthActionModelDetailsProvider.activeAccount.accountId;
+
+			canUrinate = false;
+			hasUrinationPain = false;
+			hasNausea = false;
+			hasVomited = false;
+			hasAppetite = false;
+			hasBM = false;
+			hasPassedGas = false;
+			temperatureReading = "0";
+
 		}
 
 		public function get canUrinate():Boolean

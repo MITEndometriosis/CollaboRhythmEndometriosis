@@ -27,7 +27,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 																	  scheduleCollectionsProvider:IScheduleCollectionsProvider,
 																	  viewNavigator:ViewNavigator)
 		{
-			_model = new PostOpEvaluationModel();
+			_model = new PostOpEvaluationModel(scheduleItemOccurrence, healthActionModelDetailsProvider, scheduleCollectionsProvider);
 			_viewNavigator = viewNavigator
 		}
 
@@ -120,6 +120,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function savePostOpEvaluation():void
 		{
 			_model.savePostOpEvaluation();
+			_viewNavigator.popView();
 		}
 	}
 }
