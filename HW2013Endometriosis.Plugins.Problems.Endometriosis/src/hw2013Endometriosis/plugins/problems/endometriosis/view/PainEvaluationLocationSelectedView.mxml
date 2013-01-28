@@ -27,6 +27,7 @@
 		[Bindable]
 		private var _controller:PainEvaluationHealthActionInputController;
 		private var _model:PainEvaluationModel;
+		private var BODY_PART:String;
 
 		override public function set data(value:Object):void
 		{
@@ -34,6 +35,7 @@
 
 			_controller = value as PainEvaluationHealthActionInputController;
 			_model = _controller.model;
+			BODY_PART = _model.SCREEN;
 
 		}
 
@@ -54,50 +56,73 @@
 			}
 			return false
 		}
+
+		private function nextButtonHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.changeScreens()
+			}
+		}
 		]]></fx:Script>
-	<s:Panel title="Pain Evaluation">
+	<s:Panel title="{BODY_PART} Pain Evaluation"
+			 backgroundColor="0x778899" borderColor="0x778899"
+				 width="1000"
+				 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
 		<s:Label text="The following questions will guide you in evaluating your pain symptoms."/>
-		<s:Form skinClass="spark.skins.spark.FormSkin">
+		<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xd3d3d3">
 			<s:VGroup>
-				<s:FormItem skinClass="spark.skins.spark.FormItemSkin" label="Shoulder Pain">
-					<s:HGroup>
-						<s:Label text="How would you describe your pain?"/>
+				<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin" >
+					<s:HGroup >
+						<s:Label text="How would you describe your {BODY_PART.toLowerCase()} pain?"/>
 						<s:VGroup>
 							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Sharp/Shooting"/>
 							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"/>
 							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"/>
 						</s:VGroup>
 					</s:HGroup>
-					<s:HGroup>
-						<s:Label text="How intense is the pain?"/>
+					<s:HGroup >
+						<s:Label text="How intense is the {BODY_PART.toLowerCase()} pain?"/>
 						<s:HSlider skinClass="spark.skins.spark.HSliderSkin" minimum="1" maximum="10" value="1"/>
 					</s:HGroup>
 					<s:VGroup>
-						<s:HGroup>
+						<s:HGroup >
 							<s:Label
-									text="Are there any aggrevating factors? (Things that bring the pain on and/or make the pain worse?)"/>
+									text="Are there any aggrevating factors? (Things that bring the {BODY_PART.toLowerCase()} pain on and/or make the pain worse?)"/>
 							<s:ToggleSwitch id="AggrevatingFactorSwitch"
-											skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
+											accentColor="0x9370db"
+											skinClass= "hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
 						</s:HGroup>
-						<s:HGroup includeInLayout="{AggrevatingFactorSwitch.selected}">
+						<s:HGroup includeInLayout="{AggrevatingFactorSwitch.selected}" variableColumnWidth="false" columnWidth="100">
 							<s:Label text="Please describe these factors."/>
-							<s:TextInput includeInLayout="{AlleviatingFactorSwitch.selected}" skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
-						</s:HGroup>
+							<s:TextInput visible="{AggrevatingFactorSwitch.selected}"
+										 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+						</s:HGroup >
 					</s:VGroup>
 					<s:VGroup>
-						<s:HGroup>
+						<s:HGroup >
 							<s:Label
-									text="Are there any alleviating factors? (Things that get rid of the pain subside and/or make the pain lessen?)"/>
+									text="Are there any alleviating factors? (Things that get rid of the {BODY_PART.toLowerCase()} pain subside and/or make the pain lessen?)"/>
 							<s:ToggleSwitch id="AlleviatingFactorSwitch"
-											skinClass="spark.skins.mobile.ToggleSwitchSkin"/>
+											accentColor="0x9370db"
+											skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
 						</s:HGroup>
-						<s:HGroup includeInLayout="{AlleviatingFactorSwitch.selected}">
+						<s:HGroup includeInLayout="{AlleviatingFactorSwitch.selected}" >
 							<s:Label text="Please describe these factors."/>
-							<s:TextInput includeInLayout="{AlleviatingFactorSwitch.selected}" skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+							<s:TextInput visible="{AlleviatingFactorSwitch.selected}"
+										 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="How would you describe the duration of your {BODY_PART.toLowerCase()} pain?"/>
+							<s:VGroup>
+								<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Constant"/>
+								<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Episodic"/>
+							</s:VGroup>
 						</s:HGroup>
 					</s:VGroup>
 
 				</s:FormItem>
+				<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)" skinClass="spark.skins.mobile.ButtonSkin" />
 			</s:VGroup>
 		</s:Form>
 
