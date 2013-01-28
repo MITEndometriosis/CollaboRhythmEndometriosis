@@ -1,28 +1,35 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!---
-  - Copyright 2013 John Moore, Scott Gilroy
-  -
-  - This file is part of CollaboRhythm.
-  -
-  - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
-  - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
-  - version.
-  -
-  - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
-  - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-  - details.
-  -
-  - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
-  - <http://www.gnu.org/licenses/>.
-  -->
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   title="PreOpEvaluation">
+
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PreOpEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PreOpEvaluationModel;
+
+		import mx.controls.Alert;
+
+		import spark.components.RadioButton;
+
 		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
 		import collaboRhythm.shared.collaboration.model.CollaborationModel;
 
@@ -30,16 +37,398 @@
 		private var _controller:PreOpEvaluationHealthActionInputController;
 		private var _model:PreOpEvaluationModel;
 
+
+		private var generalHealthArr:Array = ["excellent", "very good", "good", "fair", "poor"];
+		private var healthComparisonArr:Array = ["Much better", "Somewhat better",
+			"About the same", "Somewhat worse", "Much worse"];
+		private var limitYesNo:Array = ["Yes- Limited a lot", "Yes- Limited a little", "No- Not limited at all"];
+
 		override public function set data(value:Object):void
 		{
 			super.data = value;
 
 			_controller = value as PreOpEvaluationHealthActionInputController;
 			_model = _controller.model;
+		}
+
+		private function generalHealth_resultHandler(event:Event):void
+		{
+			var radioGroup:RadioButton = RadioButton(event.currentTarget);
+			var selected:Object = radioGroup.getRepeaterItem();
+			Alert.show(selected.label);
+		}
+
+		private function generalHealthComparison_resultHandler(event:Event):void
+		{
+			var radioGroup:RadioButton = RadioButton(event.currentTarget);
+			var selected:Object = radioGroup.getRepeaterItem();
+			Alert.show(selected.label);
+		}
+
+		private function activitiesModLimit_resultHandler(event:Event):void
+		{
+			var radioGroup:RadioButton = RadioButton(event.currentTarget);
+			var selected:Object = radioGroup.getRepeaterItem();
+			Alert.show(selected.label);
+		}
+
+		private function activitiesHighLimit_resultHandler(event:Event):void
+		{
 
 		}
-		]]></fx:Script>
-	<s:VGroup width="100%" height="100%" gap="0">
-		<s:Label text="Hello PreOpEvaluation!"/>
-	</s:VGroup>
+
+		private function liftingLimit_resultHandler(event:Event):void
+		{
+
+		}
+
+		private function climbingSeveralLimit_resultHandler(event:Event):void
+		{
+
+		}
+
+		private function climbingOneLimit_resultHandler(event:Event):void
+		{
+
+		}
+
+		private function bendingLimit_resultHandler(event:Event):void
+		{
+
+		}
+
+		private function walkMileLimit_resultHandler(event:Event):void
+		{
+
+		}
+
+		private function walkSeveralBlocksLimit_resultHandler(event:Event):void
+		{
+
+		}
+
+		private function walkSingleBlocksLimit_resultHandler(event:Event):void
+		{
+
+		}
+
+		private function bathingLimit_resultHandler(event:Event):void
+		{
+
+		}
+		]]>
+
+
+
+
+
+	</fx:Script>
+
+
+	<!--	<s:VGroup width="100%" height="100%" gap="0">
+			<s:Label text="Hello PreOpEvaluation!"/>
+		</s:VGroup>-->
+
+	<fx:Declarations>
+		<s:RadioButtonGroup id="generalHealthButtonGroup"/>
+		<s:RadioButtonGroup id="generalHealthComparison"/>
+		<s:RadioButtonGroup id="activitiesHighLimitButtonGroup"/>
+		<s:RadioButtonGroup id="activitiesModLimitButtonGroup"/>
+		<s:RadioButtonGroup id="liftingLimitButtonGroup"/>
+		<s:RadioButtonGroup id="climbingSeveralLimitButtonGroup"/>
+		<s:RadioButtonGroup id="climbingOneLimitButtonGroup"/>
+		<s:RadioButtonGroup id="bendingLimitButtonGroup"/>
+		<s:RadioButtonGroup id="walkMileLimitButtonGroup"/>
+		<s:RadioButtonGroup id="walkSeveralBlocksLimitButtonGroup"/>
+		<s:RadioButtonGroup id="walkSingleBlocksLimitButtonGroup"/>
+		<s:RadioButtonGroup id="bathingLimitButtonGroup"/>
+		<s:RadioButtonGroup id="h"/>
+
+	</fx:Declarations>
+
+
+	<s:Panel title="Pre-Operative Evaluation"
+			 backgroundColor="0x778899" borderColor="0x778899"
+			 width="1000"
+			 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
+
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="10"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
+
+		<s:Form skinClass="spark.skins.spark.StackedFormSkin"
+				backgroundColor="0xd3d3d3"
+				maxWidth="1000">
+			<s:layout>
+				<s:FormItemLayout>
+					<s:constraintColumns>
+						<s:ConstraintColumn id="sequenceCol"/>
+						<s:ConstraintColumn id="labelCol"/>
+						<s:ConstraintColumn id="contentCol"/>
+						<s:ConstraintColumn id="helpCol"/>
+					</s:constraintColumns>
+
+				</s:FormItemLayout>
+			</s:layout>
+
+			<s:FormHeading
+					label="Please answer the 36 questions of the Health Survey completely, honestly, and without interruptions."
+					skinClass="spark.skins.spark.FormHeadingSkin"
+					width="500"
+					backgroundColor="0xd3d3d3"/>
+
+			<s:FormItem
+					skinClass="spark.skins.spark.StackedFormItemSkin"
+					backgroundColor="0xd3d3d3">
+
+			</s:FormItem>
+		</s:Form>
+
+		<mx:Accordion backgroundColor="0xd3d3d3"
+					  width="100%" height="100%">
+			<s:NavigatorContent label="General Health"
+								width="100%" height="100%"
+								skinClass="spark.skins.mobile.ViewNavigatorSkin">
+				<s:Form skinClass="spark.skins.spark.StackedFormSkin"
+						backgroundColor="0xd3d3d3"
+						maxWidth="1000">
+
+					<s:FormItem label="In general, would you say your health is: "
+								skinClass="spark.skins.spark.StackedFormItemSkin"
+								backgroundColor="0xd3d3d3"
+								width="100%">
+						<mx:HBox>
+							<mx:Repeater id="generalHealthRepeater"
+										 dataProvider="{generalHealthArr}">
+								<s:RadioButton id="generalHealthRadioButtons"
+											   label="{generalHealthRepeater.currentItem.toString()}"
+											   group="{generalHealthButtonGroup}"
+											   change="generalHealth_resultHandler(event);"
+											   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+							</mx:Repeater>
+						</mx:HBox>
+					</s:FormItem>
+
+					<s:FormItem label="Compared to one year ago, how would you rate your health in general now? "
+								skinClass="spark.skins.spark.StackedFormItemSkin"
+								backgroundColor="0xd3d3d3"
+								width="100%">
+						<mx:HBox>
+							<mx:Repeater id="healthComparisonRepeater"
+										 dataProvider="{healthComparisonArr}">
+								<s:RadioButton id="healthComparisonRadioButtons"
+											   label="{healthComparisonRepeater.currentItem.toString()}"
+											   group="{generalHealthComparison}"
+											   change="generalHealthComparison_resultHandler(event);"
+											   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+							</mx:Repeater>
+						</mx:HBox>
+					</s:FormItem>
+				</s:Form>
+
+			</s:NavigatorContent>
+
+			<s:NavigatorContent label="Limitation of Activities"
+								width="100%" height="100%"
+								skinClass="spark.skins.mobile.ViewNavigatorSkin">
+				<s:layout>
+					<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
+				</s:layout>
+				<s:Label text="The following items are about activities you might do during a typical day. Does your health now limit you in these
+				activities? If so, how much?"/>
+				<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
+							width="100%" height="100%"
+						>
+					<s:Group>
+						<s:Form skinClass="spark.skins.spark.StackedFormSkin"
+								backgroundColor="0xd3d3d3"
+								maxWidth="1000"
+								>
+
+							<s:FormItem
+									label="Vigorous activities, such as running, lifting heavy objects, participating in strenuous sports."
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+
+									<mx:Repeater id="activitiesHighLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="activitiesHighLimitRadioButtons"
+													   label="{activitiesHighLimitRepeater.currentItem.toString()}"
+													   group="{activitiesHighLimitButtonGroup}"
+													   change="activitiesHighLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+									<mx:Repeater id="activitiesModLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="activitiesModLimitRadioButtons"
+													   label="{activitiesModLimitRepeater.currentItem.toString()}"
+													   group="{activitiesModLimitButtonGroup}"
+													   change="activitiesModLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Lifting or carrying groceries"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+
+									<mx:Repeater id="liftingLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="liftingLimitRadioButtons"
+													   label="{liftingLimitRepeater.currentItem.toString()}"
+													   group="{liftingLimitButtonGroup}"
+													   change="liftingLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Climbing several flights of stairs"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+
+									<mx:Repeater id="climbingSeveralLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="climbingSeveralLimitRadioButtons"
+													   label="{climbingSeveralLimitRepeater.currentItem.toString()}"
+													   group="{climbingSeveralLimitButtonGroup}"
+													   change="climbingSeveralLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Climbing one flight of stairs"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+
+									<mx:Repeater id="climbingOneLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="climbingOneLimitRadioButtons"
+													   label="{climbingOneLimitRepeater.currentItem.toString()}"
+													   group="{climbingOneLimitButtonGroup}"
+													   change="climbingOneLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Bending, kneeling, or stooping"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+
+									<mx:Repeater id="bendingLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="bendingLimitRadioButtons"
+													   label="{bendingLimitRepeater.currentItem.toString()}"
+													   group="{bendingLimitButtonGroup}"
+													   change="bendingLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Walking more than a mile"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+
+									<mx:Repeater id="walkMileLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="walkMileLimitRadioButtons"
+													   label="{walkMileLimitRepeater.currentItem.toString()}"
+													   group="{walkMileLimitButtonGroup}"
+													   change="walkMileLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Walking several blocks"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+									<mx:Repeater id="walkSeveralBlocksLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="walkSeveralBlocksLimitRadioButtons"
+													   label="{walkSeveralBlocksLimitRepeater.currentItem.toString()}"
+													   group="{walkSeveralBlocksLimitButtonGroup}"
+													   change="walkSeveralBlocksLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Walking single block"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+									<mx:Repeater id="walkSingleBlocksLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="walkSingleBlocksLimitRadioButtons"
+													   label="{walkSingleBlocksLimitRepeater.currentItem.toString()}"
+													   group="{walkSingleBlocksLimitButtonGroup}"
+													   change="walkSingleBlocksLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+
+							<s:FormItem
+									label="Bathing or dressing yourself"
+									skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
+									backgroundColor="0xd3d3d3">
+								<mx:HBox>
+									<mx:Repeater id="bathingLimitRepeater"
+												 dataProvider="{limitYesNo}">
+										<s:RadioButton id="bathingLimitRadioButtons"
+													   label="{bathingLimitRepeater.currentItem.toString()}"
+													   group="{bathingLimitButtonGroup}"
+													   change="bathingLimit_resultHandler(event);"
+													   skinClass="spark.skins.mobile.RadioButtonSkin"/>
+									</mx:Repeater>
+								</mx:HBox>
+							</s:FormItem>
+						</s:Form>
+
+					</s:Group>
+				</s:Scroller>
+				<!--<s:Button label="Button 2"/>-->
+			</s:NavigatorContent>
+			<s:NavigatorContent label="Pane 3"
+								width="100%" height="100%"
+								skinClass="spark.skins.mobile.ViewNavigatorSkin">
+				<s:layout>
+					<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
+				</s:layout>
+				<s:Label text="Text for Pane 3"/>
+				<!--<s:Button label="Button 3"/>-->
+			</s:NavigatorContent>
+		</mx:Accordion>
+	</s:Panel>
+
+
 </tablet:TabletViewBase>
