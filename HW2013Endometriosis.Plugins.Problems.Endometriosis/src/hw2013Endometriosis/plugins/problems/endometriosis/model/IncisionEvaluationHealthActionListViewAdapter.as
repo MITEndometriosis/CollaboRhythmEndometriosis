@@ -100,7 +100,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get additionalAdherenceInformation():String
 		{
-			return "";
+			return "...";
 		}
 
 		public function get model():IHealthActionListViewModel

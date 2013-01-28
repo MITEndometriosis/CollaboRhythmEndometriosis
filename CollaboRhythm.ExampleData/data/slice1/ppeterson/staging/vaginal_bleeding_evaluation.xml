@@ -87,7 +87,7 @@
 																		  value="xs:boolean">xs:boolean
 																	</type>
 																	<value>
-																		<indivo:textValue>yes</indivo:textValue>
+																		<indivo:textValue>true</indivo:textValue>
 																	</value>
 																</measurement>
 																<measurement>
@@ -109,7 +109,7 @@
 																		  value="xs:boolean">xs:boolean
 																	</type>
 																	<value>
-																		<indivo:textValue>no</indivo:textValue>
+																		<indivo:textValue>false</indivo:textValue>
 																	</value>
 																</measurement>
 																<measurement>
@@ -176,6 +176,8 @@
 									</relation>
 								</relatesTo>
 							</LoadableIndivoDocument>
+
+
 						</relation>
 					</relatesTo>
 				</LoadableIndivoDocument>

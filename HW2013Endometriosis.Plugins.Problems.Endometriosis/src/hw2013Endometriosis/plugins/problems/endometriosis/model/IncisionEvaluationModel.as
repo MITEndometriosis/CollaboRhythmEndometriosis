@@ -27,6 +27,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _record:Record;
+		private var _activeAccountId:String;
 
 		private var _hasRedness:Boolean;
 		private var _showRednessDetails:Boolean;
@@ -40,8 +41,6 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _showHasDischargePuss:Boolean;
 		private var _hasDischargeBlood:Boolean;
 		private var _showHasDischargeBlood:Boolean;
-		private var _activeAccountId:String;
-
 
 		public function IncisionEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
 												healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
@@ -50,6 +49,13 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			_scheduleItemOccurrence = scheduleItemOccurrence;
 			_record = healthActionModelDetailsProvider.record;
 			_activeAccountId = healthActionModelDetailsProvider.activeAccount.accountId;
+
+			hasRedness = false;
+			rednessWidth = "0";
+			hasTenderness = false;
+			hasDischarge = false;
+			hasDischargePuss = false;
+			hasDischargeBlood = false;
 		}
 
 		public function get hasRedness():Boolean
@@ -213,19 +219,19 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			measurements.addItem(hasTendernessMeasurement);
 
 			var hasDischargeMeasurement:Measurement = new Measurement();
-			hasDischargeMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has tenderness");
+			hasDischargeMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has discharge");
 			hasDischargeMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
 			hasDischargeMeasurement.value = new ValueAndUnit(null, null, hasDischarge.toString());
 			measurements.addItem(hasDischargeMeasurement);
 
 			var hasDischargePussMeasurement:Measurement = new Measurement();
-			hasDischargePussMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has tenderness");
+			hasDischargePussMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "discharge puss");
 			hasDischargePussMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
 			hasDischargePussMeasurement.value = new ValueAndUnit(null, null, hasDischargePuss.toString());
 			measurements.addItem(hasDischargePussMeasurement);
 
 			var hasDischargeBloodMeasurement:Measurement = new Measurement();
-			hasDischargeBloodMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has tenderness");
+			hasDischargeBloodMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "discharge blood");
 			hasDischargeBloodMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
 			hasDischargeBloodMeasurement.value = new ValueAndUnit(null, null, hasDischargeBlood.toString());
 			measurements.addItem(hasDischargeBloodMeasurement);

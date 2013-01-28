@@ -1,8 +1,32 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.model
 {
+	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
+	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
+	import collaboRhythm.shared.model.Record;
+	import collaboRhythm.shared.model.healthRecord.CodedValue;
+	import collaboRhythm.shared.model.healthRecord.DocumentBase;
+	import collaboRhythm.shared.model.healthRecord.ValueAndUnit;
+	import collaboRhythm.shared.model.healthRecord.document.HealthActionResult;
+	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
+	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.ActionGroupResult;
+	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.Measurement;
+
+	import mx.collections.ArrayCollection;
+
+	import mx.utils.RPCStringUtil;
+
 	[Bindable]
 	public class PostOpEvaluationModel
 	{
+		private static const POSTOP_EVALUATION_RESULT:String = "Post-Operative Daily Evaluation";
+		private static const MEASURES_CODED_VALUE_TYPE:String = "http://measures.coded.values/";
+
+		private static const TYPE_CODED_VALUE_TYPE:String = "http://www.w3.org/2001/XMLSchema";
+
+		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
+		private var _record:Record;
+		private var _activeAccountId:String;
+
 		private var _canUrinate:Boolean;
 		private var _showUrinationDetails:Boolean;
 		private var _hasUrinationPain:Boolean;
@@ -17,9 +41,26 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _showHasBM:Boolean;
 		private var _hasPassedGas:Boolean;
 		private var _showHasPassedGas:Boolean;
+		private var _temperatureReading:String;
+		private var _showTemperatureReading:String;
 
-		public function PostOpEvaluationModel()
+		public function PostOpEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
+											  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+											  scheduleCollectionsProvider:IScheduleCollectionsProvider)
 		{
+			_scheduleItemOccurrence = scheduleItemOccurrence;
+			_record = healthActionModelDetailsProvider.record;
+			_activeAccountId = healthActionModelDetailsProvider.activeAccount.accountId;
+
+			canUrinate = false;
+			hasUrinationPain = false;
+			hasNausea = false;
+			hasVomited = false;
+			hasAppetite = false;
+			hasBM = false;
+			hasPassedGas = false;
+			temperatureReading = "0";
+
 		}
 
 		public function get canUrinate():Boolean
@@ -167,6 +208,102 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		public function set showHasPassedGas(value:Boolean):void
 		{
 			_showHasPassedGas = value;
+		}
+
+		public function get temperatureReading():String
+		{
+			return _temperatureReading;
+		}
+
+		public function set temperatureReading(value:String):void
+		{
+			_temperatureReading = value;
+			showTemperatureReading = temperatureReading;
+		}
+
+		public function get showTemperatureReading():String
+		{
+			return _showTemperatureReading;
+		}
+
+		public function set showTemperatureReading(value:String):void
+		{
+			_showTemperatureReading = value;
+		}
+
+		public function savePostOpEvaluation():void
+		{
+			var adherenceResults:Vector.<DocumentBase> = new Vector.<DocumentBase>();
+
+			var healthActionResult:HealthActionResult = new HealthActionResult();
+
+			healthActionResult.name = new CodedValue(null, null, null, POSTOP_EVALUATION_RESULT);
+			healthActionResult.planType = String("prescribed");
+			healthActionResult.reportedBy = String("ppeterson@records.media.mit.edu");
+			healthActionResult.dateReported = new Date();
+
+			var actions:ArrayCollection = new ArrayCollection();
+			var action:ActionGroupResult = new ActionGroupResult();
+			var measurements:ArrayCollection = new ArrayCollection();
+
+			var canUrinateMeasurement:Measurement = new Measurement();
+			canUrinateMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "can urinate");
+			canUrinateMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			canUrinateMeasurement.value = new ValueAndUnit(null, null, canUrinate.toString());
+			measurements.addItem(canUrinateMeasurement);
+
+			var hasUrinationPainMeasurement:Measurement = new Measurement();
+			hasUrinationPainMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
+					"has urination pain");
+			hasUrinationPainMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasUrinationPainMeasurement.value = new ValueAndUnit(null, null, hasUrinationPain.toString());
+			measurements.addItem(hasUrinationPainMeasurement);
+
+			var hasNauseaMeasurement:Measurement = new Measurement();
+			hasNauseaMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has nausea");
+			hasNauseaMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasNauseaMeasurement.value = new ValueAndUnit(null, null, hasNausea.toString());
+			measurements.addItem(hasNauseaMeasurement);
+
+			var hasVomitedMeasurement:Measurement = new Measurement();
+			hasVomitedMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has vomited");
+			hasVomitedMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasVomitedMeasurement.value = new ValueAndUnit(null, null, hasVomited.toString());
+			measurements.addItem(hasVomitedMeasurement);
+
+			var hasAppetiteMeasurement:Measurement = new Measurement();
+			hasAppetiteMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has appetite");
+			hasAppetiteMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasAppetiteMeasurement.value = new ValueAndUnit(null, null, hasAppetite.toString());
+			measurements.addItem(hasAppetiteMeasurement);
+
+			var hasBMMeasurement:Measurement = new Measurement();
+			hasBMMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has BM");
+			hasBMMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasBMMeasurement.value = new ValueAndUnit(null, null, hasBM.toString());
+			measurements.addItem(hasBMMeasurement);
+
+			var hasPassedGasMeasurement:Measurement = new Measurement();
+			hasPassedGasMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has passed gas");
+			hasPassedGasMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasPassedGasMeasurement.value = new ValueAndUnit(null, null, hasPassedGas.toString());
+			measurements.addItem(hasPassedGasMeasurement);
+
+			var temperatureReadingMeasurement:Measurement = new Measurement();
+			temperatureReadingMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "temperature");
+			temperatureReadingMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
+			temperatureReadingMeasurement.value = new ValueAndUnit(null, new CodedValue(null, null, null, "degrees"),
+					temperatureReading.toString());
+			measurements.addItem(temperatureReadingMeasurement);
+
+			action.measurements = measurements;
+			actions.addItem(action);
+			healthActionResult.actions = actions;
+
+			adherenceResults.push(healthActionResult);
+
+			_scheduleItemOccurrence.createAdherenceItem(adherenceResults, _record, _activeAccountId, true);
+			_record.saveAllChanges();
 		}
 	}
 }

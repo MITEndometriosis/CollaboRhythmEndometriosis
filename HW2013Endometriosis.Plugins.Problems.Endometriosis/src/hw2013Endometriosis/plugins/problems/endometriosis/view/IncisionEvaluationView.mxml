@@ -43,7 +43,7 @@
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem id="rednessWidthFormItem" label="How wide is the redness?"
+			<s:FormItem id="rednessWidthFormItem" label="What is the size of the red area?"
 						visible="{rednessIndicatorToggleSwitch.selected}"
 						height="0"
 						skinClass="spark.skins.spark.FormItemSkin"
@@ -58,7 +58,7 @@
 					<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
 								 textAlign="right" restrict="0-9." softKeyboardType="number"
 								 change="rednessWidthTextInput_changeHandler(event)"/>
-					<s:Label text="mm"/>
+					<s:Label text="cm"/>
 				</s:HGroup>
 			</s:FormItem>
 
@@ -101,11 +101,11 @@
 			</s:FormItem>
 
 			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
-				<s:Button label="Save"
+				<s:Button label="Save" id="incisionEvaluationSaveButton"
 						  width="100"
 						  skinClass="spark.skins.mobile.ButtonSkin"
 						  chromeColor="0x9370db"
-						  click="saveButton_clickHandler(event)"/>
+						  click="incisionEvaluationSaveButton_clickHandler(event)"/>
 			</s:FormItem>
 
 		</s:Form>
@@ -146,6 +146,14 @@
 			}
 		}
 
+		private function rednessWidthTextInput_changeHandler(event:TextOperationEvent):void
+		{
+			if (_controller)
+			{
+				_controller.updateRednessWidth(rednessWidthTextInput.text);
+			}
+		}
+
 		private function tendernessIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
 			if (_controller)
@@ -178,18 +186,11 @@
 			}
 		}
 
-		private function saveButton_clickHandler(event:MouseEvent):void
+		private function incisionEvaluationSaveButton_clickHandler(event:MouseEvent):void
 		{
 			_controller.saveIncisionEvalution();
 		}
 
-		private function rednessWidthTextInput_changeHandler(event:TextOperationEvent):void
-		{
-			if (_controller)
-			{
-				_controller.updateRednessWidth(rednessWidthTextInput.text);
-			}
-		}
 		]]></fx:Script>
 
 
