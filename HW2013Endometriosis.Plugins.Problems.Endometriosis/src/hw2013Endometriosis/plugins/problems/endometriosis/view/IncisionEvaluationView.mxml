@@ -43,7 +43,7 @@
 								accentColor="0x9370db"/>
 			</s:FormItem>
 
-			<s:FormItem id="rednessWidthFormItem" label="How wide is the redness?"
+			<s:FormItem id="rednessWidthFormItem" label="What is the size of the red area?"
 						visible="{rednessIndicatorToggleSwitch.selected}"
 						height="0"
 						skinClass="spark.skins.spark.FormItemSkin"
@@ -58,7 +58,7 @@
 					<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
 								 textAlign="right" restrict="0-9." softKeyboardType="number"
 								 change="rednessWidthTextInput_changeHandler(event)"/>
-					<s:Label text="mm"/>
+					<s:Label text="cm"/>
 				</s:HGroup>
 			</s:FormItem>
 
