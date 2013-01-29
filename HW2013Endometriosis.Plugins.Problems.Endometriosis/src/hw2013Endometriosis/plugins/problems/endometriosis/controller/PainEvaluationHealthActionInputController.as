@@ -154,25 +154,18 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		}
 
 
-		public function updateScreenProgressBar(bar:ProgressBar):void
+		public function updateScreenProgressBar():void
 		{
 
 
 			{
-				_painEvaluationModel.currentPercentage += 100/ _painEvaluationModel.CalculatenumScreens();
+				_painEvaluationModel.currentPercentage += 100.0/ _painEvaluationModel.CalculatenumScreens();
 
-				if (_painEvaluationModel.currentPercentage <= 100)
-				{
 
-					bar.setProgress(_painEvaluationModel.currentPercentage, 100);
-					bar.label = "CurrentProgress" + " " + _painEvaluationModel.currentPercentage + "%";
-
-				}
 				if (_painEvaluationModel.currentPercentage > 100)
 				{
 					_painEvaluationModel.currentPercentage = 0;
-					bar.setProgress(_painEvaluationModel.currentPercentage, 100);
-					bar.label = "CurrentProgress" + " " + _painEvaluationModel.currentPercentage + "%";
+
 				}
 			}
 
