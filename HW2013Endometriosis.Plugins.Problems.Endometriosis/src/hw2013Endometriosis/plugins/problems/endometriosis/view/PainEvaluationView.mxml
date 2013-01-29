@@ -168,7 +168,7 @@
 
 					</s:VGroup>
 
-					<!--<s:Image id="painLocationImage" source="@Embed('/assets/images/PainLocation.png')"/>-->
+					<s:Image id="painLocationImage" source="@Embed('/assets/images/PainLocation.png')"/>
 
 				</s:HGroup>
 
