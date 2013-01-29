@@ -18,7 +18,7 @@
 -->
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
-					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
+					   xmlns:tablet="collaboRhythm.shared.view.tablet.*" xmlns:mx="library://ns.adobe.com/flex/mx"
 					   title="Pain Evaluation">
 
 
@@ -70,6 +70,7 @@
 			if (_controller)
 			{
 				_controller.changeScreens()
+				_controller.updateScreenProgressBar(ScreenProgressBar)
 
 			}
 		}
@@ -102,11 +103,16 @@
 
 	</fx:Script>
 
-	
 
 	<s:Panel title="Pain Evaluation" backgroundColor="0x778899" borderColor="0x778899"
 			 left="20" top="20" skinClass="spark.skins.spark.PanelSkin" bottom="20" right="20"
 			 horizontalCenter="middle">
+		<s:Group>
+
+		<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom" minimum="0" visible="true" maximum="100"
+						color="0x323232" label="CurrentProgress 0%" direction="right" mode="manual" width="50%"/>
+		</s:Group>
+
 
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
@@ -141,27 +147,27 @@
 											skinClass="spark.skins.spark.ToggleButtonSkin"
 											change="painLocationButtonHandler(event)"
 											chromeColor="0x9370db"
-									selected="{_model.hasShoulderPain}"/>
+											selected="{_model.hasShoulderPain}"/>
 							<s:ToggleButton id="AbdomenButton" label="Abdomen"
 											skinClass="spark.skins.spark.ToggleButtonSkin"
 											change="painLocationButtonHandler(event)"
 											chromeColor="0x9370db"
-									selected="{_model.hasAbdomenPain}"/>
+											selected="{_model.hasAbdomenPain}"/>
 							<s:ToggleButton id="PelvisButton" label="Pelvis"
 											skinClass="spark.skins.spark.ToggleButtonSkin"
 											change="painLocationButtonHandler(event)"
 											chromeColor="0x9370db"
-									selected="{_model.hasPelvisPain}"/>
+											selected="{_model.hasPelvisPain}"/>
 
 							<s:ToggleButton id="FlankButton" label="Flank"
 											skinClass="spark.skins.spark.ToggleButtonSkin"
 											change="painLocationButtonHandler(event)"
 											chromeColor="0x9370db"
-									selected="{_model.hasFlankPain}"/>
+											selected="{_model.hasFlankPain}"/>
 							<s:ToggleButton id="OtherButton" label="Other"
 											skinClass="spark.skins.spark.ToggleButtonSkin"
 											click="OtherButton_clickHandler(event)"
-											chromeColor="0x9370db" />
+											chromeColor="0x9370db"/>
 							<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
 									  skinClass="spark.skins.mobile.ButtonSkin"/>
 						</s:VGroup>
