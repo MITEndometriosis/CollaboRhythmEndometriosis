@@ -5,6 +5,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import collaboRhythm.shared.controller.apps.AppControllerBase;
 	import collaboRhythm.shared.controller.apps.AppControllerConstructorParams;
 
+//	import com.adobe.nativeExtensions.Vibration;
+
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.EndometriosisModel;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.EndometriosisButtonWidgetView;
@@ -112,5 +114,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 			return _model;
 		}
+
+/*		public function playVideo(instructionalVideoPath:String):void
+		{
+			// TODO: Currently using the vibration native extension with modifications to play a video
+			var vibration:Vibration = new Vibration();
+			vibration.vibrate(instructionalVideoPath, "video*//*");
+		}*/
 	}
 }
