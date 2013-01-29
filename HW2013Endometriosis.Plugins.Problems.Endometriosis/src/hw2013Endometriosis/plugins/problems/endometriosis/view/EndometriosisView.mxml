@@ -28,11 +28,12 @@
 		<s:Group>
 
 			<mx:Accordion backgroundColor="0xd3d3d3" width="100%" height="700" paddingTop="20" paddingBottom="20"
-						  paddingLeft="20" paddingRight="20">
+						  paddingLeft="20" paddingRight="20" chromeColor="0x9370db">
 
 				<s:NavigatorContent label="Overview"
 									width="100%" height="100%"
-									skinClass="spark.skins.mobile.ViewNavigatorSkin">
+									skinClass="spark.skins.mobile.ViewNavigatorSkin"
+									chromeColor="yellow">
 
 					<s:layout>
 						<s:VerticalLayout paddingTop="10" paddingLeft="10" paddingRight="10" paddingBottom="10"/>
@@ -58,7 +59,7 @@
 									<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 												width="100%" height="100%">
 
-										<s:VGroup>
+										<s:HGroup>
 
 											<mx:Text width="100%" color="0x323232">
 												<mx:text>
@@ -87,7 +88,7 @@
 											<s:Image id="endometriosisUterusImage"
 													 source="@Embed('/assets/images/uterus.png')"/>
 
-										</s:VGroup>
+										</s:HGroup>
 
 									</s:Scroller>
 
@@ -203,7 +204,8 @@
 
 				<s:NavigatorContent label="Patient Instructions"
 									width="100%" height="100%"
-									skinClass="spark.skins.mobile.ViewNavigatorSkin">
+									skinClass="spark.skins.mobile.ViewNavigatorSkin"
+									chromeColor="yellow">
 
 					<s:layout>
 						<s:VerticalLayout paddingTop="10" paddingLeft="10" paddingRight="10" paddingBottom="10"/>
@@ -588,7 +590,8 @@
 
 				<s:NavigatorContent label="Day-of Reminders"
 									width="100%" height="100%"
-									skinClass="spark.skins.mobile.ViewNavigatorSkin">
+									skinClass="spark.skins.mobile.ViewNavigatorSkin"
+									chromeColor="yellow">
 
 					<s:layout>
 						<s:VerticalLayout paddingTop="10" paddingLeft="10" paddingRight="10" paddingBottom="10"/>
@@ -691,7 +694,8 @@
 
 				<s:NavigatorContent label="Possible Complications"
 									width="100%" height="100%"
-									skinClass="spark.skins.mobile.ViewNavigatorSkin">
+									skinClass="spark.skins.mobile.ViewNavigatorSkin"
+									chromeColor="yellow">
 
 					<s:layout>
 						<s:VerticalLayout paddingTop="10" paddingLeft="10" paddingRight="10" paddingBottom="10"/>
