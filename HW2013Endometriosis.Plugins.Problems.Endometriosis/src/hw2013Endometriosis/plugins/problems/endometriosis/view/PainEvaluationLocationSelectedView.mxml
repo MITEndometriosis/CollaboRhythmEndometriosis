@@ -19,6 +19,7 @@
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
 					   title="PainEvaluationLocationSelected">
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
@@ -46,9 +47,15 @@
 			if (_controller)
 			{
 				_controller.changeScreens()
+				_controller.updateScreenProgressBar(ScreenProgressBar)
+
 			}
 		}
 		]]></fx:Script>
+
+	<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom"  minimum="0" visible="true" maximum="100"
+		             color="0x323232"  label="CurrentProgress 0 %" direction="right" mode="manual" width="100%"/>
+
 	<s:Panel title="{BODY_PART} Pain Evaluation"
 			 backgroundColor="0x778899" borderColor="0x778899"
 			 left="20" top="20" right="20" bottom="20" skinClass="spark.skins.spark.PanelSkin">
