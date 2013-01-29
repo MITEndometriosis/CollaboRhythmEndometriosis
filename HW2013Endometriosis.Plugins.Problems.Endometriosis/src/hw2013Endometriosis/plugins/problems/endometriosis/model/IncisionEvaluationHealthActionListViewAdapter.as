@@ -22,7 +22,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 	public class IncisionEvaluationHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-		[Embed(source="/assets/images/bandaid.png")]
+		[Embed(source="/assets/images/bandaid100.png")]
 		public var stitchesImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;
