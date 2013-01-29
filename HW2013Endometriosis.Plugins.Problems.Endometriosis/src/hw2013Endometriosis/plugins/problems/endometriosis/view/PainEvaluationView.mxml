@@ -19,7 +19,7 @@
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
-					   title="IncisionEvaluation">
+					   title="PainEvaluation">
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
@@ -103,7 +103,7 @@
 		<ToggleSwitch id="PainToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
 						change="painToggleSwitchChangeHandler(event)"
 						accentColor="0x9370db"/>
-		<Form id="PainForm" skinClass="spark.skins.spark.FormSkin" visible="{PainToggleSwitch.selected}">
+		<Form backgroundColor="0xd3d3d3" id="PainForm" skinClass="spark.skins.spark.FormSkin" visible="{PainToggleSwitch.selected}">
 
 
 			<Label id="PainLocationLabel" text="Please select the areas in which you have experienced pain."

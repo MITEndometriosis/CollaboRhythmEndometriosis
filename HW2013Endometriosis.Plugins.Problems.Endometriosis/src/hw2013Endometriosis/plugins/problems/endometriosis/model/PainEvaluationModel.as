@@ -1,20 +1,24 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.model
 {
-	import flash.display.Bitmap;
-
-	import spark.components.Image;
-	import spark.skins.mobile.ImageSkin;
+	import mx.collections.ArrayList;
 
 	public class PainEvaluationModel
 	{
 //		[Embed(source="/assets/images/PainLocation.bmp")]
 //		public var PainLocationBitMapImageClass:Class;
-	private var _hasPain:Boolean = false;
-		private var _hasShoulderPain: Boolean = false;
-		private var _hasAbdomenPain:Boolean= false;
+		private var _hasPain:Boolean = false;
+		private var _hasShoulderPain:Boolean = false;
+		private var _hasAbdomenPain:Boolean = false;
 		private var _hasPelvisPain:Boolean = false;
 		private var _hasFlankPain:Boolean = false;
 		private var _hasOtherPain:Boolean = false;
+		public var SHOULDER: String = "Shoulder";
+	    public var ABDOMEN:String = "Abdomen";
+        public var PELVIS:String = "Pelvis";
+	    public var FLANK: String = "Flank";
+	public var _OTHER: String = "";
+		public var SCREEN = SHOULDER;
+
 
 		public function PainEvaluationModel()
 		{
@@ -86,5 +90,18 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		{
 			_hasOtherPain = value;
 		}
+
+		public function get OTHER():String
+		{
+			return _OTHER;
+		}
+
+		public function set OTHER(value:String):void
+		{
+			_OTHER = value;
+		}
+
+
 	}
 }
+
