@@ -22,10 +22,13 @@
 					   title="Pain Evaluation">
 
 
-
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+
+		import mx.skins.spark.ButtonSkin;
+
+		import spark.skins.mobile160.assets.Button_down;
 
 		[Bindable]
 		private var _controller:PainEvaluationHealthActionInputController;
@@ -99,6 +102,8 @@
 
 	</fx:Script>
 
+	
+
 	<s:Panel title="Pain Evaluation" backgroundColor="0x778899" borderColor="0x778899"
 			 left="20" top="20" skinClass="spark.skins.spark.PanelSkin" bottom="20" right="20"
 			 horizontalCenter="middle">
@@ -119,6 +124,7 @@
 					<s:ToggleSwitch id="painIndicatorToggleSwitch"
 									skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 									change="painIndicatorToggleSwitch_changeHandler(event)"
+									selected="{_model.hasPain}"
 									accentColor="0x9370db"/>
 				</s:HGroup>
 
@@ -130,27 +136,32 @@
 						<s:Label id="PainLocationLabel" text="Where are you having pain?"/>
 
 						<s:VGroup contentBackgroundColor="0xd3d3d3">
-							<s:ToggleButton id="ShoulderButton" label="Shoulder"
-											skinClass="spark.skins.mobile.ButtonSkin"
-											change="painLocationButtonHandler(event)"
-											stickyHighlighting="true" chromeColor="0x9370db"/>
-							<s:ToggleButton id="AbdomenButton" label="Abdomen"
-											skinClass="spark.skins.mobile.ButtonSkin"
-											change="painLocationButtonHandler(event)"
-											stickyHighlighting="true" chromeColor="0x9370db"/>
-							<s:ToggleButton id="PelvisButton" label="Pelvis"
-											skinClass="spark.skins.mobile.ButtonSkin"
-											change="painLocationButtonHandler(event)"
-											stickyHighlighting="true" chromeColor="0x9370db"/>
 
-							<s:ToggleButton id="OtherButton" label="Other"
-											skinClass="spark.skins.mobile.ButtonSkin"
-											click="OtherButton_clickHandler(event)"
-											stickyHighlighting="true" chromeColor="0x9370db"/>
-							<s:ToggleButton id="FlankButton" label="Flank"
-											skinClass="spark.skins.mobile.ButtonSkin"
+							<s:ToggleButton id="ShoulderButton" label="Shoulder"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
 											change="painLocationButtonHandler(event)"
-											stickyHighlighting="true" chromeColor="0x9370db"/>
+											chromeColor="0x9370db"
+									selected="{_model.hasShoulderPain}"/>
+							<s:ToggleButton id="AbdomenButton" label="Abdomen"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											change="painLocationButtonHandler(event)"
+											chromeColor="0x9370db"
+									selected="{_model.hasAbdomenPain}"/>
+							<s:ToggleButton id="PelvisButton" label="Pelvis"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											change="painLocationButtonHandler(event)"
+											chromeColor="0x9370db"
+									selected="{_model.hasPelvisPain}"/>
+
+							<s:ToggleButton id="FlankButton" label="Flank"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											change="painLocationButtonHandler(event)"
+											chromeColor="0x9370db"
+									selected="{_model.hasFlankPain}"/>
+							<s:ToggleButton id="OtherButton" label="Other"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											click="OtherButton_clickHandler(event)"
+											chromeColor="0x9370db" />
 							<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
 									  skinClass="spark.skins.mobile.ButtonSkin"/>
 						</s:VGroup>
