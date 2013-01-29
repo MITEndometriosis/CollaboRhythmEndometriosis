@@ -85,7 +85,7 @@
 			<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
 						label="How intense is the {BODY_PART.toLowerCase()} pain?">
 				<s:HSlider skinClass="spark.skins.spark.HSliderSkin" scaleX="4" minimum="0" maximum="10" value="0" />
-				<s:Image source="http://www.smallincisionsbigresults.com/images/VAS-chart.gif"/>
+				<s:Image source="/assets/images/PainIntensityScale.png"/>
 			</s:FormItem>
 			<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
 						label="Are there any aggrevating factors?">
