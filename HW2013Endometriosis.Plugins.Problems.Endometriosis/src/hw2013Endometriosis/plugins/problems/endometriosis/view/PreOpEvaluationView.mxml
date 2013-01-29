@@ -23,10 +23,11 @@
 					   title="PreOpEvaluation">
 
 	<fx:Script><![CDATA[
-		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PreOpEvaluationHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PreOpEvalHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PreOpEvaluationModel;
 
 		import mx.controls.Alert;
+		import mx.events.ItemClickEvent;
 
 		import spark.components.RadioButton;
 
@@ -34,7 +35,7 @@
 		import collaboRhythm.shared.collaboration.model.CollaborationModel;
 
 		[Bindable]
-		private var _controller:PreOpEvaluationHealthActionInputController;
+		private var _controller:PreOpEvalHealthActionInputController;
 		private var _model:PreOpEvaluationModel;
 
 
@@ -57,235 +58,238 @@
 		{
 			super.data = value;
 
-			_controller = value as PreOpEvaluationHealthActionInputController;
+			_controller = value as PreOpEvalHealthActionInputController;
 			_model = _controller.model;
 		}
 
-		private function generalHealth_resultHandler(event:Event):void
+		private function generalHealth_resultHandler(event:ItemClickEvent):void
 		{
-			var radioGroup:RadioButton = RadioButton(event.currentTarget);
-			var selected:Object = radioGroup.getRepeaterItem();
-			Alert.show(selected.label);
+			var value:Object = generalHealthButtonGroup.selectedValue;
+			                Alert.show("You selected " + value);
 		}
 
-		private function generalHealthComparison_resultHandler(event:Event):void
+		private function generalHealthComparison_resultHandler(event:ItemClickEvent):void
 		{
-			var radioGroup:RadioButton = RadioButton(event.currentTarget);
-			var selected:Object = radioGroup.getRepeaterItem();
-			Alert.show(selected.label);
+			var value:Object = generalHealthComparison.selectedValue;
+			               Alert.show("You selected " + value);
 		}
 
-		private function sickTF_resultHandler(event:Event):void
-		{
-
-
-		}
-
-		private function healthyTF_resultHandler(event:Event):void
+		private function sickTF_resultHandler(event:ItemClickEvent):void
 		{
 
 
 		}
 
-		private function worseTF_resultHandler(event:Event):void
+		private function healthyTF_resultHandler(event:ItemClickEvent):void
 		{
 
 
 		}
 
-		private function excellentTF_resultHandler(event:Event):void
+		private function worseTF_resultHandler(event:ItemClickEvent):void
 		{
 
 
 		}
 
-		private function activitiesHighLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function activitiesModLimit_resultHandler(event:Event):void
-		{
-			var radioGroup:RadioButton = RadioButton(event.currentTarget);
-			var selected:Object = radioGroup.getRepeaterItem();
-			Alert.show(selected.label);
-		}
-
-
-		private function liftingLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function climbingSeveralLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function climbingOneLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function bendingLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function walkMileLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function walkSeveralBlocksLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function walkSingleBlocksLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function bathingLimit_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function cutTime1_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function cutTime2_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function accomplishLess1_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function accomplishLess2_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function limitWork1_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function limitWork2_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function difficultWork1_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function difficultWork2_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function cutTimeEmo1_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function cutTimeEmo2_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function accomplishLessEmo1_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function accomplishLessEmo2_resultHandler(event:Event):void
-		{
-
-		}
-
-		private function limitWorkEmo1_resultHandler(event:Event):void
+		private function excellentTF_resultHandler(event:ItemClickEvent):void
 		{
 
 
 		}
 
-		private function limitWorkEmo2_resultHandler(event:Event):void
+		private function activitiesHighLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function socialPhysical_resultHandler(event:Event):void
+		private function activitiesModLimit_resultHandler(event:ItemClickEvent):void
+		{
+			var value:Object = activitiesHighLimitButtonGroup.selectedValue;
+			Alert.show("You selected " + value);
+			
+		}
+
+
+		private function liftingLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function socialEmo_resultHandler(event:Event):void
+		private function climbingSeveralLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function painQuantity_resultHandler(event:Event):void
+		private function climbingOneLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function painInterfere_resultHandler(event:Event):void
+		private function bendingLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function pepEnergy_resultHandler(event:Event):void
+		private function walkMileLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function nervousEnergy_resultHandler(event:Event):void
+		private function walkSeveralBlocksLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function dumpsEnergy_resultHandler(event:Event):void
+		private function walkSingleBlocksLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function calmEnergy_resultHandler(event:Event):void
+		private function bathingLimit_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function lotsEnergy_resultHandler(event:Event):void
+		private function cutTime1_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function downBlueEnergy_resultHandler(event:Event):void
+		private function cutTime2_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function wornEnergy_resultHandler(event:Event):void
+		private function accomplishLess1_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function happyEnergy_resultHandler(event:Event):void
+		private function accomplishLess2_resultHandler(event:ItemClickEvent):void
 		{
 
 		}
 
-		private function tiredEnergy_resultHandler(event:Event):void
+		private function limitWork1_resultHandler(event:ItemClickEvent):void
 		{
 
+		}
+
+		private function limitWork2_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function difficultWork1_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function difficultWork2_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function cutTimeEmo1_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function cutTimeEmo2_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function accomplishLessEmo1_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function accomplishLessEmo2_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function limitWorkEmo1_resultHandler(event:ItemClickEvent):void
+		{
+
+
+		}
+
+		private function limitWorkEmo2_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function socialPhysical_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function socialEmo_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function painQuantity_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function painInterfere_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function pepEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function nervousEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function dumpsEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function calmEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function lotsEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function downBlueEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function wornEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function happyEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function tiredEnergy_resultHandler(event:ItemClickEvent):void
+		{
+
+		}
+
+		private function saveButton_clickHandler(event:MouseEvent):void
+		{
+			_controller.savePreOpEvalution();
 		}
 		]]>
 
@@ -301,79 +305,82 @@
 		</s:VGroup>-->
 
 	<fx:Declarations>
-		<s:RadioButtonGroup id="generalHealthButtonGroup"/>
-		<s:RadioButtonGroup id="generalHealthComparison"/>
-		<s:RadioButtonGroup id="activitiesHighLimitButtonGroup"/>
-		<s:RadioButtonGroup id="activitiesModLimitButtonGroup"/>
-		<s:RadioButtonGroup id="liftingLimitButtonGroup"/>
-		<s:RadioButtonGroup id="climbingSeveralLimitButtonGroup"/>
-		<s:RadioButtonGroup id="climbingOneLimitButtonGroup"/>
-		<s:RadioButtonGroup id="bendingLimitButtonGroup"/>
-		<s:RadioButtonGroup id="walkMileLimitButtonGroup"/>
-		<s:RadioButtonGroup id="walkSeveralBlocksLimitButtonGroup"/>
-		<s:RadioButtonGroup id="walkSingleBlocksLimitButtonGroup"/>
-		<s:RadioButtonGroup id="bathingLimitButtonGroup"/>
-		<s:RadioButtonGroup id="cutTime1ButtonGroup"/>
-		<s:RadioButtonGroup id="cutTime2ButtonGroup"/>
-		<s:RadioButtonGroup id="accomplishLess1ButtonGroup"/>
-		<s:RadioButtonGroup id="accomplishLess2ButtonGroup"/>
-		<s:RadioButtonGroup id="limitWork1ButtonGroup"/>
-		<s:RadioButtonGroup id="limitWork2ButtonGroup"/>
-		<s:RadioButtonGroup id="difficultWork1ButtonGroup"/>
-		<s:RadioButtonGroup id="difficultWork2ButtonGroup"/>
-		<s:RadioButtonGroup id="cutTimeEmo1ButtonGroup"/>
-		<s:RadioButtonGroup id="cutTimeEmo2ButtonGroup"/>
-		<s:RadioButtonGroup id="accomplishLessEmo1ButtonGroup"/>
-		<s:RadioButtonGroup id="accomplishLessEmo2ButtonGroup"/>
-		<s:RadioButtonGroup id="limitWorkEmo1ButtonGroup"/>
-		<s:RadioButtonGroup id="limitWorkEmo2ButtonGroup"/>
-		<s:RadioButtonGroup id="socialPhysicalButtonGroup"/>
-		<s:RadioButtonGroup id="painQuantityButtonGroup"/>
-		<s:RadioButtonGroup id="painInterfereButtonGroup"/>
-		<s:RadioButtonGroup id="socialEmoButtonGroup"/>
-		<s:RadioButtonGroup id="pepEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="nervousEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="dumpsEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="calmEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="lotsEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="downBlueEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="wornEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="happyEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="tiredEnergyButtonGroup"/>
-		<s:RadioButtonGroup id="sickTFButtonGroup"/>
-		<s:RadioButtonGroup id="healthyTFButtonGroup"/>
-		<s:RadioButtonGroup id="worseTFButtonGroup"/>
-		<s:RadioButtonGroup id="excellentTFButtonGroup"/>
+		<s:RadioButtonGroup id="generalHealthButtonGroup" itemClick="generalHealth_resultHandler(event);"/>
+		<s:RadioButtonGroup id="generalHealthComparison" itemClick="generalHealthComparison_resultHandler(event);"/>
+		<s:RadioButtonGroup id="activitiesHighLimitButtonGroup" itemClick="activitiesHighLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="activitiesModLimitButtonGroup" itemClick="activitiesModLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="liftingLimitButtonGroup" itemClick="liftingLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="climbingSeveralLimitButtonGroup"
+							itemClick="climbingSeveralLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="climbingOneLimitButtonGroup" itemClick="climbingOneLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="bendingLimitButtonGroup" itemClick="bendingLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="walkMileLimitButtonGroup" itemClick="walkMileLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="walkSeveralBlocksLimitButtonGroup"
+							itemClick="walkSeveralBlocksLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="walkSingleBlocksLimitButtonGroup"
+							itemClick="walkSingleBlocksLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="bathingLimitButtonGroup" itemClick="bathingLimit_resultHandler(event);"/>
+		<s:RadioButtonGroup id="cutTime1ButtonGroup" itemClick="cutTime1_resultHandler(event);"/>
+		<s:RadioButtonGroup id="cutTime2ButtonGroup" itemClick="cutTime2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="accomplishLess1ButtonGroup" itemClick="accomplishLess1_resultHandler(event);"/>
+		<s:RadioButtonGroup id="accomplishLess2ButtonGroup" itemClick="accomplishLess2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="limitWork1ButtonGroup" itemClick="limitWork1_resultHandler(event);"/>
+		<s:RadioButtonGroup id="limitWork2ButtonGroup" itemClick="limitWork2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="difficultWork1ButtonGroup" itemClick="difficultWork1_resultHandler(event);"/>
+		<s:RadioButtonGroup id="difficultWork2ButtonGroup" itemClick="difficultWork2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="cutTimeEmo1ButtonGroup" itemClick="cutTimeEmo2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="cutTimeEmo2ButtonGroup" itemClick="cutTimeEmo2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="accomplishLessEmo1ButtonGroup" itemClick="accomplishLessEmo1_resultHandler(event);"/>
+		<s:RadioButtonGroup id="accomplishLessEmo2ButtonGroup" itemClick="accomplishLessEmo2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="limitWorkEmo1ButtonGroup" itemClick="limitWork1_resultHandler(event);"/>
+		<s:RadioButtonGroup id="limitWorkEmo2ButtonGroup" itemClick="limitWorkEmo2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="socialPhysicalButtonGroup" itemClick="socialPhysical_resultHandler(event);"/>
+		<s:RadioButtonGroup id="painQuantityButtonGroup" itemClick="painQuantity_resultHandler(event);"/>
+		<s:RadioButtonGroup id="painInterfereButtonGroup" itemClick="painInterfere_resultHandler(event);"/>
+		<s:RadioButtonGroup id="socialEmoButtonGroup" itemClick="socialEmo_resultHandler(event);"/>
+		<s:RadioButtonGroup id="pepEnergyButtonGroup" itemClick="pepEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="nervousEnergyButtonGroup" itemClick="nervousEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="dumpsEnergyButtonGroup" itemClick="dumpsEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="calmEnergyButtonGroup" itemClick="calmEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="lotsEnergyButtonGroup" itemClick="lotsEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="downBlueEnergyButtonGroup" itemClick="downBlueEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="wornEnergyButtonGroup" itemClick="wornEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="happyEnergyButtonGroup" itemClick="happyEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="tiredEnergyButtonGroup" itemClick="tiredEnergy_resultHandler(event);"/>
+		<s:RadioButtonGroup id="sickTFButtonGroup" itemClick="sickTF_resultHandler(event);"/>
+		<s:RadioButtonGroup id="healthyTFButtonGroup" itemClick="healthyTF_resultHandler(event);"/>
+		<s:RadioButtonGroup id="worseTFButtonGroup" itemClick="worseTF_resultHandler(event);"/>
+		<s:RadioButtonGroup id="excellentTFButtonGroup" itemClick="excellentTF_resultHandler(event);"/>
 
 	</fx:Declarations>
 
-	<s:Scroller width="1000" height="600" skinClass="spark.skins.spark.ScrollerSkin">
-		<s:Group>
-			<s:Panel title="Pre-Operative Evaluation"
-					 backgroundColor="0x778899" borderColor="0x778899"
-					 width="100%" height="100%"
-					 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
 
-				<s:layout>
-					<s:VerticalLayout horizontalAlign="center"
-									  paddingLeft="10" paddingRight="10"
-									  paddingTop="10" paddingBottom="10"/>
-				</s:layout>
+	<s:Panel title="Pre-Operative Evaluation"
+			 backgroundColor="0x778899" borderColor="0x778899"
+			 width="1000" height="600"
+			 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
 
-				<s:Label paddingTop="10" paddingLeft="10" paddingBottom="10" paddingRight="10"
-						text="Please answer the 36 questions of the Health Survey completely, honestly, and without interruptions."
-						width="500"
-						backgroundColor="0xd3d3d3"/>
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="10"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
+		<s:Scroller width="900" height="500"
+					skinClass="spark.skins.spark.ScrollerSkin">
+			<s:VGroup id="accordionForm">
+				<s:Label paddingTop="10" paddingLeft="10" paddingBottom="10" paddingRight="10" textAlign="center"
+						 text="Please answer the 36 questions of the Health Survey completely, honestly, and without interruptions."
+						 width="100%"/>
 
-
-				<mx:Accordion backgroundColor="0xd3d3d3"
-							  width="100%" height="100%">
+				<mx:Accordion backgroundColor="0xd3d3d3" horizontalCenter="0">
 					<s:NavigatorContent label="General Health"
 										width="100%" height="100%"
 										skinClass="spark.skins.mobile.ViewNavigatorSkin">
 						<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 									width="100%" height="100%">
 							<s:Group>
+
+
 								<s:Form skinClass="spark.skins.spark.StackedFormSkin"
 										backgroundColor="0xd3d3d3"
 										maxWidth="1000">
@@ -388,7 +395,6 @@
 												<s:RadioButton id="generalHealthRadioButtons"
 															   label="{generalHealthRepeater.currentItem.toString()}"
 															   group="{generalHealthButtonGroup}"
-															   change="generalHealth_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -405,7 +411,6 @@
 												<s:RadioButton id="healthComparisonRadioButtons"
 															   label="{healthComparisonRepeater.currentItem.toString()}"
 															   group="{generalHealthComparison}"
-															   change="generalHealthComparison_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -425,7 +430,6 @@
 												<s:RadioButton id="sickTFRadioButtons"
 															   label="{sickTFRepeater.currentItem.toString()}"
 															   group="{sickTFButtonGroup}"
-															   change="sickTF_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -440,7 +444,6 @@
 												<s:RadioButton id="healthyTFRadioButtons"
 															   label="{healthyTFRepeater.currentItem.toString()}"
 															   group="{healthyTFButtonGroup}"
-															   change="healthyTF_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -457,7 +460,6 @@
 												<s:RadioButton id="worseTFRadioButtons"
 															   label="{worseTFRepeater.currentItem.toString()}"
 															   group="{worseTFButtonGroup}"
-															   change="worseTF_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -473,7 +475,6 @@
 												<s:RadioButton id="excellentTFRadioButtons"
 															   label="{excellentTFRepeater.currentItem.toString()}"
 															   group="{excellentTFButtonGroup}"
-															   change="excellentTF_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -513,7 +514,6 @@
 												<s:RadioButton id="activitiesHighLimitRadioButtons"
 															   label="{activitiesHighLimitRepeater.currentItem.toString()}"
 															   group="{activitiesHighLimitButtonGroup}"
-															   change="activitiesHighLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -529,7 +529,6 @@
 												<s:RadioButton id="activitiesModLimitRadioButtons"
 															   label="{activitiesModLimitRepeater.currentItem.toString()}"
 															   group="{activitiesModLimitButtonGroup}"
-															   change="activitiesModLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -546,7 +545,6 @@
 												<s:RadioButton id="liftingLimitRadioButtons"
 															   label="{liftingLimitRepeater.currentItem.toString()}"
 															   group="{liftingLimitButtonGroup}"
-															   change="liftingLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -563,7 +561,6 @@
 												<s:RadioButton id="climbingSeveralLimitRadioButtons"
 															   label="{climbingSeveralLimitRepeater.currentItem.toString()}"
 															   group="{climbingSeveralLimitButtonGroup}"
-															   change="climbingSeveralLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -580,7 +577,6 @@
 												<s:RadioButton id="climbingOneLimitRadioButtons"
 															   label="{climbingOneLimitRepeater.currentItem.toString()}"
 															   group="{climbingOneLimitButtonGroup}"
-															   change="climbingOneLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -597,7 +593,6 @@
 												<s:RadioButton id="bendingLimitRadioButtons"
 															   label="{bendingLimitRepeater.currentItem.toString()}"
 															   group="{bendingLimitButtonGroup}"
-															   change="bendingLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -614,7 +609,6 @@
 												<s:RadioButton id="walkMileLimitRadioButtons"
 															   label="{walkMileLimitRepeater.currentItem.toString()}"
 															   group="{walkMileLimitButtonGroup}"
-															   change="walkMileLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -630,7 +624,6 @@
 												<s:RadioButton id="walkSeveralBlocksLimitRadioButtons"
 															   label="{walkSeveralBlocksLimitRepeater.currentItem.toString()}"
 															   group="{walkSeveralBlocksLimitButtonGroup}"
-															   change="walkSeveralBlocksLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -646,7 +639,6 @@
 												<s:RadioButton id="walkSingleBlocksLimitRadioButtons"
 															   label="{walkSingleBlocksLimitRepeater.currentItem.toString()}"
 															   group="{walkSingleBlocksLimitButtonGroup}"
-															   change="walkSingleBlocksLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -662,7 +654,6 @@
 												<s:RadioButton id="bathingLimitRadioButtons"
 															   label="{bathingLimitRepeater.currentItem.toString()}"
 															   group="{bathingLimitButtonGroup}"
-															   change="bathingLimit_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -701,7 +692,6 @@
 												<s:RadioButton id="cutTime1RadioButtons"
 															   label="{cutTime1Repeater.currentItem.toString()}"
 															   group="{cutTime1ButtonGroup}"
-															   change="cutTime1_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -718,7 +708,6 @@
 												<s:RadioButton id="cutTime2RadioButtons"
 															   label="{cutTime2Repeater.currentItem.toString()}"
 															   group="{cutTime2ButtonGroup}"
-															   change="cutTime2_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -735,7 +724,6 @@
 												<s:RadioButton id="accomplishLess1RadioButtons"
 															   label="{accomplishLess1Repeater.currentItem.toString()}"
 															   group="{accomplishLess1ButtonGroup}"
-															   change="accomplishLess1_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -752,7 +740,6 @@
 												<s:RadioButton id="accomplishLess2RadioButtons"
 															   label="{accomplishLess2Repeater.currentItem.toString()}"
 															   group="{accomplishLess2ButtonGroup}"
-															   change="accomplishLess2_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -769,7 +756,6 @@
 												<s:RadioButton id="limitWork1RadioButtons"
 															   label="{limitWork1Repeater.currentItem.toString()}"
 															   group="{limitWork1ButtonGroup}"
-															   change="limitWork1_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -786,7 +772,6 @@
 												<s:RadioButton id="limitWorkLess2RadioButtons"
 															   label="{limitWork2Repeater.currentItem.toString()}"
 															   group="{limitWork2ButtonGroup}"
-															   change="limitWork2_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -803,7 +788,6 @@
 												<s:RadioButton id="difficultWork1RadioButtons"
 															   label="{difficultWork1Repeater.currentItem.toString()}"
 															   group="{difficultWork1ButtonGroup}"
-															   change="difficultWork1_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -820,7 +804,6 @@
 												<s:RadioButton id="difficultWork2RadioButtons"
 															   label="{difficultWork2Repeater.currentItem.toString()}"
 															   group="{difficultWork2ButtonGroup}"
-															   change="difficultWork2_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -857,7 +840,6 @@
 												<s:RadioButton id="cutTimeEmo1RadioButtons"
 															   label="{cutTimeEmo1Repeater.currentItem.toString()}"
 															   group="{cutTimeEmo1ButtonGroup}"
-															   change="cutTimeEmo1_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -874,7 +856,6 @@
 												<s:RadioButton id="cutTimeEmo2RadioButtons"
 															   label="{cutTimeEmo2Repeater.currentItem.toString()}"
 															   group="{cutTimeEmo2ButtonGroup}"
-															   change="cutTimeEmo2_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -891,7 +872,6 @@
 												<s:RadioButton id="accomplishLessEmo1RadioButtons"
 															   label="{accomplishLessEmo1Repeater.currentItem.toString()}"
 															   group="{accomplishLessEmo1ButtonGroup}"
-															   change="accomplishLessEmo1_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -908,7 +888,6 @@
 												<s:RadioButton id="accomplishLessEmo2RadioButtons"
 															   label="{accomplishLessEmo2Repeater.currentItem.toString()}"
 															   group="{accomplishLessEmo2ButtonGroup}"
-															   change="accomplishLessEmo2_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -925,7 +904,6 @@
 												<s:RadioButton id="limitWorkEmo1RadioButtons"
 															   label="{limitWorkEmo1Repeater.currentItem.toString()}"
 															   group="{limitWorkEmo1ButtonGroup}"
-															   change="limitWorkEmo1_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -942,7 +920,6 @@
 												<s:RadioButton id="limitWorkLessEmo2RadioButtons"
 															   label="{limitWorkEmo2Repeater.currentItem.toString()}"
 															   group="{limitWorkEmo2ButtonGroup}"
-															   change="limitWorkEmo2_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -978,7 +955,6 @@
 												<s:RadioButton id="socialPhysicalRadioButtons"
 															   label="{socialPhysicalRepeater.currentItem.toString()}"
 															   group="{socialPhysicalButtonGroup}"
-															   change="socialPhysical_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -995,7 +971,6 @@
 												<s:RadioButton id="socialEmoRadioButtons"
 															   label="{socialEmoRepeater.currentItem.toString()}"
 															   group="{socialEmoButtonGroup}"
-															   change="socialEmo_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1029,16 +1004,15 @@
 											<mx:Repeater id="painQuantityRepeater"
 														 dataProvider="{painQuantity}">
 												<s:RadioButton id="painQuantityRadioButtons"
-															   label="painQuantityRepeater.currentItem.toString()}"
+															   label="{painQuantityRepeater.currentItem.toString()}"
 															   group="{painQuantityButtonGroup}"
-															   change="painQuantity_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
 									</s:FormItem>
 
 									<s:FormItem
-											label="During the past 4 weeks, how much did pain interfere with your normal work (including both work outside the home and housework)?"
+											label="During the past 4 weeks, how much did pain interfere with your normal work?"
 											skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
 											backgroundColor="0xd3d3d3">
 										<mx:HBox>
@@ -1048,7 +1022,6 @@
 												<s:RadioButton id="painInterfereRadioButtons"
 															   label="{painInterfereRepeater.currentItem.toString()}"
 															   group="{painInterfereButtonGroup}"
-															   change="painInterfere_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1086,9 +1059,8 @@
 											<mx:Repeater id="pepEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="pepEnergyRadioButtons"
-															   label="pepEnergyRepeater.currentItem.toString()}"
+															   label="{pepEnergyRepeater.currentItem.toString()}"
 															   group="{pepEnergyButtonGroup}"
-															   change="pepEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1102,9 +1074,8 @@
 											<mx:Repeater id="nervousEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="nervousRadioButtons"
-															   label="nervousEnergyRepeater.currentItem.toString()}"
+															   label="{nervousEnergyRepeater.currentItem.toString()}"
 															   group="{nervousEnergyButtonGroup}"
-															   change="nervousEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1119,9 +1090,8 @@
 											<mx:Repeater id="dumpsEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="dumpsEnergyRadioButtons"
-															   label="dumpsEnergyRepeater.currentItem.toString()}"
+															   label="{dumpsEnergyRepeater.currentItem.toString()}"
 															   group="{dumpsEnergyButtonGroup}"
-															   change="dumpsEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1136,9 +1106,8 @@
 											<mx:Repeater id="calmEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="calmEnergyRadioButtons"
-															   label="calmEnergyRepeater.currentItem.toString()}"
+															   label="{calmEnergyRepeater.currentItem.toString()}"
 															   group="{calmEnergyButtonGroup}"
-															   change="calmEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1152,9 +1121,8 @@
 											<mx:Repeater id="lotsEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="lotsEnergyRadioButtons"
-															   label="lotsEnergyRepeater.currentItem.toString()}"
+															   label="{lotsEnergyRepeater.currentItem.toString()}"
 															   group="{lotsEnergyButtonGroup}"
-															   change="lotsEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1168,9 +1136,8 @@
 											<mx:Repeater id="downBlueEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="downBlueEnergyRadioButtons"
-															   label="downBlueEnergyRepeater.currentItem.toString()}"
+															   label="{downBlueEnergyRepeater.currentItem.toString()}"
 															   group="{downBlueEnergyButtonGroup}"
-															   change="downBlueEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1184,9 +1151,8 @@
 											<mx:Repeater id="wornEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="wornEnergyRadioButtons"
-															   label="wornEnergyRepeater.currentItem.toString()}"
+															   label="{wornEnergyRepeater.currentItem.toString()}"
 															   group="{wornEnergyButtonGroup}"
-															   change="wornEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1200,9 +1166,8 @@
 											<mx:Repeater id="happyEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="happyEnergyRadioButtons"
-															   label="happyEnergyRepeater.currentItem.toString()}"
+															   label="{happyEnergyRepeater.currentItem.toString()}"
 															   group="{happyEnergyButtonGroup}"
-															   change="happyEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1214,9 +1179,8 @@
 											<mx:Repeater id="tiredEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="tiredEnergyRadioButtons"
-															   label="tiredEnergyRepeater.currentItem.toString()}"
+															   label="{tiredEnergyRepeater.currentItem.toString()}"
 															   group="{tiredEnergyButtonGroup}"
-															   change="tiredEnergy_resultHandler(event);"
 															   skinClass="spark.skins.mobile.RadioButtonSkin"/>
 											</mx:Repeater>
 										</mx:HBox>
@@ -1232,9 +1196,18 @@
 				</mx:Accordion>
 
 
-			</s:Panel>
+				<s:Button label="Save"
+						  width="100"
+						  skinClass="spark.skins.mobile.ButtonSkin"
+						  chromeColor="0x9370db"
+						  x="250"
+						  click="saveButton_clickHandler(event)"/>
+			</s:VGroup>
 
-		</s:Group>
-	</s:Scroller>
+		</s:Scroller>
+
+
+	</s:Panel>
+
 
 </tablet:TabletViewBase>

@@ -13,7 +13,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.IncisionEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PostOpEvaluationHealthActionInputController;
-	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PreOpEvaluationHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PreOpEvalHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
 
@@ -60,7 +60,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 			if (healthAction.name == EndometriosisModel.PRE_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
 			{
-				return new PreOpEvaluationHealthActionInputController(scheduleItemOccurrence,
+				return new PreOpEvalHealthActionInputController(scheduleItemOccurrence,
 						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
 			}
 
