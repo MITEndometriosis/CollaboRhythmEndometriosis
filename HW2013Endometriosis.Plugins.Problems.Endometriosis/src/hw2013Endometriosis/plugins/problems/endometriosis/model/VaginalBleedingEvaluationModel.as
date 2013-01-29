@@ -41,9 +41,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 
 		public function VaginalBleedingEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
-													   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
-													   scheduleCollectionsProvider:IScheduleCollectionsProvider)
-		{
+															   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+															   scheduleCollectionsProvider:IScheduleCollectionsProvider)
+				{
 			_scheduleItemOccurrence = scheduleItemOccurrence;
 			_record = healthActionModelDetailsProvider.record;
 			_activeAccountId = healthActionModelDetailsProvider.activeAccount.accountId;
