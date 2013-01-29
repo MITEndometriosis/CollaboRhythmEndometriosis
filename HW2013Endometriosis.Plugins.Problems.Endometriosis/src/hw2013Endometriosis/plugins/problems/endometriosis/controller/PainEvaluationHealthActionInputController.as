@@ -111,25 +111,35 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			_painEvaluationModel.hasFlankPain = selected
 		}
 
-		public function updateHasOtherPain(selected:Boolean):void
-		{
-			_painEvaluationModel.hasOtherPain = selected
-		}
 
 		public function changeScreens():void
 		{
-			var viewList: Array = [_painEvaluationModel.HOME,_painEvaluationModel.SHOULDER, _painEvaluationModel.ABDOMEN, _painEvaluationModel.PELVIS, _painEvaluationModel.FLANK, _painEvaluationModel.OTHER];
-			var painList: Array = [false, _painEvaluationModel.hasShoulderPain, _painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasFlankPain, _painEvaluationModel.hasOtherPain];
+			var viewList:Array = [_painEvaluationModel.HOME, _painEvaluationModel.SHOULDER, _painEvaluationModel.ABDOMEN, _painEvaluationModel.PELVIS, _painEvaluationModel.FLANK ];
+			var painList:Array = [true, _painEvaluationModel.hasShoulderPain, _painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasFlankPain];
 
-			_painEvaluationModel.SCREEN = viewList[viewList.indexOf(_painEvaluationModel.SCREEN) + 1];
-			if (_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
+			//Allowing Screens to loop
+			if (viewList.indexOf(_painEvaluationModel.SCREEN) == viewList.length - 1)
 			{
-				_viewNavigator.pushView(PainEvaluationView, this);
+				_painEvaluationModel.SCREEN = viewList[0]
 			}
-			
+			else
+			{
+				_painEvaluationModel.SCREEN = viewList[viewList.indexOf(_painEvaluationModel.SCREEN) + 1];
+			}
+
+			//Deciding which screen to push
+
+
 			if (painList[viewList.indexOf(_painEvaluationModel.SCREEN)])
 			{
-			_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
+				if (_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
+				{
+					_viewNavigator.pushView(PainEvaluationView, this);
+				}
+				else
+				{
+					_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
+				}
 			}
 
 			else

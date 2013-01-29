@@ -39,23 +39,7 @@
 
 		}
 
-		private function formItemDisplayHandler(location:String):Boolean
-		{
-			if (_controller)
-			{
-				if (location == "ShoulderFormItem")
-					return _controller.model.hasShoulderPain;
-				if (location == "AbdomenFormItem")
-					return _controller.model.hasAbdomenPain;
-				if (location == "PelvisFormItem")
-					return _controller.model.hasPelvisPain;
-				if (location == "FlankFormItem")
-					return _controller.model.hasFlankPain;
-				if (location == "OtherFormItem")
-					return _controller.model.hasOtherPain;
-			}
-			return false
-		}
+
 
 		private function nextButtonHandler(event:Event):void
 		{
@@ -67,68 +51,85 @@
 		]]></fx:Script>
 	<s:Panel title="{BODY_PART} Pain Evaluation"
 			 backgroundColor="0x778899" borderColor="0x778899"
-			 width="1000"
-			 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
-		<s:FormHeading skinClass="spark.skins.spark.FormHeadingSkin" backgroundColor="0xd3d3d3"
-					   label="The following questions will guide you in evaluating your pain symptoms."/>
-		<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xd3d3d3">
+			 left="20" top="20" right="20" bottom="20" skinClass="spark.skins.spark.PanelSkin">
 
-			<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
-						label="How would you describe your {BODY_PART.toLowerCase()} pain?">
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="20"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
 
-				<s:VGroup>
-					<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Sharp/Shooting"/>
-					<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"/>
-					<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"/>
-				</s:VGroup>
-			</s:FormItem>
-			<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
-						label="How intense is the {BODY_PART.toLowerCase()} pain?">
-				<s:HSlider skinClass="spark.skins.spark.HSliderSkin" scaleX="4" minimum="0" maximum="10" value="0" />
-				<s:Image source="/assets/images/PainIntensityScale.png"/>
-			</s:FormItem>
-			<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
-						label="Are there any aggrevating factors?">
-				<s:FormItem label="(Things that bring the {BODY_PART.toLowerCase()} pain on and/or make the pain worse?)"/>
+		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
+					width="100%" height="100%">
+			<s:Group>
 
-				<s:ToggleSwitch id="AggrevatingFactorSwitch"
-								accentColor="0x9370db"
-								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
-			</s:FormItem>
-			<s:FormItem visible="{AggrevatingFactorSwitch.selected}" skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3"
-						includeInLayout="{AggrevatingFactorSwitch.selected}" label="Please describe these factors.">
-				<s:TextInput visible="{AggrevatingFactorSwitch.selected}"
-							 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
-			</s:FormItem>
+				<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xd3d3d3">
+					<s:FormHeading skinClass="spark.skins.spark.FormHeadingSkin" backgroundColor="0xd3d3d3"
+								   label="The following questions will guide you in evaluating your pain symptoms."/>
 
+					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+								label="How would you describe your {BODY_PART.toLowerCase()} pain?">
 
-			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
-						label="Are there any alleviating factors?">
-				<s:FormItem label="(Things that get rid of the {BODY_PART.toLowerCase()} pain subside and/or make the pain lessen?)"/>
-				<s:ToggleSwitch id="AlleviatingFactorSwitch"
-								accentColor="0x9370db"
-								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
-			</s:FormItem>
-			<s:FormItem visible="{AlleviatingFactorSwitch.selected}" backgroundColor="0xd3d3d3"
-						skinClass="spark.skins.spark.FormItemSkin"
-						includeInLayout="{AlleviatingFactorSwitch.selected}" label="Please describe these factors.">
-				<s:TextInput visible="{AlleviatingFactorSwitch.selected}"
-							 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
-			</s:FormItem>
-			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
-						label="How would you describe the duration of your {BODY_PART.toLowerCase()} pain?">
-				<s:VGroup>
-					<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Constant"/>
-					<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Episodic"/>
-				</s:VGroup>
-			</s:FormItem>
+						<s:VGroup>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Sharp/Shooting"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"/>
+						</s:VGroup>
+					</s:FormItem>
+					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+								label="How intense is the {BODY_PART.toLowerCase()} pain?">
+						<s:HSlider skinClass="spark.skins.spark.HSliderSkin" scaleX="4" minimum="0" maximum="10"
+								   value="0"/>
+						<s:Image source="@Embed('/assets/images/PainIntensityScale.png')"/>
+					</s:FormItem>
+					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+								label="Are there any aggrevating factors?">
+						<s:FormItem
+								label="(Things that bring the {BODY_PART.toLowerCase()} pain on and/or make the pain worse?)"/>
+
+						<s:ToggleSwitch id="AggrevatingFactorSwitch"
+										accentColor="0x9370db"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
+					</s:FormItem>
+					<s:FormItem visible="{AggrevatingFactorSwitch.selected}" skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xd3d3d3"
+								includeInLayout="{AggrevatingFactorSwitch.selected}"
+								label="Please describe these factors.">
+						<s:TextInput visible="{AggrevatingFactorSwitch.selected}"
+									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+					</s:FormItem>
 
 
-			<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
-					  skinClass="spark.skins.mobile.ButtonSkin"/>
+					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
+								label="Are there any alleviating factors?">
+						<s:FormItem
+								label="(Things that get rid of the {BODY_PART.toLowerCase()} pain subside and/or make the pain lessen?)"/>
+						<s:ToggleSwitch id="AlleviatingFactorSwitch"
+										accentColor="0x9370db"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
+					</s:FormItem>
+					<s:FormItem visible="{AlleviatingFactorSwitch.selected}" backgroundColor="0xd3d3d3"
+								skinClass="spark.skins.spark.FormItemSkin"
+								includeInLayout="{AlleviatingFactorSwitch.selected}"
+								label="Please describe these factors.">
+						<s:TextInput visible="{AlleviatingFactorSwitch.selected}"
+									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+					</s:FormItem>
+					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
+								label="How would you describe the duration of your {BODY_PART.toLowerCase()} pain?">
+						<s:VGroup>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Constant"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Episodic"/>
+						</s:VGroup>
+					</s:FormItem>
 
-		</s:Form>
+
+					<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
+							  skinClass="spark.skins.mobile.ButtonSkin"/>
+
+				</s:Form>
+			</s:Group>
+		</s:Scroller>
 
 
 	</s:Panel>

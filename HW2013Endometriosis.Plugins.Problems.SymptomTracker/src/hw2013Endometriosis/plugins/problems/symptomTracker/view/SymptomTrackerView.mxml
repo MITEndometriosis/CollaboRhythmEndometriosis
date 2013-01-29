@@ -41,8 +41,79 @@
 			_collaborationLobbyNetConnectionServiceProxy = _controller.collaborationLobbyNetConnectionServiceProxy as
 					CollaborationLobbyNetConnectionServiceProxy;
 		}
+		private function painToggleSwitchChangeHandler(event:Event):void
+				{
+					if (_controller)
+					{
+
+		//
+					}
+
+				}
+
+				private function painLocationButtonHandler(event:Event):void
+				{
+					if (_controller)
+					{
+
+					}
+				}
+
+				private function nextButtonHandler(event:Event):void
+				{
+					if (_controller)
+					{
+
+
+					}
+				}
 		]]></fx:Script>
-	<s:VGroup width="100%" height="100%" gap="0">
-		<s:Label text="Hello SymptomTracker!"/>
-	</s:VGroup>
+
+	<s:Panel title="Pain Evaluation">
+		<s:layout>
+			<s:VerticalLayout>
+			</s:VerticalLayout>
+		</s:layout>
+
+
+		<s:Label id="PainTFLabel" text="Have you been experiencing pain today?"/>
+		<s:ToggleSwitch id="PainToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
+						change="painToggleSwitchChangeHandler(event)"
+						accentColor="0x9370db"/>
+		<s:Form backgroundColor="0xd3d3d3" id="PainForm" skinClass="spark.skins.spark.FormSkin" visible="{PainToggleSwitch.selected}">
+
+
+			<s:Label id="PainLocationLabel" text="Please select the areas in which you have experienced pain."
+					 visible="false"/>
+
+			<s:HGroup>
+				<s:FormItem>
+					<s:VGroup>
+						<s:ToggleButton id="ShoulderButton" label="Shoulder"
+								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db" />
+						<s:ToggleButton id="AbdomenButton" label="Abdomen"
+								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
+						<s:ToggleButton id="PelvisButton" label="Pelvis"
+								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
+						<s:ToggleButton id="OtherButton" label="Other"
+									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
+						<s:ToggleButton id="FlankButton" label="Flank"
+									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
+						<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)" skinClass="spark.skins.mobile.ButtonSkin" />
+
+
+
+					</s:VGroup>
+				</s:FormItem>
+
+
+				<s:Image
+						source="C:\Users\NURSEN\Documents\GitRepositories\CollaboRhythmEndometriosis\HW2013Endometriosis.Plugins.Problems.Endometriosis\src\assets\images\PainLocation.png"/>
+
+			</s:HGroup>
+		</s:Form>
+
+
+	</s:Panel>
+
 </tablet:TabletViewBase>
