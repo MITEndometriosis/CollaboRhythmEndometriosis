@@ -64,18 +64,18 @@
 
 		private function generalHealth_resultHandler(event:ItemClickEvent):void
 		{
-			var value:Object = generalHealthButtonGroup.selectedValue;
-			                Alert.show("You selected " + value);
+			_controller.updategeneralHealth(generalHealthButtonGroup.selectedValue.toString());
+
 		}
 
 		private function generalHealthComparison_resultHandler(event:ItemClickEvent):void
 		{
-			var value:Object = generalHealthComparison.selectedValue;
-			               Alert.show("You selected " + value);
+			_controller.updategeneralHealthComparison(generalHealthComparison.selectedValue.toString());
 		}
 
 		private function sickTF_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatesickTF(sickTFButtonGroup.selectedValue.toString());
 
 
 		}
@@ -83,207 +83,245 @@
 		private function healthyTF_resultHandler(event:ItemClickEvent):void
 		{
 
+			_controller.updatehealthyTF(healthyTFButtonGroup.selectedValue.toString());
 
 		}
 
 		private function worseTF_resultHandler(event:ItemClickEvent):void
 		{
 
+			_controller.updateworseTF(worseTFButtonGroup.selectedValue.toString());
 
 		}
 
 		private function excellentTF_resultHandler(event:ItemClickEvent):void
 		{
 
+			_controller.updateexcellentTF(excellentTFButtonGroup.selectedValue.toString());
 
 		}
 
 		private function activitiesHighLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateactivitiesHighLimit(activitiesHighLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function activitiesModLimit_resultHandler(event:ItemClickEvent):void
 		{
-			var value:Object = activitiesHighLimitButtonGroup.selectedValue;
-			Alert.show("You selected " + value);
-			
+			_controller.updateactivitiesModLimit(activitiesModLimitButtonGroup.selectedValue.toString());
+
 		}
 
 
 		private function liftingLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateliftingLimit(liftingLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function climbingSeveralLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateclimbingSeveralLimit(climbingSeveralLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function climbingOneLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateclimbingOneLimit(climbingOneLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function bendingLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatebendingLimit(bendingLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function walkMileLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatewalkMileLimit(walkMileLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function walkSeveralBlocksLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatewalkSeveralLimit(walkSeveralBlocksLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function walkSingleBlocksLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatewalkOneLimit(walkSingleBlocksLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function bathingLimit_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatebathingLimit(bathingLimitButtonGroup.selectedValue.toString());
 
 		}
 
 		private function cutTime1_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatecutTime1(cutTime1ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function cutTime2_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatecutTime2(cutTime2ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function accomplishLess1_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateaccomplishLess1(accomplishLess1ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function accomplishLess2_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateaccomplishLess2(accomplishLess2ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function limitWork1_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatelimitWork1(limitWork1ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function limitWork2_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatelimitWork2(limitWork2ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function difficultWork1_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatedifficultWork1(difficultWork1ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function difficultWork2_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatedifficultWork2(difficultWork2ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function cutTimeEmo1_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatecutTimeEmo1(cutTimeEmo1ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function cutTimeEmo2_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatecutTimeEmo2(cutTimeEmo2ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function accomplishLessEmo1_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateaccomplishLessEmo1(accomplishLessEmo1ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function accomplishLessEmo2_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updateaccomplishLessEmo2(accomplishLessEmo2ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function limitWorkEmo1_resultHandler(event:ItemClickEvent):void
 		{
 
+			_controller.updatelimitWorkEmo1(limitWorkEmo1ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function limitWorkEmo2_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatelimitWorkEmo2(limitWorkEmo2ButtonGroup.selectedValue.toString());
 
 		}
 
 		private function socialPhysical_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatesocialPhysical(socialPhysicalButtonGroup.selectedValue.toString());
 
 		}
 
 		private function socialEmo_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatesocialEmo(socialEmoButtonGroup.selectedValue.toString());
 
 		}
 
 		private function painQuantity_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatepainQuantity(painQuantityButtonGroup.selectedValue.toString());
 
 		}
 
 		private function painInterfere_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatepainInterfere(painInterfereButtonGroup.selectedValue.toString());
 
 		}
 
 		private function pepEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatepepEnergy(pepEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function nervousEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatenervousEnergy(nervousEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function dumpsEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatedumpsEnergy(dumpsEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function calmEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatecalmEnergy(calmEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function lotsEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatelotsEnergy(lotsEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function downBlueEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatedownBlueEnergy(downBlueEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function wornEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatewornEnergy(wornEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function happyEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatehappyEnergy(happyEnergyButtonGroup.selectedValue.toString());
 
 		}
 
 		private function tiredEnergy_resultHandler(event:ItemClickEvent):void
 		{
+			_controller.updatetiredEnergy(tiredEnergyButtonGroup.selectedValue.toString());
 
 		}
 
