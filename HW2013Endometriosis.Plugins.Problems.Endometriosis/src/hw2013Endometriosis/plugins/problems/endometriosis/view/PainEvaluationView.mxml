@@ -69,8 +69,8 @@
 		{
 			if (_controller)
 			{
-				_controller.changeScreens()
-				_controller.updateScreenProgressBar(ScreenProgressBar)
+				_controller.changeScreens();
+				_controller.updateScreenProgressBar(ScreenProgressBar);
 
 			}
 		}
@@ -107,11 +107,7 @@
 	<s:Panel title="Pain Evaluation" backgroundColor="0x778899" borderColor="0x778899"
 			 left="20" top="20" skinClass="spark.skins.spark.PanelSkin" bottom="20" right="20"
 			 horizontalCenter="middle">
-		<s:Group>
 
-		<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom" minimum="0" visible="true" maximum="100"
-						color="0x323232" label="CurrentProgress 0%" direction="right" mode="manual" width="50%"/>
-		</s:Group>
 
 
 		<s:layout>
@@ -120,6 +116,11 @@
 							  paddingTop="10" paddingBottom="10"/>
 		</s:layout>
 
+		<s:Group>
+			<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom" minimum="0" visible="true" maximum="100"
+									color="0x323232" progress="_model.currentPercentage" label="CurrentProgress {_model.currentPercentage}%" direction="right" mode="manual" width="50%"/>
+
+		</s:Group>
 		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 					width="100%" height="100%">
 
