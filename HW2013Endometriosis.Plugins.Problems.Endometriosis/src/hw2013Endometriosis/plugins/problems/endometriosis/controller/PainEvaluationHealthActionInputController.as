@@ -14,12 +14,15 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import flashx.textLayout.events.FlowElementMouseEvent;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationLocationSelectedView;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationView;
 
 	import j2as3.collection.ArrayList;
 
 	import mx.collections.ArrayList;
+	import mx.controls.ProgressBar;
 
 	import mx.validators.PhoneNumberValidator;
 
@@ -151,6 +154,29 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		}
 
 
+		public function updateScreenProgressBar(bar:ProgressBar):void
+		{
+
+
+			{
+				_painEvaluationModel.currentPercentage += 100/ _painEvaluationModel.CalculatenumScreens();
+
+				if (_painEvaluationModel.currentPercentage <= 100)
+				{
+
+					bar.setProgress(_painEvaluationModel.currentPercentage, 100);
+					bar.label = "CurrentProgress" + " " + _painEvaluationModel.currentPercentage + "%";
+
+				}
+				if (_painEvaluationModel.currentPercentage > 100)
+				{
+					_painEvaluationModel.currentPercentage = 0;
+					bar.setProgress(_painEvaluationModel.currentPercentage, 100);
+					bar.label = "CurrentProgress" + " " + _painEvaluationModel.currentPercentage + "%";
+				}
+			}
+
+		}
 	}
 
 }

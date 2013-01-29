@@ -11,6 +11,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _hasAbdomenPain:Boolean = false;
 		private var _hasPelvisPain:Boolean = false;
 		private var _hasFlankPain:Boolean = false;
+		private var _currentPercentage:int = 0;
 
 		public var SHOULDER: String = "Shoulder";
 	    public var ABDOMEN:String = "Abdomen";
@@ -19,6 +20,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public var HOME: String = "home"
 		public var SCREEN:String = HOME;
+
+
 
 
 		public function PainEvaluationModel()
@@ -83,7 +86,32 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		}
 
 
+		public function get currentPercentage():int
+		{
+			return _currentPercentage;
+		}
 
+		public function set currentPercentage(value:int):void
+		{
+			_currentPercentage = value;
+		}
+
+
+
+		public function CalculatenumScreens():int
+		{ var value: int = 1;
+			var hasPainArray: Array = [_hasAbdomenPain, _hasFlankPain, _hasPelvisPain, _hasShoulderPain];
+			var a:Boolean;
+
+			for (a in hasPainArray)
+			{
+				if (a)
+				{value= value +1;
+				}
+			}
+
+			return value;
+		}
 	}
 }
 
