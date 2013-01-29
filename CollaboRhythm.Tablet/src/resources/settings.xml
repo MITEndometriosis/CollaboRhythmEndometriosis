@@ -53,9 +53,11 @@
 		<!--<pluginSearchPath>$APPLICATION_DIRECTORY$/../../CollaboRhythm.Plugins.Problems.HIV/bin-debug</pluginSearchPath>-->
 		<!--<pluginSearchPath>$APPLICATION_DIRECTORY$/../../CollaboRhythm.Plugins.BloodPressure/bin-debug</pluginSearchPath>-->
 		<pluginSearchPath>$APPLICATION_DIRECTORY$/../../out/production/HW2013Endometriosis.Plugins.Problems.Endometriosis</pluginSearchPath>
+		<pluginSearchPath>$APPLICATION_DIRECTORY$/../../out/production/HW2013Endometriosis.Plugins.Problems.SymptomTracker</pluginSearchPath>
 		<!--<pluginSearchPath>$APPLICATION_DIRECTORY$/../../CollaboRhythm.Plugins.IncisionEvaluation/bin-debug</pluginSearchPath>-->
 
 		<!-- This path is for the plugins that are installed with the application -->
+		<pluginSearchPath>$APPLICATION_DIRECTORY$/plugins/SymptomTrackerPluginModule.swf</pluginSearchPath>
 		<pluginSearchPath>$APPLICATION_DIRECTORY$/plugins/SchedulePluginModule.swf</pluginSearchPath>
 		<pluginSearchPath>$APPLICATION_DIRECTORY$/plugins/HealthChartsPluginModule.swf</pluginSearchPath>
 		<pluginSearchPath>$APPLICATION_DIRECTORY$/plugins/MedicationsPluginModule.swf</pluginSearchPath>
@@ -87,6 +89,8 @@
 				<appDescriptor>collaboRhythm.plugins.healthCharts.controller::HealthChartsAppController</appDescriptor>
 				<appDescriptor>collaboRhythm.plugins.incisionEvaluation.controller::IncisionEvaluationAppController</appDescriptor>
 				<appDescriptor>collaboRhythm.plugins.messages.controller::MessagesAppController</appDescriptor>
+				<appDescriptor>hw2013Endometriosis.plugins.problems.symptomTracker.controller::SymptomTrackerAppController</appDescriptor>
+
 				<!--<appDescriptor>collaboRhythm.plugins.insulinTitrationSupport.controller::InsulinTitrationFAQAppController</appDescriptor>-->
 				<appDescriptor>hw2013Endometriosis.plugins.problems.endometriosis.controller::EndometriosisAppController</appDescriptor>
 			</appDescriptors>

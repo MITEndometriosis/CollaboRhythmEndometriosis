@@ -17,14 +17,18 @@
  - <http://www.gnu.org/licenses/>.
 -->
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
-					   xmlns="library://ns.adobe.com/flex/spark"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
-					   title="PainEvaluation">
+					   title="Pain Evaluation">
+
+
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 
-		import mx.controls.Button;
+		import mx.skins.spark.ButtonSkin;
+
+		import spark.skins.mobile160.assets.Button_down;
 
 		[Bindable]
 		private var _controller:PainEvaluationHealthActionInputController;
@@ -40,12 +44,11 @@
 
 		}
 
-		private function painToggleSwitchChangeHandler(event:Event):void
+		private function painIndicatorToggleSwitch_changeHandler(event:Event):void
 		{
 			if (_controller)
 			{
-				_controller.updateHasPain(PainToggleSwitch.selected);
-//
+				_controller.updateHasPain(painIndicatorToggleSwitch.selected);
 			}
 
 		}
@@ -59,7 +62,6 @@
 				_controller.updateHasAbdomenPain(AbdomenButton.selected);
 				_controller.updateHasPelvisPain(PelvisButton.selected);
 				_controller.updateHasFlankPain(FlankButton.selected);
-				_controller.updateHasOtherPain(OtherButton.selected)
 			}
 		}
 
@@ -89,55 +91,91 @@
 			_hitarea.graphics.endFill();
 			return _hitarea;
 		}
-		]]></fx:Script>
+
+		private function OtherButton_clickHandler(event:MouseEvent):void
+		{
+			(new AlertMessage()).open(this, false);
+
+		}
+		]]>
 
 
-	<Panel title="Pain Evaluation">
-		<layout>
-			<VerticalLayout>
-			</VerticalLayout>
-		</layout>
+	</fx:Script>
 
+	
 
-		<Label id="PainTFLabel" text="Have you been experiencing pain today?"/>
-		<ToggleSwitch id="PainToggleSwitch" skinClass="spark.skins.mobile.ToggleSwitchSkin"
-						change="painToggleSwitchChangeHandler(event)"
-						accentColor="0x9370db"/>
-		<Form backgroundColor="0xd3d3d3" id="PainForm" skinClass="spark.skins.spark.FormSkin" visible="{PainToggleSwitch.selected}">
+	<s:Panel title="Pain Evaluation" backgroundColor="0x778899" borderColor="0x778899"
+			 left="20" top="20" skinClass="spark.skins.spark.PanelSkin" bottom="20" right="20"
+			 horizontalCenter="middle">
 
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="10"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
 
-			<Label id="PainLocationLabel" text="Please select the areas in which you have experienced pain."
-					 visible="false"/>
+		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
+					width="100%" height="100%">
 
-			<HGroup>
-				<FormItem>
-					<VGroup>
-						<ToggleButton id="ShoulderButton" label="Shoulder"
-								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db" />
-						<ToggleButton id="AbdomenButton" label="Abdomen"
-								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
-						<ToggleButton id="PelvisButton" label="Pelvis"
-								  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
-						<ToggleButton id="OtherButton" label="Other"
-									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
-						<ToggleButton id="FlankButton" label="Flank"
-									  skinClass="spark.skins.mobile.ButtonSkin" change="painLocationButtonHandler(event)" stickyHighlighting="true" chromeColor="0x9370db"/>
-						<Button id="NextButton" label="Next" click="nextButtonHandler(event)" skinClass="spark.skins.mobile.ButtonSkin" />
+			<s:VGroup id="painEvalGroup" horizontalCenter="middle" contentBackgroundColor="0xd3d3d3">
 
+				<s:HGroup contentBackgroundColor="0xd3d3d3">
+					<s:Label text="Have you been experiencing pain today?"/>
+					<s:ToggleSwitch id="painIndicatorToggleSwitch"
+									skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+									change="painIndicatorToggleSwitch_changeHandler(event)"
+									selected="{_model.hasPain}"
+									accentColor="0x9370db"/>
+				</s:HGroup>
 
+				<s:HGroup contentBackgroundColor="0xd3d3d3" visible="{painIndicatorToggleSwitch.selected}"
+						  includeInLayout="{painIndicatorToggleSwitch.selected}">
 
-					</VGroup>
-				</FormItem>
+					<s:VGroup contentBackgroundColor="0xd3d3d3">
 
+						<s:Label id="PainLocationLabel" text="Where are you having pain?"/>
 
-				<Image
-						source="C:\Users\NURSEN\Documents\GitRepositories\CollaboRhythmEndometriosis\HW2013Endometriosis.Plugins.Problems.Endometriosis\src\assets\images\PainLocation.png"/>
+						<s:VGroup contentBackgroundColor="0xd3d3d3">
 
-			</HGroup>
-		</Form>
+							<s:ToggleButton id="ShoulderButton" label="Shoulder"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											change="painLocationButtonHandler(event)"
+											chromeColor="0x9370db"
+									selected="{_model.hasShoulderPain}"/>
+							<s:ToggleButton id="AbdomenButton" label="Abdomen"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											change="painLocationButtonHandler(event)"
+											chromeColor="0x9370db"
+									selected="{_model.hasAbdomenPain}"/>
+							<s:ToggleButton id="PelvisButton" label="Pelvis"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											change="painLocationButtonHandler(event)"
+											chromeColor="0x9370db"
+									selected="{_model.hasPelvisPain}"/>
 
+							<s:ToggleButton id="FlankButton" label="Flank"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											change="painLocationButtonHandler(event)"
+											chromeColor="0x9370db"
+									selected="{_model.hasFlankPain}"/>
+							<s:ToggleButton id="OtherButton" label="Other"
+											skinClass="spark.skins.spark.ToggleButtonSkin"
+											click="OtherButton_clickHandler(event)"
+											chromeColor="0x9370db" />
+							<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
+									  skinClass="spark.skins.mobile.ButtonSkin"/>
+						</s:VGroup>
 
-	</Panel>
+					</s:VGroup>
 
+					<s:Image id="painLocationImage" source="@Embed('/assets/images/PainLocation.png')"/>
+
+				</s:HGroup>
+
+			</s:VGroup>
+
+		</s:Scroller>
+
+	</s:Panel>
 
 </tablet:TabletViewBase>

@@ -11,13 +11,14 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _hasAbdomenPain:Boolean = false;
 		private var _hasPelvisPain:Boolean = false;
 		private var _hasFlankPain:Boolean = false;
-		private var _hasOtherPain:Boolean = false;
+
 		public var SHOULDER: String = "Shoulder";
 	    public var ABDOMEN:String = "Abdomen";
         public var PELVIS:String = "Pelvis";
 	    public var FLANK: String = "Flank";
-	public var _OTHER: String = "";
-		public var SCREEN = SHOULDER;
+
+		public var HOME: String = "home"
+		public var SCREEN:String = HOME;
 
 
 		public function PainEvaluationModel()
@@ -81,25 +82,6 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			_hasFlankPain = value;
 		}
 
-		public function get hasOtherPain():Boolean
-		{
-			return _hasOtherPain;
-		}
-
-		public function set hasOtherPain(value:Boolean):void
-		{
-			_hasOtherPain = value;
-		}
-
-		public function get OTHER():String
-		{
-			return _OTHER;
-		}
-
-		public function set OTHER(value:String):void
-		{
-			_OTHER = value;
-		}
 
 
 	}
