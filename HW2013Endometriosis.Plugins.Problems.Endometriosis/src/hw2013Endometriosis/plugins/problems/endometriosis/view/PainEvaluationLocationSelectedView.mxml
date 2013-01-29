@@ -95,30 +95,30 @@
 						<s:Image source="@Embed('/assets/images/PainIntensityScale.png')"/>
 					</s:FormItem>
 					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
-								label="Are there any aggrevating factors?">
+								label="Are there any aggravating factors?">
 						<s:FormItem
 								label="(Things that bring the {BODY_PART.toLowerCase()} pain on and/or make the pain worse?)"/>
 
 
 						<s:VGroup>
-							<s:CheckBox id="AggrevatingSexualIntercourseCheckBox"
+							<s:CheckBox id="AggravatingSexualIntercourseCheckBox"
 										skinClass="spark.skins.spark.CheckBoxSkin" label="Sexual Intercourse"/>
-							<s:CheckBox id="AggrevatingMildPhysicalActivityCheckBox"
+							<s:CheckBox id="AggravatingMildPhysicalActivityCheckBox"
 										skinClass="spark.skins.spark.CheckBoxSkin" label="Mild Physical Activity"/>
-							<s:CheckBox id="AggrevatingModeratePhysicalActivityCheckBox"
+							<s:CheckBox id="AggravatingModeratePhysicalActivityCheckBox"
 										skinClass="spark.skins.spark.CheckBoxSkin" label="Moderate Physical Activity"/>
-							<s:CheckBox id="AggrevatingStrenuousPhysicalActivityCheckBox"
+							<s:CheckBox id="AggravatingStrenuousPhysicalActivityCheckBox"
 										skinClass="spark.skins.spark.CheckBoxSkin" label="Strenuous Physical Activity"/>
-							<s:CheckBox id="AggrevatingEatingCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+							<s:CheckBox id="AggravatingEatingCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Eating"/>
-							<s:CheckBox id="AggrevatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+							<s:CheckBox id="AggravatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Other"/>
 						</s:VGroup>
 					</s:FormItem>
-					<s:FormItem visible="{AggrevatingOtherCheckBox.selected}" skinClass="spark.skins.spark.FormItemSkin"
+					<s:FormItem visible="{AggravatingOtherCheckBox.selected}" skinClass="spark.skins.spark.FormItemSkin"
 								backgroundColor="0xd3d3d3"
-								includeInLayout="{AggrevatingOtherCheckBox.selected}">
-						<s:TextInput visible="{AggrevatingOtherCheckBox.selected}"
+								includeInLayout="{AggravatingOtherCheckBox.selected}">
+						<s:TextInput visible="{AggravatingOtherCheckBox.selected}"
 									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
 					</s:FormItem>
 
