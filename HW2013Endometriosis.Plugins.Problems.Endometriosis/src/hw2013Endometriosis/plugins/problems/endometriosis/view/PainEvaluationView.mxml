@@ -158,8 +158,9 @@
 		{
 			if (_controller)
 			{
-				_controller.changeScreens();
+
 				_controller.updateScreenProgressBar();
+				_controller.changeScreens();
 
 			}
 		}
