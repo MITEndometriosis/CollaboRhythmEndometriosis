@@ -44,6 +44,6 @@
 		]]></fx:Script>
 	<sharedView:WidgetButton id="openButton" width="100%" height="100%"
 							 skinClass="collaboRhythm.shared.view.skins.HomeTransparentNavigationButtonSkin"
-							 label="Endometriosis"
+							 icon="@Embed('/assets/images/ribbon100.png')"
 							 click="openButton_clickHandler()"/>
 </s:Group>
