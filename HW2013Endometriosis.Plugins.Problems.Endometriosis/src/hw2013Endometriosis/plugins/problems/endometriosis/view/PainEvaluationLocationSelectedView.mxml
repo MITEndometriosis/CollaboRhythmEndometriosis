@@ -70,7 +70,7 @@
 
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
-							  paddingLeft="10" paddingRight="20"
+							  paddingLeft="10" paddingRight="10"
 							  paddingTop="10" paddingBottom="10"/>
 		</s:layout>
 
@@ -85,10 +85,10 @@
 		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 					width="100%" height="100%">
 
-			<s:Group horizontalCenter="0">
+			<s:Group horizontalCenter="middle">
 
 				<s:Form skinClass="spark.skins.spark.FormSkin"
-						backgroundColor="0xf5f5f5" horizontalCenter="0">
+						backgroundColor="0xf5f5f5" horizontalCenter="middle">
 
 					<s:FormHeading skinClass="spark.skins.spark.FormHeadingSkin" backgroundColor="0xf5f5f5"
 								   label="The following questions will guide you in evaluating your pain symptoms."/>

@@ -535,7 +535,8 @@
 						 width="100%"/>
 
 
-				<mx:Accordion backgroundColor="0xd3d3d3"
+				<mx:Accordion backgroundColor="0xf5f5f5"
+							  chromeColor="0x9370db"
 							  horizontalCenter="0"
 							  x="500"
 							  left="100">
