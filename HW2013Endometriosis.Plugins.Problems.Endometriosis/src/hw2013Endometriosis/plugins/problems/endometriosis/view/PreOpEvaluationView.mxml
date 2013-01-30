@@ -335,6 +335,7 @@
 			if (errors.length == 0)
 			{
 				Alert.show('All fields are valid.');
+				_controller.savePreOpEvalution();
 			}
 			else
 			{
@@ -409,100 +410,103 @@
 
 		<fx:Array id="validatorsArray">
 			<!--<mx:StringValidator id="generalHealhValidator" source="{generalHealthButtonGroup}" property="selection" required="true"/>-->
-			<mx:StringValidator id="generalHealthValidator" source="{generalHealthButtonGroup}" property="selection"
+			<mx:StringValidator id="generalHealthValidator"
+								source="{generalHealthButtonGroup}"  listener="{generalHealthHBox}"
+								property ="selection"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="generalHealthComparisonValidator" source="{generalHealthComparison}"
-								property="selection"
+								property="selection" listener="{healthComparisonHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="activitiesHighLimitValidator" source="{activitiesHighLimitButtonGroup}"
-								property="selection"
+								property="selection" listener="{activitesHighLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="activitiesModLimitValidator" source="{activitiesModLimitButtonGroup}"
-								property="selection"
+								property="selection" listener="{activitiesModLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="liftingLimitValidator" source="{liftingLimitButtonGroup}" property="selection"
+			<mx:StringValidator id="liftingLimitValidator" source="{liftingLimitButtonGroup}" property="selection" listener="{liftingLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="climbingSeveralLimitValidator" source="{climbingSeveralLimitButtonGroup}"
-								property="selection"
+								property="selection" listener="{climbingSeveralLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="climbingOneLimitValidator" source="{climbingOneLimitButtonGroup}"
-								property="selection"
+								property="selection" listener="{climbingOneLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="bendingLimitValidator" source="{bendingLimitButtonGroup}" property="selection"
+			<mx:StringValidator id="bendingLimitValidator" source="{bendingLimitButtonGroup}" property="selection" listener="{bendingLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="walkMileLimitValidator" source="{walkMileLimitButtonGroup}" property="selection"
+			<mx:StringValidator id="walkMileLimitValidator" source="{walkMileLimitButtonGroup}" property="selection" listener="{walkMileLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="walkSeveralBlocksLimitValidator"
-								source="{walkSeveralBlocksLimitButtonGroup}" property="selection"
+								source="{walkSeveralBlocksLimitButtonGroup}" property="selection" listener="{walkSeveralBlocksLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="walkSingleBlocksLimitValidator" source="{walkSingleBlocksLimitButtonGroup}"
-								property="selection"
+								property="selection" listener="{walkSingleBlocksLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="bathingLimitValidator" source="{bathingLimitButtonGroup}" property="selection"
+			<mx:StringValidator id="bathingLimitValidator" source="{bathingLimitButtonGroup}" property="selection" listener="{bathingLimitHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="cutTime1Validator" source="{cutTime1ButtonGroup}" property="selection"
+			<mx:StringValidator id="cutTime1Validator" source="{cutTime1ButtonGroup}" property="selection" listener="{cutTime1HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="cutTime2Validator" source="{cutTime2ButtonGroup}" property="selection"
+			<mx:StringValidator id="cutTime2Validator" source="{cutTime2ButtonGroup}" property="selection" listener="{cutTime2HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="accomplishLess1Validator" source="{accomplishLess1ButtonGroup}" property="selection"
+			<mx:StringValidator id="accomplishLess1Validator" source="{accomplishLess1ButtonGroup}" property="selection" listener="{accomplishLess1HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="accomplishLess2Validator" source="{accomplishLess2ButtonGroup}" property="selection"
+			<mx:StringValidator id="accomplishLess2Validator" source="{accomplishLess2ButtonGroup}" property="selection" listener="{accomplishLess2HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="limitWork1Validator" source="{limitWork1ButtonGroup}" property="selection"
+			<mx:StringValidator id="limitWork1Validator" source="{limitWork1ButtonGroup}" property="selection" listener="{limitWork1HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="limitWork2Validator" source="{limitWork2ButtonGroup}" property="selection"
+			<mx:StringValidator id="limitWork2Validator" source="{limitWork2ButtonGroup}" property="selection" listener="{limitWork2HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="difficultWork1Validator" source="{difficultWork1ButtonGroup}" property="selection"
+			<mx:StringValidator id="difficultWork1Validator" source="{difficultWork1ButtonGroup}"
+								property="selection" listener="{difficultWork1HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="difficultWork2Validator" source="{difficultWork2ButtonGroup}" property="selection"
+			<mx:StringValidator id="difficultWork2Validator" source="{difficultWork2ButtonGroup}" property="selection" listener="{difficultWork2HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="cutTimeEmo1Validator" source="{cutTimeEmo1ButtonGroup}" property="selection"
+			<mx:StringValidator id="cutTimeEmo1Validator" source="{cutTimeEmo1ButtonGroup}" property="selection" listener="{cutTimeEmo1HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="cutTimeEmo2Validator" source="{cutTimeEmo2ButtonGroup}" property="selection"
+			<mx:StringValidator id="cutTimeEmo2Validator" source="{cutTimeEmo2ButtonGroup}" property="selection" listener="{cutTimeEmo2HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="accomplishLessEmo1Validator" source="{accomplishLessEmo1ButtonGroup}"
-								property="selection"
+								property="selection" listener="{accomplishLessEmo1HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
 			<mx:StringValidator id="accomplishLessEmo2Validator" source="{accomplishLessEmo2ButtonGroup}"
-								property="selection"
+								property="selection" listener="{accomplishLessEmo2HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="limitWorkEmo1Validator" source="{limitWorkEmo1ButtonGroup}" property="selection"
+			<mx:StringValidator id="limitWorkEmo1Validator" source="{limitWorkEmo1ButtonGroup}" property="selection" listener="{limitWorkEmo1HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="limitWorkEmo2Validator" source="{limitWorkEmo2ButtonGroup}" property="selection"
+			<mx:StringValidator id="limitWorkEmo2Validator" source="{limitWorkEmo2ButtonGroup}" property="selection" listener="{limitWork2HBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="socialPhysicalValidator" source="{socialPhysicalButtonGroup}" property="selection"
+			<mx:StringValidator id="socialPhysicalValidator" source="{socialPhysicalButtonGroup}" property="selection" listener="{socialPhysicalHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="painQuantityValidator" source="{painQuantityButtonGroup}" property="selection"
+			<mx:StringValidator id="painQuantityValidator" source="{painQuantityButtonGroup}" property="selection" listener="{painQuantityHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="painInterfereValidator" source="{painInterfereButtonGroup}" property="selection"
+			<mx:StringValidator id="painInterfereValidator" source="{painInterfereButtonGroup}" property="selection" listener="{painInterfereHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="socialEmoValidator" source="{socialEmoButtonGroup}" property="selection"
+			<mx:StringValidator id="socialEmoValidator" source="{socialEmoButtonGroup}" property="selection" listener="{socialEmoHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="pepEnergyValidator" source="{pepEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="pepEnergyValidator" source="{pepEnergyButtonGroup}" property="selection" listener="{pepEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="nervousEnergyValidator" source="{nervousEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="nervousEnergyValidator" source="{nervousEnergyButtonGroup}" property="selection" listener="{nervousEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="dumpsEnergyValidator" source="{dumpsEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="dumpsEnergyValidator" source="{dumpsEnergyButtonGroup}" property="selection" listener="{dumpsEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="calmEnergyValidator" source="{calmEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="calmEnergyValidator" source="{calmEnergyButtonGroup}" property="selection" listener="{calmEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="lotsEnergyValidator" source="{lotsEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="lotsEnergyValidator" source="{lotsEnergyButtonGroup}" property="selection" listener="{lotsEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="downBlueEnergyValidator" source="{downBlueEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="downBlueEnergyValidator" source="{downBlueEnergyButtonGroup}" property="selection" listener="{downBlueEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="wornEnergyValidator" source="{wornEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="wornEnergyValidator" source="{wornEnergyButtonGroup}" property="selection" listener="{wornEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="happyEnergyValidator" source="{happyEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="happyEnergyValidator" source="{happyEnergyButtonGroup}" property="selection" listener="{happyEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="tiredEnergyValidator" source="{tiredEnergyButtonGroup}" property="selection"
+			<mx:StringValidator id="tiredEnergyValidator" source="{tiredEnergyButtonGroup}" property="selection" listener="{tiredEnergyHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="sickTFValidator" source="{sickTFButtonGroup}" property="selection"
+			<mx:StringValidator id="sickTFValidator" source="{sickTFButtonGroup}" property="selection" listener="{sickTFHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="healthyTFValidator" source="{healthyTFButtonGroup}" property="selection"
+			<mx:StringValidator id="healthyTFValidator" source="{healthyTFButtonGroup}" property="selection" listener="{healthTFHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="worseTFValidator" source="{worseTFButtonGroup}" property="selection"
+			<mx:StringValidator id="worseTFValidator" source="{worseTFButtonGroup}" property="selection" listener="{worseTFHBox}"
 								trigger="{saveButton}" triggerEvent="click"/>
-			<mx:StringValidator id="excellentTFValidator" source="{excellentTFButtonGroup}" property="selection"
+			<mx:StringValidator id="excellentTFValidator" source="{excellentTFButtonGroup}" property="selection" listener="{excellentTFValidator}"
 								trigger="{saveButton}" triggerEvent="click"/>
 
 		</fx:Array>
@@ -677,7 +681,7 @@
 											skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
 											backgroundColor="0xd3d3d3">
 
-										<mx:HBox id="acitivitesHighLimitHBox">
+										<mx:HBox id="activitesHighLimitHBox">
 
 											<mx:Repeater id="activitiesHighLimitRepeater"
 														 dataProvider="{limitYesNo}">
@@ -1352,7 +1356,7 @@
 									<s:FormItem required="true" label="Do you feel tired?"
 												skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
 												backgroundColor="0xd3d3d3">
-										<mx:HBox id="TiredEnergyHBox">
+										<mx:HBox id="tiredEnergyHBox">
 											<mx:Repeater id="tiredEnergyRepeater"
 														 dataProvider="{howOften2}">
 												<s:RadioButton id="tiredEnergyRadioButtons"
@@ -1379,7 +1383,7 @@
 						  chromeColor="0x9370db"
 						  horizontalCenter="0"
 						  left="100" top="20"
-						  click="saveButton_clickHandler(event)"/>
+						  click="validateForm()"/>
 			</s:VGroup>
 
 		</s:Scroller>
