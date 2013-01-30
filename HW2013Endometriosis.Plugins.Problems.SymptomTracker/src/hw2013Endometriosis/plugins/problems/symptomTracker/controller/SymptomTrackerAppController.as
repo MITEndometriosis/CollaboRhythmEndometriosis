@@ -112,5 +112,10 @@ package hw2013Endometriosis.plugins.problems.symptomTracker.controller
 		{
 			return _model;
 		}
+
+		public function pushNewScreen():void
+		{
+			
+		}
 	}
 }

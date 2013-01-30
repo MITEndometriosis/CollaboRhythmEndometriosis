@@ -1,5 +1,7 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.model
 {
+	import flashx.textLayout.formats.Float;
+
 	import mx.collections.ArrayList;
 
 	public class PainEvaluationModel
@@ -11,7 +13,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _hasAbdomenPain:Boolean = false;
 		private var _hasPelvisPain:Boolean = false;
 		private var _hasFlankPain:Boolean = false;
-		private var _currentPercentage:int = 0;
+		private var _currentPercentage:Number = 0;
 
 		public var SHOULDER: String = "Shoulder";
 	    public var ABDOMEN:String = "Abdomen";
@@ -98,20 +100,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 
 
-		public function CalculatenumScreens():int
-		{ var value: int = 1;
-			var hasPainArray: Array = [_hasAbdomenPain, _hasFlankPain, _hasPelvisPain, _hasShoulderPain];
-			var a:Boolean;
 
-			for (a in hasPainArray)
-			{
-				if (a)
-				{value= value +1;
-				}
-			}
-
-			return value;
-		}
 	}
 }
 
