@@ -82,8 +82,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			series.dataProvider = seriesDataCollection;
 			series.displayName = "Pain Evaluation";
 			series.filterDataValues = "none";
-			series.setStyle("stroke", new SolidColorStroke(0x224488, 2));
-			series.setStyle("fill", new SolidColor(0xFF0000));
+			series.setStyle("stroke", new SolidColorStroke(0xF53884, 2));
+			series.setStyle("fill", new SolidColor(0xF53884));
 			seriesDataSets.push(new SeriesDataSet(series, seriesDataCollection, "dateReported"));
 
 			return seriesDataSets;
