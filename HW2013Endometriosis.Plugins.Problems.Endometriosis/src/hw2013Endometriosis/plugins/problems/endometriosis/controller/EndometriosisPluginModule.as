@@ -10,6 +10,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import collaboRhythm.shared.pluginsSupport.IPlugin;
 	import collaboRhythm.shared.ui.healthCharts.model.modifiers.IChartModifierFactory;
 
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.EndometriosisChartModifierFactory;
+
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.EndometriosisHealthActionInputControllerFactory;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.EndometriosisHealthActionListViewAdapterFactory;
@@ -37,11 +39,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			componentContainer.registerComponentInstance(ReflectionUtils.getClassInfo(EndometriosisHealthActionInputControllerFactory).name,
 					IHealthActionInputControllerFactory,
 					new EndometriosisHealthActionInputControllerFactory());
-//
-//			componentContainer.registerComponentInstance(ReflectionUtils.getClassInfo(EndometriosisChartModifierFactory).name,
-//					IChartModifierFactory,
-//					new EndometriosisChartModifierFactory());
-//
+
+			componentContainer.registerComponentInstance(ReflectionUtils.getClassInfo(EndometriosisChartModifierFactory).name,
+					IChartModifierFactory,
+					new EndometriosisChartModifierFactory());
+
 //			componentContainer.registerComponentInstance(ReflectionUtils.getClassInfo(EndometriosisHealthActionCreationControllerFactory).name,
 //					IHealthActionCreationControllerFactory,
 //					new EndometriosisHealthActionCreationControllerFactory());

@@ -235,7 +235,7 @@
     
     <demographicsId>36df9159-2d8a-49c3-9ebf-b77e549d490a</demographicsId>
     
-    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    <notes/>
     
     <recordSeed/>
     
@@ -317,7 +317,7 @@
     
     <shareAccountId>endometriosis-jking@records.media.mit.edu</shareAccountId>
     
-    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    <notes/>
     
     <shareRole>Coach</shareRole>
     
@@ -327,4 +327,86 @@
     
   </AccountSource>
   
-</dataroot>
+<AccountSource>
+    
+    <accountId>endometriosis-test1@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@localhost</contactEmail>
+    
+    <fullName>Pamela Peterson</fullName>
+    
+    <username>endometriosis-test1</username>
+    
+    <password>endometriosis-test1</password>
+    
+    <givenName>Test1</givenName>
+    
+    <familyName>Tester</familyName>
+    
+    <streetAddress>84 Spruce Street</streetAddress>
+    
+    <postalCode>2215</postalCode>
+    
+    <locality>Boston</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-patient@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-patient@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1940-02-24T00:00:00Z</dateOfBirth>
+    
+    <age>70</age>
+    
+    <gender>Female</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Widowed</maritalStatus>
+    
+    <employmentStatus>Retired</employmentStatus>
+    
+    <employmentIndustry>Education</employmentIndustry>
+    
+    <occupation>Teacher</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId/>
+    
+    <accessKey/>
+    
+    <accessSecret/>
+    
+    <status/>
+    
+    <demographicsId>7cac4b09-ae19-4fad-963e-1b936d24bad3</demographicsId>
+    
+    <recordSeed/>
+    
+    <shareAccountId>endometriosis-jking@records.media.mit.edu</shareAccountId>
+    
+    <notes/>
+    
+    <shareRole>Coach</shareRole>
+    
+    <documentsDirectory/>
+    
+    <mode>patient</mode>
+    
+  </AccountSource></dataroot>
