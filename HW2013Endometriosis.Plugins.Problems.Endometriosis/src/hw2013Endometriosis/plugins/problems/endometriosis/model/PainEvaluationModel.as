@@ -100,20 +100,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 
 
-		public function CalculatenumScreens():int
-		{ var value: int = 1;
-			var hasPainArray: Array = [_hasAbdomenPain, _hasFlankPain, _hasPelvisPain, _hasShoulderPain];
-			var a:Boolean;
 
-			for (a in hasPainArray)
-			{
-				if (a)
-				{value= value +1;
-				}
-			}
-
-			return value;
-		}
 	}
 }
 

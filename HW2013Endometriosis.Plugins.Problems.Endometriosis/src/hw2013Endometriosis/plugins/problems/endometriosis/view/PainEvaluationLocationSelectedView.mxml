@@ -137,7 +137,7 @@
 										skinClass="spark.skins.spark.CheckBoxSkin" label="Heating Pad"/>
 							<s:CheckBox id="AlleviatingBowelMovementCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Bowel Movement"/>
-							<s:CheckBox id="AlleviatingAccupunctureCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+							<s:CheckBox id="AlleviatingAcupunctureCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Acupuncture"/>
 							<s:CheckBox id="AlleviatingHerbsCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 							label="Herbs"/>
