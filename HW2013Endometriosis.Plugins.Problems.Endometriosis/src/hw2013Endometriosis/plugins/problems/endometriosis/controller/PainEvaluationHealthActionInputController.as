@@ -118,29 +118,36 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function changeScreens():void
 		{
-			var viewList:Array = [_painEvaluationModel.HOME, _painEvaluationModel.SHOULDER, _painEvaluationModel.ABDOMEN, _painEvaluationModel.PELVIS, _painEvaluationModel.FLANK ];
-			var painList:Array = [true, _painEvaluationModel.hasShoulderPain, _painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasFlankPain];
+			const viewList:Array = [_painEvaluationModel.HOME, _painEvaluationModel.SHOULDER, _painEvaluationModel.ABDOMEN, _painEvaluationModel.PELVIS, _painEvaluationModel.FLANK ];
+			const painList:Array = [true, _painEvaluationModel.hasShoulderPain, _painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasFlankPain];
+			var indexNum:int = viewList.indexOf(_painEvaluationModel.SCREEN);
 
 			//Allowing Screens to loop
-			if (viewList.indexOf(_painEvaluationModel.SCREEN) == viewList.length - 1)
+			if (indexNum == viewList.length - 1)
 			{
-				_painEvaluationModel.SCREEN = viewList[0]
+				_painEvaluationModel.SCREEN = _painEvaluationModel.HOME
 			}
 			else
 			{
-				_painEvaluationModel.SCREEN = viewList[viewList.indexOf(_painEvaluationModel.SCREEN) + 1];
+				indexNum = indexNum + 1;
+				_painEvaluationModel.SCREEN = viewList[indexNum];
 			}
+
 
 			//Deciding which screen to push
-			if(_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
-			{
-				_viewNavigator.popView();
-			}
 
 
-			if (painList[viewList.indexOf(_painEvaluationModel.SCREEN)])
+			if (painList[indexNum])
 			{
-				_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
+				if (_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
+				{
+					_viewNavigator.popToFirstView();
+
+				}
+				else
+				{
+					_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
+				}
 			}
 
 			else
@@ -155,26 +162,26 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		public function updateScreenProgressBar():void
 		{
 
-				if (_painEvaluationModel.currentPercentage > 100)
-				{
-					_painEvaluationModel.currentPercentage = 0;
+			if (_painEvaluationModel.currentPercentage > 100)
+			{
+				_painEvaluationModel.currentPercentage = 0;
 
-				}
+			}
 			var value:int = 0;
-							var hasPainArray:Array = [_painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasFlankPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasShoulderPain];
-							var a:Boolean;
+			var hasPainArray:Array = [_painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasFlankPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasShoulderPain];
 
-							for (a in hasPainArray)
-							{
-								if (a)
-								{
-									value = value + 1;
-								}
-							}
 
-							var numScreens:Number = value;
+			for (var i:int = 0; i < hasPainArray.length; i++)
+			{
+				if (hasPainArray[i])
+				{
+					value = value + 1;
+				}
+			}
 
-							_painEvaluationModel.currentPercentage += 100.0 / numScreens;
+			var numScreens:Number = value;
+
+			_painEvaluationModel.currentPercentage += 100.0 / numScreens;
 
 
 		}
