@@ -18,7 +18,7 @@
 <tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
-					   xmlns:view="hw2013Endometriosis.plugins.problems.symptomTracker.view.*"
+					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   title="SymptomTracker">
 
 
@@ -51,7 +51,7 @@
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="nauseaButton" label="Nausea"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="painLocationButtonHandler(event)"
+								  click="nauseaLocationButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="shoulderButton" label="Shoulder Pain"
 								  skinClass="spark.skins.mobile.ButtonSkin"
@@ -75,15 +75,15 @@
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="urinarySymptomsButton" label="Urinary Symptoms"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="painLocationButtonHandler(event)"
+								  click="urinarySymptomsLocationButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="bowelSymptomsButton" label="Bowel Symptoms"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="painLocationButtonHandler(event)"
+								  click="bowelLocationButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="otherButton" label="Other Symptom"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="painLocationButtonHandler(event)"
+								  click="otherLocationButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 
 					</s:VGroup>
@@ -100,8 +100,9 @@
 	</s:Panel>
 
 	<fx:Script><![CDATA[
-		import hw2013Endometriosis.plugins.problems.symptomTracker.controller.SymptomTrackerAppController;
-		import hw2013Endometriosis.plugins.problems.symptomTracker.model.SymptomTrackerModel;
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.SymptomTrackerAppController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.SymptomTrackerModel;
 
 		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
 		import collaboRhythm.shared.collaboration.model.CollaborationModel;
@@ -110,6 +111,7 @@
 
 		[Bindable]
 		private var _controller:SymptomTrackerAppController;
+		private var _painController:PainEvaluationHealthActionInputController;
 		private var _model:SymptomTrackerModel;
 		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
 		private var _viewNavigator:ViewNavigator;
@@ -118,6 +120,7 @@
 		{
 			super.data = value;
 
+			_painController = value as PainEvaluationHealthActionInputController;
 			_controller = value as SymptomTrackerAppController;
 			_model = _controller.model;
 
@@ -139,10 +142,25 @@
 		{
 			if (_controller)
 			{
+				switch (event.target)
+				{
+					case shoulderButton:
+						_painController.updateHasShoulderPain(true);
+						break;
+					case pelvisButton:
+						_painController.updateHasPelvisPain(true);
+						break;
+					case abdomenButton:
+						_painController.updateHasAbdomenPain(true);
+						break;
+					case flankButton:
+						_painController.updateHasFlankPain(true);
+						break;
+
+				}
 				_controller.pushPainEvaluationView();
 			}
 		}
-
 
 		private function emoLocationButtonHandler(event:MouseEvent):void
 		{
@@ -158,17 +176,37 @@
 
 		}
 
-		/*
-				private function nextButtonHandler(event:Event):void
-				{
-					if (_controller)
-					{
+		private function nauseaLocationButtonHandler(event:MouseEvent):void
+		{
+			if (_controller)
+			{
+				_controller.pushPostOpEvaluationView();
+			}
+		}
 
+		private function urinarySymptomsLocationButtonHandler(event:MouseEvent):void
+		{
+			if (_controller)
+						{
+							_controller.pushPostOpEvaluationView();
+						}
+		}
 
-					}
-				}
-		*/
+		private function bowelLocationButtonHandler(event:MouseEvent):void
+		{
+			if (_controller)
+						{
+							_controller.pushPostOpEvaluationView();
+						}
+		}
 
+		private function otherLocationButtonHandler(event:MouseEvent):void
+		{
+			if (_controller)
+						{
+							_controller.pushPostOpEvaluationView();
+						}
+		}
 		]]></fx:Script>
 
 
