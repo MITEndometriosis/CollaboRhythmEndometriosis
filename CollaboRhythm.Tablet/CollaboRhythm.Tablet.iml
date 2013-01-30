@@ -100,6 +100,7 @@
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/../CollaboRhythm.Plugins.Problems.HIV/bin-debug/HIVPluginModule.swf" path-in-package="plugins/HIVPluginModule.swf" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/../CollaboRhythm.Plugins.IncisionEvaluation/bin-debug/IncisionEvaluationPluginModule.swf" path-in-package="plugins/IncisionEvaluationPluginModule.swf" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/../out/production/HW2013Endometriosis.Plugins.Problems.SymptomTracker/HW2013Endometriosis_Plugins_Problems_SymptomTracker.swf" path-in-package="plugins/HW2013Endometriosis_Plugins_Problems_SymptomTracker.swf" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/../out/production/HW2013Endometriosis.Plugins.Problems.Endometriosis/HW2013Endometriosis_Plugins_Problems_Endometriosis.swf" path-in-package="plugins/HW2013Endometriosis_Plugins_Problems_Endometriosis.swf" />
           </files-to-package>
           <AirSigningOptions keystore-path="$MODULE_DIR$/../CollaboRhythm.Workstation/CollaboRhythmKeystore.p12" use-temp-certificate="false" />
         </packaging-android>
