@@ -178,11 +178,11 @@
 		</s:layout>
 
 		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
-					width="100%" height="100%">
+						width="100%" height="100%">
 
-			<s:Group>
+			<s:Group horizontalCenter="0">
 				<s:Form skinClass="spark.skins.spark.FormSkin"
-						backgroundColor="0xd3d3d3">
+						backgroundColor="0xd3d3d3" horizontalCenter="0" >
 					<s:FormHeading
 							label="Bleeding can be normal, either due to the surgery or menstruation."
 							skinClass="spark.skins.spark.FormHeadingSkin"
@@ -299,7 +299,7 @@
 						</s:HGroup>
 					</s:FormItem>
 
-					<s:FormItem
+					<s:FormItem horizontalCenter="0" verticalCenter="0"
 							skinClass="spark.skins.spark.FormItemSkin"
 							backgroundColor="0xd3d3d3">
 						<s:Button label="Save"

@@ -366,7 +366,7 @@
 		<s:RadioButtonGroup id="limitWork2ButtonGroup" itemClick="limitWork2_resultHandler(event);"/>
 		<s:RadioButtonGroup id="difficultWork1ButtonGroup" itemClick="difficultWork1_resultHandler(event);"/>
 		<s:RadioButtonGroup id="difficultWork2ButtonGroup" itemClick="difficultWork2_resultHandler(event);"/>
-		<s:RadioButtonGroup id="cutTimeEmo1ButtonGroup" itemClick="cutTimeEmo2_resultHandler(event);"/>
+		<s:RadioButtonGroup id="cutTimeEmo1ButtonGroup" itemClick="cutTimeEmo1_resultHandler(event);"/>
 		<s:RadioButtonGroup id="cutTimeEmo2ButtonGroup" itemClick="cutTimeEmo2_resultHandler(event);"/>
 		<s:RadioButtonGroup id="accomplishLessEmo1ButtonGroup" itemClick="accomplishLessEmo1_resultHandler(event);"/>
 		<s:RadioButtonGroup id="accomplishLessEmo2ButtonGroup" itemClick="accomplishLessEmo2_resultHandler(event);"/>
@@ -390,12 +390,112 @@
 		<s:RadioButtonGroup id="worseTFButtonGroup" itemClick="worseTF_resultHandler(event);"/>
 		<s:RadioButtonGroup id="excellentTFButtonGroup" itemClick="excellentTF_resultHandler(event);"/>
 
+		<fx:Array id="validatorsArray">
+			<!--<mx:StringValidator id="generalHealhValidator" source="{generalHealthButtonGroup}" property="selection" required="true"/>-->
+			<mx:StringValidator id="generalHealthValidator" source="{generalHealthButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="generalHealthComparisonValidator" source="{generalHealthComparison}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="activitiesHighLimitValidator" source="{activitiesHighLimitButtonGroup}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="activitiesModLimitValidator" source="{activitiesModLimitButtonGroup}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="liftingLimitValidator" source="{liftingLimitButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="climbingSeveralLimitValidator" source="{climbingSeveralLimitButtonGroup}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="climbingOneLimitValidator" source="{climbingOneLimitButtonGroup}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="bendingLimitValidator" source="{bendingLimitButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="walkMileLimitValidator" source="{walkMileLimitButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="walkSeveralBlocksLimitValidator"
+								source="{walkSeveralBlocksLimitButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="walkSingleBlocksLimitValidator" source="{walkSingleBlocksLimitButtonGroup}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="bathingLimitValidator" source="{bathingLimitButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="cutTime1Validator" source="{cutTime1ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="cutTime2Validator" source="{cutTime2ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="accomplishLess1Validator" source="{accomplishLess1ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="accomplishLess2Validator" source="{accomplishLess2ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="limitWork1Validator" source="{limitWork1ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="limitWork2Validator" source="{limitWork2ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="difficultWork1Validator" source="{difficultWork1ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="difficultWork2Validator" source="{difficultWork2ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="cutTimeEmo1Validator" source="{cutTimeEmo1ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="cutTimeEmo2Validator" source="{cutTimeEmo2ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="accomplishLessEmo1Validator" source="{accomplishLessEmo1ButtonGroup}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="accomplishLessEmo2Validator" source="{accomplishLessEmo2ButtonGroup}"
+								property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="limitWorkEmo1Validator" source="{limitWorkEmo1ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="limitWorkEmo2Validator" source="{limitWorkEmo2ButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="socialPhysicalValidator" source="{socialPhysicalButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="painQuantityValidator" source="{painQuantityButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="painInterfereValidator" source="{painInterfereButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="socialEmoValidator" source="{socialEmoButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="pepEnergyValidator" source="{pepEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="nervousEnergyValidator" source="{nervousEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="dumpsEnergyValidator" source="{dumpsEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="calmEnergyValidator" source="{calmEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="lotsEnergyValidator" source="{lotsEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="downBlueEnergyValidator" source="{downBlueEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="wornEnergyValidator" source="{wornEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="happyEnergyValidator" source="{happyEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="tiredEnergyValidator" source="{tiredEnergyButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="sickTFValidator" source="{sickTFButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="healthyTFValidator" source="{healthyTFButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="worseTFValidator" source="{worseTFButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+			<mx:StringValidator id="excellentTFValidator" source="{excellentTFButtonGroup}" property="selection"
+								trigger="{saveButton}" triggerEvent="click"/>
+
+		</fx:Array>
 	</fx:Declarations>
 
 
 	<s:Panel title="Pre-Operative Evaluation"
 			 backgroundColor="0x778899" borderColor="0x778899"
 			 width="1000" height="600"
+			 horizontalCenter="middle"
 			 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
 
 		<s:layout>
@@ -403,17 +503,26 @@
 							  paddingLeft="10" paddingRight="10"
 							  paddingTop="10" paddingBottom="10"/>
 		</s:layout>
-		<s:Scroller width="900" height="500"
+		<s:Scroller width="950" height="450" horizontalCenter="0"
 					skinClass="spark.skins.spark.ScrollerSkin">
-			<s:VGroup id="accordionForm">
+			<s:VGroup id="accordionForm"
+					  horizontalCenter="0"  horizontalAlign="center"
+					  paddingTop="10" paddingLeft="10" paddingBottom="10" paddingRight="10">
 				<s:Label paddingTop="10" paddingLeft="10" paddingBottom="10" paddingRight="10" textAlign="center"
 						 text="Please answer the 36 questions of the Health Survey completely, honestly, and without interruptions."
 						 width="100%"/>
 
-				<mx:Accordion backgroundColor="0xd3d3d3" horizontalCenter="0">
+
+				<mx:Accordion backgroundColor="0xd3d3d3"
+							  horizontalCenter="0"
+							  x="500"
+							  left="100">
+
+
 					<s:NavigatorContent label="General Health"
 										width="100%" height="100%"
-										skinClass="spark.skins.mobile.ViewNavigatorSkin">
+										skinClass="spark.skins.mobile.ViewNavigatorSkin"
+										horizontalCenter="0">
 						<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 									width="100%" height="100%">
 							<s:Group>
@@ -423,7 +532,7 @@
 										backgroundColor="0xd3d3d3"
 										maxWidth="1000">
 
-									<s:FormItem label="In general, would you say your health is: "
+									<s:FormItem required="true" label="In general, would you say your health is: "
 												skinClass="spark.skins.spark.StackedFormItemSkin"
 												backgroundColor="0xd3d3d3"
 												width="100%">
@@ -438,11 +547,11 @@
 										</mx:HBox>
 									</s:FormItem>
 
-									<s:FormItem
-											label="Compared to one year ago, how would you rate your health in general now? "
-											skinClass="spark.skins.spark.StackedFormItemSkin"
-											backgroundColor="0xd3d3d3"
-											width="100%">
+									<s:FormItem required="true"
+												label="Compared to one year ago, how would you rate your health in general now? "
+												skinClass="spark.skins.spark.StackedFormItemSkin"
+												backgroundColor="0xd3d3d3"
+												width="100%">
 										<mx:HBox>
 											<mx:Repeater id="healthComparisonRepeater"
 														 dataProvider="{healthComparisonArr}">
@@ -458,7 +567,8 @@
 									<s:Label text="How true or false is each of the following statements for you?"
 											 width="100%"/>
 
-									<s:FormItem label="I seem to get sick a little easier than other people."
+									<s:FormItem required="true"
+												label="I seem to get sick a little easier than other people."
 												skinClass="spark.skins.spark.StackedFormItemSkin"
 												backgroundColor="0xd3d3d3"
 												width="100%">
@@ -472,7 +582,7 @@
 											</mx:Repeater>
 										</mx:HBox>
 									</s:FormItem>
-									<s:FormItem label="I am as healthy as anybody I know."
+									<s:FormItem required="true" label="I am as healthy as anybody I know."
 												skinClass="spark.skins.spark.StackedFormItemSkin"
 												backgroundColor="0xd3d3d3"
 												width="100%">
@@ -488,7 +598,7 @@
 									</s:FormItem>
 
 
-									<s:FormItem label="I expect my health to get worse"
+									<s:FormItem required="true" label="I expect my health to get worse"
 												skinClass="spark.skins.spark.StackedFormItemSkin"
 												backgroundColor="0xd3d3d3"
 												width="100%">
@@ -503,7 +613,7 @@
 										</mx:HBox>
 									</s:FormItem>
 
-									<s:FormItem label="My health is excellent."
+									<s:FormItem required="true" label="My health is excellent."
 												skinClass="spark.skins.spark.StackedFormItemSkin"
 												backgroundColor="0xd3d3d3"
 												width="100%">
@@ -525,7 +635,8 @@
 
 					<s:NavigatorContent label="Limitation of Activities"
 										width="100%" height="100%"
-										skinClass="spark.skins.mobile.ViewNavigatorSkin">
+										skinClass="spark.skins.mobile.ViewNavigatorSkin"
+										horizontalCenter="0">
 						<s:layout>
 							<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
 						</s:layout>
@@ -706,7 +817,8 @@
 
 					<s:NavigatorContent label="Physical Health Problems"
 										width="100%" height="100%"
-										skinClass="spark.skins.mobile.ViewNavigatorSkin">
+										skinClass="spark.skins.mobile.ViewNavigatorSkin"
+										horizontalCenter="0">
 						<s:layout>
 							<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
 						</s:layout>
@@ -854,7 +966,8 @@
 
 					<s:NavigatorContent label="Emotional Health Problems"
 										width="100%" height="100%"
-										skinClass="spark.skins.mobile.ViewNavigatorSkin">
+										skinClass="spark.skins.mobile.ViewNavigatorSkin"
+										horizontalCenter="0">
 						<s:layout>
 							<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
 						</s:layout>
@@ -970,7 +1083,8 @@
 					</s:NavigatorContent>
 					<s:NavigatorContent label="Social Activities"
 										width="100%" height="100%"
-										skinClass="spark.skins.mobile.ViewNavigatorSkin">
+										skinClass="spark.skins.mobile.ViewNavigatorSkin"
+										horizontalCenter="0">
 						<s:layout>
 							<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
 						</s:layout>
@@ -1020,8 +1134,9 @@
 					</s:NavigatorContent>
 
 					<s:NavigatorContent label="Pain"
-										width="100%" height="100%"
-										skinClass="spark.skins.mobile.ViewNavigatorSkin">
+										width="100%" height="300"
+										skinClass="spark.skins.mobile.ViewNavigatorSkin"
+							horizontalCenter="0">
 						<s:layout>
 							<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
 						</s:layout>
@@ -1073,13 +1188,15 @@
 
 					<s:NavigatorContent label="Energy and Emotions"
 										width="100%" height="100%"
-										skinClass="spark.skins.mobile.ViewNavigatorSkin">
+										skinClass="spark.skins.mobile.ViewNavigatorSkin"
+							horizontalCenter="0">
 						<s:layout>
 							<s:VerticalLayout paddingTop="10" paddingLeft="5"/>
 						</s:layout>
 
 						<s:Label text="These questions are about how you feel and how things have been with you during the last 4 weeks.
-				 		For each question, please give the answer that comes closest to the way you have been feeling."/>
+				 		For each question, please give the answer that comes closest to the way you have been feeling."
+								width="100%"/>
 
 						<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 									width="100%" height="100%">
@@ -1210,7 +1327,7 @@
 											</mx:Repeater>
 										</mx:HBox>
 									</s:FormItem>
-									<s:FormItem label="Do you feel tired?"
+									<s:FormItem required="true" label="Do you feel tired?"
 												skinClass="spark.skins.spark.StackedFormItemSkin" width="100%"
 												backgroundColor="0xd3d3d3">
 										<mx:HBox>
@@ -1233,12 +1350,13 @@
 
 				</mx:Accordion>
 
-
-				<s:Button label="Save"
+				<s:Button id="saveButton"
+						  label="Save"
 						  width="100"
 						  skinClass="spark.skins.mobile.ButtonSkin"
 						  chromeColor="0x9370db"
-						  x="250"
+						  horizontalCenter="0" verticalCenter="0"
+						  left="100"
 						  click="saveButton_clickHandler(event)"/>
 			</s:VGroup>
 
