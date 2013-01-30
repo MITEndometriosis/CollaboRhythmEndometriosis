@@ -170,7 +170,7 @@
 
 
 					<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
-							  skinClass="spark.skins.mobile.ButtonSkin"/>
+							  skinClass="spark.skins.mobile.ButtonSkin" chromeColor="yellow"/>
 
 				</s:Form>
 			</s:Group>

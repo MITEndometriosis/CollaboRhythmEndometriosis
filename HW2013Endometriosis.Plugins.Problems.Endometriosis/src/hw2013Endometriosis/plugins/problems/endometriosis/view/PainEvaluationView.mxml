@@ -58,7 +58,8 @@
 						  includeInLayout="{painIndicatorToggleSwitch.selected}"
 						  verticalCenter="middle" verticalAlign="middle">
 
-					<s:VGroup verticalCenter="middle" horizontalCenter="middle">
+					<s:VGroup verticalCenter="middle" horizontalCenter="middle"
+							verticalAlign="middle" horizontalAlign="center">
 
 						<s:Label id="PainLocationLabel" text="Where are you having pain?"/>
 
@@ -95,7 +96,7 @@
 											height="50" width="150"/>
 							<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
 									  skinClass="spark.skins.mobile.ButtonSkin"
-									  height="50" width="150"/>
+									  height="50" width="150" chromeColor="yellow"/>
 						</s:VGroup>
 
 					</s:VGroup>
