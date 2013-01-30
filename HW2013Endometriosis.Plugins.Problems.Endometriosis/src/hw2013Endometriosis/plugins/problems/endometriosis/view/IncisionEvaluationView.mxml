@@ -21,8 +21,10 @@
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   title="IncisionEvaluation">
 
-	<s:Panel title="Incision Evaluation." backgroundColor="0x778899" borderColor="0x778899" width="1000"
-			 x="20" y="20" skinClass="spark.skins.spark.PanelSkin">
+	<s:Panel title="Incision Evaluation." backgroundColor="0xf5f5f5" borderColor="0x9370db"
+			 chromeColor="0x9370db" left="20" top="20" bottom="20" right="20"
+			 skinClass="spark.skins.spark.PanelSkin"
+			 horizontalCenter="middle">
 
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
@@ -30,85 +32,98 @@
 							  paddingTop="10" paddingBottom="10"/>
 		</s:layout>
 
-		<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xd3d3d3">
+		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
+					width="100%" height="100%">
 
-			<s:FormHeading label="Please take a look at your incisions."
-						   skinClass="spark.skins.spark.FormHeadingSkin"/>
+			<s:Group horizontalCenter="middle">
+				<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xf5f5f5"
+						horizontalCenter="middle" verticalCenter="middle">
 
-			<s:FormItem label="Are any of them red?" skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="rednessIndicatorToggleSwitch"
-								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="rednessIndicatorToggleSwitch_changeHandler(event)"
-								accentColor="0x9370db"/>
-			</s:FormItem>
+					<s:FormHeading label="Please take a look at your incisions."
+								   skinClass="spark.skins.spark.FormHeadingSkin"/>
 
-			<s:FormItem id="rednessWidthFormItem" label="What is the size of the red area?"
-						visible="{rednessIndicatorToggleSwitch.selected}"
-						height="0"
-						skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:showEffect>
-					<s:Resize heightTo="{rednessWidthHGroup.height + 20}"/>
-				</s:showEffect>
-				<s:hideEffect>
-					<s:Resize heightTo="0"/>
-				</s:hideEffect>
-				<s:HGroup id="rednessWidthHGroup" verticalAlign="baseline">
-					<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin" width="50"
-								 textAlign="right" restrict="0-9." softKeyboardType="number"
-								 change="rednessWidthTextInput_changeHandler(event)"/>
-					<s:Label text="cm"/>
-				</s:HGroup>
-			</s:FormItem>
+					<s:FormItem label="Are any of them red?" skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:ToggleSwitch id="rednessIndicatorToggleSwitch"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+										change="rednessIndicatorToggleSwitch_changeHandler(event)"
+										accentColor="0x9370db"/>
+					</s:FormItem>
 
-			<!--			<s:FormItem label="Color:" visible="{_model.showRednessDetails}"
-									includeInLayout="{_model.showRednessDetails}" skinClass="spark.skins.spark.FormItemSkin">
-							<s:SpinnerListContainer width="150" height="100"
-													skinClass="spark.skins.mobile.SpinnerListContainerSkin">
-								<s:SpinnerList id="rednessIndicatorSpinnerList" labelField="color"
-											   dataProvider="{rednessIndicatorArrayCollection}"
-											   skinClass="spark.skins.mobile.SpinnerListSkin" width="100%"/>
-							</s:SpinnerListContainer>
-						</s:FormItem>-->
+					<s:FormItem id="rednessWidthFormItem" label="What is the size of the red area?"
+								visible="{rednessIndicatorToggleSwitch.selected}"
+								height="0"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:showEffect>
+							<s:Resize heightTo="{rednessWidthHGroup.height + 20}"/>
+						</s:showEffect>
+						<s:hideEffect>
+							<s:Resize heightTo="0"/>
+						</s:hideEffect>
+						<s:HGroup id="rednessWidthHGroup" verticalAlign="baseline">
+							<s:TextInput id="rednessWidthTextInput" skinClass="spark.skins.mobile.StageTextInputSkin"
+										 width="50"
+										 textAlign="right" restrict="0-9." softKeyboardType="number"
+										 change="rednessWidthTextInput_changeHandler(event)"/>
+							<s:Label text="cm"/>
+						</s:HGroup>
+					</s:FormItem>
 
-			<s:FormItem label="Are they sensitive?" skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="tendernessIndicatorToggleSwitch"
-								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="tendernessIndicatorToggleSwitch_changeHandler(event)"
-								accentColor="0x9370db"/>
-			</s:FormItem>
+					<!--			<s:FormItem label="Color:" visible="{_model.showRednessDetails}"
+											includeInLayout="{_model.showRednessDetails}" skinClass="spark.skins.spark.FormItemSkin">
+									<s:SpinnerListContainer width="150" height="100"
+															skinClass="spark.skins.mobile.SpinnerListContainerSkin">
+										<s:SpinnerList id="rednessIndicatorSpinnerList" labelField="color"
+													   dataProvider="{rednessIndicatorArrayCollection}"
+													   skinClass="spark.skins.mobile.SpinnerListSkin" width="100%"/>
+									</s:SpinnerListContainer>
+								</s:FormItem>-->
 
-			<s:FormItem label="Do any of them have discharge?" skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:ToggleSwitch id="dischargeIndicatorToggleSwitch"
-								skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
-								change="dischargeIndicatorToggleSwitch_changeHandler(event)"
-								accentColor="0x9370db"/>
-			</s:FormItem>
+					<s:FormItem label="Are they sensitive?" skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:ToggleSwitch id="tendernessIndicatorToggleSwitch"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+										change="tendernessIndicatorToggleSwitch_changeHandler(event)"
+										accentColor="0x9370db"/>
+					</s:FormItem>
 
-			<s:FormItem label="What kind of discharge?" visible="{dischargeIndicatorToggleSwitch.selected}"
-						includeInLayout="{dischargeIndicatorToggleSwitch.selected}"
-						skinClass="spark.skins.spark.FormItemSkin"
-						backgroundColor="0xd3d3d3">
-				<s:HGroup>
-					<s:CheckBox id="hasDischargePussCheckBox" label="Puss" skinClass="spark.skins.spark.CheckBoxSkin"
-								change="hasDischargePussCheckBox_changeHandler(event)"/>
-					<s:CheckBox id="hasDischargeBloodCheckBox" label="Blood" skinClass="spark.skins.spark.CheckBoxSkin"
-								change="hasDischargeBloodCheckBox_changeHandler(event)"/>
-				</s:HGroup>
-			</s:FormItem>
+					<s:FormItem label="Do any of them have discharge?" skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:ToggleSwitch id="dischargeIndicatorToggleSwitch"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+										change="dischargeIndicatorToggleSwitch_changeHandler(event)"
+										accentColor="0x9370db"/>
+					</s:FormItem>
 
-			<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3">
-				<s:Button label="Save" id="incisionEvaluationSaveButton"
-						  width="100"
-						  skinClass="spark.skins.mobile.ButtonSkin"
-						  chromeColor="0x9370db"
-						  click="incisionEvaluationSaveButton_clickHandler(event)"/>
-			</s:FormItem>
+					<s:FormItem label="What kind of discharge?" visible="{dischargeIndicatorToggleSwitch.selected}"
+								includeInLayout="{dischargeIndicatorToggleSwitch.selected}"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:HGroup>
+							<s:CheckBox id="hasDischargePussCheckBox" label="Puss"
+										skinClass="spark.skins.spark.CheckBoxSkin"
+										change="hasDischargePussCheckBox_changeHandler(event)"/>
+							<s:CheckBox id="hasDischargeBloodCheckBox" label="Blood"
+										skinClass="spark.skins.spark.CheckBoxSkin"
+										change="hasDischargeBloodCheckBox_changeHandler(event)"/>
+						</s:HGroup>
+					</s:FormItem>
 
-		</s:Form>
+					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xf5f5f5">
+						<s:Button label="Save" id="incisionEvaluationSaveButton"
+								  width="100"
+								  skinClass="spark.skins.mobile.ButtonSkin"
+								  chromeColor="0x9370db"
+								  click="incisionEvaluationSaveButton_clickHandler(event)"/>
+					</s:FormItem>
+
+				</s:Form>
+
+			</s:Group>
+
+		</s:Scroller>
+
 	</s:Panel>
 
 	<fx:Declarations>
@@ -190,7 +205,6 @@
 		{
 			_controller.saveIncisionEvalution();
 		}
-
 		]]></fx:Script>
 
 

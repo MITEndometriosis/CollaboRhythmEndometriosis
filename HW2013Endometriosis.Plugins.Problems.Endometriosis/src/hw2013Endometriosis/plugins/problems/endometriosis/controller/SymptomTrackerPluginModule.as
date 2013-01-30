@@ -1,4 +1,4 @@
-package hw2013Endometriosis.plugins.problems.symptomTracker.controller
+package hw2013Endometriosis.plugins.problems.endometriosis.controller
 {
 	import castle.flexbridge.reflection.ReflectionUtils;
     import spark.components.ViewNavigator;

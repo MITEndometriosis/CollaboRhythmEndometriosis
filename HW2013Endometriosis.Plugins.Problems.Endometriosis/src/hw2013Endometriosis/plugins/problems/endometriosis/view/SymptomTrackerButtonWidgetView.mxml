@@ -23,8 +23,8 @@
 		@namespace s "library://ns.adobe.com/flex/spark";
 	</fx:Style>
 	<fx:Script><![CDATA[
-		import hw2013Endometriosis.plugins.problems.symptomTracker.controller.SymptomTrackerAppController;
-		import hw2013Endometriosis.plugins.problems.symptomTracker.model.SymptomTrackerModel;
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.SymptomTrackerAppController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.SymptomTrackerModel;
 
 		private var _controller:SymptomTrackerAppController;
 

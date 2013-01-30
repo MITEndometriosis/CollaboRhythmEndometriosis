@@ -1,20 +1,22 @@
-package hw2013Endometriosis.plugins.problems.symptomTracker.controller
+package hw2013Endometriosis.plugins.problems.endometriosis.controller
 {
 	import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
 	import collaboRhythm.shared.collaboration.model.SynchronizationService;
 	import collaboRhythm.shared.controller.apps.AppControllerBase;
 	import collaboRhythm.shared.controller.apps.AppControllerConstructorParams;
 
+
 	import spark.components.ViewNavigator;
 
-	import hw2013Endometriosis.plugins.problems.symptomTracker.model.SymptomTrackerModel;
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.SymptomTrackerModel;
 
-	import hw2013Endometriosis.plugins.problems.symptomTracker.view.SymptomTrackerButtonWidgetView;
-	import hw2013Endometriosis.plugins.problems.symptomTracker.view.SymptomTrackerView;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.SymptomTrackerButtonWidgetView;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.SymptomTrackerView;
 
 
-	//import hw2013Endometriosis.plugins.problems.endometriosis.view.VaginalBleedingEvaluationView;
-
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.VaginalBleedingEvaluationView;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationLocationSelectedView;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.PostOpEvaluationView;
 
 
 	import mx.core.UIComponent;
@@ -122,19 +124,23 @@ package hw2013Endometriosis.plugins.problems.symptomTracker.controller
 
 		public function pushPainEvaluationView():void
 		{
-			//_viewNavigator.pushView(painEvaluationView, this);
+			_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
 
 		}
 
-		public function pusEmoView():void
+		public function pushEmoView():void
 		{
 
 		}
 
+		public function pushPostOpEvaluationView():void
+		{
+			_viewNavigator.pushView(PostOpEvaluationView,this);
+		}
 
 		public function pushVaginalBleedingEvaluationView():void
 		{
-//			_viewNavigator.pushView(VaginalBleedingEvaluationView, this);
+			_viewNavigator.pushView(VaginalBleedingEvaluationView, this);
 		}
 
 	}

@@ -52,7 +52,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _difficultWork1:String;
 		private var _difficultWork2:String;
 		private var _cutTimeEmo1:String;
-		private var _cutTimeEmo2climbingOneLimit:String;
+		private var _cutTimeEmo2:String;
 		private var _accomplishLessEmo1:String;
 		private var _accomplishLessEmo2:String;
 		private var _limitWorkEmo1:String;
@@ -334,12 +334,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get cutTimeEmo2():String
 		{
-			return _cutTimeEmo2climbingOneLimit;
+			return _cutTimeEmo2;
 		}
 
 		public function set cutTimeEmo2(text:String):void
 		{
-			_cutTimeEmo2climbingOneLimit = text;
+			_cutTimeEmo2 = text;
 		}
 
 		public function get accomplishLessEmo1():String
