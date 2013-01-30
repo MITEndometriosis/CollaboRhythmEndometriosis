@@ -39,8 +39,7 @@
 
 			_controller = value as PainEvaluationHealthActionInputController;
 			_model = _controller.model;
-			BODY_PART = _model.SCREEN;
-
+			BODY_PART = _model.screen;
 
 
 		}

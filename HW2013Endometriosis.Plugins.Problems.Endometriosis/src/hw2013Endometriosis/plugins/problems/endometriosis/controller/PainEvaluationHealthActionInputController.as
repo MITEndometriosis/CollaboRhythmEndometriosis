@@ -118,19 +118,19 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function changeScreens():void
 		{
-			const viewList:Array = [_painEvaluationModel.HOME, _painEvaluationModel.SHOULDER, _painEvaluationModel.ABDOMEN, _painEvaluationModel.PELVIS, _painEvaluationModel.FLANK ];
+			const viewList:Array = [PainEvaluationModel.HOME, PainEvaluationModel.SHOULDER, PainEvaluationModel.ABDOMEN, PainEvaluationModel.PELVIS, PainEvaluationModel.FLANK ];
 			const painList:Array = [true, _painEvaluationModel.hasShoulderPain, _painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasFlankPain];
-			var indexNum:int = viewList.indexOf(_painEvaluationModel.SCREEN);
+			var indexNum:int = viewList.indexOf(_painEvaluationModel.screen);
 
 			//Allowing Screens to loop
 			if (indexNum == viewList.length - 1)
 			{
-				_painEvaluationModel.SCREEN = _painEvaluationModel.HOME
+				_painEvaluationModel.screen = PainEvaluationModel.HOME
 			}
 			else
 			{
 				indexNum = indexNum + 1;
-				_painEvaluationModel.SCREEN = viewList[indexNum];
+				_painEvaluationModel.screen = viewList[indexNum];
 			}
 
 
@@ -139,7 +139,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 			if (painList[indexNum])
 			{
-				if (_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
+				if (_painEvaluationModel.screen == PainEvaluationModel.HOME)
 				{
 					_viewNavigator.popToFirstView();
 

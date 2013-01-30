@@ -15,13 +15,13 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _hasFlankPain:Boolean = false;
 		private var _currentPercentage:Number = 0;
 
-		public var SHOULDER: String = "Shoulder";
-	    public var ABDOMEN:String = "Abdomen";
-        public var PELVIS:String = "Pelvis";
-	    public var FLANK: String = "Flank";
-
-		public var HOME: String = "home"
-		public var SCREEN:String = HOME;
+		public static const SHOULDER: String = "Shoulder";
+	    public static const ABDOMEN:String = "Abdomen";
+        public static const PELVIS:String = "Pelvis";
+	    public static const FLANK: String = "Flank";
+		public static const HOME: String = "home"
+		public static const PAIN_EVALUATION_RESULT: String = "Pain Evaluation Result";
+		public var screen:String = HOME;
 
 
 

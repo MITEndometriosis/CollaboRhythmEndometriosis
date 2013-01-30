@@ -41,6 +41,9 @@
             <entry library-id="f803ca99-0bed-4adb-adfb-8ed8e150b560">
               <dependency linkage="Merged" />
             </entry>
+            <entry module-name="McCuneChart" build-configuration-name="McCuneChart">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="4.6.0" />
         </dependencies>
@@ -99,6 +102,7 @@
         <jarDirectory url="file://$MODULE_DIR$/libs" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="McCuneChart" exported="" />
   </component>
 </module>
 
