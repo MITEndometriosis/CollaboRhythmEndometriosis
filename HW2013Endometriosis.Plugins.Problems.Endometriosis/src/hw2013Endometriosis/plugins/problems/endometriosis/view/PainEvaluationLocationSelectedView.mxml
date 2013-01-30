@@ -21,7 +21,7 @@
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   xmlns:mx="library://ns.adobe.com/flex/mx"
 					   title="PainEvaluationLocationSelected"
-		creationComplete="creationCompleteHandler(event)">
+					   creationComplete="creationCompleteHandler(event)">
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
@@ -40,7 +40,6 @@
 			_controller = value as PainEvaluationHealthActionInputController;
 			_model = _controller.model;
 			BODY_PART = _model.SCREEN;
-
 
 
 		}
@@ -65,17 +64,20 @@
 
 
 	<s:Panel title="{BODY_PART} Pain Evaluation"
-			 backgroundColor="0x778899" borderColor="0x778899"
-			 left="20" top="20" right="20" bottom="20" skinClass="spark.skins.spark.PanelSkin">
+			 backgroundColor="0xf5f5f5" borderColor="0x9370db"
+			 chromeColor="0x9370db" left="20" top="20" bottom="20" right="20"
+			 skinClass="spark.skins.spark.PanelSkin"
+			 horizontalCenter="middle">
 
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
 							  paddingLeft="10" paddingRight="20"
 							  paddingTop="10" paddingBottom="10"/>
 		</s:layout>
+
 		<s:Group>
 			<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom" minimum="0" visible="true" maximum="100"
-							color="0x323232"
+							color="0x9370db"
 							label="CurrentProgress {_model.currentPercentage}%" direction="right" mode="manual"
 							width="50%"/>
 
@@ -83,13 +85,16 @@
 
 		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 					width="100%" height="100%">
-			<s:Group>
 
-				<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xd3d3d3">
-					<s:FormHeading skinClass="spark.skins.spark.FormHeadingSkin" backgroundColor="0xd3d3d3"
+			<s:Group horizontalCenter="0">
+
+				<s:Form skinClass="spark.skins.spark.FormSkin"
+						backgroundColor="0xf5f5f5" horizontalCenter="0">
+
+					<s:FormHeading skinClass="spark.skins.spark.FormHeadingSkin" backgroundColor="0xf5f5f5"
 								   label="The following questions will guide you in evaluating your pain symptoms."/>
 
-					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+					<s:FormItem backgroundColor="0xf5f5f5" skinClass="spark.skins.spark.FormItemSkin"
 								label="How would you describe your {BODY_PART.toLowerCase()} pain?">
 
 						<s:VGroup>
@@ -97,18 +102,24 @@
 							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"/>
 							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"/>
 						</s:VGroup>
+
 					</s:FormItem>
-					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+
+					<s:FormItem backgroundColor="0xf5f5f5" skinClass="spark.skins.spark.FormItemSkin"
 								label="How intense is the {BODY_PART.toLowerCase()} pain?">
+
 						<s:HSlider skinClass="spark.skins.spark.HSliderSkin" scaleX="4" minimum="0" maximum="10"
 								   value="0"/>
+
 						<s:Image source="@Embed('/assets/images/PainIntensityScale.png')"/>
+
 					</s:FormItem>
-					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+
+					<s:FormItem backgroundColor="0xf5f5f5" skinClass="spark.skins.spark.FormItemSkin"
 								label="Are there any aggravating factors?">
+
 						<s:FormItem
 								label="(Things that bring the {BODY_PART.toLowerCase()} pain on and/or make the pain worse?)"/>
-
 
 						<s:VGroup>
 							<s:CheckBox id="AggravatingSexualIntercourseCheckBox"
@@ -124,22 +135,27 @@
 							<s:CheckBox id="AggravatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Other"/>
 						</s:VGroup>
+
 					</s:FormItem>
+
 					<s:FormItem visible="{AggravatingOtherCheckBox.selected}" skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3"
+								backgroundColor="0xf5f5f5"
 								includeInLayout="{AggravatingOtherCheckBox.selected}">
+
 						<s:TextInput visible="{AggravatingOtherCheckBox.selected}"
 									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+
 					</s:FormItem>
 
-
-					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
+					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xf5f5f5"
 								label="Are there any alleviating factors?">
+
 						<s:FormItem
 								label="(Things that get rid of the {BODY_PART.toLowerCase()} pain subside and/or make the pain lessen?)"/>
-						<s:VGroup>
 
-							<s:CheckBox id="AlleviatingOTCPainMedicationCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+						<s:VGroup>
+							<s:CheckBox id="AlleviatingOTCPainMedicationCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Over-the-Counter Pain Medication"/>
 							<s:CheckBox id="AlleviatingNarcoticsCheckBox"
 										skinClass="spark.skins.spark.CheckBoxSkin" label="Narcotics"/>
@@ -150,31 +166,39 @@
 							<s:CheckBox id="AlleviatingAcupunctureCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Acupuncture"/>
 							<s:CheckBox id="AlleviatingHerbsCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
-							label="Herbs"/>
+										label="Herbs"/>
 							<s:CheckBox id="AlleviatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
 										label="Other"/>
 						</s:VGroup>
+
 					</s:FormItem>
-					<s:FormItem visible="{AlleviatingOtherCheckBox.selected}" backgroundColor="0xd3d3d3"
+
+					<s:FormItem visible="{AlleviatingOtherCheckBox.selected}" backgroundColor="0xf5f5f5"
 								skinClass="spark.skins.spark.FormItemSkin"
 								includeInLayout="{AlleviatingOtherCheckBox.selected}">
+
 						<s:TextInput visible="{AlleviatingOtherCheckBox.selected}"
 									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+
 					</s:FormItem>
-					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
+
+					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xf5f5f5"
 								label="How would you describe the duration of your {BODY_PART.toLowerCase()} pain?">
+
 						<s:VGroup>
 							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Constant"/>
 							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Episodic"/>
 						</s:VGroup>
-					</s:FormItem>
 
+					</s:FormItem>
 
 					<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
 							  skinClass="spark.skins.mobile.ButtonSkin" chromeColor="yellow"/>
 
 				</s:Form>
+
 			</s:Group>
+			
 		</s:Scroller>
 
 
