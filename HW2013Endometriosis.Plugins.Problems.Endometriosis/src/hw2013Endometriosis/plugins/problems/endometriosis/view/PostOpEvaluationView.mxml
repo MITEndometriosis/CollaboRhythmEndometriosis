@@ -116,7 +116,7 @@
 						<s:Button label="Save" id="postOpEvaluationSaveButton"
 								  width="100"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  chromeColor="0x9370db"
+								  chromeColor="yellow"
 								  click="postOpEvaluationSaveButton_clickHandler(event)"/>
 					</s:FormItem>
 

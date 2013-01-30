@@ -114,7 +114,7 @@
 						<s:Button label="Save" id="incisionEvaluationSaveButton"
 								  width="100"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  chromeColor="0x9370db"
+								  chromeColor="yellow"
 								  click="incisionEvaluationSaveButton_clickHandler(event)"/>
 					</s:FormItem>
 

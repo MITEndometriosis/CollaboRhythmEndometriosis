@@ -1376,7 +1376,7 @@
 						  label="Save"
 						  width="100"
 						  skinClass="spark.skins.mobile.ButtonSkin"
-						  chromeColor="0x9370db"
+						  chromeColor="yellow"
 						  horizontalCenter="0"
 						  left="100" top="20"
 						  click="saveButton_clickHandler(event)"/>
