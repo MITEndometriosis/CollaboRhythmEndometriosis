@@ -20,10 +20,13 @@
 					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   xmlns:mx="library://ns.adobe.com/flex/mx"
-					   title="PainEvaluationLocationSelected">
+					   title="PainEvaluationLocationSelected"
+		creationComplete="creationCompleteHandler(event)">
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+
+		import mx.events.FlexEvent;
 
 		[Bindable]
 		private var _controller:PainEvaluationHealthActionInputController;
@@ -39,6 +42,7 @@
 			BODY_PART = _model.SCREEN;
 
 
+
 		}
 
 
@@ -46,10 +50,16 @@
 		{
 			if (_controller)
 			{
-				_controller.changeScreens();
+
 				_controller.updateScreenProgressBar();
+				_controller.changeScreens();
 
 			}
+		}
+
+		private function creationCompleteHandler(event:FlexEvent):void
+		{
+			ScreenProgressBar.setProgress(_model.currentPercentage, 100);
 		}
 		]]></fx:Script>
 
@@ -65,7 +75,7 @@
 		</s:layout>
 		<s:Group>
 			<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom" minimum="0" visible="true" maximum="100"
-							color="0x323232" progress="{_model.currentPercentage}"
+							color="0x323232"
 							label="CurrentProgress {_model.currentPercentage}%" direction="right" mode="manual"
 							width="50%"/>
 

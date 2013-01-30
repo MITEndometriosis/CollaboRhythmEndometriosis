@@ -956,7 +956,7 @@
 		 }*/
 		private function playLaparoscopyVideoButton_clickHandler(event:MouseEvent):void
 		{
-//			_controller.playVideo("Laparoscopy.m4v");
+			_controller.playVideo("Laparoscopy.m4v");
 		}
 		]]>
 	</fx:Script>

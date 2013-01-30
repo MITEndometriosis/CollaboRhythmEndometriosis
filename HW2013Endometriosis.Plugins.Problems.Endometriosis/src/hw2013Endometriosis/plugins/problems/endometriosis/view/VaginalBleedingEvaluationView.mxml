@@ -168,8 +168,10 @@
 
 
 	<s:Panel title="Vaginal Bleeding Evaluation"
-			 backgroundColor="0x778899" borderColor="0x778899"
-			 left="20" top="20" skinClass="spark.skins.spark.PanelSkin" bottom="20" right="20">
+			 backgroundColor="0xf5f5f5" borderColor="0x9370db"
+			 chromeColor="0x9370db" left="20" top="20" bottom="20" right="20"
+			 skinClass="spark.skins.spark.PanelSkin"
+			 horizontalCenter="middle">
 
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="center"
@@ -178,19 +180,19 @@
 		</s:layout>
 
 		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
-					width="100%" height="100%">
+						width="100%" height="100%">
 
-			<s:Group>
+			<s:Group horizontalCenter="0">
 				<s:Form skinClass="spark.skins.spark.FormSkin"
-						backgroundColor="0xd3d3d3">
+						backgroundColor="0xf5f5f5" horizontalCenter="0" >
 					<s:FormHeading
 							label="Bleeding can be normal, either due to the surgery or menstruation."
 							skinClass="spark.skins.spark.FormHeadingSkin"
-							backgroundColor="0xd3d3d3"/>
+							backgroundColor="0xf5f5f5"/>
 
 					<s:FormItem label="Have you had any vaginal bleeding in the past day?"
 								skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3">
+								backgroundColor="0xf5f5f5">
 						<s:ToggleSwitch id="bleedingIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										click="bleedingIndicatorToggleSwitch_changeHandler(event)"
@@ -201,7 +203,7 @@
 								visible="{bleedingIndicatorToggleSwitch.selected}"
 								includeInLayout="{bleedingIndicatorToggleSwitch.selected}"
 								skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3">
+								backgroundColor="0xf5f5f5">
 
 						<s:HGroup>
 							<s:RadioButton id="redBloodButton"
@@ -223,7 +225,7 @@
 								visible="{bleedingIndicatorToggleSwitch.selected}"
 								includeInLayout="{bleedingIndicatorToggleSwitch.selected}"
 								skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3">
+								backgroundColor="0xf5f5f5">
 						<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										click="bloodClotsIndicatorToggleSwitch_changeHandler(event)"
@@ -233,7 +235,7 @@
 					<s:FormItem label="What size are they?" visible="{bloodClotsIndicatorToggleSwitch.selected}"
 								includeInLayout="{bloodClotsIndicatorToggleSwitch.selected}"
 								skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3">
+								backgroundColor="0xf5f5f5">
 						<s:HGroup>
 							<s:RadioButton groupName="bloodClotSize"
 										   id="bloodClotsSmallCheckBox"
@@ -252,7 +254,7 @@
 
 					<s:FormItem label="Have you used any feminine products?"
 								skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3"
+								backgroundColor="0xf5f5f5"
 								visible="{bleedingIndicatorToggleSwitch.selected}"
 								includeInLayout="{bleedingIndicatorToggleSwitch.selected}">
 						<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
@@ -265,7 +267,7 @@
 								visible="{FeminineProductsIndicatorToggleSwitch.selected}"
 								includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
 								skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3">
+								backgroundColor="0xf5f5f5">
 						<s:HGroup variableColumnWidth="false" columnWidth="100">
 							<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
 										skinClass="spark.skins.spark.CheckBoxSkin"
@@ -284,7 +286,7 @@
 								visible="{FeminineProductsIndicatorToggleSwitch.selected}"
 								includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
 								skinClass="spark.skins.spark.FormItemSkin"
-								backgroundColor="0xd3d3d3">
+								backgroundColor="0xf5f5f5">
 						<s:HGroup variableColumnWidth="false" columnWidth="75">
 							<s:TextInput id="feminineProductNumTextInput"
 										 restrict="0-9" softKeyboardType="number"
@@ -301,7 +303,7 @@
 
 					<s:FormItem
 							skinClass="spark.skins.spark.FormItemSkin"
-							backgroundColor="0xd3d3d3">
+							backgroundColor="0xf5f5f5">
 						<s:Button label="Save"
 								  width="100"
 								  skinClass="spark.skins.mobile.ButtonSkin"

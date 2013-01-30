@@ -5,10 +5,15 @@ package hw2013Endometriosis.plugins.problems.symptomTracker.controller
 	import collaboRhythm.shared.controller.apps.AppControllerBase;
 	import collaboRhythm.shared.controller.apps.AppControllerConstructorParams;
 
+	import spark.components.ViewNavigator;
+
 	import hw2013Endometriosis.plugins.problems.symptomTracker.model.SymptomTrackerModel;
 
 	import hw2013Endometriosis.plugins.problems.symptomTracker.view.SymptomTrackerButtonWidgetView;
 	import hw2013Endometriosis.plugins.problems.symptomTracker.view.SymptomTrackerView;
+
+
+
 
 	import mx.core.UIComponent;
 
@@ -113,9 +118,10 @@ package hw2013Endometriosis.plugins.problems.symptomTracker.controller
 			return _model;
 		}
 
-		public function pushNewScreen():void
+		public function pushPainEvaluationView():void
 		{
-			
+			//_viewNavigator.pushView(painEvaluationView, this);
+
 		}
 	}
 }
