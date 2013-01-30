@@ -110,7 +110,7 @@
 						<s:HSlider skinClass="spark.skins.spark.HSliderSkin" scaleX="4" minimum="0" maximum="10"
 								   value="0"/>
 
-						<s:Image source="@Embed('/assets/images/PainIntensityScale.png')"/>
+						<s:Image source="@Embed('/assets/images/VASchart.png')"/>
 
 					</s:FormItem>
 
