@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="McCuneChart.demos" type="FlashRunConfigurationType" factoryName="Flash App">
+  <configuration default="false" name="McCuneChart.demos" type="FlashRunConfigurationType" factoryName="Flash App" singleton="true">
     <option name="BCName" value="McCuneChart.demos" />
     <option name="IOSSimulatorSdkPath" value="" />
     <option name="adlOptions" value="" />
@@ -32,7 +32,9 @@
     <option name="url" value="http://" />
     <option name="usbDebugPort" value="7936" />
     <RunnerSettings RunnerId="FlexDebugRunner" />
+    <RunnerSettings RunnerId="FlexRunner" />
     <ConfigurationWrapper RunnerId="FlexDebugRunner" />
+    <ConfigurationWrapper RunnerId="FlexRunner" />
     <method />
   </configuration>
 </component>

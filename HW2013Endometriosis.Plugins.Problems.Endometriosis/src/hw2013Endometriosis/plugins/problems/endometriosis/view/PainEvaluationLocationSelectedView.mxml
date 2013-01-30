@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<!---
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
+<tablet:TabletViewBase xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
+					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   title="PainEvaluationLocationSelected"
+		creationComplete="creationCompleteHandler(event)">
+	<fx:Script><![CDATA[
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+
+		import mx.events.FlexEvent;
+
+		[Bindable]
+		private var _controller:PainEvaluationHealthActionInputController;
+		private var _model:PainEvaluationModel;
+		private var BODY_PART:String;
+
+		override public function set data(value:Object):void
+		{
+			super.data = value;
+
+			_controller = value as PainEvaluationHealthActionInputController;
+			_model = _controller.model;
+			BODY_PART = _model.SCREEN;
+
+
+
+		}
+
+
+		private function nextButtonHandler(event:Event):void
+		{
+			if (_controller)
+			{
+
+				_controller.updateScreenProgressBar();
+				_controller.changeScreens();
+
+			}
+		}
+
+		private function creationCompleteHandler(event:FlexEvent):void
+		{
+			ScreenProgressBar.setProgress(_model.currentPercentage, 100);
+		}
+		]]></fx:Script>
+
+
+	<s:Panel title="{BODY_PART} Pain Evaluation"
+			 backgroundColor="0x778899" borderColor="0x778899"
+			 left="20" top="20" right="20" bottom="20" skinClass="spark.skins.spark.PanelSkin">
+
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="20"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
+		<s:Group>
+			<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom" minimum="0" visible="true" maximum="100"
+							color="0x323232"
+							label="CurrentProgress {_model.currentPercentage}%" direction="right" mode="manual"
+							width="50%"/>
+
+		</s:Group>
+
+		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
+					width="100%" height="100%">
+			<s:Group>
+
+				<s:Form skinClass="spark.skins.spark.FormSkin" backgroundColor="0xd3d3d3">
+					<s:FormHeading skinClass="spark.skins.spark.FormHeadingSkin" backgroundColor="0xd3d3d3"
+								   label="The following questions will guide you in evaluating your pain symptoms."/>
+
+					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+								label="How would you describe your {BODY_PART.toLowerCase()} pain?">
+
+						<s:VGroup>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Sharp/Shooting"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"/>
+						</s:VGroup>
+					</s:FormItem>
+					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+								label="How intense is the {BODY_PART.toLowerCase()} pain?">
+						<s:HSlider skinClass="spark.skins.spark.HSliderSkin" scaleX="4" minimum="0" maximum="10"
+								   value="0"/>
+						<s:Image source="@Embed('/assets/images/PainIntensityScale.png')"/>
+					</s:FormItem>
+					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
+								label="Are there any aggravating factors?">
+						<s:FormItem
+								label="(Things that bring the {BODY_PART.toLowerCase()} pain on and/or make the pain worse?)"/>
+
+
+						<s:VGroup>
+							<s:CheckBox id="AggravatingSexualIntercourseCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Sexual Intercourse"/>
+							<s:CheckBox id="AggravatingMildPhysicalActivityCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Mild Physical Activity"/>
+							<s:CheckBox id="AggravatingModeratePhysicalActivityCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Moderate Physical Activity"/>
+							<s:CheckBox id="AggravatingStrenuousPhysicalActivityCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Strenuous Physical Activity"/>
+							<s:CheckBox id="AggravatingEatingCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Eating"/>
+							<s:CheckBox id="AggravatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Other"/>
+						</s:VGroup>
+					</s:FormItem>
+					<s:FormItem visible="{AggravatingOtherCheckBox.selected}" skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xd3d3d3"
+								includeInLayout="{AggravatingOtherCheckBox.selected}">
+						<s:TextInput visible="{AggravatingOtherCheckBox.selected}"
+									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+					</s:FormItem>
+
+
+					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
+								label="Are there any alleviating factors?">
+						<s:FormItem
+								label="(Things that get rid of the {BODY_PART.toLowerCase()} pain subside and/or make the pain lessen?)"/>
+						<s:VGroup>
+
+							<s:CheckBox id="AlleviatingOTCPainMedicationCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Over-the-Counter Pain Medication"/>
+							<s:CheckBox id="AlleviatingNarcoticsCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Narcotics"/>
+							<s:CheckBox id="AlleviatingHeatingPadCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Heating Pad"/>
+							<s:CheckBox id="AlleviatingBowelMovementCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Bowel Movement"/>
+							<s:CheckBox id="AlleviatingAcupunctureCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Acupuncture"/>
+							<s:CheckBox id="AlleviatingHerbsCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+							label="Herbs"/>
+							<s:CheckBox id="AlleviatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Other"/>
+						</s:VGroup>
+					</s:FormItem>
+					<s:FormItem visible="{AlleviatingOtherCheckBox.selected}" backgroundColor="0xd3d3d3"
+								skinClass="spark.skins.spark.FormItemSkin"
+								includeInLayout="{AlleviatingOtherCheckBox.selected}">
+						<s:TextInput visible="{AlleviatingOtherCheckBox.selected}"
+									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
+					</s:FormItem>
+					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"
+								label="How would you describe the duration of your {BODY_PART.toLowerCase()} pain?">
+						<s:VGroup>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Constant"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Episodic"/>
+						</s:VGroup>
+					</s:FormItem>
+
+
+					<s:Button id="NextButton" label="Next" click="nextButtonHandler(event)"
+							  skinClass="spark.skins.mobile.ButtonSkin"/>
+
+				</s:Form>
+			</s:Group>
+		</s:Scroller>
+
+
+	</s:Panel>
+</tablet:TabletViewBase>

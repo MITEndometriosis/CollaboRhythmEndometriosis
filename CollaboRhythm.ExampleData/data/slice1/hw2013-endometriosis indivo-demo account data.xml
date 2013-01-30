@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataroot>
+  
+  <indivoServerBaseURL>https://indivo-demo.media.mit.edu:8000</indivoServerBaseURL>
+  
+  <AccountSource>
+    
+    <accountId>example-clinician@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@localhost</contactEmail>
+    
+    <fullName>Example Clinician</fullName>
+    
+    <username>example-clinician</username>
+    
+    <password>example-clinician</password>
+    
+    <givenName>Example</givenName>
+    
+    <familyName>Clinician</familyName>
+    
+    <streetAddress>1066 Spinel Rd</streetAddress>
+    
+    <postalCode>2142</postalCode>
+    
+    <locality>Cambridge</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-clinician@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-clinician@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1957-03-29T00:00:00Z</dateOfBirth>
+    
+    <age>53</age>
+    
+    <gender>Male</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Married</maritalStatus>
+    
+    <employmentStatus>Employed</employmentStatus>
+    
+    <employmentIndustry>Medical</employmentIndustry>
+    
+    <occupation>Doctor</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>Please do not use this account</recordId>
+    
+    <status/>
+    
+    <accessKey/>
+    
+    <accessSecret/>
+    
+    <demographicsId/>
+    
+    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    
+    <recordSeed/>
+    
+    <mode>clinician</mode>
+    
+  </AccountSource>
+  
+  <AccountSource>
+    
+    <accountId>example-patient@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@localhost</contactEmail>
+    
+    <fullName>Example Patient</fullName>
+    
+    <username>example-patient</username>
+    
+    <password>example-patient</password>
+    
+    <givenName>Example</givenName>
+    
+    <familyName>Patient</familyName>
+    
+    <streetAddress>84 Spruce Street</streetAddress>
+    
+    <postalCode>2215</postalCode>
+    
+    <locality>Boston</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-patient@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-patient@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1940-02-24T00:00:00Z</dateOfBirth>
+    
+    <age>70</age>
+    
+    <gender>Female</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Widowed</maritalStatus>
+    
+    <employmentStatus>Retired</employmentStatus>
+    
+    <employmentIndustry>Education</employmentIndustry>
+    
+    <occupation>Teacher</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>Please do not use this account</recordId>
+    
+    <accessKey/>
+    
+    <accessSecret/>
+    
+    <status/>
+    
+    <demographicsId>18124489-3b91-45bd-90a9-375a520eca26</demographicsId>
+    
+    <recordSeed/>
+    
+    <shareAccountId>example-clinician@records.media.mit.edu</shareAccountId>
+    
+    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    
+    <shareRole>Coach</shareRole>
+    
+    <documentsDirectory>mbrooks</documentsDirectory>
+    
+    <mode>patient</mode>
+    
+  </AccountSource>
+  
+  <AccountSource>
+    
+    <accountId>endometriosis-jking@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@localhost</contactEmail>
+    
+    <fullName>James King</fullName>
+    
+    <username>endometriosis-jking</username>
+    
+    <password>example-clinician</password>
+    
+    <givenName>James</givenName>
+    
+    <familyName>King</familyName>
+    
+    <streetAddress>1066 Spinel Rd</streetAddress>
+    
+    <postalCode>2142</postalCode>
+    
+    <locality>Cambridge</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-clinician@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-clinician@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1957-03-29T00:00:00Z</dateOfBirth>
+    
+    <age>53</age>
+    
+    <gender>Male</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Married</maritalStatus>
+    
+    <employmentStatus>Employed</employmentStatus>
+    
+    <employmentIndustry>Medical</employmentIndustry>
+    
+    <occupation>Doctor</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>1819cffc-9492-4cb6-875d-34ef7bc0074c</recordId>
+    
+    <status>Demographics document created. Id: 36df9159-2d8a-49c3-9ebf-b77e549d490a</status>
+    
+    <accessKey>fi0zS78FE9jtYwLVlswv</accessKey>
+    
+    <accessSecret>lNzRt7JiSKNJbiQVEPmm</accessSecret>
+    
+    <demographicsId>36df9159-2d8a-49c3-9ebf-b77e549d490a</demographicsId>
+    
+    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    
+    <recordSeed/>
+    
+    <mode>clinician</mode>
+    
+  </AccountSource>
+  
+  <AccountSource>
+    
+    <accountId>ppeterson@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@localhost</contactEmail>
+    
+    <fullName>Pamela Peterson</fullName>
+    
+    <username>ppeterson</username>
+    
+    <password>example-patient</password>
+    
+    <givenName>Pamela</givenName>
+    
+    <familyName>Peterson</familyName>
+    
+    <streetAddress>84 Spruce Street</streetAddress>
+    
+    <postalCode>2215</postalCode>
+    
+    <locality>Boston</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-patient@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-patient@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1940-02-24T00:00:00Z</dateOfBirth>
+    
+    <age>70</age>
+    
+    <gender>Female</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Widowed</maritalStatus>
+    
+    <employmentStatus>Retired</employmentStatus>
+    
+    <employmentIndustry>Education</employmentIndustry>
+    
+    <occupation>Teacher</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>e539ef9e-dffd-4c7b-98da-0962f129b3d5</recordId>
+    
+    <accessKey>E8JqSH0MU7RXSC97k16P</accessKey>
+    
+    <accessSecret>PyodBMJwNJekDV4nKb1k</accessSecret>
+    
+    <status>Created 10/10 documents, 4/5 relationships</status>
+    
+    <demographicsId>7cac4b09-ae19-4fad-963e-1b936d24bad3</demographicsId>
+    
+    <recordSeed>1</recordSeed>
+    
+    <shareAccountId>endometriosis-jking@records.media.mit.edu</shareAccountId>
+    
+    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    
+    <shareRole>Coach</shareRole>
+    
+    <documentsDirectory/>
+    
+    <mode>patient</mode>
+    
+  </AccountSource>
+  
+</dataroot>

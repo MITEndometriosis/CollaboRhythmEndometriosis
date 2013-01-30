@@ -35,7 +35,7 @@ package collaboRhythm.plugins.foraD40b.model
 														  currentHealthActionInputController:IHealthActionInputController,
 														  collaborationLobbyNetConnectionServiceProxy:ICollaborationLobbyNetConnectionServiceProxy):IHealthActionInputController
 		{
-			if (healthAction.type == EquipmentHealthAction.TYPE)
+			if (healthAction && healthAction.type == EquipmentHealthAction.TYPE)
 			{
 				var equipmentHealthAction:EquipmentHealthAction = EquipmentHealthAction(healthAction);
 				if (equipmentHealthAction.name == BLOOD_PRESSURE_INSTRUCTIONS &&

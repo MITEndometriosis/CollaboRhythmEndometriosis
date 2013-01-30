@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<!---
+ - Copyright 2013 John Moore, Scott Gilroy
+ -
+ - This file is part of CollaboRhythm.
+ -
+ - CollaboRhythm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ - License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later
+ - version.
+ -
+ - CollaboRhythm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ - warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ - details.
+ -
+ - You should have received a copy of the GNU General Public License along with CollaboRhythm.  If not, see
+ - <http://www.gnu.org/licenses/>.
+-->
+<tablet:TabletViewBase xmlns="http://ns.adobe.com/sml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:tablet="collaboRhythm.shared.view.tablet.*"
+					   xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   title="VaginalBleedingEvaluation">
+
+	<fx:Declarations>
+
+		<s:RadioButtonGroup id="bloodColor" itemClick="bloodColor_eventHandler(event)"/>
+		<s:RadioButtonGroup id="bloodClotSize" itemClick="bloodClotSize_eventHandler(event);"/>
+	</fx:Declarations>
+
+
+	<fx:Script><![CDATA[
+		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
+
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
+
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
+
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.VaginalBleedingEvaluationModel;
+
+		import mx.events.ItemClickEvent;
+
+		import spark.events.TextOperationEvent;
+
+		[Bindable]
+		private var _controller:VaginalBleedingEvaluationHealthActionInputController;
+		[Bindable]
+		private var _model:VaginalBleedingEvaluationModel;
+		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
+
+		//		[Bindable]
+		//		public var bloodColor:Array = ['0xFF0000', '0x8B0000', '0x800000', '0xA52A2A', 'A0522D', '0x8B4513' ];
+
+		override public function set data(value:Object):void
+		{
+			super.data = value;
+
+			_controller = value as VaginalBleedingEvaluationHealthActionInputController;
+			_model = _controller.model;
+
+		}
+
+		private function bleedingIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			_controller.updateHasBleeding(bleedingIndicatorToggleSwitch.selected);
+
+		}
+
+		private function bloodColor_eventHandler(event:ItemClickEvent):void
+		{
+			if (event.currentTarget.selectedValue == "red")
+			{
+				_controller.updateBloodColor("Red");
+			}
+			else if (event.currentTarget.selectedValue == "brown")
+			{
+				_controller.updateBloodColor("Brown");
+			}
+		}
+
+
+		private function bloodClotsIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			_controller.updateHasBloodClots(bloodClotsIndicatorToggleSwitch.selected);
+
+
+		}
+
+		private function bloodClotSize_eventHandler(event:ItemClickEvent):void
+		{
+			if (event.currentTarget.selectedValue == "Small")
+			{
+				_controller.updateBloodClotSize("Small")
+			}
+			else if (event.currentTarget.selectedValue == "Medium")
+			{
+				_controller.updateBloodClotSize("Medium")
+			}
+			else
+			//selectedValue=="large"
+			{
+				_controller.updateBloodClotSize("Large")
+			}
+
+		}
+
+
+		private function feminineProductsIndicatorToggleSwitch_changeHandler(event:Event):void
+		{
+			_controller.updateUseFeminineProducts(FeminineProductsIndicatorToggleSwitch.selected);
+
+		}
+
+		private function feminineProductsCheckBox_eventHandler(event:Event):void
+		{
+			var feminineProductsUsed:String = "";
+			if (feminineProductsPantilinerCheckBox.selected == true)
+			{
+				feminineProductsUsed += "Pantiliner" + "\n";
+			}
+			if (feminineProductsMaxiPadCheckBox.selected == true)
+			{
+				feminineProductsUsed += "MaxiPad" + "\n";
+			}
+			if (feminineProductsTamponCheckBox.selected == true)
+			{
+				feminineProductsUsed += "TamponPad" + "\n";
+			}
+
+			if (_controller)
+			{
+				_controller.updateFeminineProductType(feminineProductsUsed);
+			}
+
+
+		}
+
+
+		private function feminineProductNumTextInput_changeHandler(event:TextOperationEvent):void
+		{
+			if (_controller)
+			{
+				_controller.updateFeminineProductNum(feminineProductNumTextInput.text);
+			}
+		}
+
+		private function spottingFeminingProductsCheckBox_changeHandler(event:Event):void
+		{
+			if (_controller)
+			{
+				_controller.updateHasSpotting(hasSpottingCheckBox.selected);
+			}
+		}
+
+		private function saveButton_clickHandler(event:MouseEvent):void
+		{
+			_controller.saveVaginalBleedingEvalution();
+		}
+		]]>
+
+
+
+		</fx:Script>
+
+
+	<!--<s:VGroup width="100%" height="100%" gap="0">-->
+	<!--<s:Label text="Hello VaginalBleedingEvaluation!"/>-->
+	<!--</s:VGroup>-->
+
+
+	<s:Panel title="Vaginal Bleeding Evaluation"
+			 backgroundColor="0xf5f5f5" borderColor="0x9370db"
+			 chromeColor="0x9370db" left="20" top="20" bottom="20" right="20"
+			 skinClass="spark.skins.spark.PanelSkin"
+			 horizontalCenter="middle">
+
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center"
+							  paddingLeft="10" paddingRight="10"
+							  paddingTop="10" paddingBottom="10"/>
+		</s:layout>
+
+		<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
+						width="100%" height="100%">
+
+			<s:Group horizontalCenter="0">
+				<s:Form skinClass="spark.skins.spark.FormSkin"
+						backgroundColor="0xf5f5f5" horizontalCenter="0" >
+					<s:FormHeading
+							label="Bleeding can be normal, either due to the surgery or menstruation."
+							skinClass="spark.skins.spark.FormHeadingSkin"
+							backgroundColor="0xf5f5f5"/>
+
+					<s:FormItem label="Have you had any vaginal bleeding in the past day?"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:ToggleSwitch id="bleedingIndicatorToggleSwitch"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+										click="bleedingIndicatorToggleSwitch_changeHandler(event)"
+										accentColor="0x9370db"/>
+					</s:FormItem>
+
+					<s:FormItem label="What color is the blood?"
+								visible="{bleedingIndicatorToggleSwitch.selected}"
+								includeInLayout="{bleedingIndicatorToggleSwitch.selected}"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+
+						<s:HGroup>
+							<s:RadioButton id="redBloodButton"
+										   groupName="bloodColor"
+										   label="Red" value="red"
+										   skinClass="spark.skins.spark.RadioButtonSkin"
+										   color="red"
+									/>
+
+							<s:RadioButton id="brownBloodButton"
+										   groupName="bloodColor"
+										   label="Brown" skinClass="spark.skins.spark.RadioButtonSkin"
+										   color="0xa52a2a"
+										   value="brown"/>
+						</s:HGroup>
+					</s:FormItem>
+
+					<s:FormItem label="Do you have any blood clots?"
+								visible="{bleedingIndicatorToggleSwitch.selected}"
+								includeInLayout="{bleedingIndicatorToggleSwitch.selected}"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+										click="bloodClotsIndicatorToggleSwitch_changeHandler(event)"
+										accentColor="0x9370db"/>
+					</s:FormItem>
+
+					<s:FormItem label="What size are they?" visible="{bloodClotsIndicatorToggleSwitch.selected}"
+								includeInLayout="{bloodClotsIndicatorToggleSwitch.selected}"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:HGroup>
+							<s:RadioButton groupName="bloodClotSize"
+										   id="bloodClotsSmallCheckBox"
+										   value="Small" label="Small"
+										   skinClass="spark.skins.spark.RadioButtonSkin"/>
+							<s:RadioButton groupName="bloodClotSize"
+										   id="bloodClotsMediumCheckBox"
+										   value="Medium" label="Medium"
+										   skinClass="spark.skins.spark.RadioButtonSkin"/>
+							<s:RadioButton groupName="bloodClotSize"
+										   id="feminineProductsLargeCheckBox"
+										   value="Large" label="Large"
+										   skinClass="spark.skins.spark.RadioButtonSkin"/>
+						</s:HGroup>
+					</s:FormItem>
+
+					<s:FormItem label="Have you used any feminine products?"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5"
+								visible="{bleedingIndicatorToggleSwitch.selected}"
+								includeInLayout="{bleedingIndicatorToggleSwitch.selected}">
+						<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+										click="feminineProductsIndicatorToggleSwitch_changeHandler(event)"
+										accentColor="0x9370db"/>
+					</s:FormItem>
+
+					<s:FormItem label="What kind of product?"
+								visible="{FeminineProductsIndicatorToggleSwitch.selected}"
+								includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:HGroup variableColumnWidth="false" columnWidth="100">
+							<s:CheckBox id="feminineProductsPantilinerCheckBox" label="Pantiliner"
+										skinClass="spark.skins.spark.CheckBoxSkin"
+										click="feminineProductsCheckBox_eventHandler(event)"/>
+							<s:CheckBox id="feminineProductsMaxiPadCheckBox" label="MaxiPad"
+										skinClass="spark.skins.spark.CheckBoxSkin"
+										click="feminineProductsCheckBox_eventHandler(event)"/>
+							<s:CheckBox id="feminineProductsTamponCheckBox" label="Tampon"
+										skinClass="spark.skins.spark.CheckBoxSkin"
+										click="feminineProductsCheckBox_eventHandler(event)"/>
+
+						</s:HGroup>
+					</s:FormItem>
+
+					<s:FormItem label="How many have you had to change because you bled through them?"
+								visible="{FeminineProductsIndicatorToggleSwitch.selected}"
+								includeInLayout="{FeminineProductsIndicatorToggleSwitch.selected}"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:HGroup variableColumnWidth="false" columnWidth="75">
+							<s:TextInput id="feminineProductNumTextInput"
+										 restrict="0-9" softKeyboardType="number"
+										 change="feminineProductNumTextInput_changeHandler(event)"
+										 width="50" skinClass="spark.skins.mobile.TextInputSkin"/>
+							<s:Label text="or"
+									 textAlign="center"
+									 alignmentBaseline="ideographicBottom"/>
+							<s:CheckBox id="hasSpottingCheckBox" label="spotting"
+										skinClass="spark.skins.spark.CheckBoxSkin"
+										click="spottingFeminingProductsCheckBox_changeHandler(event)"/>
+						</s:HGroup>
+					</s:FormItem>
+
+					<s:FormItem
+							skinClass="spark.skins.spark.FormItemSkin"
+							backgroundColor="0xf5f5f5">
+						<s:Button label="Save"
+								  width="100"
+								  skinClass="spark.skins.mobile.ButtonSkin"
+								  chromeColor="0x9370db"
+								  click="saveButton_clickHandler(event)"/>
+					</s:FormItem>
+				</s:Form>
+			</s:Group>
+		</s:Scroller>
+	</s:Panel>
+
+</tablet:TabletViewBase>
