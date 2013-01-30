@@ -47,7 +47,7 @@
 			if (_controller)
 			{
 				_controller.changeScreens();
-				_controller.updateScreenProgressBar(ScreenProgressBar);
+				_controller.updateScreenProgressBar();
 
 			}
 		}
@@ -65,7 +65,9 @@
 		</s:layout>
 		<s:Group>
 			<mx:ProgressBar id="ScreenProgressBar" labelPlacement="bottom" minimum="0" visible="true" maximum="100"
-							color="0x323232" progress="{_model.currentPercentage}" label="CurrentProgress {_model.currentPercentage}%" direction="right" mode="manual" width="50%"/>
+							color="0x323232" progress="{_model.currentPercentage}"
+							label="CurrentProgress {_model.currentPercentage}%" direction="right" mode="manual"
+							width="50%"/>
 
 		</s:Group>
 
@@ -93,19 +95,30 @@
 						<s:Image source="@Embed('/assets/images/PainIntensityScale.png')"/>
 					</s:FormItem>
 					<s:FormItem backgroundColor="0xd3d3d3" skinClass="spark.skins.spark.FormItemSkin"
-								label="Are there any aggrevating factors?">
+								label="Are there any aggravating factors?">
 						<s:FormItem
 								label="(Things that bring the {BODY_PART.toLowerCase()} pain on and/or make the pain worse?)"/>
 
-						<s:ToggleSwitch id="AggrevatingFactorSwitch"
-										accentColor="0x9370db"
-										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
+
+						<s:VGroup>
+							<s:CheckBox id="AggravatingSexualIntercourseCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Sexual Intercourse"/>
+							<s:CheckBox id="AggravatingMildPhysicalActivityCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Mild Physical Activity"/>
+							<s:CheckBox id="AggravatingModeratePhysicalActivityCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Moderate Physical Activity"/>
+							<s:CheckBox id="AggravatingStrenuousPhysicalActivityCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Strenuous Physical Activity"/>
+							<s:CheckBox id="AggravatingEatingCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Eating"/>
+							<s:CheckBox id="AggravatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Other"/>
+						</s:VGroup>
 					</s:FormItem>
-					<s:FormItem visible="{AggrevatingFactorSwitch.selected}" skinClass="spark.skins.spark.FormItemSkin"
+					<s:FormItem visible="{AggravatingOtherCheckBox.selected}" skinClass="spark.skins.spark.FormItemSkin"
 								backgroundColor="0xd3d3d3"
-								includeInLayout="{AggrevatingFactorSwitch.selected}"
-								label="Please describe these factors.">
-						<s:TextInput visible="{AggrevatingFactorSwitch.selected}"
+								includeInLayout="{AggravatingOtherCheckBox.selected}">
+						<s:TextInput visible="{AggravatingOtherCheckBox.selected}"
 									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
 					</s:FormItem>
 
@@ -114,15 +127,28 @@
 								label="Are there any alleviating factors?">
 						<s:FormItem
 								label="(Things that get rid of the {BODY_PART.toLowerCase()} pain subside and/or make the pain lessen?)"/>
-						<s:ToggleSwitch id="AlleviatingFactorSwitch"
-										accentColor="0x9370db"
-										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"/>
+						<s:VGroup>
+
+							<s:CheckBox id="AlleviatingOTCPainMedicationCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Over-the-Counter Pain Medication"/>
+							<s:CheckBox id="AlleviatingNarcoticsCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Narcotics"/>
+							<s:CheckBox id="AlleviatingHeatingPadCheckBox"
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Heating Pad"/>
+							<s:CheckBox id="AlleviatingBowelMovementCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Bowel Movement"/>
+							<s:CheckBox id="AlleviatingAcupunctureCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Acupuncture"/>
+							<s:CheckBox id="AlleviatingHerbsCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+							label="Herbs"/>
+							<s:CheckBox id="AlleviatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
+										label="Other"/>
+						</s:VGroup>
 					</s:FormItem>
-					<s:FormItem visible="{AlleviatingFactorSwitch.selected}" backgroundColor="0xd3d3d3"
+					<s:FormItem visible="{AlleviatingOtherCheckBox.selected}" backgroundColor="0xd3d3d3"
 								skinClass="spark.skins.spark.FormItemSkin"
-								includeInLayout="{AlleviatingFactorSwitch.selected}"
-								label="Please describe these factors.">
-						<s:TextInput visible="{AlleviatingFactorSwitch.selected}"
+								includeInLayout="{AlleviatingOtherCheckBox.selected}">
+						<s:TextInput visible="{AlleviatingOtherCheckBox.selected}"
 									 skinClass="spark.skins.spark.TextInputSkin" height="50" width="500"/>
 					</s:FormItem>
 					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xd3d3d3"

@@ -16,6 +16,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.EndometriosisButtonWidgetView;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationLocationSelectedView;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationView;
 
@@ -131,18 +132,15 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			}
 
 			//Deciding which screen to push
+			if(_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
+			{
+				_viewNavigator.popView();
+			}
 
 
 			if (painList[viewList.indexOf(_painEvaluationModel.SCREEN)])
 			{
-				if (_painEvaluationModel.SCREEN == _painEvaluationModel.HOME)
-				{
-					_viewNavigator.pushView(PainEvaluationView, this);
-				}
-				else
-				{
-					_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
-				}
+				_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
 			}
 
 			else
@@ -154,27 +152,30 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		}
 
 
-		public function updateScreenProgressBar(bar:ProgressBar):void
+		public function updateScreenProgressBar():void
 		{
 
-
-			{
-				_painEvaluationModel.currentPercentage += 100/ _painEvaluationModel.CalculatenumScreens();
-
-				if (_painEvaluationModel.currentPercentage <= 100)
-				{
-
-					bar.setProgress(_painEvaluationModel.currentPercentage, 100);
-					bar.label = "CurrentProgress" + " " + _painEvaluationModel.currentPercentage + "%";
-
-				}
 				if (_painEvaluationModel.currentPercentage > 100)
 				{
 					_painEvaluationModel.currentPercentage = 0;
-					bar.setProgress(_painEvaluationModel.currentPercentage, 100);
-					bar.label = "CurrentProgress" + " " + _painEvaluationModel.currentPercentage + "%";
+
 				}
-			}
+			var value:int = 0;
+							var hasPainArray:Array = [_painEvaluationModel.hasAbdomenPain, _painEvaluationModel.hasFlankPain, _painEvaluationModel.hasPelvisPain, _painEvaluationModel.hasShoulderPain];
+							var a:Boolean;
+
+							for (a in hasPainArray)
+							{
+								if (a)
+								{
+									value = value + 1;
+								}
+							}
+
+							var numScreens:Number = value;
+
+							_painEvaluationModel.currentPercentage += 100.0 / numScreens;
+
 
 		}
 
