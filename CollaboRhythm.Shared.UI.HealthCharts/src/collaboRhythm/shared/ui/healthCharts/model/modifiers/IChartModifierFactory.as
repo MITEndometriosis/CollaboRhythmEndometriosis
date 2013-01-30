@@ -15,7 +15,7 @@ package collaboRhythm.shared.ui.healthCharts.model.modifiers
 	{
 		/**
 		 * Updates the set of chart descriptors which will be used to create charts.
-		 * Descriptors can be added, removed, or reordered.
+		 * Descriptors can be removed or reordered. Adding new descriptors is not currently supported.
 		 * @param chartDescriptors the current set of chart descriptors
 		 * @return the new set of chart descriptors
 		 */
