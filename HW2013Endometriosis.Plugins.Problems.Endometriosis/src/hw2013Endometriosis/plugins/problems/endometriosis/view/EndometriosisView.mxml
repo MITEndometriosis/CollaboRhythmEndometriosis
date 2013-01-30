@@ -106,8 +106,9 @@
 									<s:Scroller skinClass="spark.skins.mobile.SpinnerListScrollerSkin"
 												width="100%" height="100%">
 
-										<s:VGroup>
-
+										<s:HGroup>
+											<s:Image id="ibuprofen"
+													 source="@Embed('/assets/images/ibuprofen.png')"/>
 											<mx:Text width="100%" color="0x323232">
 												<mx:text>
 													Generally, the first thing patients and doctors try to relieve the
@@ -148,7 +149,7 @@
 												</mx:text>
 											</mx:Text>
 
-										</s:VGroup>
+										</s:HGroup>
 
 									</s:Scroller>
 
@@ -347,17 +348,15 @@
 											<mx:Text width="100%" color="0x323232" paddingLeft="50">
 												<mx:text>
 													- Pick up Pick up two 10 ounce bottles of Magnesium Citrate from
-													your
-													local Pharmacy
-													- At 1:00 PM Drink the first bottle of Magnesium Citrate
-													- At 7:00 PM, drink the second bottle of Magnesium Citrate
+													your local Pharmacy&#13;At 1:00 PM Drink the first bottle of Magnesium Citrate &#xd;
+													- At 7:00 PM, drink the second bottle of Magnesium Citrate&#13;
 													- Throughout the day, make sure you drink at least eight glasses or
-													more
+													more&#13;
 													of fluids other than the prep
 													- You may experience bloating symptoms as when as nausea and
-													diarrhea.
+													diarrhea.&#13;
 													if you have abdominal pain or vomiting, stop drinking and call our
-													office.
+													office.&#13;
 												</mx:text>
 											</mx:Text>
 
