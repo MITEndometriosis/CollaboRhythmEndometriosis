@@ -177,6 +177,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			}
 
 		}
+
 	}
 
 }
