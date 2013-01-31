@@ -22,7 +22,6 @@
 					   title="VaginalBleedingEvaluation">
 
 	<fx:Declarations>
-
 		<s:RadioButtonGroup id="bloodColor" itemClick="bloodColor_eventHandler(event)"/>
 		<s:RadioButtonGroup id="bloodClotSize" itemClick="bloodClotSize_eventHandler(event);"/>
 	</fx:Declarations>
