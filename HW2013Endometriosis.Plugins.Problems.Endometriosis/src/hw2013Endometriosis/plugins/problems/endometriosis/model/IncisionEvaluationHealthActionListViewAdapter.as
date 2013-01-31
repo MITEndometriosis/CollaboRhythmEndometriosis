@@ -71,7 +71,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get description():String
 		{
-			return "";
+			return "Wound Check";
 		}
 
 		public function get indication():String
@@ -81,12 +81,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get primaryInstructions():String
 		{
-			return "";
+			return "Detect infection and";
 		}
 
 		public function get secondaryInstructions():String
 		{
-			return "";
+			return "monitor healing";
 		}
 
 		public function get instructionalVideoPath():String

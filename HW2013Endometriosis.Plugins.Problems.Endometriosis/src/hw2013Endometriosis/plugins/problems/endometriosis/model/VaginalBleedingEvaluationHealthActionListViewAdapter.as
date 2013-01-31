@@ -73,7 +73,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get description():String
 		{
-			return "";
+			return "Report any bleeding";
 		}
 
 		public function get indication():String
@@ -83,12 +83,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get primaryInstructions():String
 		{
-			return "";
+			return "To monitor and detect";
 		}
 
 		public function get secondaryInstructions():String
 		{
-			return "";
+			return "healing complications";
 		}
 
 		public function get instructionalVideoPath():String

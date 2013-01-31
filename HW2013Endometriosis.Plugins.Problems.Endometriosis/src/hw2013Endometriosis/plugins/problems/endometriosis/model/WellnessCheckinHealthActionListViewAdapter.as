@@ -69,7 +69,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get description():String
 		{
-			return "";
+			return "Emotional wellness check-in";
 		}
 
 		public function get indication():String
@@ -79,12 +79,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get primaryInstructions():String
 		{
-			return "";
+			return "Mental health is also";
 		}
 
 		public function get secondaryInstructions():String
 		{
-			return "";
+			return "very important";
 		}
 
 		public function get instructionalVideoPath():String

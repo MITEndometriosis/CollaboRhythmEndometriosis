@@ -72,7 +72,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get description():String
 		{
-			return "";
+			return "Optional 3-5 minute survey";
 		}
 
 		public function get indication():String
@@ -82,12 +82,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get primaryInstructions():String
 		{
-			return "";
+			return "Determine your baseline ";
 		}
 
 		public function get secondaryInstructions():String
 		{
-			return "";
+			return "wellness score";
 		}
 
 		public function get instructionalVideoPath():String

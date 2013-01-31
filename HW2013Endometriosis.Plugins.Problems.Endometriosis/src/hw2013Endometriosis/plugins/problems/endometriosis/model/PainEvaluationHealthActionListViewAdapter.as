@@ -68,7 +68,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get description():String
 		{
-			return "";
+			return "Monitor your pain symptoms";
 		}
 
 		public function get indication():String
@@ -78,12 +78,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get primaryInstructions():String
 		{
-			return "";
+			return "Help develop a pain";
 		}
 
 		public function get secondaryInstructions():String
 		{
-			return "";
+			return "management strategy";
 		}
 
 		public function get instructionalVideoPath():String

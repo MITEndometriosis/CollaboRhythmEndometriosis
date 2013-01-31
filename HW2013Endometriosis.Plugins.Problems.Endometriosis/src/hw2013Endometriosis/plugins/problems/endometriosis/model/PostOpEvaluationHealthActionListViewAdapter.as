@@ -72,7 +72,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get description():String
 		{
-			return "";
+			return "General Healing Check-in";
 		}
 
 		public function get indication():String
@@ -82,12 +82,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get primaryInstructions():String
 		{
-			return "";
+			return "Evaluate normal bodily";
 		}
 
 		public function get secondaryInstructions():String
 		{
-			return "";
+			return "functions";
 		}
 
 		public function get instructionalVideoPath():String

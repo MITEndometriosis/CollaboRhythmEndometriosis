@@ -97,9 +97,12 @@
 								label="How would you describe your {BODY_PART.toLowerCase()} pain?">
 
 						<s:VGroup>
-							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Sharp/Shooting"/>
-							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"/>
-							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Sharp/Shooting"
+										scaleX="1.3" scaleY="1.3"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Dull/Aching"
+										scaleX="1.3" scaleY="1.3"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Cramping/Squeezing"
+										scaleX="1.3" scaleY="1.3"/>
 						</s:VGroup>
 
 					</s:FormItem>
@@ -108,7 +111,7 @@
 								label="How intense is the {BODY_PART.toLowerCase()} pain?">
 
 						<s:HSlider skinClass="spark.skins.spark.HSliderSkin" scaleX="4" minimum="0" maximum="10"
-								   value="0"/>
+								   value="0" scaleY="2"/>
 
 						<s:Image source="@Embed('/assets/images/VASchart.png')"/>
 
@@ -122,17 +125,21 @@
 
 						<s:VGroup>
 							<s:CheckBox id="AggravatingSexualIntercourseCheckBox"
-										skinClass="spark.skins.spark.CheckBoxSkin" label="Sexual Intercourse"/>
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Sexual Intercourse"
+										scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AggravatingMildPhysicalActivityCheckBox"
-										skinClass="spark.skins.spark.CheckBoxSkin" label="Mild Physical Activity"/>
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Mild Physical Activity"
+										scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AggravatingModeratePhysicalActivityCheckBox"
-										skinClass="spark.skins.spark.CheckBoxSkin" label="Moderate Physical Activity"/>
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Moderate Physical Activity"
+										scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AggravatingStrenuousPhysicalActivityCheckBox"
-										skinClass="spark.skins.spark.CheckBoxSkin" label="Strenuous Physical Activity"/>
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Strenuous Physical Activity"
+										scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AggravatingEatingCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
-										label="Eating"/>
+										label="Eating" scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AggravatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
-										label="Other"/>
+										label="Other" scaleX="1.3" scaleY="1.3"/>
 						</s:VGroup>
 
 					</s:FormItem>
@@ -155,19 +162,22 @@
 						<s:VGroup>
 							<s:CheckBox id="AlleviatingOTCPainMedicationCheckBox"
 										skinClass="spark.skins.spark.CheckBoxSkin"
-										label="Over-the-Counter Pain Medication"/>
+										label="Over-the-Counter Pain Medication"
+										scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AlleviatingNarcoticsCheckBox"
-										skinClass="spark.skins.spark.CheckBoxSkin" label="Narcotics"/>
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Narcotics"
+										scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AlleviatingHeatingPadCheckBox"
-										skinClass="spark.skins.spark.CheckBoxSkin" label="Heating Pad"/>
+										skinClass="spark.skins.spark.CheckBoxSkin" label="Heating Pad"
+										scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AlleviatingBowelMovementCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
-										label="Bowel Movement"/>
+										label="Bowel Movement" scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AlleviatingAcupunctureCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
-										label="Acupuncture"/>
+										label="Acupuncture" scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AlleviatingHerbsCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
-										label="Herbs"/>
+										label="Herbs" scaleX="1.3" scaleY="1.3"/>
 							<s:CheckBox id="AlleviatingOtherCheckBox" skinClass="spark.skins.spark.CheckBoxSkin"
-										label="Other"/>
+										label="Other" scaleX="1.3" scaleY="1.3"/>
 						</s:VGroup>
 
 					</s:FormItem>
@@ -185,8 +195,10 @@
 								label="How would you describe the duration of your {BODY_PART.toLowerCase()} pain?">
 
 						<s:VGroup>
-							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Constant"/>
-							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Episodic"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Constant"
+										scaleX="1.3" scaleY="1.3"/>
+							<s:CheckBox skinClass="spark.skins.spark.CheckBoxSkin" label="Episodic"
+										scaleX="1.3" scaleY="1.3"/>
 						</s:VGroup>
 
 					</s:FormItem>
