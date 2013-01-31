@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataroot>
+  
+  <indivoServerBaseURL>http://indivo-dev.media.mit.edu:9291</indivoServerBaseURL>
+  
+  <AccountSource>
+    
+    <accountId>example-clinician@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@fake.org</contactEmail>
+    
+    <fullName>Example Clinician</fullName>
+    
+    <username>example-clinician</username>
+    
+    <password>example-clinician</password>
+    
+    <givenName>Example</givenName>
+    
+    <familyName>Clinician</familyName>
+    
+    <streetAddress>1066 Spinel Rd</streetAddress>
+    
+    <postalCode>2142</postalCode>
+    
+    <locality>Cambridge</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-clinician@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-clinician@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1957-03-29T00:00:00Z</dateOfBirth>
+    
+    <age>53</age>
+    
+    <gender>Male</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Married</maritalStatus>
+    
+    <employmentStatus>Employed</employmentStatus>
+    
+    <employmentIndustry>Medical</employmentIndustry>
+    
+    <occupation>Doctor</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId/>
+    
+    <status/>
+    
+    <accessKey/>
+    
+    <accessSecret/>
+    
+    <demographicsId/>
+    
+    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    
+    <recordSeed/>
+    
+    <mode>clinician</mode>
+    
+  </AccountSource>
+  
+  <AccountSource>
+    
+    <accountId>example-patient@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@fake.org</contactEmail>
+    
+    <fullName>Example Patient</fullName>
+    
+    <username>example-patient</username>
+    
+    <password>example-patient</password>
+    
+    <givenName>Example</givenName>
+    
+    <familyName>Patient</familyName>
+    
+    <streetAddress>84 Spruce Street</streetAddress>
+    
+    <postalCode>2215</postalCode>
+    
+    <locality>Boston</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-patient@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-patient@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1940-02-24T00:00:00Z</dateOfBirth>
+    
+    <age>70</age>
+    
+    <gender>Female</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Widowed</maritalStatus>
+    
+    <employmentStatus>Retired</employmentStatus>
+    
+    <employmentIndustry>Education</employmentIndustry>
+    
+    <occupation>Teacher</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId/>
+    
+    <accessKey/>
+    
+    <accessSecret/>
+    
+    <status/>
+    
+    <demographicsId>18124489-3b91-45bd-90a9-375a520eca26</demographicsId>
+    
+    <recordSeed/>
+    
+    <shareAccountId>example-clinician@records.media.mit.edu</shareAccountId>
+    
+    <notes>Use "Account -&gt; Duplicate Account Source" to make your own account based on this one</notes>
+    
+    <shareRole>Coach</shareRole>
+    
+    <documentsDirectory>mbrooks</documentsDirectory>
+    
+    <mode>patient</mode>
+    
+  </AccountSource>
+  
+  <AccountSource>
+    
+    <accountId>endometriosis-jking@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@fake.org</contactEmail>
+    
+    <fullName>James King</fullName>
+    
+    <username>endometriosis-jking</username>
+    
+    <password>example-clinician</password>
+    
+    <givenName>James</givenName>
+    
+    <familyName>King</familyName>
+    
+    <streetAddress>1066 Spinel Rd</streetAddress>
+    
+    <postalCode>2142</postalCode>
+    
+    <locality>Cambridge</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-clinician@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-clinician@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1957-03-29T00:00:00Z</dateOfBirth>
+    
+    <age>53</age>
+    
+    <gender>Male</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Married</maritalStatus>
+    
+    <employmentStatus>Employed</employmentStatus>
+    
+    <employmentIndustry>Medical</employmentIndustry>
+    
+    <occupation>Doctor</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>fcb56a9b-19b1-4ac9-be7f-a7cad467cb8c</recordId>
+    
+    <status>Demographics document created. Id: 1729daa4-07bf-4dc1-9521-c62f67b856a2</status>
+    
+    <accessKey>BphULiRezQRg6zy4uf4x</accessKey>
+    
+    <accessSecret>a662ZhwDEFZrT1kQopOj</accessSecret>
+    
+    <demographicsId>1729daa4-07bf-4dc1-9521-c62f67b856a2</demographicsId>
+    
+    <notes/>
+    
+    <recordSeed/>
+    
+    <mode>clinician</mode>
+    
+  </AccountSource>
+  
+  <AccountSource>
+    
+    <accountId>ppeterson@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@fake.org</contactEmail>
+    
+    <fullName>Pamela Peterson</fullName>
+    
+    <username>ppeterson</username>
+    
+    <password>example-patient</password>
+    
+    <givenName>Pamela</givenName>
+    
+    <familyName>Peterson</familyName>
+    
+    <streetAddress>84 Spruce Street</streetAddress>
+    
+    <postalCode>2215</postalCode>
+    
+    <locality>Boston</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-patient@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-patient@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1940-02-24T00:00:00Z</dateOfBirth>
+    
+    <age>70</age>
+    
+    <gender>Female</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Widowed</maritalStatus>
+    
+    <employmentStatus>Retired</employmentStatus>
+    
+    <employmentIndustry>Education</employmentIndustry>
+    
+    <occupation>Teacher</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>1ef67ffa-54b1-40ba-9b4e-2326f909e20e</recordId>
+    
+    <accessKey>mHmscz857UJt2HWrevh2</accessKey>
+    
+    <accessSecret>WA9sGIrMdMQUcZtVbx04</accessSecret>
+    
+    <status>Created 2/8 documents, 0/3 relationships</status>
+    
+    <demographicsId>1af60c41-fb42-40cd-9a8d-b02c9befb627</demographicsId>
+    
+    <recordSeed/>
+    
+    <shareAccountId>endometriosis-jking@records.media.mit.edu</shareAccountId>
+    
+    <notes/>
+    
+    <shareRole>Coach</shareRole>
+    
+    <documentsDirectory/>
+    
+    <mode>patient</mode>
+    
+  </AccountSource>
+  
+  <AccountSource>
+    
+    <accountId>endometriosis-test1@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@fake.org</contactEmail>
+    
+    <fullName>Pamela Peterson</fullName>
+    
+    <username>endometriosis-test1</username>
+    
+    <password>endometriosis-test1</password>
+    
+    <givenName>Test1</givenName>
+    
+    <familyName>Tester</familyName>
+    
+    <streetAddress>84 Spruce Street</streetAddress>
+    
+    <postalCode>2215</postalCode>
+    
+    <locality>Boston</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-patient@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-patient@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1940-02-24T00:00:00Z</dateOfBirth>
+    
+    <age>70</age>
+    
+    <gender>Female</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Widowed</maritalStatus>
+    
+    <employmentStatus>Retired</employmentStatus>
+    
+    <employmentIndustry>Education</employmentIndustry>
+    
+    <occupation>Teacher</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>6936d8e1-8323-497c-8643-f7a7e111a893</recordId>
+    
+    <accessKey>xSuzvpHZOjChNWudfWUj</accessKey>
+    
+    <accessSecret>9nMBKA5CRvo1I9ePcbnb</accessSecret>
+    
+    <status>Record shared.</status>
+    
+    <demographicsId>e31c2cb9-d46c-4718-ac57-f8bc17c064cf</demographicsId>
+    
+    <recordSeed/>
+    
+    <shareAccountId>endometriosis-jking@records.media.mit.edu</shareAccountId>
+    
+    <notes/>
+    
+    <shareRole>Coach</shareRole>
+    
+    <documentsDirectory/>
+    
+    <mode>patient</mode>
+    
+  </AccountSource>
+</dataroot>
