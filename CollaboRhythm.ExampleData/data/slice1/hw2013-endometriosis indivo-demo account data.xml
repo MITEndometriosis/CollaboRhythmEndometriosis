@@ -303,17 +303,17 @@
     
     <organDonar>true</organDonar>
     
-    <recordId>e539ef9e-dffd-4c7b-98da-0962f129b3d5</recordId>
+    <recordId>e05be1a8-d064-48c8-b54b-0d303af39fa9</recordId>
     
-    <accessKey>E8JqSH0MU7RXSC97k16P</accessKey>
+    <accessKey>JgXLFuLq1K8ZWrzcTb6v</accessKey>
     
-    <accessSecret>PyodBMJwNJekDV4nKb1k</accessSecret>
+    <accessSecret>TUR6hyqnxqK7FEempYrg</accessSecret>
     
-    <status>Created 10/10 documents, 4/5 relationships</status>
+    <status/>
     
     <demographicsId>7cac4b09-ae19-4fad-963e-1b936d24bad3</demographicsId>
     
-    <recordSeed>1</recordSeed>
+    <recordSeed>2</recordSeed>
     
     <shareAccountId>endometriosis-jking@records.media.mit.edu</shareAccountId>
     
@@ -406,6 +406,88 @@
     <shareRole>Coach</shareRole>
     
     <documentsDirectory/>
+    
+    <mode>patient</mode>
+    
+  </AccountSource><AccountSource>
+    
+    <accountId>ppeterson2@records.media.mit.edu</accountId>
+    
+    <contactEmail>not_used@localhost</contactEmail>
+    
+    <fullName>Example Patient</fullName>
+    
+    <username>ppeterson2</username>
+    
+    <password>example-patient</password>
+    
+    <givenName>Pamela</givenName>
+    
+    <familyName>Patient</familyName>
+    
+    <streetAddress>84 Spruce Street</streetAddress>
+    
+    <postalCode>2215</postalCode>
+    
+    <locality>Boston</locality>
+    
+    <region>Massachusetts</region>
+    
+    <country>US</country>
+    
+    <timeZone>-5GMT</timeZone>
+    
+    <emailPersonal>example-patient@records.media.mit.edu</emailPersonal>
+    
+    <phoneNumberHome>1-555-555-6548</phoneNumberHome>
+    
+    <phoneNumberWork>1-555-555-8654</phoneNumberWork>
+    
+    <instantMessengerName>example-patient@records.media.mit.edu</instantMessengerName>
+    
+    <dateOfBirth>1940-02-24T00:00:00Z</dateOfBirth>
+    
+    <age>70</age>
+    
+    <gender>Female</gender>
+    
+    <ethnicity>White</ethnicity>
+    
+    <language>English</language>
+    
+    <maritalStatus>Widowed</maritalStatus>
+    
+    <employmentStatus>Retired</employmentStatus>
+    
+    <employmentIndustry>Education</employmentIndustry>
+    
+    <occupation>Teacher</occupation>
+    
+    <religion>Protestant</religion>
+    
+    <highestEducation>University</highestEducation>
+    
+    <organDonar>true</organDonar>
+    
+    <recordId>02d3fc94-33af-48f0-a4a5-7e36e6387ae3</recordId>
+    
+    <accessKey>hCM4rYwtt2LPcJFzc78X</accessKey>
+    
+    <accessSecret>G2s1uofp5gG7AEw9PCfi</accessSecret>
+    
+    <status/>
+    
+    <demographicsId>18124489-3b91-45bd-90a9-375a520eca26</demographicsId>
+    
+    <recordSeed/>
+    
+    <shareAccountId>endometriosis-jking@records.media.mit.edu</shareAccountId>
+    
+    <notes/>
+    
+    <shareRole>Coach</shareRole>
+    
+    <documentsDirectory>ppeterson</documentsDirectory>
     
     <mode>patient</mode>
     
