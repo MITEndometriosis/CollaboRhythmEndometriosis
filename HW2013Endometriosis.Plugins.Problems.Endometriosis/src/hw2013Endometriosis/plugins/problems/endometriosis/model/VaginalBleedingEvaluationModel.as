@@ -3,9 +3,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
 	import collaboRhythm.shared.model.Record;
-	import collaboRhythm.shared.model.healthRecord.CodedValue;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmCodedValue;
 	import collaboRhythm.shared.model.healthRecord.DocumentBase;
-	import collaboRhythm.shared.model.healthRecord.ValueAndUnit;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmValueAndUnit;
 	import collaboRhythm.shared.model.healthRecord.document.HealthActionResult;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.ActionGroupResult;
@@ -24,7 +24,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _record:Record;
 
-		private var _hasBleeding;
+		private var _hasBleeding: Boolean;
 		private var _showBleedingColor:Boolean;
 		private var _hasBloodClots:Boolean;
 		private var _showBloodClotSize:Boolean;
@@ -190,7 +190,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 			var healthActionResult:HealthActionResult = new HealthActionResult();
 
-			healthActionResult.name = new CodedValue(null, null, null, VAGINAL_BLEEDING_EVALUATION_RESULT);
+			healthActionResult.name = new CollaboRhythmCodedValue(null, null, null, VAGINAL_BLEEDING_EVALUATION_RESULT);
 			healthActionResult.planType = String("prescribed");
 			healthActionResult.reportedBy = String("ppeterson@records.mit.edu");
 			healthActionResult.dateReported = new Date();
@@ -200,54 +200,54 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			var measurements:ArrayCollection = new ArrayCollection();
 
 			var hasBleedingMeasurement:Measurement = new Measurement();
-			hasBleedingMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has bleeding");
-			hasBleedingMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasBleedingMeasurement.value = new ValueAndUnit(null, null, hasBleeding.toString());
+			hasBleedingMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has bleeding");
+			hasBleedingMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasBleedingMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasBleeding.toString());
 			measurements.addItem(hasBleedingMeasurement);
 
 			var bloodColorMeasurement:Measurement = new Measurement();
-			bloodColorMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "blood color");
-			bloodColorMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			bloodColorMeasurement.value = new ValueAndUnit(null, null, bloodColor.toString());
+			bloodColorMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "blood color");
+			bloodColorMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			bloodColorMeasurement.value = new CollaboRhythmValueAndUnit(null, null, bloodColor.toString());
 			measurements.addItem(bloodColorMeasurement);
 
 			var hasBloodClotsMeasurement:Measurement = new Measurement();
-			hasBloodClotsMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has blood clots");
-			hasBloodClotsMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasBloodClotsMeasurement.value = new ValueAndUnit(null, null, hasBloodClots.toString());
+			hasBloodClotsMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has blood clots");
+			hasBloodClotsMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasBloodClotsMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasBloodClots.toString());
 			measurements.addItem(hasBloodClotsMeasurement);
 
 			var bloodClotSizeMeasurement:Measurement = new Measurement();
-			bloodClotSizeMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "blood clot size");
-			bloodClotSizeMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			bloodClotSizeMeasurement.value = new ValueAndUnit(null, null, bloodClotSize.toString());
+			bloodClotSizeMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "blood clot size");
+			bloodClotSizeMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			bloodClotSizeMeasurement.value = new CollaboRhythmValueAndUnit(null, null, bloodClotSize.toString());
 			measurements.addItem(bloodClotSizeMeasurement);
 
 			var useFeminineProductMeasurement:Measurement = new Measurement();
-			useFeminineProductMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
+			useFeminineProductMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
 					"use feminine product");
-			useFeminineProductMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			useFeminineProductMeasurement.value = new ValueAndUnit(null, null, useFeminineProducts.toString());
+			useFeminineProductMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			useFeminineProductMeasurement.value = new CollaboRhythmValueAndUnit(null, null, useFeminineProducts.toString());
 			measurements.addItem(useFeminineProductMeasurement);
 
 			var feminineProductTypeMeasurement:Measurement = new Measurement();
-			feminineProductTypeMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
+			feminineProductTypeMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
 					"feminine product type");
-			feminineProductTypeMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			feminineProductTypeMeasurement.value = new ValueAndUnit(null, null, feminineProductsType.toString());
+			feminineProductTypeMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			feminineProductTypeMeasurement.value = new CollaboRhythmValueAndUnit(null, null, feminineProductsType.toString());
 			measurements.addItem(feminineProductTypeMeasurement);
 
 			var feminineProductNumMeasurement:Measurement = new Measurement();
-			feminineProductNumMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
+			feminineProductNumMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
 					"feminine product num");
-			feminineProductNumMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
-			feminineProductNumMeasurement.value = new ValueAndUnit(null, null, feminineProductsNum.toString());
+			feminineProductNumMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
+			feminineProductNumMeasurement.value = new CollaboRhythmValueAndUnit(null, null, feminineProductsNum.toString());
 			measurements.addItem(feminineProductNumMeasurement);
 
 			var hasSpottingMeasurement:Measurement = new Measurement();
-			hasSpottingMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has spotting");
-			hasSpottingMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasSpottingMeasurement.value = new ValueAndUnit(null, null, hasSpotting.toString());
+			hasSpottingMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has spotting");
+			hasSpottingMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasSpottingMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasSpotting.toString());
 			measurements.addItem(hasSpottingMeasurement);
 
 

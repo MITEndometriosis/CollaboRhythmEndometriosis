@@ -3,9 +3,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
 	import collaboRhythm.shared.model.Record;
-	import collaboRhythm.shared.model.healthRecord.CodedValue;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmCodedValue;
 	import collaboRhythm.shared.model.healthRecord.DocumentBase;
-	import collaboRhythm.shared.model.healthRecord.ValueAndUnit;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmValueAndUnit;
 	import collaboRhythm.shared.model.healthRecord.document.HealthActionResult;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.ActionGroupResult;
@@ -520,7 +520,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 			var healthActionResult:HealthActionResult = new HealthActionResult();
 
-			healthActionResult.name = new CodedValue(null, null, null, PRE_OP_EVALUATION_RESULT);
+			healthActionResult.name = new CollaboRhythmCodedValue(null, null, null, PRE_OP_EVALUATION_RESULT);
 			healthActionResult.planType = String("prescribed");
 			healthActionResult.reportedBy = String("ppeterson@records.mit.edu");
 			healthActionResult.dateReported = new Date();
@@ -531,269 +531,269 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 
 			var generalHealthMeasurement:Measurement = new Measurement();
-			generalHealthMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "generalHealth");
-			generalHealthMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			generalHealthMeasurement.value = new ValueAndUnit(null, null, generalHealth);
+			generalHealthMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "generalHealth");
+			generalHealthMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			generalHealthMeasurement.value = new CollaboRhythmValueAndUnit(null, null, generalHealth);
 			measurements.addItem(generalHealthMeasurement);
 
 			var generalHealthComparisonMeasurement:Measurement = new Measurement();
-			generalHealthComparisonMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "generalHealthComparison");
-			generalHealthComparisonMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			generalHealthComparisonMeasurement.value = new ValueAndUnit(null, null, generalHealthComparison);
+			generalHealthComparisonMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "generalHealthComparison");
+			generalHealthComparisonMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			generalHealthComparisonMeasurement.value = new CollaboRhythmValueAndUnit(null, null, generalHealthComparison);
 			measurements.addItem(generalHealthComparisonMeasurement);
 
 			var sickTFMeasurement:Measurement = new Measurement();
-			sickTFMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "sickTF");
-			sickTFMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			sickTFMeasurement.value = new ValueAndUnit(null, null, sickTF);
+			sickTFMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "sickTF");
+			sickTFMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			sickTFMeasurement.value = new CollaboRhythmValueAndUnit(null, null, sickTF);
 			measurements.addItem(sickTFMeasurement);
 
 			var healthyTFMeasurement:Measurement = new Measurement();
-			healthyTFMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "healthyTF");
-			healthyTFMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			healthyTFMeasurement.value = new ValueAndUnit(null, null, healthyTF);
+			healthyTFMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "healthyTF");
+			healthyTFMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			healthyTFMeasurement.value = new CollaboRhythmValueAndUnit(null, null, healthyTF);
 			measurements.addItem(healthyTFMeasurement);
 
 			var worseTFMeasurement:Measurement = new Measurement();
-			worseTFMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "worseTF");
-			worseTFMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			worseTFMeasurement.value = new ValueAndUnit(null, null, worseTF);
+			worseTFMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "worseTF");
+			worseTFMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			worseTFMeasurement.value = new CollaboRhythmValueAndUnit(null, null, worseTF);
 			measurements.addItem(worseTFMeasurement);
 
 			var excellentTFMeasurement:Measurement = new Measurement();
-			excellentTFMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "excellentTF");
-			excellentTFMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			excellentTFMeasurement.value = new ValueAndUnit(null, null, excellentTF);
+			excellentTFMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "excellentTF");
+			excellentTFMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			excellentTFMeasurement.value = new CollaboRhythmValueAndUnit(null, null, excellentTF);
 			measurements.addItem(excellentTFMeasurement);
 
 			var activitiesHighLimitMeasurement:Measurement = new Measurement();
-			activitiesHighLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "activitiesHighLimit");
-			activitiesHighLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			activitiesHighLimitMeasurement.value = new ValueAndUnit(null, null, activitiesHighLimit);
+			activitiesHighLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "activitiesHighLimit");
+			activitiesHighLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			activitiesHighLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, activitiesHighLimit);
 			measurements.addItem(activitiesHighLimitMeasurement);
 
 			var activitiesModLimitMeasurement:Measurement = new Measurement();
-			activitiesModLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "activitiesModLimit");
-			activitiesModLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			activitiesModLimitMeasurement.value = new ValueAndUnit(null, null, activitiesModLimit);
+			activitiesModLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "activitiesModLimit");
+			activitiesModLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			activitiesModLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, activitiesModLimit);
 			measurements.addItem(activitiesModLimitMeasurement);
 
 			var liftingLimitMeasurement:Measurement = new Measurement();
-			liftingLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "liftingLimit");
-			liftingLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			liftingLimitMeasurement.value = new ValueAndUnit(null, null, liftingLimit);
+			liftingLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "liftingLimit");
+			liftingLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			liftingLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, liftingLimit);
 			measurements.addItem(liftingLimitMeasurement);
 
 			var climbingSeveralLimitMeasurement:Measurement = new Measurement();
-			climbingSeveralLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "climbingSeveralLimit");
-			climbingSeveralLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			climbingSeveralLimitMeasurement.value = new ValueAndUnit(null, null, climbingSeveralLimit);
+			climbingSeveralLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "climbingSeveralLimit");
+			climbingSeveralLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			climbingSeveralLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, climbingSeveralLimit);
 			measurements.addItem(climbingSeveralLimitMeasurement);
 
 			var climbingOneLimitMeasurement:Measurement = new Measurement();
-			climbingOneLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "climbingOneLimit");
-			climbingOneLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			climbingOneLimitMeasurement.value = new ValueAndUnit(null, null, climbingOneLimit);
+			climbingOneLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "climbingOneLimit");
+			climbingOneLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			climbingOneLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, climbingOneLimit);
 			measurements.addItem(climbingOneLimitMeasurement);
 
 			var climbingOneLimitMeasurement:Measurement = new Measurement();
-						climbingOneLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "climbingOneLimit");
-						climbingOneLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-						climbingOneLimitMeasurement.value = new ValueAndUnit(null, null, climbingOneLimit);
+						climbingOneLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "climbingOneLimit");
+						climbingOneLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+						climbingOneLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, climbingOneLimit);
 						measurements.addItem(climbingOneLimitMeasurement);
 
 			var bendingLimitMeasurement:Measurement = new Measurement();
-			bendingLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "bendingLimit");
-			bendingLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			bendingLimitMeasurement.value = new ValueAndUnit(null, null, bendingLimit);
+			bendingLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "bendingLimit");
+			bendingLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			bendingLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, bendingLimit);
 						measurements.addItem(bendingLimitMeasurement);
 
 			var walkMileLimitMeasurement:Measurement = new Measurement();
-			walkMileLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "walkMileLimit");
-			walkMileLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			walkMileLimitMeasurement.value = new ValueAndUnit(null, null, walkMileLimit);
+			walkMileLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "walkMileLimit");
+			walkMileLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			walkMileLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, walkMileLimit);
 						measurements.addItem(walkMileLimitMeasurement);
 
 			var walkSeveralLimitMeasurement:Measurement = new Measurement();
-			walkSeveralLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "walkSeveralLimit");
-			walkSeveralLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			walkSeveralLimitMeasurement.value = new ValueAndUnit(null, null, walkSeveralLimit);
+			walkSeveralLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "walkSeveralLimit");
+			walkSeveralLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			walkSeveralLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, walkSeveralLimit);
 						measurements.addItem(walkSeveralLimitMeasurement);
 
 			var walkOneLimitMeasurement:Measurement = new Measurement();
-			walkOneLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "walkOneLimit");
-			walkOneLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			walkOneLimitMeasurement.value = new ValueAndUnit(null, null, walkOneLimit);
+			walkOneLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "walkOneLimit");
+			walkOneLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			walkOneLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, walkOneLimit);
 						measurements.addItem(walkOneLimitMeasurement);
 
 			var bathingLimitMeasurement:Measurement = new Measurement();
-			bathingLimitMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "bathingLimit");
-			bathingLimitMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			bathingLimitMeasurement.value = new ValueAndUnit(null, null, bathingLimit);
+			bathingLimitMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "bathingLimit");
+			bathingLimitMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			bathingLimitMeasurement.value = new CollaboRhythmValueAndUnit(null, null, bathingLimit);
 						measurements.addItem(bathingLimitMeasurement);
 
 			var cutTime1Measurement:Measurement = new Measurement();
-			cutTime1Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTime1");
-			cutTime1Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			cutTime1Measurement.value = new ValueAndUnit(null, null, climbingOneLimit);
+			cutTime1Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTime1");
+			cutTime1Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			cutTime1Measurement.value = new CollaboRhythmValueAndUnit(null, null, climbingOneLimit);
 						measurements.addItem(cutTime1Measurement);
 
 
 			var cutTime2Measurement:Measurement = new Measurement();
-			cutTime2Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTime2");
-			cutTime2Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			cutTime2Measurement.value = new ValueAndUnit(null, null, cutTime2);
+			cutTime2Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTime2");
+			cutTime2Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			cutTime2Measurement.value = new CollaboRhythmValueAndUnit(null, null, cutTime2);
 						measurements.addItem(cutTime2Measurement);
 
 			var accomplishLess1Measurement:Measurement = new Measurement();
-			accomplishLess1Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLess1");
-			accomplishLess1Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			accomplishLess1Measurement.value = new ValueAndUnit(null, null, accomplishLess1);
+			accomplishLess1Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLess1");
+			accomplishLess1Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			accomplishLess1Measurement.value = new CollaboRhythmValueAndUnit(null, null, accomplishLess1);
 						measurements.addItem(accomplishLess1Measurement);
 
 			var accomplishLess2Measurement:Measurement = new Measurement();
-			accomplishLess2Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLess2");
-			accomplishLess2Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			accomplishLess2Measurement.value = new ValueAndUnit(null, null, accomplishLess2);
+			accomplishLess2Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLess2");
+			accomplishLess2Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			accomplishLess2Measurement.value = new CollaboRhythmValueAndUnit(null, null, accomplishLess2);
 						measurements.addItem(accomplishLess2Measurement);
 
 			var limitWork1Measurement:Measurement = new Measurement();
-			limitWork1Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWork1");
-			limitWork1Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			limitWork1Measurement.value = new ValueAndUnit(null, null, limitWork1);
+			limitWork1Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWork1");
+			limitWork1Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			limitWork1Measurement.value = new CollaboRhythmValueAndUnit(null, null, limitWork1);
 						measurements.addItem(limitWork1Measurement);
 
 			var limitWork2Measurement:Measurement = new Measurement();
-			limitWork2Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWork2");
-			limitWork2Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			limitWork2Measurement.value = new ValueAndUnit(null, null, limitWork2);
+			limitWork2Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWork2");
+			limitWork2Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			limitWork2Measurement.value = new CollaboRhythmValueAndUnit(null, null, limitWork2);
 						measurements.addItem(limitWork2Measurement);
 
 			var difficultWork1Measurement:Measurement = new Measurement();
-			difficultWork1Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "difficultWork1");
-			difficultWork1Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			difficultWork1Measurement.value = new ValueAndUnit(null, null, difficultWork1);
+			difficultWork1Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "difficultWork1");
+			difficultWork1Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			difficultWork1Measurement.value = new CollaboRhythmValueAndUnit(null, null, difficultWork1);
 						measurements.addItem(difficultWork1Measurement);
 
 			var difficultWork2Measurement:Measurement = new Measurement();
-			difficultWork2Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "difficultWork2");
-			difficultWork2Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			difficultWork2Measurement.value = new ValueAndUnit(null, null, difficultWork2);
+			difficultWork2Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "difficultWork2");
+			difficultWork2Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			difficultWork2Measurement.value = new CollaboRhythmValueAndUnit(null, null, difficultWork2);
 						measurements.addItem(difficultWork2Measurement);
 
 			var cutTimeEmo1Measurement:Measurement = new Measurement();
-			cutTimeEmo1Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTimeEmo1");
-			cutTimeEmo1Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			cutTimeEmo1Measurement.value = new ValueAndUnit(null, null, cutTimeEmo1);
+			cutTimeEmo1Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTimeEmo1");
+			cutTimeEmo1Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			cutTimeEmo1Measurement.value = new CollaboRhythmValueAndUnit(null, null, cutTimeEmo1);
 						measurements.addItem(cutTimeEmo1Measurement);
 
 			var cutTimeEmo2Measurement:Measurement = new Measurement();
-			cutTimeEmo2Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTimeEmo2");
-			cutTimeEmo2Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			cutTimeEmo2Measurement.value = new ValueAndUnit(null, null, cutTimeEmo2);
+			cutTimeEmo2Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "cutTimeEmo2");
+			cutTimeEmo2Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			cutTimeEmo2Measurement.value = new CollaboRhythmValueAndUnit(null, null, cutTimeEmo2);
 						measurements.addItem(cutTimeEmo2Measurement);
 
 			var accomplishLessEmo1Measurement:Measurement = new Measurement();
-			accomplishLessEmo1Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLessEmo1");
-			accomplishLessEmo1Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			accomplishLessEmo1Measurement.value = new ValueAndUnit(null, null, accomplishLessEmo1);
+			accomplishLessEmo1Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLessEmo1");
+			accomplishLessEmo1Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			accomplishLessEmo1Measurement.value = new CollaboRhythmValueAndUnit(null, null, accomplishLessEmo1);
 						measurements.addItem(accomplishLessEmo1Measurement);
 
 			var accomplishLessEmo2Measurement:Measurement = new Measurement();
-			accomplishLessEmo2Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLessEmo2");
-			accomplishLessEmo2Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			accomplishLessEmo2Measurement.value = new ValueAndUnit(null, null, accomplishLessEmo2);
+			accomplishLessEmo2Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "accomplishLessEmo2");
+			accomplishLessEmo2Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			accomplishLessEmo2Measurement.value = new CollaboRhythmValueAndUnit(null, null, accomplishLessEmo2);
 						measurements.addItem(accomplishLessEmo2Measurement);
 
 			var limitWorkEmo1Measurement:Measurement = new Measurement();
-			limitWorkEmo1Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWorkEmo1");
-			limitWorkEmo1Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			limitWorkEmo1Measurement.value = new ValueAndUnit(null, null, limitWorkEmo1);
+			limitWorkEmo1Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWorkEmo1");
+			limitWorkEmo1Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			limitWorkEmo1Measurement.value = new CollaboRhythmValueAndUnit(null, null, limitWorkEmo1);
 						measurements.addItem(limitWorkEmo1Measurement);
 
 			var limitWorkEmo2Measurement:Measurement = new Measurement();
-			limitWorkEmo2Measurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWorkEmo2");
-			limitWorkEmo2Measurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			limitWorkEmo2Measurement.value = new ValueAndUnit(null, null, limitWorkEmo2);
+			limitWorkEmo2Measurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "limitWorkEmo2");
+			limitWorkEmo2Measurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			limitWorkEmo2Measurement.value = new CollaboRhythmValueAndUnit(null, null, limitWorkEmo2);
 						measurements.addItem(limitWorkEmo2Measurement);
 
 			var socialPhysicalMeasurement:Measurement = new Measurement();
-			socialPhysicalMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "socialPhysical");
-			socialPhysicalMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			socialPhysicalMeasurement.value = new ValueAndUnit(null, null, socialPhysical);
+			socialPhysicalMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "socialPhysical");
+			socialPhysicalMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			socialPhysicalMeasurement.value = new CollaboRhythmValueAndUnit(null, null, socialPhysical);
 						measurements.addItem(socialPhysicalMeasurement);
 
 			var painQuantityMeasurement:Measurement = new Measurement();
-			painQuantityMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "painQuantity");
-			painQuantityMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			painQuantityMeasurement.value = new ValueAndUnit(null, null, painQuantity);
+			painQuantityMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "painQuantity");
+			painQuantityMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			painQuantityMeasurement.value = new CollaboRhythmValueAndUnit(null, null, painQuantity);
 						measurements.addItem(painQuantityMeasurement);
 
 			var painInterfereMeasurement:Measurement = new Measurement();
-			painInterfereMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "painInterfere");
-			painInterfereMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			painInterfereMeasurement.value = new ValueAndUnit(null, null, painInterfere);
+			painInterfereMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "painInterfere");
+			painInterfereMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			painInterfereMeasurement.value = new CollaboRhythmValueAndUnit(null, null, painInterfere);
 						measurements.addItem(painInterfereMeasurement);
 
 			var socialEmoMeasurement:Measurement = new Measurement();
-			socialEmoMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "socialEmo");
-			socialEmoMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			socialEmoMeasurement.value = new ValueAndUnit(null, null, socialEmo);
+			socialEmoMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "socialEmo");
+			socialEmoMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			socialEmoMeasurement.value = new CollaboRhythmValueAndUnit(null, null, socialEmo);
 						measurements.addItem(socialEmoMeasurement);
 
 			var pepEnergyMeasurement:Measurement = new Measurement();
-			pepEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "pepEnergy");
-			pepEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			pepEnergyMeasurement.value = new ValueAndUnit(null, null, pepEnergy);
+			pepEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "pepEnergy");
+			pepEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			pepEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, pepEnergy);
 						measurements.addItem(pepEnergyMeasurement);
 
 			var nervousEnergyMeasurement:Measurement = new Measurement();
-			nervousEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "nervousEnergy");
-			nervousEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			nervousEnergyMeasurement.value = new ValueAndUnit(null, null, nervousEnergy);
+			nervousEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "nervousEnergy");
+			nervousEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			nervousEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, nervousEnergy);
 						measurements.addItem(nervousEnergyMeasurement);
 
 			var dumpsEnergyMeasurement:Measurement = new Measurement();
-			dumpsEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "dumpsEnergy");
-			dumpsEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			dumpsEnergyMeasurement.value = new ValueAndUnit(null, null, dumpsEnergy);
+			dumpsEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "dumpsEnergy");
+			dumpsEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			dumpsEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, dumpsEnergy);
 						measurements.addItem(dumpsEnergyMeasurement);
 
 			var calmEnergyMeasurement:Measurement = new Measurement();
-			calmEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "calmEnergy");
-			calmEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			calmEnergyMeasurement.value = new ValueAndUnit(null, null, calmEnergy);
+			calmEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "calmEnergy");
+			calmEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			calmEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, calmEnergy);
 						measurements.addItem(calmEnergyMeasurement);
 
 			var lotsEnergyMeasurement:Measurement = new Measurement();
-			lotsEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "lotsEnergy");
-			lotsEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			lotsEnergyMeasurement.value = new ValueAndUnit(null, null, lotsEnergy);
+			lotsEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "lotsEnergy");
+			lotsEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			lotsEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, lotsEnergy);
 						measurements.addItem(lotsEnergyMeasurement);
 
 			var downBlueEnergyMeasurement:Measurement = new Measurement();
-			downBlueEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "downBlueEnergy");
-			downBlueEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			downBlueEnergyMeasurement.value = new ValueAndUnit(null, null, downBlueEnergy);
+			downBlueEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "downBlueEnergy");
+			downBlueEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			downBlueEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, downBlueEnergy);
 						measurements.addItem(downBlueEnergyMeasurement);
 
 			var wornEnergyMeasurement:Measurement = new Measurement();
-			wornEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "wornEnergy");
-			wornEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			wornEnergyMeasurement.value = new ValueAndUnit(null, null, wornEnergy);
+			wornEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "wornEnergy");
+			wornEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			wornEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, wornEnergy);
 						measurements.addItem(wornEnergyMeasurement);
 
 
 			var happyEnergyMeasurement:Measurement = new Measurement();
-			happyEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "happyEnergy");
-			happyEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			happyEnergyMeasurement.value = new ValueAndUnit(null, null, happyEnergy);
+			happyEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "happyEnergy");
+			happyEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			happyEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, happyEnergy);
 						measurements.addItem(happyEnergyMeasurement);
 
 			var tiredEnergyMeasurement:Measurement = new Measurement();
-			tiredEnergyMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "tiredEnergy");
-			tiredEnergyMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
-			tiredEnergyMeasurement.value = new ValueAndUnit(null, null, tiredEnergy);
+			tiredEnergyMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "tiredEnergy");
+			tiredEnergyMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:string");
+			tiredEnergyMeasurement.value = new CollaboRhythmValueAndUnit(null, null, tiredEnergy);
 						measurements.addItem(tiredEnergyMeasurement);
 
 			action.measurements = measurements;

@@ -3,9 +3,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
 	import collaboRhythm.shared.model.Record;
-	import collaboRhythm.shared.model.healthRecord.CodedValue;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmCodedValue;
 	import collaboRhythm.shared.model.healthRecord.DocumentBase;
-	import collaboRhythm.shared.model.healthRecord.ValueAndUnit;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmValueAndUnit;
 	import collaboRhythm.shared.model.healthRecord.document.HealthActionResult;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.ActionGroupResult;
@@ -237,7 +237,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 			var healthActionResult:HealthActionResult = new HealthActionResult();
 
-			healthActionResult.name = new CodedValue(null, null, null, POSTOP_EVALUATION_RESULT);
+			healthActionResult.name = new CollaboRhythmCodedValue(null, null, null, POSTOP_EVALUATION_RESULT);
 			healthActionResult.planType = String("prescribed");
 			healthActionResult.reportedBy = String("ppeterson@records.media.mit.edu");
 			healthActionResult.dateReported = new Date();
@@ -247,52 +247,52 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			var measurements:ArrayCollection = new ArrayCollection();
 
 			var canUrinateMeasurement:Measurement = new Measurement();
-			canUrinateMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "can urinate");
-			canUrinateMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			canUrinateMeasurement.value = new ValueAndUnit(null, null, canUrinate.toString());
+			canUrinateMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "can urinate");
+			canUrinateMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			canUrinateMeasurement.value = new CollaboRhythmValueAndUnit(null, null, canUrinate.toString());
 			measurements.addItem(canUrinateMeasurement);
 
 			var hasUrinationPainMeasurement:Measurement = new Measurement();
-			hasUrinationPainMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
+			hasUrinationPainMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
 					"has urination pain");
-			hasUrinationPainMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasUrinationPainMeasurement.value = new ValueAndUnit(null, null, hasUrinationPain.toString());
+			hasUrinationPainMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasUrinationPainMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasUrinationPain.toString());
 			measurements.addItem(hasUrinationPainMeasurement);
 
 			var hasNauseaMeasurement:Measurement = new Measurement();
-			hasNauseaMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has nausea");
-			hasNauseaMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasNauseaMeasurement.value = new ValueAndUnit(null, null, hasNausea.toString());
+			hasNauseaMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has nausea");
+			hasNauseaMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasNauseaMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasNausea.toString());
 			measurements.addItem(hasNauseaMeasurement);
 
 			var hasVomitedMeasurement:Measurement = new Measurement();
-			hasVomitedMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has vomited");
-			hasVomitedMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasVomitedMeasurement.value = new ValueAndUnit(null, null, hasVomited.toString());
+			hasVomitedMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has vomited");
+			hasVomitedMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasVomitedMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasVomited.toString());
 			measurements.addItem(hasVomitedMeasurement);
 
 			var hasAppetiteMeasurement:Measurement = new Measurement();
-			hasAppetiteMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has appetite");
-			hasAppetiteMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasAppetiteMeasurement.value = new ValueAndUnit(null, null, hasAppetite.toString());
+			hasAppetiteMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has appetite");
+			hasAppetiteMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasAppetiteMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasAppetite.toString());
 			measurements.addItem(hasAppetiteMeasurement);
 
 			var hasBMMeasurement:Measurement = new Measurement();
-			hasBMMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has BM");
-			hasBMMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasBMMeasurement.value = new ValueAndUnit(null, null, hasBM.toString());
+			hasBMMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has BM");
+			hasBMMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasBMMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasBM.toString());
 			measurements.addItem(hasBMMeasurement);
 
 			var hasPassedGasMeasurement:Measurement = new Measurement();
-			hasPassedGasMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has passed gas");
-			hasPassedGasMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasPassedGasMeasurement.value = new ValueAndUnit(null, null, hasPassedGas.toString());
+			hasPassedGasMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has passed gas");
+			hasPassedGasMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasPassedGasMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasPassedGas.toString());
 			measurements.addItem(hasPassedGasMeasurement);
 
 			var temperatureReadingMeasurement:Measurement = new Measurement();
-			temperatureReadingMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "temperature");
-			temperatureReadingMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
-			temperatureReadingMeasurement.value = new ValueAndUnit(null, new CodedValue(null, null, null, "degrees"),
+			temperatureReadingMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "temperature");
+			temperatureReadingMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
+			temperatureReadingMeasurement.value = new CollaboRhythmValueAndUnit(null, new CollaboRhythmCodedValue(null, null, null, "degrees"),
 					temperatureReading.toString());
 			measurements.addItem(temperatureReadingMeasurement);
 

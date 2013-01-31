@@ -3,9 +3,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionModelDetailsProvider;
 	import collaboRhythm.plugins.schedule.shared.model.IScheduleCollectionsProvider;
 	import collaboRhythm.shared.model.Record;
-	import collaboRhythm.shared.model.healthRecord.CodedValue;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmCodedValue;
 	import collaboRhythm.shared.model.healthRecord.DocumentBase;
-	import collaboRhythm.shared.model.healthRecord.ValueAndUnit;
+	import collaboRhythm.shared.model.healthRecord.CollaboRhythmValueAndUnit;
 	import collaboRhythm.shared.model.healthRecord.document.HealthActionResult;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 	import collaboRhythm.shared.model.healthRecord.document.healthActionResult.ActionGroupResult;
@@ -191,7 +191,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 			var healthActionResult:HealthActionResult = new HealthActionResult();
 
-			healthActionResult.name = new CodedValue(null, null, null, INCISION_EVALUATION_RESULT);
+			healthActionResult.name = new CollaboRhythmCodedValue(null, null, null, INCISION_EVALUATION_RESULT);
 			healthActionResult.planType = String("prescribed");
 			healthActionResult.reportedBy = String("ppeterson@records.media.mit.edu");
 			healthActionResult.dateReported = new Date();
@@ -201,39 +201,39 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			var measurements:ArrayCollection = new ArrayCollection();
 
 			var hasRednessMeasurement:Measurement = new Measurement();
-			hasRednessMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has redness");
-			hasRednessMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasRednessMeasurement.value = new ValueAndUnit(null, null, hasRedness.toString());
+			hasRednessMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has redness");
+			hasRednessMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasRednessMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasRedness.toString());
 			measurements.addItem(hasRednessMeasurement);
 
 			var woundWidthMeasurement:Measurement = new Measurement();
-			woundWidthMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "wound width");
-			woundWidthMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
-			woundWidthMeasurement.value = new ValueAndUnit(null, new CodedValue(null, null, null, "cm"), rednessWidth.toString());
+			woundWidthMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "wound width");
+			woundWidthMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:float");
+			woundWidthMeasurement.value = new CollaboRhythmValueAndUnit(null, new CollaboRhythmCodedValue(null, null, null, "cm"), rednessWidth.toString());
 			measurements.addItem(woundWidthMeasurement);
 
 			var hasTendernessMeasurement:Measurement = new Measurement();
-			hasTendernessMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has tenderness");
-			hasTendernessMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasTendernessMeasurement.value = new ValueAndUnit(null, null, hasTenderness.toString());
+			hasTendernessMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has tenderness");
+			hasTendernessMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasTendernessMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasTenderness.toString());
 			measurements.addItem(hasTendernessMeasurement);
 
 			var hasDischargeMeasurement:Measurement = new Measurement();
-			hasDischargeMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has discharge");
-			hasDischargeMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasDischargeMeasurement.value = new ValueAndUnit(null, null, hasDischarge.toString());
+			hasDischargeMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "has discharge");
+			hasDischargeMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasDischargeMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasDischarge.toString());
 			measurements.addItem(hasDischargeMeasurement);
 
 			var hasDischargePussMeasurement:Measurement = new Measurement();
-			hasDischargePussMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "discharge puss");
-			hasDischargePussMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasDischargePussMeasurement.value = new ValueAndUnit(null, null, hasDischargePuss.toString());
+			hasDischargePussMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "discharge puss");
+			hasDischargePussMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasDischargePussMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasDischargePuss.toString());
 			measurements.addItem(hasDischargePussMeasurement);
 
 			var hasDischargeBloodMeasurement:Measurement = new Measurement();
-			hasDischargeBloodMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "discharge blood");
-			hasDischargeBloodMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
-			hasDischargeBloodMeasurement.value = new ValueAndUnit(null, null, hasDischargeBlood.toString());
+			hasDischargeBloodMeasurement.name = new CollaboRhythmCodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "discharge blood");
+			hasDischargeBloodMeasurement.type = new CollaboRhythmCodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
+			hasDischargeBloodMeasurement.value = new CollaboRhythmValueAndUnit(null, null, hasDischargeBlood.toString());
 			measurements.addItem(hasDischargeBloodMeasurement);
 
 			action.measurements = measurements;
