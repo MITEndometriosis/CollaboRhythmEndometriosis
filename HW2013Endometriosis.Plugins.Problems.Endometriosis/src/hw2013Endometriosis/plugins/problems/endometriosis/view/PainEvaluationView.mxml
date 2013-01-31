@@ -51,7 +51,7 @@
 									skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 									change="painIndicatorToggleSwitch_changeHandler(event)"
 									selected="{_model.hasPain}"
-									accentColor="0x9370db"/>
+									accentColor="0x9370db" color="white"/>
 				</s:HGroup>
 
 				<s:HGroup visible="{painIndicatorToggleSwitch.selected}"

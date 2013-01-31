@@ -195,7 +195,7 @@
 						<s:ToggleSwitch id="bleedingIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										click="bleedingIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="What color is the blood?"
@@ -228,7 +228,7 @@
 						<s:ToggleSwitch id="bloodClotsIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										click="bloodClotsIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="What size are they?" visible="{bloodClotsIndicatorToggleSwitch.selected}"
@@ -259,7 +259,7 @@
 						<s:ToggleSwitch id="FeminineProductsIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										click="feminineProductsIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="What kind of product?"

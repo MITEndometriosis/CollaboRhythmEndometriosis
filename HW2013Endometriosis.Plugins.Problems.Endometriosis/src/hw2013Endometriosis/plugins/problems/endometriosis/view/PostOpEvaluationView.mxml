@@ -48,7 +48,7 @@
 						<s:ToggleSwitch id="urinationIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										change="urinationIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="Do you have any pain while urinating?" skinClass="spark.skins.spark.FormItemSkin"
@@ -57,7 +57,7 @@
 						<s:ToggleSwitch id="urinationPainIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										change="urinationPainIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="Have you felt nauseated?" skinClass="spark.skins.spark.FormItemSkin"
@@ -65,7 +65,7 @@
 						<s:ToggleSwitch id="hasNauseaIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										change="hasNauseaIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="Have you vomited?" skinClass="spark.skins.spark.FormItemSkin"
@@ -74,7 +74,7 @@
 						<s:ToggleSwitch id="hasVomitedIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										change="hasVomitedIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="Have you had an appetite?" skinClass="spark.skins.spark.FormItemSkin"
@@ -82,7 +82,7 @@
 						<s:ToggleSwitch id="hasAppetiteIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										change="hasAppetiteIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="Have you had a bowel movement?" skinClass="spark.skins.spark.FormItemSkin"
@@ -90,7 +90,7 @@
 						<s:ToggleSwitch id="hasBMIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										change="hasBMIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="Have you passed gas?" skinClass="spark.skins.spark.FormItemSkin"
@@ -98,7 +98,7 @@
 						<s:ToggleSwitch id="hasPassedGasIndicatorToggleSwitch"
 										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
 										change="hasPassedGasIndicatorToggleSwitch_changeHandler(event)"
-										accentColor="0x9370db"/>
+										accentColor="0x9370db" color="white"/>
 					</s:FormItem>
 
 					<s:FormItem label="What is your temperature?"
