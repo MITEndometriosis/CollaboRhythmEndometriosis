@@ -23,9 +23,9 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		private var _model:WellnessCheckinModel;
 
 		public function WellnessCheckinHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
-													 healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
-													 scheduleCollectionsProvider:IScheduleCollectionsProvider,
-													 viewNavigator:ViewNavigator)
+																   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+																   scheduleCollectionsProvider:IScheduleCollectionsProvider,
+																   viewNavigator:ViewNavigator)
 		{
 			_model = new WellnessCheckinModel(scheduleItemOccurrence, healthActionModelDetailsProvider,
 					scheduleCollectionsProvider);

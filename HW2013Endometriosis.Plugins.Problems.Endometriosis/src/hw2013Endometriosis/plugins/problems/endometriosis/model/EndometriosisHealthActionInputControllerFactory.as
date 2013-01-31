@@ -16,6 +16,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PreOpEvalHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
 	import hw2013Endometriosis.plugins.problems.endometriosis.controller.VaginalBleedingEvaluationHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.WellnessCheckinHealthActionInputController;
 
 	import spark.components.ViewNavigator;
 
@@ -61,6 +62,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			if (healthAction.name == EndometriosisModel.PRE_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
 			{
 				return new PreOpEvalHealthActionInputController(scheduleItemOccurrence,
+						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
+			}
+
+			if (healthAction.name == EndometriosisModel.WELLNESS_CHECKIN_HEALTH_ACTION_SCHEDULE_TYPE)
+			{
+				return new WellnessCheckinHealthActionInputController(scheduleItemOccurrence,
 						healthActionModelDetailsProvider, scheduleCollectionsProvider, viewNavigator);
 			}
 
