@@ -19,7 +19,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 	public class WellnessCheckinHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-		[Embed(source="/assets/images/heart.png")]
+		[Embed(source="/assets/images/wellness.png")]
 		public var wellnessImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;
@@ -64,7 +64,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get name():String
 		{
-			return "Emotional Health";
+			return "Wellness Check-in";
 		}
 
 		public function get description():String

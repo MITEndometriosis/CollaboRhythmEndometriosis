@@ -69,6 +69,13 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 							healthActionModelDetailsProvider);
 				}
 
+				if (healthActionSchedule.name.text ==
+						EndometriosisModel.WELLNESS_CHECKIN_HEALTH_ACTION_SCHEDULE_TYPE)
+				{
+					return new WellnessCheckinHealthActionListViewAdapter(scheduleItemOccurrence,
+							healthActionModelDetailsProvider);
+				}
+
 
 			}
 

@@ -21,7 +21,7 @@
 					   xmlns:view="hw2013Endometriosis.plugins.problems.endometriosis.view.*"
 					   title="EmotionalHealth">
 
-	<s:Panel title="Emotional Health" backgroundColor="0xf5f5f5" borderColor="0x9370db"
+	<s:Panel title="Wellness Check-in" backgroundColor="0xf5f5f5" borderColor="0x9370db"
 			 chromeColor="0x9370db" left="20" top="20" bottom="20" right="20"
 			 skinClass="spark.skins.spark.PanelSkin"
 			 horizontalCenter="middle">
@@ -83,7 +83,9 @@
 
 		[Bindable]
 		private var _controller:WellnessCheckinHealthActionInputController;
+		[Bindable]
 		private var _model:WellnessCheckinModel;
+		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
 
 		override public function set data(value:Object):void
 		{
