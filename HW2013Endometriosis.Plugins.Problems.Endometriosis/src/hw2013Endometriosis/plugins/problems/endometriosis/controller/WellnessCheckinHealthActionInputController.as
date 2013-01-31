@@ -77,5 +77,10 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 			_model = value;
 		}
+
+		public function saveWellnessCheckin():void
+		{
+			_viewNavigator.popView();
+		}
 	}
 }

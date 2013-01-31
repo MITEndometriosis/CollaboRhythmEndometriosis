@@ -70,7 +70,7 @@
 						<s:Button label="Save" id="wellnessCheckinSaveButton"
 								  width="100"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  chromeColor="yellow"/>
+								  chromeColor="yellow" click="wellnessCheckinSaveButton_clickHandler(event)"/>
 					</s:FormItem>
 
 				</s:Form>
@@ -100,6 +100,11 @@
 
 			_controller = value as WellnessCheckinHealthActionInputController;
 			_model = _controller.model;
+		}
+
+		private function wellnessCheckinSaveButton_clickHandler(event:MouseEvent):void
+		{
+			_controller.saveWellnessCheckin();
 		}
 		]]></fx:Script>
 
