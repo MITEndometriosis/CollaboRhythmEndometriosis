@@ -110,6 +110,14 @@
 						</s:HGroup>
 					</s:FormItem>
 
+					<s:FormItem label="Does your bandage have a blue 'X'?"
+								skinClass="spark.skins.spark.FormItemSkin"
+								backgroundColor="0xf5f5f5">
+						<s:ToggleSwitch id="smartBandaidIndicatorToggleSwitch"
+										skinClass="hw2013Endometriosis.plugins.problems.endometriosis.view.YesNoToggleSwitchSkin"
+										accentColor="0x9370db" color="white"/>
+					</s:FormItem>
+
 					<s:FormItem skinClass="spark.skins.spark.FormItemSkin" backgroundColor="0xf5f5f5">
 						<s:Button label="Save" id="incisionEvaluationSaveButton"
 								  width="100"
