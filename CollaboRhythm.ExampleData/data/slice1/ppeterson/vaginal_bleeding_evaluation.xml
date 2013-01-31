@@ -24,7 +24,7 @@
 							  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 				<name>Vaginal Bleeding Evaluation</name>
 				<planType>Prescribed</planType>
-				<plannedBy>jking@records.media.mit.edu</plannedBy>
+				<plannedBy>ppeterson@records.media.mit.edu</plannedBy>
 				<datePlanned>2013-01-01T21:00:00Z</datePlanned>
 				<indication>Endometriosis</indication>
 				<instructions>Record vaginal bleeding daily for the first week and as needed for 6 weeks after
@@ -45,7 +45,7 @@
 					<document>
 						<HealthActionSchedule xmlns="http://indivo.org/vocab/xml/documents#">
 							<name>Vaginal Bleeding Evaluation</name>
-							<scheduledBy>jking@records.media.mit.edu</scheduledBy>
+							<scheduledBy>ppeterson@records.media.mit.edu</scheduledBy>
 							<dateScheduled>2013-01-01T13:00:00Z</dateScheduled>
 							<dateStart>2013-01-01T09:00:00Z</dateStart>
 							<dateEnd>2013-01-01T13:00:00Z</dateEnd>

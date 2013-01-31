@@ -15,10 +15,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import spark.components.Button;
 
 	import spark.components.Image;
+	import spark.skins.spark.ImageSkin;
 
 	public class WellnessCheckinHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
-
+		[Embed(source="/assets/images/heart.png")]
+		public var wellnessImageClass:Class;
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _healthActionSchedule:HealthActionSchedule;
 
@@ -34,7 +36,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 				_scheduleItemOccurrence = scheduleItemOccurrence;
 				_healthActionSchedule = scheduleItemOccurrence.scheduleItem as HealthActionSchedule;
 
-				_emotionalHealthEvaluationHealthAction = new HealthActionBase(EndometriosisModel.EMOTIONAL_HEALTH_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE,
+				_emotionalHealthEvaluationHealthAction = new HealthActionBase(EndometriosisModel.WELLNESS_CHECKIN_HEALTH_ACTION_SCHEDULE_TYPE,
 						_healthActionSchedule.name.text);
 
 				_model = new HealthActionListViewModelBase(scheduleItemOccurrence, healthActionModelDetailsProvider);
@@ -48,7 +50,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function createImage():Image
 		{
-			return null;
+			var wellnessCheckinImage:Image = new Image();
+			wellnessCheckinImage.setStyle("skinClass", ImageSkin);
+			wellnessCheckinImage.source = wellnessImageClass;
+
+			return wellnessCheckinImage;
 		}
 
 		public function createCustomView():IVisualElement
@@ -92,7 +98,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 		public function get additionalAdherenceInformation():String
 		{
-			return "";
+			return "...";
 		}
 
 		public function get model():IHealthActionListViewModel

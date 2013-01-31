@@ -41,15 +41,15 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 
 		public function VaginalBleedingEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
-															   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
-															   scheduleCollectionsProvider:IScheduleCollectionsProvider)
-				{
+													   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
+													   scheduleCollectionsProvider:IScheduleCollectionsProvider)
+		{
 			_scheduleItemOccurrence = scheduleItemOccurrence;
 			_record = healthActionModelDetailsProvider.record;
 			_activeAccountId = healthActionModelDetailsProvider.activeAccount.accountId;
 
 			hasBleeding = false;
-			bloodColor= "";
+			bloodColor = "";
 			hasBloodClots = false;
 			bloodClotSize = "";
 			useFeminineProducts = false;
@@ -224,7 +224,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			measurements.addItem(bloodClotSizeMeasurement);
 
 			var useFeminineProductMeasurement:Measurement = new Measurement();
-			useFeminineProductMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null, "use feminine product");
+			useFeminineProductMeasurement.name = new CodedValue(MEASURES_CODED_VALUE_TYPE, null, null,
+					"use feminine product");
 			useFeminineProductMeasurement.type = new CodedValue(TYPE_CODED_VALUE_TYPE, null, null, "xs:boolean");
 			useFeminineProductMeasurement.value = new ValueAndUnit(null, null, useFeminineProducts.toString());
 			measurements.addItem(useFeminineProductMeasurement);

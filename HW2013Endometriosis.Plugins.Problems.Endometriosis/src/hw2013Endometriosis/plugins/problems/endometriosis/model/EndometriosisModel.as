@@ -7,7 +7,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		public static const PAIN_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE:String = "Pain Evaluation";
 		public static const POST_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE:String = "Post-Operative Daily Evaluation";
 		public static const PRE_OP_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE:String = "Pre-Operative Daily Evaluation";
-		public static const EMOTIONAL_HEALTH_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE:String = "EmotionalHealthEvaluation";
+		public static const WELLNESS_CHECKIN_HEALTH_ACTION_SCHEDULE_TYPE:String = "Wellness Check-in";
 
 		public function EndometriosisModel()
 		{
