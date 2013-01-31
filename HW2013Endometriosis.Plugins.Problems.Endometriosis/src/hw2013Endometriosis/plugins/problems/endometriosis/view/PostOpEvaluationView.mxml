@@ -107,7 +107,7 @@
 						<s:HGroup>
 							<s:TextInput id="temperatureTextInput" skinClass="spark.skins.mobile.StageTextInputSkin"
 										 width="50"
-										 textAlign="right" restrict="0-9." softKeyboardType="number"
+										 textAlign="right" softKeyboardType="number"
 										 change="temperatureTextInput_changeHandler(event)"/>
 							<s:Label text="degrees fahrenheit" alignmentBaseline="ideographicBottom"/>
 						</s:HGroup>
