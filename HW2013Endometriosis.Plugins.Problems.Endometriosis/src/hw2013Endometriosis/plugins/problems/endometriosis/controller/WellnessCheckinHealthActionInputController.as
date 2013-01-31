@@ -10,36 +10,36 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 	import flash.net.URLVariables;
 
-	import hw2013Endometriosis.plugins.problems.endometriosis.model.EmotionalHealthEvaluationModel;
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.WellnessCheckinModel;
 
-	import hw2013Endometriosis.plugins.problems.endometriosis.view.EmotionalHealthEvaluationView;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.WellnessCheckinView;
 
 	import spark.components.ViewNavigator;
 
-	public class EmotionalHealthEvaluationHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
+	public class WellnessCheckinHealthActionInputController extends HealthActionInputControllerBase implements IHealthActionInputController
 	{
 
 		private var _viewNavigator:ViewNavigator;
-		private var _model:EmotionalHealthEvaluationModel;
+		private var _model:WellnessCheckinModel;
 
-		public function EmotionalHealthEvaluationHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
+		public function WellnessCheckinHealthActionInputController(scheduleItemOccurrence:ScheduleItemOccurrence,
 													 healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
 													 scheduleCollectionsProvider:IScheduleCollectionsProvider,
 													 viewNavigator:ViewNavigator)
 		{
-			_model = new EmotionalHealthEvaluationModel(scheduleItemOccurrence, healthActionModelDetailsProvider,
+			_model = new WellnessCheckinModel(scheduleItemOccurrence, healthActionModelDetailsProvider,
 					scheduleCollectionsProvider);
 			_viewNavigator = viewNavigator
 		}
 
 		public function handleHealthActionResult(initiatedLocally:Boolean):void
 		{
-			_viewNavigator.pushView(EmotionalHealthEvaluationView, this);
+			_viewNavigator.pushView(WellnessCheckinView, this);
 		}
 
 		public function handleHealthActionSelected():void
 		{
-			_viewNavigator.pushView(EmotionalHealthEvaluationView, this);
+			_viewNavigator.pushView(WellnessCheckinView, this);
 		}
 
 		public function handleUrlVariables(urlVariables:URLVariables):void
@@ -68,12 +68,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		{
 		}
 
-		public function get model():EmotionalHealthEvaluationModel
+		public function get model():WellnessCheckinModel
 		{
 			return _model;
 		}
 
-		public function set model(value:EmotionalHealthEvaluationModel):void
+		public function set model(value:WellnessCheckinModel):void
 		{
 			_model = value;
 		}

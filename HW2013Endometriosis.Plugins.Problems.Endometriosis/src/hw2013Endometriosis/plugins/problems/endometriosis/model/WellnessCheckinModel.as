@@ -5,14 +5,14 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 	import collaboRhythm.shared.model.Record;
 	import collaboRhythm.shared.model.healthRecord.document.ScheduleItemOccurrence;
 
-	public class EmotionalHealthEvaluationModel
+	public class WellnessCheckinModel
 	{
 
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
 		private var _record:Record;
 		private var _activeAccountId:String;
 
-		public function EmotionalHealthEvaluationModel(scheduleItemOccurrence:ScheduleItemOccurrence,
+		public function WellnessCheckinModel(scheduleItemOccurrence:ScheduleItemOccurrence,
 											 healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
 											 scheduleCollectionsProvider:IScheduleCollectionsProvider)
 		{

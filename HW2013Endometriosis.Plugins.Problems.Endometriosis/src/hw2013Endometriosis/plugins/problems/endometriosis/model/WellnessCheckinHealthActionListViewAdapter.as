@@ -16,7 +16,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 
 	import spark.components.Image;
 
-	public class EmotionalHealthEvaluationHealthActionListViewAdapter implements IHealthActionListViewAdapter
+	public class WellnessCheckinHealthActionListViewAdapter implements IHealthActionListViewAdapter
 	{
 
 		private var _scheduleItemOccurrence:ScheduleItemOccurrence;
@@ -26,7 +26,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 		private var _model:HealthActionListViewModelBase;
 		private var _controller:HealthActionListViewControllerBase;
 
-		public function EmotionalHealthEvaluationHealthActionListViewAdapter(scheduleItemOccurrence:ScheduleItemOccurrence,
+		public function WellnessCheckinHealthActionListViewAdapter(scheduleItemOccurrence:ScheduleItemOccurrence,
 													   healthActionModelDetailsProvider:IHealthActionModelDetailsProvider)
 		{
 			if (scheduleItemOccurrence)

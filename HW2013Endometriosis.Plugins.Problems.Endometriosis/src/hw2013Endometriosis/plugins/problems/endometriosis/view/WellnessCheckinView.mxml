@@ -75,21 +75,21 @@
 	</s:Panel>
 
 	<fx:Script><![CDATA[
-		import hw2013Endometriosis.plugins.problems.endometriosis.controller.EmotionalHealthEvaluationHealthActionInputController;
-		import hw2013Endometriosis.plugins.problems.endometriosis.model.EmotionalHealthEvaluationModel;
+		import hw2013Endometriosis.plugins.problems.endometriosis.controller.WellnessCheckinHealthActionInputController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.WellnessCheckinModel;
 
 		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
 		import collaboRhythm.shared.collaboration.model.CollaborationModel;
 
 		[Bindable]
-		private var _controller:EmotionalHealthEvaluationHealthActionInputController;
-		private var _model:EmotionalHealthEvaluationModel;
+		private var _controller:WellnessCheckinHealthActionInputController;
+		private var _model:WellnessCheckinModel;
 
 		override public function set data(value:Object):void
 		{
 			super.data = value;
 
-			_controller = value as EmotionalHealthEvaluationHealthActionInputController;
+			_controller = value as WellnessCheckinHealthActionInputController;
 			_model = _controller.model;
 		}
 		]]></fx:Script>
