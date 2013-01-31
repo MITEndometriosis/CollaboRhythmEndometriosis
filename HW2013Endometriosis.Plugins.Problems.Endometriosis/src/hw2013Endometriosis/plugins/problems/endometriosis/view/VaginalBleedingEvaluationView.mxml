@@ -209,14 +209,13 @@
 										   groupName="bloodColor"
 										   label="Red" value="red"
 										   skinClass="spark.skins.spark.RadioButtonSkin"
-										   color="red"
-									/>
+										   color="red" scaleX="1.5" scaleY="1.5"/>
 
 							<s:RadioButton id="brownBloodButton"
 										   groupName="bloodColor"
 										   label="Brown" skinClass="spark.skins.spark.RadioButtonSkin"
 										   color="0xa52a2a"
-										   value="brown"/>
+										   value="brown" scaleX="1.5" scaleY="1.5"/>
 						</s:HGroup>
 					</s:FormItem>
 
@@ -239,15 +238,18 @@
 							<s:RadioButton groupName="bloodClotSize"
 										   id="bloodClotsSmallCheckBox"
 										   value="Small" label="Small"
-										   skinClass="spark.skins.spark.RadioButtonSkin"/>
+										   skinClass="spark.skins.spark.RadioButtonSkin"
+										   scaleX="1.5" scaleY="1.5"/>
 							<s:RadioButton groupName="bloodClotSize"
 										   id="bloodClotsMediumCheckBox"
 										   value="Medium" label="Medium"
-										   skinClass="spark.skins.spark.RadioButtonSkin"/>
+										   skinClass="spark.skins.spark.RadioButtonSkin"
+										   scaleX="1.5" scaleY="1.5"/>
 							<s:RadioButton groupName="bloodClotSize"
 										   id="feminineProductsLargeCheckBox"
 										   value="Large" label="Large"
-										   skinClass="spark.skins.spark.RadioButtonSkin"/>
+										   skinClass="spark.skins.spark.RadioButtonSkin"
+										   scaleX="1.5" scaleY="1.5"/>
 						</s:HGroup>
 					</s:FormItem>
 
@@ -297,6 +299,7 @@
 							<s:CheckBox id="hasSpottingCheckBox" label="spotting"
 										skinClass="spark.skins.spark.CheckBoxSkin"
 										click="spottingFeminingProductsCheckBox_changeHandler(event)"/>
+
 						</s:HGroup>
 					</s:FormItem>
 
