@@ -48,7 +48,7 @@
 							<dateEnd>2013-01-02T02:00:00Z</dateEnd>
 							<recurrenceRule>
 								<frequency>DAILY</frequency>
-								<count>40</count>
+								<count>100</count>
 							</recurrenceRule>
 						</HealthActionSchedule>
 					</document>
