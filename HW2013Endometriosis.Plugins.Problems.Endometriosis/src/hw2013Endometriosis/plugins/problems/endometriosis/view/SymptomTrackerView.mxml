@@ -51,7 +51,7 @@
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="nauseaButton" label="Nausea"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="nauseaLocationButtonHandler(event)"
+								  click="painLocationButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="shoulderButton" label="Shoulder Pain"
 								  skinClass="spark.skins.mobile.ButtonSkin"
@@ -75,15 +75,15 @@
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="urinarySymptomsButton" label="Urinary Symptoms"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="urinarySymptomsLocationButtonHandler(event)"
+								  click="painLocationButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="bowelSymptomsButton" label="Bowel Symptoms"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="bowelLocationButtonHandler(event)"
+								  click="postOpButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 						<s:Button id="otherButton" label="Other Symptom"
 								  skinClass="spark.skins.mobile.ButtonSkin"
-								  click="otherLocationButtonHandler(event)"
+								  click="postOpButtonHandler(event)"
 								  chromeColor="0x9370db" width="160"/>
 
 					</s:VGroup>
@@ -102,27 +102,34 @@
 	<fx:Script><![CDATA[
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
 		import hw2013Endometriosis.plugins.problems.endometriosis.controller.SymptomTrackerAppController;
+		import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 		import hw2013Endometriosis.plugins.problems.endometriosis.model.SymptomTrackerModel;
 
 		import collaboRhythm.shared.collaboration.model.CollaborationLobbyNetConnectionServiceProxy;
 		import collaboRhythm.shared.collaboration.model.CollaborationModel;
 
+		import mx.controls.Alert;
+
 		import spark.components.ViewNavigator;
 
 		[Bindable]
 		private var _controller:SymptomTrackerAppController;
+		[Bindable]
 		private var _painController:PainEvaluationHealthActionInputController;
+		[Bindable]
 		private var _model:SymptomTrackerModel;
+		private var _painEvaluationModel:PainEvaluationModel;
 		private var _collaborationLobbyNetConnectionServiceProxy:CollaborationLobbyNetConnectionServiceProxy;
-		private var _viewNavigator:ViewNavigator;
+		//private var _viewNavigator:ViewNavigator;
 
 		override public function set data(value:Object):void
 		{
 			super.data = value;
 
-			_painController = value as PainEvaluationHealthActionInputController;
 			_controller = value as SymptomTrackerAppController;
-			_model = _controller.model;
+			_painController = value as PainEvaluationHealthActionInputController;
+			_model = value as SymptomTrackerModel;
+			_painEvaluationModel = value as PainEvaluationModel;
 
 			_collaborationLobbyNetConnectionServiceProxy = _controller.collaborationLobbyNetConnectionServiceProxy as
 					CollaborationLobbyNetConnectionServiceProxy;
@@ -140,27 +147,41 @@
 
 		private function painLocationButtonHandler(event:Event):void
 		{
+
 			if (_controller)
 			{
 				switch (event.target)
 				{
 					case shoulderButton:
-						_painController.updateHasShoulderPain(true);
+					{
+						_controller.pushShoulderPainEvaluationView();
 						break;
+					}
 					case pelvisButton:
-						_painController.updateHasPelvisPain(true);
+					{
+						_controller.pushPelvisPainEvaluationView();
 						break;
+					}
 					case abdomenButton:
-						_painController.updateHasAbdomenPain(true);
+					{
+						_controller.pushAbdomenPainEvaluationView();
 						break;
+					}
 					case flankButton:
-						_painController.updateHasFlankPain(true);
+					{
+						_controller.pushFlankPainEvaluationView();
 						break;
+					}
+					default:
 
+						_controller.pushPainEvaluationView();
+						break;
 				}
-				_controller.pushPainEvaluationView();
 			}
+
+
 		}
+
 
 		private function emoLocationButtonHandler(event:MouseEvent):void
 		{
@@ -176,36 +197,22 @@
 
 		}
 
-		private function nauseaLocationButtonHandler(event:MouseEvent):void
+		/*
+		 private function nextButtonHandler(event:Event):void
+		 {
+		 if (_controller)
+		 {
+
+
+		 }
+		 }
+		 */
+		private function postOpButtonHandler(event:MouseEvent):void
 		{
 			if (_controller)
 			{
 				_controller.pushPostOpEvaluationView();
 			}
-		}
-
-		private function urinarySymptomsLocationButtonHandler(event:MouseEvent):void
-		{
-			if (_controller)
-						{
-							_controller.pushPostOpEvaluationView();
-						}
-		}
-
-		private function bowelLocationButtonHandler(event:MouseEvent):void
-		{
-			if (_controller)
-						{
-							_controller.pushPostOpEvaluationView();
-						}
-		}
-
-		private function otherLocationButtonHandler(event:MouseEvent):void
-		{
-			if (_controller)
-						{
-							_controller.pushPostOpEvaluationView();
-						}
 		}
 		]]></fx:Script>
 

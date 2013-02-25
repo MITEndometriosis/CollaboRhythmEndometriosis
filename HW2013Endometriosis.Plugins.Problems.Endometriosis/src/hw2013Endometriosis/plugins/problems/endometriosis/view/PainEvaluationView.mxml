@@ -130,7 +130,7 @@
 			super.data = value;
 
 			_controller = value as PainEvaluationHealthActionInputController;
-			_model = _controller.model;
+			_model = value as PainEvaluationModel;
 
 		}
 

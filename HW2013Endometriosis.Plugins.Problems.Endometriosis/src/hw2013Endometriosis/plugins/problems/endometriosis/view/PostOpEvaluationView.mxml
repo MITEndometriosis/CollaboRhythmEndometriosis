@@ -146,7 +146,7 @@
 			super.data = value;
 
 			_controller = value as PostOpEvaluationHealthActionInputController;
-			_model = _controller.model;
+			_model = value as PostOpEvaluationModel;
 
 		}
 

@@ -1,7 +1,10 @@
 package hw2013Endometriosis.plugins.problems.endometriosis.controller
 {
 	import castle.flexbridge.reflection.ReflectionUtils;
-    import spark.components.ViewNavigator;
+
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.SymptomTrackerAppController;
+
+	import spark.components.ViewNavigator;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionCreationControllerFactory;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionInputControllerFactory;
 	import collaboRhythm.plugins.schedule.shared.model.IHealthActionListViewAdapterFactory;

@@ -43,7 +43,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 																  viewNavigator:ViewNavigator)
 		{
 			_painEvaluationModel = new PainEvaluationModel();
-			_viewNavigator = viewNavigator
+			_viewNavigator = viewNavigator;
 		}
 
 		public function handleHealthActionResult(initiatedLocally:Boolean):void
@@ -125,7 +125,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 			//Allowing Screens to loop
 			if (indexNum == viewList.length - 1)
 			{
-				_painEvaluationModel.screen = PainEvaluationModel.HOME
+				_painEvaluationModel.screen = PainEvaluationModel.HOME;
 			}
 			else
 			{

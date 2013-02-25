@@ -5,6 +5,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import collaboRhythm.shared.controller.apps.AppControllerBase;
 	import collaboRhythm.shared.controller.apps.AppControllerConstructorParams;
 
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.EndometriosisHealthActionInputControllerFactory;
+
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationLocationSelectedView;
+
+	import mx.controls.Alert;
 
 	import spark.components.ViewNavigator;
 
@@ -13,9 +18,12 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.SymptomTrackerButtonWidgetView;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.SymptomTrackerView;
 
+	import hw2013Endometriosis.plugins.problems.endometriosis.controller.PainEvaluationHealthActionInputController;
+	import hw2013Endometriosis.plugins.problems.endometriosis.model.PainEvaluationModel;
 
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.VaginalBleedingEvaluationView;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationLocationSelectedView;
+	import hw2013Endometriosis.plugins.problems.endometriosis.view.PainEvaluationView;
 	import hw2013Endometriosis.plugins.problems.endometriosis.view.PostOpEvaluationView;
 
 
@@ -31,14 +39,22 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 		private var _collaborationLobbyNetConnectionServiceProxyLocal:CollaborationLobbyNetConnectionServiceProxy;
 		private var _synchronizationService:SynchronizationService;
 
+		//	private var _healthActionInputController:EndometriosisHealthActionInputControllerFactory;
+
+		private var _painController:PainEvaluationHealthActionInputController;
+		private var _painModel:PainEvaluationModel;
+
 		public function SymptomTrackerAppController(constructorParams:AppControllerConstructorParams)
 		{
 			super(constructorParams);
+
+			//	_viewNavigator=_healthActionInputController.viewNavigator;
 
 			_collaborationLobbyNetConnectionServiceProxyLocal = _collaborationLobbyNetConnectionServiceProxy as
 					CollaborationLobbyNetConnectionServiceProxy;
 			_synchronizationService = new SynchronizationService(this,
 					_collaborationLobbyNetConnectionServiceProxyLocal);
+			_painModel = new PainEvaluationModel();
 		}
 
 		override protected function createWidgetView():UIComponent
@@ -124,6 +140,36 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function pushPainEvaluationView():void
 		{
+
+			_viewNavigator.pushView(PainEvaluationView, this);
+
+		}
+
+		public function pushShoulderPainEvaluationView():void
+		{
+			_painModel.screen = PainEvaluationModel.SHOULDER;
+			_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
+
+		}
+
+		public function pushPelvisPainEvaluationView():void
+		{
+
+			//_painModel.screen = PainEvaluationModel.PELVIS;
+			_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
+
+		}
+
+		public function pushAbdomenPainEvaluationView():void
+		{
+			_painModel.screen = PainEvaluationModel.ABDOMEN;
+			_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
+
+		}
+
+		public function pushFlankPainEvaluationView():void
+		{
+			_painModel.screen = PainEvaluationModel.FLANK;
 			_viewNavigator.pushView(PainEvaluationLocationSelectedView, this);
 
 		}
@@ -135,7 +181,7 @@ package hw2013Endometriosis.plugins.problems.endometriosis.controller
 
 		public function pushPostOpEvaluationView():void
 		{
-			_viewNavigator.pushView(PostOpEvaluationView,this);
+			_viewNavigator.pushView(PostOpEvaluationView, this);
 		}
 
 		public function pushVaginalBleedingEvaluationView():void

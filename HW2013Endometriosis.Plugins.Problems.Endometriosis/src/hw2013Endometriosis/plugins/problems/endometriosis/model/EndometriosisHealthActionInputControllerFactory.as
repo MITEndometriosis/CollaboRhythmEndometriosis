@@ -27,6 +27,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 			super();
 		}
 
+		private var _viewNavigator:ViewNavigator;
+
 		public function createHealthActionInputController(healthAction:HealthActionBase,
 														  scheduleItemOccurrence:ScheduleItemOccurrence,
 														  healthActionModelDetailsProvider:IHealthActionModelDetailsProvider,
@@ -35,6 +37,8 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 														  currentHealthActionInputController:IHealthActionInputController,
 														  collaborationLobbyNetConnectionServiceProxy:ICollaborationLobbyNetConnectionServiceProxy):IHealthActionInputController
 		{
+			_viewNavigator=viewNavigator;
+
 			if (healthAction.name == EndometriosisModel.INCISION_EVALUATION_HEALTH_ACTION_SCHEDULE_TYPE)
 			{
 				return new IncisionEvaluationHealthActionInputController(scheduleItemOccurrence,
@@ -82,6 +86,11 @@ package hw2013Endometriosis.plugins.problems.endometriosis.model
 																currentDeviceHealthActionInputController:IHealthActionInputController):IHealthActionInputController
 		{
 			return null;
+		}
+
+		public function get viewNavigator():ViewNavigator
+		{
+			return _viewNavigator;
 		}
 	}
 }

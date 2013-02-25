@@ -932,7 +932,7 @@
 			super.data = value;
 
 			_controller = value as EndometriosisAppController;
-			_model = _controller.model;
+			_model = value as EndometriosisModel;
 
 			_collaborationLobbyNetConnectionServiceProxy = _controller.collaborationLobbyNetConnectionServiceProxy as
 					CollaborationLobbyNetConnectionServiceProxy;
